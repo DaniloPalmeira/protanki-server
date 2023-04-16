@@ -4,6 +4,7 @@ const user = require("./database/user");
 
 class ProTankiServer {
 	constructor() {
+		this.id = 1;
 		this.users = {};
 
 		this.clients = [];

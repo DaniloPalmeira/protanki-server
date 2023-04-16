@@ -1,4 +1,4 @@
-const ByteArray = require("../bytearray");
+const ByteArray = require("../ByteArray");
 
 module.exports = class {
 	constructor() {

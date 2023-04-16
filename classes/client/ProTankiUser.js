@@ -1,11 +1,10 @@
 const Sequelize = require("sequelize");
-const user = require("../database/user");
-const friends = require("../database/friends");
+const user = require("../../helpers/user");
 const {
 	getUserByUsername,
 	getFriendsOrCreateByID,
 	updateFriends,
-} = require("../database/db");
+} = require("../../helpers/db");
 
 module.exports = class ProTankiUser {
 	exist = false;

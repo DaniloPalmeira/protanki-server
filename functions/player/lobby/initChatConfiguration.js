@@ -1,4 +1,4 @@
-const ByteArray = require("../../../modules/bytearray");
+const ByteArray = require("../../../classes/ByteArray");
 
 initChatConfiguration = function () {
 	var packet = new ByteArray();

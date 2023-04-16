@@ -1,5 +1,5 @@
-const ProTankiBattle = require("../../../modules/Interface/ProTankiBattle");
-const ByteArray = require("../../../modules/bytearray");
+const ProTankiBattle = require("../../../classes/server/ProTankiBattle");
+const ByteArray = require("../../../classes/ByteArray");
 
 module.exports = function (packet) {
 	var bData = {};

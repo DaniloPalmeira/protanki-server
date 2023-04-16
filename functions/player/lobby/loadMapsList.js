@@ -1,4 +1,4 @@
-const ByteArray = require("../../../modules/bytearray");
+const ByteArray = require("../../../classes/ByteArray");
 
 loadMapsList = function () {
 	var packet = new ByteArray();

@@ -68,10 +68,15 @@ const updateFriends = async (keys, friendsObj, id) => {
 	});
 };
 
+const createAccount = async (username, password) => {
+	return await user.create({ username, password });
+};
+
 module.exports = {
 	getUserById,
 	getUserByUsername,
 	getUserByEmail,
 	getFriendsOrCreateByID,
 	updateFriends,
+	createAccount,
 };

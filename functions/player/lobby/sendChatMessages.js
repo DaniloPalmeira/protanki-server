@@ -1,4 +1,4 @@
-const ByteArray = require("../../../modules/bytearray");
+const ByteArray = require("../../../classes/ByteArray");
 
 sendChatMessages = function (messageList) {
 	var packet = new ByteArray();

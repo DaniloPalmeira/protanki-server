@@ -1,9 +1,10 @@
 const initClientFuncions = require("../functions/initClientFunctions");
-const ByteArray = require("./bytearray");
-const ProTankiUser = require("./Interface/ProTankiUser");
-const Sequelize = require("sequelize");
-const user = require("../modules/database/user");
-const { getUserByEmail, getUserById } = require("../modules/database/db");
+const ByteArray = require("./ByteArray");
+const ProTankiUser = require("./client/ProTankiUser");
+const { getUserByEmail } = require("../helpers/db");
+const ProTankiRegister = require("./client/ProTankiRegister");
+const ProTankiLogin = require("./client/ProTankiLogin");
+const PKG = require("../modules/pkg.json");
 
 class ProTankiClient {
 	language = "ru";
@@ -28,6 +29,10 @@ class ProTankiClient {
 
 		this.server.addClient(this);
 		this.gerateCryptKeys();
+
+		this.user = new ProTankiUser();
+		this.register = new ProTankiRegister(this);
+		this.login = new ProTankiLogin(this);
 	}
 
 	onConnectionClose() {
@@ -118,13 +123,6 @@ class ProTankiClient {
 
 		if (this.rawDataReceived.bytesAvailable() >= possibleLen) {
 			var _data = new ByteArray(this.rawDataReceived.readBytes(possibleLen));
-			// console.log(
-			// 	"Sobra?",
-			// 	possibleLen,
-			// 	_data.bytesAvailable(),
-			// 	this.rawDataReceived.bytesAvailable(),
-			// 	this.rawDataReceived
-			// );
 			this.parsePacket(_data);
 			if (this.rawDataReceived.bytesAvailable() > 0) {
 				await this.onDataReceived();
@@ -146,8 +144,10 @@ class ProTankiClient {
 
 		this.decryptPacket(packet);
 
-		if (packetID == -1864333717) {
+		if (packetID == PKG.SET_LANGUAGE) {
 			this.setLanguage(packet);
+		} else if (packetID == PKG.AUTOLOGIN_BY_HASH) {
+			console.log("HASH", packet.readUTF());
 		} else if (packetID == -82304134) {
 			var callback = packet.readInt();
 			if (callback == 1) {
@@ -234,19 +234,6 @@ class ProTankiClient {
 			} else {
 				console.log("calback", callback);
 			}
-		} else if (packetID == 268832557) {
-			this.sendPacket(
-				-1672577397,
-				new ByteArray(
-					"\x00\x00\x00\x00\x03DanAP\x00\x00@'\x8d6?\xd9\x97\xfcAP\x00\x00\x00\x01"
-				)
-			);
-			this.sendPacket(
-				-157204477,
-				new ByteArray(
-					"\x00\xc4\xcc\x81\x9aE\xa6N^CH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xc08Q\xec"
-				)
-			);
 		} else if (packetID == 945463181) {
 			var message = packet.readUTF();
 			var anyBol = packet.readBoolean();
@@ -255,14 +242,14 @@ class ProTankiClient {
 			_packet.writeUTF(message);
 			_packet.writeInt(2);
 			this.sendPacket(1259981343, _packet);
-		} else if (packetID == -349828108) {
+		} else if (packetID == PKG.REQUEST_CAPTCHA) {
 			this.requestCaptcha(packet);
-		} else if (packetID == 1083705823) {
-			this.verifyUsername(packet);
-		} else if (packetID == 427083290) {
-			this.registerUser(packet);
-		} else if (packetID == -739684591) {
-			this.loginUser(packet);
+		} else if (packetID == PKG.REGISTER_VERIFY_USERNAME) {
+			this.register.verifyUsername(packet);
+		} else if (packetID == PKG.REGISTER_NEW_USER) {
+			this.register.newUser(packet);
+		} else if (packetID == PKG.LOGIN_CHECK_CREDENTIALS) {
+			this.login.checkCredentials(packet);
 		} else if (packetID == 1271163230) {
 			// VERIFICAR CAPTCHA (RECUPERAÇAO DE SENHA)
 			let _packet = new ByteArray().writeInt(3);
@@ -305,18 +292,108 @@ class ProTankiClient {
 
 				this.sendChatMessages([mensagem]);
 			}.call(this));
-		} else if (packetID == 2092412133) {
+		} else if (packetID == PKG.LOBBY_BATTLE_INFOS) {
 			this.getBattleInfos(packet);
-		} else if (packetID == 850220815) {
-			// ABRIR CONFIGURAÇÕES
-			this.socialNetworkPanel();
-			this.notificationEnabled();
-		} else if (packetID == 566652736) {
+		} else if (packetID == 1227293080) {
+			console.log("Tentanto abrir a tela de missões");
+			const missionsPacket = new ByteArray();
+
+			const missions = [
+				{
+					canSkipForFree: true,
+					description: "Entregar bandeiras",
+					finishCriteria: 999,
+					image: 123333,
+					prizes: [
+						{
+							count: 99999,
+							name: "Cristais",
+						},
+					],
+					progress: 0,
+					questId: 0,
+					skipCost: 50000,
+				},
+				{
+					canSkipForFree: true,
+					description: "Entregar bandeiras",
+					finishCriteria: 999,
+					image: 123333,
+					prizes: [
+						{
+							count: 1000000,
+							name: "Experiencia",
+						},
+					],
+					progress: 0,
+					questId: 1,
+					skipCost: 50000,
+				},
+			];
+
+			missionsPacket.writeInt(missions.length);
+			missions.forEach((mission) => {
+				missionsPacket.writeBoolean(mission.canSkipForFree);
+				missionsPacket.writeUTF(mission.description);
+				missionsPacket.writeInt(mission.finishCriteria);
+				missionsPacket.writeInt(mission.image);
+				missionsPacket.writeInt(mission.prizes.length);
+				mission.prizes.forEach((prize) => {
+					missionsPacket.writeInt(prize.count);
+					missionsPacket.writeUTF(prize.name);
+				});
+				missionsPacket.writeInt(mission.progress);
+				missionsPacket.writeInt(mission.questId);
+				missionsPacket.writeInt(mission.skipCost);
+			});
+
+			missionsPacket.writeInt(0); // currentQuestLevel
+			missionsPacket.writeInt(0); // currentQuestStreak
+			missionsPacket.writeBoolean(false); // doneForToday
+			missionsPacket.writeInt(123341); // questImage
+			missionsPacket.writeInt(123345); // rewardImage
+
+			this.sendPacket(809822533, missionsPacket);
+		} else if (packetID == 326032325) {
+			const missionId = packet.readInt();
+			console.log(`Mudar missão de acordo com o id ${missionId}`);
+		} else if (packetID == PKG.OPEN_BUY_PANEL) {
+			console.log("Tentanto abrir a tela de compra");
+			let _packet = new ByteArray();
+			_packet.writeInt(948382);
+			_packet.writeUTF("");
+			_packet.writeUTF(
+				'Parabéns, você recebeu o cartão bônus "Double Crystal". Com ele, você é cobrado duas vezes mais cristais do que de costume ao comprá-los com dinheiro real. Não importa quantos cristais você compre, você receberá de presente a mesma quantia. O cartão é válido apenas por 24 horas. Tenha tempo para fazer compras lucrativas!\n\nAtenção! Os cristais de bônus não são levados em consideração ao deduzir referências.'
+			);
+			this.sendPacket(-875418096, _packet);
+		} else if (packetID == -731115522) {
+			// ClientStoredSettings - Falta finalizar
+			const showDamageEnabled = packet.readBoolean();
+		} else if (packetID == PKG.OPEN_SETTINGS) {
+			console.log("Abrindo tela de config");
+			this.sendPacket(600420685);
+		} else if (packetID == PKG.GET_SETTINGS) {
+			console.log("Carregando tela de config");
+			const SocialNetworkPanel = new ByteArray();
+			SocialNetworkPanel.writeBoolean(true);
+			SocialNetworkPanel.writeInt(1); // LINKS
+			SocialNetworkPanel.writeUTF(
+				"https://oauth.vk.com/authorize?client_id=7889475&response_type=code&display=page&redirect_uri=http://146.59.110.195:8090/externalEntrance/vkontakte/?session=2628617444119693439"
+			); // authorizationUrl
+			SocialNetworkPanel.writeBoolean(false); // linkExists // plataforma vinculada
+			SocialNetworkPanel.writeUTF("vkontakte"); // snId
+			this.sendPacket(-583564465, SocialNetworkPanel);
+
+			const notificationEnabled = new ByteArray();
+			notificationEnabled.writeBoolean(true);
+			this.sendPacket(1447082276, notificationEnabled);
+		} else if (packetID == PKG.LOBBY_SET_BATTLE_NAME) {
+			// DEFINIR O NOME DA BATALHA
 			this.setBattleName(packet);
-		} else if (packetID == -2135234426) {
+		} else if (packetID == PKG.LOBBY_CREATE_BATTLE) {
 			// CRIAR BATALHA
 			this.createBattle(packet);
-		} else if (packetID == -479046431) {
+		} else if (packetID == PKG.LOBBY_OPEN_GARAGE) {
 			// ABRIR GARAGEM
 			this.openGarage();
 		} else if (packetID == 126880779) {
@@ -731,63 +808,62 @@ class ProTankiClient {
 		this.loadLayout(1);
 		this.sendPacket(-324155151);
 
-		this.initResources(
-			[
-				613847, 882260, 603366, 762221, 387779, 651066, 825544, 592136, 379077,
-				43761, 608063, 508353, 553103, 103660, 686147, 595904, 705554, 882259,
-				603365, 762220, 387778, 896849, 216993, 807842, 677721, 205433, 282433,
-				770995, 875152, 412745, 412747, 412749, 412751, 262762, 581830, 926940,
-				918917, 86316, 9428, 67785, 9711, 507813, 581114, 810956, 772221,
-				209093, 930954, 725126, 72508, 629496, 265425, 67263, 923853, 209092,
-				930953, 725125, 72507, 826132, 289133, 271579, 630759, 904690, 486892,
-				55428, 64819, 730749, 500013, 914016, 832320, 882375, 511249, 372034,
-				185908, 542698, 906451, 905090, 385917, 388968, 388967, 910936, 971083,
-				123597, 123598, 123566, 123567, 123568, 123569, 123570, 123571, 123572,
-				123574, 123575, 123576, 123577, 123578, 123579, 123580, 123581, 123582,
-				123583, 123584, 123585, 123586, 123587, 123588, 123589, 123590, 123591,
-				123592, 123593, 123594, 123595, 123596, 471061, 350240, 468704, 912977,
-				456516, 95646, 682329, 300293, 769778, 123601, 981027, 246572, 201158,
-				107643, 829177, 564917, 364130, 865963, 968399, 123600, 92554, 985440,
-				254675, 344971, 123604, 5343, 277983, 112041, 201886, 46357, 388701,
-				600886, 739321, 123599, 332230, 327089, 964904, 49564, 167323, 379571,
-				184125, 791701, 648950, 123565, 669820, 123602, 645131, 494974, 16227,
-				186119, 123603, 700822, 184733, 123605, 866855, 337676, 235659, 148905,
-				157268, 378710, 321516, 645743, 213222, 876546, 476463, 345344, 124521,
-				415252, 856855, 633256, 971085, 148906, 345346, 345345, 643246, 643245,
-				272402, 875490, 102099, 580104, 417664, 390894, 922189, 783992, 922542,
-				892482, 184586, 419174, 252605, 752370, 188269, 566195, 355510, 30158,
-				291770, 836341, 458866, 620162, 846169, 482389, 743352, 431685, 587952,
-				482387, 482390, 482391, 348673, 486103, 482393, 149964, 494235, 702421,
-				482392, 482394, 254380, 482395, 533887, 677607, 703411, 841306, 525234,
-				511823, 195900, 765374, 333579, 482396, 428601, 671068, 962041, 803390,
-				482397, 310874, 33331, 482398, 353894, 175184, 977110, 855481, 19784,
-				482399, 758173, 807884, 482400, 482401, 524803, 521658, 739955, 672648,
-				288940, 969240, 390649, 393067, 482402, 426788, 583689, 297237, 95492,
-				131017, 511824, 884861, 855523, 396547, 834458, 900943, 658830, 234018,
-				135239, 749551, 405746, 490205, 660966, 482403, 482404, 289461, 243929,
-				84693, 714942, 25966, 80128, 187001, 187002, 187003, 186998, 186999,
-				187000, 765745, 765746, 765748, 765747, 765743, 533226, 423422, 51287,
-				602359, 326343, 700690, 470883, 149381, 994995, 747941, 156789, 227313,
-				837531, 871359, 765744, 186997, 524516, 789404, 45309, 122218, 868053,
-				784942, 749669, 978053, 524809, 100096, 212942, 416096, 100527, 348039,
-				387176, 395966, 133241, 187107, 136056, 408662, 846623, 817175, 890775,
-				817171, 248829, 891798, 796471, 674687, 817162, 531101, 650392, 353567,
-				389934, 817167, 215066, 817163, 239833, 687487, 126433, 617155, 817168,
-				226368, 817169, 150010, 817165, 34073, 527428, 997998, 171873, 686233,
-				852231, 643659, 268558, 254796, 817170, 397117, 817173, 227538, 817174,
-				864803, 357931, 475042, 915892, 800215, 817177, 499689, 802465, 654396,
-				965911, 817161, 817166, 360111, 660670, 817164, 673110, 20255, 634104,
-				842400, 811482, 727483, 465714, 910731, 817172, 641622, 662139, 138495,
-				384066, 687486, 239194, 817176, 478398, 89108, 208105, 288506, 66990,
-				243557, 322006, 480054, 542199, 759852, 156904, 652351, 401654, 489242,
-				195617, 15895, 114450, 528275, 252505, 452333, 684358, 42973, 683948,
-				452335, 334541, 487144, 683952, 368261, 380858, 683947, 452334, 482522,
-				533224, 452336, 452338, 80750, 851011, 683951, 683950, 825562, 641749,
-				683949, 166230, 432233, 452337, 661713, 73360, 683946, 319554, 443119,
-				107132, 558183, 205377, 474775,
-			],
-			3
-		);
+		const resources = [
+			613847, 882260, 603366, 762221, 387779, 651066, 825544, 592136, 379077,
+			43761, 608063, 508353, 553103, 103660, 686147, 595904, 705554, 882259,
+			603365, 762220, 387778, 896849, 216993, 807842, 677721, 205433, 282433,
+			770995, 875152, 412745, 412747, 412749, 412751, 262762, 581830, 926940,
+			918917, 86316, 9428, 67785, 9711, 507813, 581114, 810956, 772221, 209093,
+			930954, 725126, 72508, 629496, 265425, 67263, 923853, 209092, 930953,
+			725125, 72507, 826132, 289133, 271579, 630759, 904690, 486892, 55428,
+			64819, 730749, 500013, 914016, 832320, 882375, 511249, 372034, 185908,
+			542698, 906451, 905090, 385917, 388968, 388967, 910936, 971083, 123597,
+			123598, 123566, 123567, 123568, 123569, 123570, 123571, 123572, 123574,
+			123575, 123576, 123577, 123578, 123579, 123580, 123581, 123582, 123583,
+			123584, 123585, 123586, 123587, 123588, 123589, 123590, 123591, 123592,
+			123593, 123594, 123595, 123596, 471061, 350240, 468704, 912977, 456516,
+			95646, 682329, 300293, 769778, 123601, 981027, 246572, 201158, 107643,
+			829177, 564917, 364130, 865963, 968399, 123600, 92554, 985440, 254675,
+			344971, 123604, 5343, 277983, 112041, 201886, 46357, 388701, 600886,
+			739321, 123599, 332230, 327089, 964904, 49564, 167323, 379571, 184125,
+			791701, 648950, 123565, 669820, 123602, 645131, 494974, 16227, 186119,
+			123603, 700822, 184733, 123605, 866855, 337676, 235659, 148905, 157268,
+			378710, 321516, 645743, 213222, 876546, 476463, 345344, 124521, 415252,
+			856855, 633256, 971085, 148906, 345346, 345345, 643246, 643245, 272402,
+			875490, 102099, 580104, 417664, 390894, 922189, 783992, 922542, 892482,
+			184586, 419174, 252605, 752370, 188269, 566195, 355510, 30158, 291770,
+			836341, 458866, 620162, 846169, 482389, 743352, 431685, 587952, 482387,
+			482390, 482391, 348673, 486103, 482393, 149964, 494235, 702421, 482392,
+			482394, 254380, 482395, 533887, 677607, 703411, 841306, 525234, 511823,
+			195900, 765374, 333579, 482396, 428601, 671068, 962041, 803390, 482397,
+			310874, 33331, 482398, 353894, 175184, 977110, 855481, 19784, 482399,
+			758173, 807884, 482400, 482401, 524803, 521658, 739955, 672648, 288940,
+			969240, 390649, 393067, 482402, 426788, 583689, 297237, 95492, 131017,
+			511824, 884861, 855523, 396547, 834458, 900943, 658830, 234018, 135239,
+			749551, 405746, 490205, 660966, 482403, 482404, 289461, 243929, 84693,
+			714942, 25966, 80128, 187001, 187002, 187003, 186998, 186999, 187000,
+			765745, 765746, 765748, 765747, 765743, 533226, 423422, 51287, 602359,
+			326343, 700690, 470883, 149381, 994995, 747941, 156789, 227313, 837531,
+			871359, 765744, 186997, 524516, 789404, 45309, 122218, 868053, 784942,
+			749669, 978053, 524809, 100096, 212942, 416096, 100527, 348039, 387176,
+			395966, 133241, 187107, 136056, 408662, 846623, 817175, 890775, 817171,
+			248829, 891798, 796471, 674687, 817162, 531101, 650392, 353567, 389934,
+			817167, 215066, 817163, 239833, 687487, 126433, 617155, 817168, 226368,
+			817169, 150010, 817165, 34073, 527428, 997998, 171873, 686233, 852231,
+			643659, 268558, 254796, 817170, 397117, 817173, 227538, 817174, 864803,
+			357931, 475042, 915892, 800215, 817177, 499689, 802465, 654396, 965911,
+			817161, 817166, 360111, 660670, 817164, 673110, 20255, 634104, 842400,
+			811482, 727483, 465714, 910731, 817172, 641622, 662139, 138495, 384066,
+			687486, 239194, 817176, 478398, 89108, 208105, 288506, 66990, 243557,
+			322006, 480054, 542199, 759852, 156904, 652351, 401654, 489242, 195617,
+			15895, 114450, 528275, 252505, 452333, 684358, 42973, 683948, 452335,
+			334541, 487144, 683952, 368261, 380858, 683947, 452334, 482522, 533224,
+			452336, 452338, 80750, 851011, 683951, 683950, 825562, 641749, 683949,
+			166230, 432233, 452337, 661713, 73360, 683946, 319554, 443119, 107132,
+			558183, 205377, 474775,
+		];
+
+		this.initResources(resources, 3);
 	}
 }
 

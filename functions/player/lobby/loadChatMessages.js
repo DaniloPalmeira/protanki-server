@@ -1,4 +1,4 @@
-const ByteArray = require("../../../modules/bytearray");
+const ByteArray = require("../../../classes/ByteArray");
 
 loadChatMessages = function () {
 	this.sendChatMessages(this.server.chatHistory);

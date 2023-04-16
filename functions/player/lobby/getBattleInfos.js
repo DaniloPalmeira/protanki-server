@@ -1,4 +1,4 @@
-const ByteArray = require("../../../modules/bytearray");
+const ByteArray = require("../../../classes/ByteArray");
 
 getBattleInfos = function (packet) {
 	if (typeof packet == typeof "battleId") {

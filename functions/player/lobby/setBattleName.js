@@ -1,4 +1,4 @@
-const ByteArray = require("../../../modules/bytearray");
+const ByteArray = require("../../../classes/ByteArray");
 
 module.exports = function (packet) {
 	var battleName = packet.readUTF();

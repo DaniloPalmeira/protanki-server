@@ -1,10 +1,6 @@
 const initResourcesJson = require("./initResourcesJson");
 const initResources = require("./initResources");
 
-const statusBarLoaded = require("./player/statusBarLoaded");
-const showNews = require("./player/lobby/showNews");
-const initChatConfiguration = require("./player/lobby/initChatConfiguration");
-const setChatDelay = require("./player/lobby/setChatDelay");
 const loadChatMessages = require("./player/lobby/loadChatMessages");
 const loadMapsList = require("./player/lobby/loadMapsList");
 const loadBattleList = require("./player/lobby/loadBattleList");
@@ -20,19 +16,12 @@ const loadWeapons = require("./player/battle/loadWeapons");
 const EquipItemInGarage = require("./player/garage/EquipItemInGarage");
 const TryBuyThisItem = require("./player/garage/TryBuyThisItem");
 
-const socialNetworkPanel = require("./player/config/socialNetworkPanel");
-const notificationEnabled = require("./player/config/notificationEnabled");
-
 initClientFuncions = function () {
 	this.initResourcesJson = initResourcesJson.bind(this);
 	this.initResources = initResources.bind(this);
 
-	// PLAYER
-	this.statusBarLoaded = statusBarLoaded.bind(this);
 	// LOBBY
-	this.showNews = showNews.bind(this);
-	this.initChatConfiguration = initChatConfiguration.bind(this);
-	this.setChatDelay = setChatDelay.bind(this);
+
 	this.loadChatMessages = loadChatMessages.bind(this);
 	this.loadMapsList = loadMapsList.bind(this);
 	this.loadBattleList = loadBattleList.bind(this);
@@ -48,10 +37,6 @@ initClientFuncions = function () {
 	// GARAGE
 	this.EquipItemInGarage = EquipItemInGarage.bind(this);
 	this.TryBuyThisItem = TryBuyThisItem.bind(this);
-
-	// CONFIGURAÇÕES
-	this.socialNetworkPanel = socialNetworkPanel.bind(this);
-	this.notificationEnabled = notificationEnabled.bind(this);
 };
 
 module.exports = initClientFuncions;

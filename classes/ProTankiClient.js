@@ -1,10 +1,12 @@
 const initClientFuncions = require("../functions/initClientFunctions");
 const ByteArray = require("./ByteArray");
 const ProTankiUser = require("./client/ProTankiUser");
-const { getUserByEmail } = require("../helpers/db");
+const { getUserByEmail, getUserById } = require("../helpers/db");
 const ProTankiRegister = require("./client/ProTankiRegister");
 const ProTankiLogin = require("./client/ProTankiLogin");
-const PKG = require("../modules/pkg.json");
+const ProTankiLobby = require("./client/ProTankiLobby");
+const ProTankiLobbyChat = require("./client/ProTankiLobbyChat");
+const PKG = require("../helpers/pkg.json");
 
 class ProTankiClient {
 	language = "ru";
@@ -146,8 +148,20 @@ class ProTankiClient {
 
 		if (packetID == PKG.SET_LANGUAGE) {
 			this.setLanguage(packet);
-		} else if (packetID == PKG.AUTOLOGIN_BY_HASH) {
+		} else if (packetID == PKG.INVITE_CODE_VERIFY) {
+			const code = packet.readUTF();
+			if (code === "noob") {
+				const userCanLoginOnly = new ByteArray();
+				userCanLoginOnly.writeUTF("");
+				this.sendPacket(PKG.INVITE_CODE_LOGIN, userCanLoginOnly);
+			} else if (code === "new") {
+				this.sendPacket(PKG.INVITE_CODE_NEW_USER);
+			} else {
+				this.sendPacket(PKG.INVITE_CODE_INVALID);
+			}
+		} else if (packetID == PKG.AUTOLOGIN) {
 			console.log("HASH", packet.readUTF());
+			this.sendPacket(PKG.AUTOLOGIN_CANCEL);
 		} else if (packetID == -82304134) {
 			var callback = packet.readInt();
 			if (callback == 1) {
@@ -157,9 +171,9 @@ class ProTankiClient {
 			} else if (callback == 2) {
 				this.changeLayout(0, 0);
 				this.initArchivaments();
-				this.showNews();
-				this.initChatConfiguration();
-				this.setChatDelay();
+				this.lobby.showNews();
+				this.lobbyChat.configuration();
+				this.lobbyChat.chatDelay();
 				this.loadChatMessages();
 				// this.addPlayerInBattle()
 				this.loadMapsList();
@@ -209,15 +223,12 @@ class ProTankiClient {
 
 				// EQUIPAR ITENS DA GARAGEM (Q ESTAVAM SALVOS)
 				for (const key in this.user.garage) {
-					console.log(key);
 					const cat = this.user.garage[key];
-					console.log(cat.equiped);
 					if (cat.equiped != undefined) {
 						var itemToEquip =
 							cat.equiped +
 							"_m" +
 							(cat[cat.equiped].m >= 0 ? cat[cat.equiped].m : 0);
-						console.log(itemToEquip);
 						this.sendPacket(
 							2062201643,
 							new ByteArray().writeUTF(itemToEquip).writeBoolean(true)
@@ -234,9 +245,9 @@ class ProTankiClient {
 			} else {
 				console.log("calback", callback);
 			}
-		} else if (packetID == 945463181) {
+		} else if (packetID == PKG.BATTLE_MESSAGE) {
 			var message = packet.readUTF();
-			var anyBol = packet.readBoolean();
+			var teamOnly = packet.readBoolean(); // team only
 			var _packet = new ByteArray();
 			_packet.writeUTF(this.user.username);
 			_packet.writeUTF(message);
@@ -250,9 +261,12 @@ class ProTankiClient {
 			this.register.newUser(packet);
 		} else if (packetID == PKG.LOGIN_CHECK_CREDENTIALS) {
 			this.login.checkCredentials(packet);
-		} else if (packetID == 1271163230) {
+		} else if (packetID == PKG.CHECK_CAPTCHA) {
+			console.log("VERIFICAR CAPTCHA", packet);
+			const position = packet.readInt();
+			const value = packet.readInt();
 			// VERIFICAR CAPTCHA (RECUPERAÇAO DE SENHA)
-			let _packet = new ByteArray().writeInt(3);
+			let _packet = new ByteArray().writeInt(position);
 			this.sendPacket(-819536476, _packet);
 		} else if (packetID == 1744584433) {
 			(async () => {
@@ -267,7 +281,7 @@ class ProTankiClient {
 			})();
 			// AGUARDAR CÓDIGO DO EMAIL = -1607756600
 			// EMAIL NÃO CADASTRADO = -262455387
-		} else if (packetID == 903498755) {
+		} else if (packetID == PKG.VERIFY_CODE_EMAIL) {
 			let codigoEmail = packet.readUTF();
 			console.log(codigoEmail);
 			this.sendPacket(-16447159);
@@ -294,7 +308,7 @@ class ProTankiClient {
 			}.call(this));
 		} else if (packetID == PKG.LOBBY_BATTLE_INFOS) {
 			this.getBattleInfos(packet);
-		} else if (packetID == 1227293080) {
+		} else if (packetID == PKG.OPEN_MISSIONS_PANEL) {
 			console.log("Tentanto abrir a tela de missões");
 			const missionsPacket = new ByteArray();
 
@@ -354,7 +368,7 @@ class ProTankiClient {
 			missionsPacket.writeInt(123345); // rewardImage
 
 			this.sendPacket(809822533, missionsPacket);
-		} else if (packetID == 326032325) {
+		} else if (packetID == PKG.MISSION_CHANGE) {
 			const missionId = packet.readInt();
 			console.log(`Mudar missão de acordo com o id ${missionId}`);
 		} else if (packetID == PKG.OPEN_BUY_PANEL) {
@@ -374,19 +388,8 @@ class ProTankiClient {
 			this.sendPacket(600420685);
 		} else if (packetID == PKG.GET_SETTINGS) {
 			console.log("Carregando tela de config");
-			const SocialNetworkPanel = new ByteArray();
-			SocialNetworkPanel.writeBoolean(true);
-			SocialNetworkPanel.writeInt(1); // LINKS
-			SocialNetworkPanel.writeUTF(
-				"https://oauth.vk.com/authorize?client_id=7889475&response_type=code&display=page&redirect_uri=http://146.59.110.195:8090/externalEntrance/vkontakte/?session=2628617444119693439"
-			); // authorizationUrl
-			SocialNetworkPanel.writeBoolean(false); // linkExists // plataforma vinculada
-			SocialNetworkPanel.writeUTF("vkontakte"); // snId
-			this.sendPacket(-583564465, SocialNetworkPanel);
-
-			const notificationEnabled = new ByteArray();
-			notificationEnabled.writeBoolean(true);
-			this.sendPacket(1447082276, notificationEnabled);
+			this.socialNetworkPanel();
+			this.notificationEnabled();
 		} else if (packetID == PKG.LOBBY_SET_BATTLE_NAME) {
 			// DEFINIR O NOME DA BATALHA
 			this.setBattleName(packet);
@@ -396,38 +399,41 @@ class ProTankiClient {
 		} else if (packetID == PKG.LOBBY_OPEN_GARAGE) {
 			// ABRIR GARAGEM
 			this.openGarage();
-		} else if (packetID == 126880779) {
+		} else if (packetID == PKG.FRIEND_SEARCH) {
 			// PESQUISAR NOME PARA ADICIONAR AMIGO
 			let username = packet.readUTF();
 			this.searchUserToAdd(username);
-		} else if (packetID == -1457773660) {
+		} else if (packetID == PKG.FRIEND_SEND_REQUEST) {
 			// ENVIAR SOLICITAÇÃO DE AMIZADE
 			let username = packet.readUTF();
 			this.sendFriendRequest(username);
-		} else if (packetID == 84050355) {
+		} else if (packetID == PKG.FRIEND_CANCEL_REQUEST) {
 			// REMOVER SOLICITAÇÃO DE AMIZADE
 			let username = packet.readUTF();
 			this.cancelFriendRequestSend(username);
-		} else if (packetID == -1041660861) {
+		} else if (packetID == PKG.FRIEND_REMOVE_NEW_REQUEST_NOTIFY) {
 			// REMOVER NOTIFICAÇÃO DE SOLICITAÇOES DE AMIZADE NOVAS
 			this.user.clearfriendsIncomingNew();
-			this.sendPacket(-1041660861, packet);
-		} else if (packetID == -1926185291) {
+			this.sendPacket(PKG.FRIEND_REMOVE_NEW_REQUEST_NOTIFY, packet);
+		} else if (packetID == PKG.FRIEND_ACCEPT_REQUEST) {
 			// ACEITAR SOLICITAÇÃO DE AMIZADE
 			let username = packet.readUTF();
 			this.acceptedFriendRequestFrom(username);
-		} else if (packetID == -1588006900) {
+		} else if (packetID == PKG.FRIEND_REFUSE_REQUEST) {
 			// RECUSAR SOLICITAÇÃO DE AMIZADE
 			let username = packet.readUTF();
 			this.refusedFriendRequestFrom(username);
-		} else if (packetID == 1286861380) {
+		} else if (packetID == PKG.FRIEND_REMOVE_NEW_NOTIFY) {
 			// REMOVER NOTIFICAÇÃO DE SOLICITAÇOES DE AMIZADE ACEITAS
 			this.user.clearfriendsAcceptedNew();
-			this.sendPacket(1286861380, packet);
-		} else if (packetID == 1774907609) {
+			this.sendPacket(PKG.FRIEND_REMOVE_NEW_NOTIFY, packet);
+		} else if (packetID == PKG.FRIEND_REMOVE) {
+			const username = packet.readUTF();
+			console.log("Remover amigo:", username);
+		} else if (packetID == PKG.REQUEST_USER_INFO) {
 			var username = packet.readUTF();
 			this.requestUserInfos(username);
-		} else if (packetID == 1091756732) {
+		} else if (packetID == PKG.VIEW_ITEM_IN_GARAGE) {
 			// PREVIEW DE PINTURA
 			var item = packet.readUTF();
 			if (item) {
@@ -436,7 +442,7 @@ class ProTankiClient {
 					new ByteArray().writeUTF(item).writeBoolean(true)
 				);
 			}
-		} else if (packetID == -1505530736) {
+		} else if (packetID == PKG.GARAGE_EQUIP_ITEM) {
 			// EQUIPAR ITEM NA GARAGEM
 			var name = null;
 			var modification = 0;
@@ -452,7 +458,7 @@ class ProTankiClient {
 					);
 				}
 			}
-		} else if (packetID == -1961983005) {
+		} else if (packetID == PKG.GARAGE_BUY_ITEM) {
 			// COMPRAR ITEM NA GARAGEM
 			var item = packet.readUTF();
 			if (item) {
@@ -467,11 +473,8 @@ class ProTankiClient {
 					value,
 					item,
 				});
-				console.log("packet", packet);
-				console.log(item, quantity, value);
-				// console.log(this.user.garage);
 			}
-		} else if (packetID == 1452181070) {
+		} else if (packetID == PKG.LOBBY_REQUEST_BATTLE_LIST) {
 			// PEDIR LISTA DE BATALHAS
 			this.loadLayout(0);
 			this.sendPacket(1211186637); // REMOVER GARAGEM
@@ -494,6 +497,58 @@ class ProTankiClient {
 			.write(packet.buffer).buffer;
 
 		this.socket.write(byteA);
+	}
+
+	/**
+	 * Define a notificação de convites como habilitadas ou desabilitadas
+	 *
+	 * @function notificationEnabled
+	 * @returns {void}
+	 */
+	notificationEnabled() {
+		// Cria um novo objeto ByteArray
+		var packet = new ByteArray();
+
+		// Escreve um valor booleano "true" ou "false" no objeto
+		packet.writeBoolean(true);
+
+		// Envia o pacote de dados junto com um identificador específico (1447082276)
+		// usando a função sendPacket()
+		this.sendPacket(1447082276, packet);
+	}
+
+	/**
+	 * Função para enviar um painel de redes sociais em um pacote.
+	 */
+	socialNetworkPanel() {
+		// Criação de um novo objeto ByteArray para manipulação do pacote
+		var packet = new ByteArray();
+
+		// Lista de objetos representando as redes sociais
+		var socialNetworks = [
+			{
+				name: "vkontakte", // Nome da rede social
+				link: "https://oauth.vk.com/authorize?client_id=7889475&response_type=code&display=page&redirect_uri=http://146.59.110.195:8090/externalEntrance/vkontakte/?session=-4811882778452478", // Link da rede social
+				exist: false, // Indicação se a rede social existe ou não
+			},
+		];
+
+		// Escreve um valor booleano true no pacote
+		packet.writeBoolean(true);
+
+		// Escreve o tamanho da lista socialNetworks no pacote
+		packet.writeInt(socialNetworks.length);
+
+		// Loop para escrever os dados de cada rede social no pacote
+		socialNetworks.forEach((network) => {
+			const { name, link, exist } = network;
+			packet.writeUTF(link); // Escreve o link da rede social no pacote
+			packet.writeBoolean(exist ?? false); // Escreve a indicação se a rede social existe no pacote
+			packet.writeUTF(name); // Escreve o nome da rede social no pacote
+		});
+
+		// Envia o pacote com os dados do painel de redes sociais
+		this.sendPacket(-583564465, packet);
 	}
 
 	async searchUserToAdd(username) {
@@ -548,18 +603,22 @@ class ProTankiClient {
 		packet.writeInt(origin);
 		packet.writeInt(state);
 
-		this.lobby.removePlayer(this);
-		this.garage.removePlayer(this);
-		this.lobbyChat.removePlayer(this);
+		this.lobbyServer.removePlayer(this);
+		this.garageServer.removePlayer(this);
+		this.lobbyChatServer.removePlayer(this);
+		this.lobby = null;
+		this.lobbyChat = null;
 
 		switch (state) {
 			case 0:
-				this.lobby.addPlayer(this);
-				this.lobbyChat.addPlayer(this);
+				this.lobbyServer.addPlayer(this);
+				this.lobbyChatServer.addPlayer(this);
+				this.lobby = new ProTankiLobby(this);
+				this.lobbyChat = new ProTankiLobbyChat(this);
 				break;
 			case 1:
-				this.garage.addPlayer(this);
-				this.lobbyChat.addPlayer(this);
+				this.garageServer.addPlayer(this);
+				this.lobbyChatServer.addPlayer(this);
 				break;
 			default:
 				break;
@@ -575,9 +634,8 @@ class ProTankiClient {
 	}
 
 	async requestUserInfos(username) {
-		console.log(username);
+		console.log("requestUserInfos", username);
 		let _user = await this.ObtainUserByUsername(username);
-		console.log(_user);
 		if (!_user.exist) return;
 
 		//CodecOnlineNotifierData
@@ -700,7 +758,7 @@ class ProTankiClient {
 	setInviteState() {
 		var packet = new ByteArray();
 
-		packet.writeBoolean(this.server.canInvite);
+		packet.writeBoolean(this.server.requireInviteCode);
 
 		this.sendPacket(444933603, packet);
 	}

@@ -70,6 +70,11 @@ class ByteArray {
 		}
 	}
 
+	writeObject(obj) {
+		value = JSON.stringify(obj);
+		return this.writeUTF(value);
+	}
+
 	writeBoolean(value) {
 		return this.writeByte(value ? 1 : 0);
 	}
@@ -139,6 +144,11 @@ class ByteArray {
 		} else {
 			return null;
 		}
+	}
+
+	readObject() {
+		const value = this.readUTF();
+		return JSON.parse(value);
 	}
 
 	readBytes(size) {

@@ -43,7 +43,7 @@ sendChatMessages = function (messageList) {
 
 	if (messageList.length == 1) {
 		this.server.chatHistory.push(messageList[0]);
-		this.lobbyChat.sendPacket(-1263520410, packet);
+		this.lobbyChatServer.sendPacket(-1263520410, packet);
 	} else {
 		this.sendPacket(-1263520410, packet);
 	}

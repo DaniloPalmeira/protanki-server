@@ -1,7 +1,7 @@
 const ByteArray = require("../ByteArray");
 
-const ProTankiFriends = require("../Interface/ProTankiFriends");
-const PKG = require("../pkg.json");
+const ProTankiFriends = require("../client/ProTankiFriends");
+const PKG = require("../../helpers/pkg.json");
 
 module.exports = class ProTankiProfile {
 	constructor(client) {

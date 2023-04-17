@@ -19,7 +19,7 @@ class ProTankiBattle {
 		blue: [],
 	};
 	battleId = ""; //string
-	battleMode = "DM"; // string
+	battleMode = null; // string
 	map = ""; // string
 	maxPeople = 0;
 	name = ""; //string
@@ -55,64 +55,75 @@ class ProTankiBattle {
 	}
 
 	/**
-	 * @param {string|number} theme
+	 * Define o tema de batalha.
+	 *
+	 * @param {string|number} theme - O tema de batalha a ser definido, pode ser um valor numérico ou uma string.
+	 * @returns {void}
 	 */
 	set themeBattle(theme) {
-		if (typeof theme == typeof 0) {
-			switch (theme) {
-				case 0:
-					this.theme = "SUMMER";
-					break;
-				case 1:
-					this.theme = "WINTER";
-					break;
-				case 2:
-					this.theme = "SPACE";
-					break;
-				case 3:
-					this.theme = "SUMMER_DAY";
-					break;
-				case 4:
-					this.theme = "SUMMER_NIGHT";
-					break;
-				case 5:
-					this.theme = "WINTER_DAY";
-					break;
-				default:
-					this.theme = "SUMMER";
-					break;
+		const themes = {
+			0: "SUMMER", // Tema de batalha com valor 0 é "SUMMER"
+			1: "WINTER", // Tema de batalha com valor 1 é "WINTER"
+			2: "SPACE", // Tema de batalha com valor 2 é "SPACE"
+			3: "SUMMER_DAY", // Tema de batalha com valor 3 é "SUMMER_DAY"
+			4: "SUMMER_NIGHT", // Tema de batalha com valor 4 é "SUMMER_NIGHT"
+			5: "WINTER_DAY", // Tema de batalha com valor 5 é "WINTER_DAY"
+		};
+
+		// Verifica se o valor de "theme" está presente em "themes"
+		if (theme in themes) {
+			this.theme = themes[theme]; // Atribui o valor correspondente do objeto "themes"
+		} else if (typeof theme === "string") {
+			// Se "theme" for uma string
+			const themeUpperCase = theme.toUpperCase(); // Converte "theme" para letras maiúsculas
+			for (const key in themes) {
+				if (themes[key].toUpperCase() === themeUpperCase) {
+					// Verifica se "theme" corresponde a algum valor em "themes"
+					this.theme = themes[key]; // Atribui o valor correspondente do objeto "themes"
+					break; // Sai do loop assim que encontrar uma correspondência
+				}
 			}
-		} else {
-			this.theme = theme;
+		}
+
+		if (!this.theme) {
+			// Se "this.theme" ainda não foi definido
+			this.theme = "SUMMER"; // Atribuição padrão como "SUMMER"
 		}
 	}
 
 	/**
-	 * @param {string|number} mode
+	 * Define o modo de batalha.
+	 *
+	 * @param {string|number} mode - O modo de batalha a ser definido, pode ser um valor numérico ou uma string.
+	 * @returns {void}
 	 */
 	set modeBattle(mode) {
-		if (typeof mode == typeof 0) {
-			switch (mode) {
-				case 0:
-					this.battleMode = "DM";
-					break;
-				case 1:
-					this.battleMode = "TDM";
-					break;
-				case 2:
-					this.battleMode = "CTF";
-					break;
-				case 3:
-					this.battleMode = "CP";
-					break;
-				case 4:
-					this.battleMode = "AS";
-					break;
-				default:
-					break;
+		const battleModes = {
+			0: "DM", // Modo de batalha com valor 0 é "DM"
+			1: "TDM", // Modo de batalha com valor 1 é "TDM"
+			2: "CTF", // Modo de batalha com valor 2 é "CTF"
+			3: "CP", // Modo de batalha com valor 3 é "CP"
+			4: "AS", // Modo de batalha com valor 4 é "AS"
+		};
+
+		// Verifica se o valor de "mode" está presente em "battleModes"
+		if (mode in battleModes) {
+			this.battleMode = battleModes[mode]; // Atribui o valor correspondente do objeto "battleModes"
+		} else if (typeof mode === "string") {
+			// Se "mode" for uma string
+			const modeLowerCase = mode.toLowerCase(); // Converte "mode" para letras minúsculas
+			for (const key in battleModes) {
+				if (battleModes[key].toLowerCase() === modeLowerCase) {
+					// Verifica se "mode" corresponde a algum valor em "battleModes"
+					this.battleMode = battleModes[key]; // Atribui o valor correspondente do objeto "battleModes"
+					break; // Sai do loop assim que encontrar uma correspondência
+				}
 			}
-		} else {
-			this.battleMode = mode;
+		}
+
+		if (!this.battleMode) {
+			// Se "this.battleMode" ainda não foi definido
+			this.battleMode = "DM"; // Atribuição padrão como "DM"
 		}
 	}
 

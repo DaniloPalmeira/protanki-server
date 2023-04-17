@@ -1,6 +1,6 @@
-const ProTankiBattle = require("./Interface/ProTankiBattle");
-const database = require("./database/connection");
-const user = require("./database/user");
+const ProTankiBattle = require("./server/ProTankiBattle");
+const database = require("../helpers/connection");
+const user = require("../helpers/user");
 
 class ProTankiServer {
 	constructor() {
@@ -11,7 +11,7 @@ class ProTankiServer {
 		this.ClientfromUID = {};
 		this.UIDfromClient = {};
 
-		// database.sync({ alter: true });
+		database.sync({ alter: true });
 
 		this.weapons = {
 			weapons: [
@@ -2668,9 +2668,9 @@ class ProTankiServer {
 			this.battleList[b.battleId] = new ProTankiBattle({ ...b, server: this });
 		});
 
-		this.captchaLocations = [5];
+		this.captchaLocations = [0, 1, 2, 3, 4, 5];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];
-		this.canInvite = false;
+		this.requireInviteCode = true;
 		this.database = {
 			database,
 			user,

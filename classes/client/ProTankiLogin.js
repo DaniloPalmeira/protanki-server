@@ -1,57 +1,75 @@
 const ByteArray = require("../ByteArray");
-const { getUserByUsername } = require("../database/db");
-const PKG = require("../pkg.json");
+const { getUserByUsername } = require("../../helpers/db");
+const PKG = require("../../helpers/pkg.json");
 const ProTankiProfile = require("./ProTankiProfile");
 
+/**
+ * Classe ProTankiLogin representa a lógica de login do jogo ProTanki.
+ */
 module.exports = class ProTankiLogin {
 	constructor(client) {
 		this.client = client;
 	}
 
-	// FUNÇÕES SINCRONAS
+	/**
+	 * Função síncrona para enviar um pacote para o cliente.
+	 * @param {number} packetID - O ID do pacote.
+	 * @param {ByteArray} packet - O objeto ByteArray contendo os dados do pacote.
+	 */
 	sendPacket(packetID, packet = new ByteArray()) {
 		this.client.sendPacket(packetID, packet);
 	}
 
+	/**
+	 * Função para lidar com credenciais inválidas.
+	 */
 	invalidCredentials() {
 		this.sendPacket(PKG.INVALID_CREDENTIALS);
 	}
 
+	/**
+	 * Função para remover o formulário de login.
+	 */
 	removeForm() {
 		this.sendPacket(PKG.REMOVE_LOGIN_FORM);
 	}
 
-	// FUNÇÕES ASSINCRONAS
-
+	/**
+	 * Função assíncrona para verificar as credenciais do usuário.
+	 * @param {ByteArray} packet - O objeto ByteArray contendo os dados do pacote.
+	 */
 	async checkCredentials(packet) {
-		let username = packet.readUTF();
-		let password = packet.readUTF();
+		const username = packet.readUTF();
+		const password = packet.readUTF();
+		const rememberMe = packet.readBoolean();
 
-		let rememberMe = packet.readBoolean();
-
-		let _user = await getUserByUsername(username);
-		if (_user && _user.password == password) {
-			if (_user.privLevel == -1) {
-				let _packet = new ByteArray();
-				_packet.writeUTF(
+		const user = await getUserByUsername(username);
+		if (user && user.password === password) {
+			if (user.privLevel === -1) {
+				const msg = new ByteArray();
+				msg.writeUTF(
 					"Esta conta foi bloqueada permanentemente, acesse ou crie outra"
 				);
-				this.sendPacket(PKG.MESSAGE_ALERT, _packet);
+				this.sendPacket(PKG.MESSAGE_ALERT, msg);
 			} else {
-				this.executeLogin(_user);
+				await this.executeLogin(user);
 			}
 		} else {
 			this.invalidCredentials();
 		}
 	}
 
-	async executeLogin(_user) {
+	/**
+	 * Função assíncrona para executar o login do usuário.
+	 * @param {object} user - O objeto de usuário obtido do banco de dados.
+	 */
+	async executeLogin(user) {
 		this.removeForm();
 
 		const client = this.client;
 
 		client.loadLayout(0);
-		client.user = await client.ObtainUserByUser(_user);
+		client.user = await client.ObtainUserByUser(user);
 		client.user.online = true;
 		client.profile = new ProTankiProfile(client);
 		client.profile.sendPremiumInfo();
@@ -60,7 +78,7 @@ module.exports = class ProTankiLogin {
 		client.initResource(115361);
 		client.profile.friends.loadFriendList();
 
-		var json = {
+		const json = {
 			resources: [
 				{
 					idhigh: "0",

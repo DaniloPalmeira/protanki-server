@@ -1,5 +1,5 @@
-const ByteArray = require("../ByteArray");
-const { getUserById } = require("../../modules/database/db");
+const ByteArray = require("../../classes/ByteArray");
+const { getUserById } = require("../../helpers/db");
 
 module.exports = class {
 	constructor(client) {

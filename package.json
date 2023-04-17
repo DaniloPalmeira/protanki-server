@@ -1,9 +1,18 @@
 {
+	"name": "protanki-server",
 	"dependencies": {
 		"@types/sequelize": "^4.28.14",
-		"node-fetch": "^2.6.7",
-		"pystruct": "^0.0.2",
 		"sequelize": "^6.29.3",
 		"sqlite3": "^5.1.4"
-	}
+	},
+	"version": "1.0.0",
+	"description": "ProTanki Online - Server",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node main"
+	},
+	"keywords": [],
+	"author": "DaniloPalmeira",
+	"license": "ISC"
 }

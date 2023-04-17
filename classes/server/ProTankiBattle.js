@@ -407,9 +407,9 @@ class ProTankiBattle {
 		}
 
 		client.loadLayout(3);
-		client.removeLobbyChat();
-		client.removeBattleList();
-		client.loadWeapons();
+		client.lobby.removeChat();
+		client.lobby.removeBattleList();
+		client.battle.weaponsInfos();
 	}
 
 	removePlayer(client) {

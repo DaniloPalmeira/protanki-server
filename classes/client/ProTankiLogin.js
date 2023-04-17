@@ -75,7 +75,7 @@ module.exports = class ProTankiLogin {
 		client.profile.sendPremiumInfo();
 		client.profile.sendProfileInfo();
 		client.profile.sendEmailInfo();
-		client.initResource(115361);
+		client.resources.loadByID(115361);
 		client.profile.friends.loadFriendList();
 
 		const json = {
@@ -1685,6 +1685,6 @@ module.exports = class ProTankiLogin {
 			],
 		};
 
-		client.initResourcesJson(JSON.stringify(json), 2);
+		client.resources.loadByJSON(json, 2);
 	}
 };

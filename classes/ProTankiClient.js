@@ -1,11 +1,13 @@
-const initClientFuncions = require("../functions/initClientFunctions");
 const ByteArray = require("./ByteArray");
 const ProTankiUser = require("./client/ProTankiUser");
-const { getUserByEmail, getUserById } = require("../helpers/db");
+const { getUserByEmail } = require("../helpers/db");
 const ProTankiRegister = require("./client/ProTankiRegister");
 const ProTankiLogin = require("./client/ProTankiLogin");
 const ProTankiLobby = require("./client/ProTankiLobby");
 const ProTankiLobbyChat = require("./client/ProTankiLobbyChat");
+const ProTankiGarage = require("./client/ProTankiGarage");
+const ProTankiBattle = require("./client/ProTankiBattle");
+const ProTankiResources = require("./client/ProTankiResources");
 const PKG = require("../helpers/pkg.json");
 
 class ProTankiClient {
@@ -20,7 +22,7 @@ class ProTankiClient {
 
 	constructor(data) {
 		Object.assign(this, data);
-		initClientFuncions.call(this);
+		this.resources = new ProTankiResources(this);
 
 		this.rawDataReceived = new ByteArray(Buffer.alloc(0));
 
@@ -174,10 +176,10 @@ class ProTankiClient {
 				this.lobby.showNews();
 				this.lobbyChat.configuration();
 				this.lobbyChat.chatDelay();
-				this.loadChatMessages();
+				this.lobbyChat.obtainChatMessages();
 				// this.addPlayerInBattle()
-				this.loadMapsList();
-				this.loadBattleList();
+				this.lobby.mapsList();
+				this.lobby.battleList();
 			} else if (callback == 3) {
 				// LOAD USER GARAGE
 				var jsonGarageUser = {
@@ -304,10 +306,10 @@ class ProTankiClient {
 				}
 				mensagem.text = packet.readUTF();
 
-				this.sendChatMessages([mensagem]);
+				this.lobbyChat.sendMessageList([mensagem]);
 			}.call(this));
 		} else if (packetID == PKG.LOBBY_BATTLE_INFOS) {
-			this.getBattleInfos(packet);
+			this.lobby.getBattleInfos(packet);
 		} else if (packetID == PKG.OPEN_MISSIONS_PANEL) {
 			console.log("Tentanto abrir a tela de missões");
 			const missionsPacket = new ByteArray();
@@ -392,10 +394,10 @@ class ProTankiClient {
 			this.notificationEnabled();
 		} else if (packetID == PKG.LOBBY_SET_BATTLE_NAME) {
 			// DEFINIR O NOME DA BATALHA
-			this.setBattleName(packet);
+			this.lobby.fixBattleName(packet);
 		} else if (packetID == PKG.LOBBY_CREATE_BATTLE) {
 			// CRIAR BATALHA
-			this.createBattle(packet);
+			this.lobby.createBattle(packet);
 		} else if (packetID == PKG.LOBBY_OPEN_GARAGE) {
 			// ABRIR GARAGEM
 			this.openGarage();
@@ -443,21 +445,7 @@ class ProTankiClient {
 				);
 			}
 		} else if (packetID == PKG.GARAGE_EQUIP_ITEM) {
-			// EQUIPAR ITEM NA GARAGEM
-			var name = null;
-			var modification = 0;
-			var item = packet.readUTF();
-			if (item) {
-				name = item.split("_m")[0];
-				modification = parseInt(item.split("_m")[1]);
-				var equipItem = this.EquipItemInGarage({ item, name, modification });
-				if (equipItem) {
-					this.sendPacket(
-						2062201643,
-						new ByteArray().writeUTF(item).writeBoolean(true)
-					);
-				}
-			}
+			this.garage.equipItem(packet);
 		} else if (packetID == PKG.GARAGE_BUY_ITEM) {
 			// COMPRAR ITEM NA GARAGEM
 			var item = packet.readUTF();
@@ -466,7 +454,7 @@ class ProTankiClient {
 				var modification = parseInt(item.split("_m")[1]);
 				var quantity = packet.readInt();
 				var value = packet.readInt();
-				var canBuy = this.TryBuyThisItem({
+				var canBuy = this.garage.tryBuyThisItem({
 					name,
 					modification,
 					quantity,
@@ -479,8 +467,8 @@ class ProTankiClient {
 			this.loadLayout(0);
 			this.sendPacket(1211186637); // REMOVER GARAGEM
 			this.changeLayout(0, 0);
-			this.loadMapsList();
-			this.loadBattleList();
+			this.lobby.mapsList();
+			this.lobby.battleList();
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}
@@ -607,19 +595,25 @@ class ProTankiClient {
 		this.garageServer.removePlayer(this);
 		this.lobbyChatServer.removePlayer(this);
 		this.lobby = null;
+		this.battle = null;
 		this.lobbyChat = null;
+		this.garage = null;
 
 		switch (state) {
 			case 0:
-				this.lobbyServer.addPlayer(this);
 				this.lobbyChatServer.addPlayer(this);
-				this.lobby = new ProTankiLobby(this);
+				this.lobbyServer.addPlayer(this);
 				this.lobbyChat = new ProTankiLobbyChat(this);
+				this.lobby = new ProTankiLobby(this);
 				break;
 			case 1:
-				this.garageServer.addPlayer(this);
 				this.lobbyChatServer.addPlayer(this);
+				this.garageServer.addPlayer(this);
+				this.lobbyChat = new ProTankiLobbyChat(this);
+				this.garage = new ProTankiGarage(this);
 				break;
+			case 3:
+				this.battle = new ProTankiBattle(this);
 			default:
 				break;
 		}
@@ -670,7 +664,7 @@ class ProTankiClient {
 
 			this.setLoginSocialButtons();
 			this.initCaptchaPositions();
-			this.initResources(
+			this.resources.loadByListOfIds(
 				[
 					343233, 343122, 790554, 432322, 523534, 124221, 123444, 143111,
 					490113, 321232, 158174, 106777, 342637, 925137, 523632, 975465,
@@ -812,14 +806,6 @@ class ProTankiClient {
 		// 4 = reload_space
 	}
 
-	initResource(resource) {
-		var packet = new ByteArray();
-
-		packet.writeInt(resource);
-
-		this.sendPacket(834877801, packet);
-	}
-
 	initArchivaments() {
 		var archives = [0, 2, 4];
 
@@ -921,7 +907,7 @@ class ProTankiClient {
 			558183, 205377, 474775,
 		];
 
-		this.initResources(resources, 3);
+		this.resources.loadByListOfIds(resources, 3);
 	}
 }
 

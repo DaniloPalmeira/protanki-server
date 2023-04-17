@@ -71,7 +71,7 @@ class ByteArray {
 	}
 
 	writeObject(obj) {
-		value = JSON.stringify(obj);
+		const value = JSON.stringify(obj);
 		return this.writeUTF(value);
 	}
 

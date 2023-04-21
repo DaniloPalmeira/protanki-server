@@ -7602,7 +7602,7 @@ module.exports = class {
 		});
 		var packet = new ByteArray();
 
-		packet.writeUTF(JSON.stringify({ resources }));
+		packet.writeObject({ resources });
 		packet.writeInt(callbackID);
 
 		this.sendPacket(-1797047325, packet);

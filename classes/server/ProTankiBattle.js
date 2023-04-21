@@ -1,225 +1,177 @@
 const ByteArray = require("../ByteArray");
 
 class ProTankiBattle {
+	_autoBalance = true;
+	spectators = [];
 	clients = [];
-	usernameToClient = [];
-	viewers = [];
-	// users = [
-	// 	{
-	// 		kills: 0,
-	// 		score: 0,
-	// 		suspicious: false,
-	// 		user: "Dan",
-	// 	},
-	// ];
-	usersStat = {};
-	teams = {
-		dm: [],
-		red: [],
-		blue: [],
+	mode = 0;
+	modeString = {
+		0: "DM",
+		1: "TDM",
+		2: "CTF",
+		3: "CP",
+		4: "AS",
 	};
-	battleId = ""; //string
-	battleMode = null; // string
-	map = ""; // string
-	maxPeople = 0;
-	name = ""; //string
-	privateBattle = false;
-	proBattle = false;
-	minRank = 0;
-	maxRank = 0;
-	preview = 0;
-	parkourMode = false;
-	equipmentConstraintsMode = "NONE";
-	suspicionLevel = "NONE";
-	reArmorEnabled = true;
+	equip = 0;
+	equipString = {
+		0: "NONE",
+		1: "HORNET_RAILGUN",
+		2: "WASP_RAILGUN",
+		3: "HORNET_WASP_RAILGUN",
+	};
+	friendlyFire = false;
+	scoreLimit = 0;
 	timeLimitInSec = 0;
+	map = null;
+	maxPeople = 0;
+	name = null;
+	parkour = false;
+	private = false;
+	pro = false;
+	maxRank = 0;
+	minRank = 0;
+	reArmorEnabled = true;
+	theme = 0;
+	themeString = {
+		0: "SUMMER",
+		1: "WINTER",
+		2: "SPACE",
+		3: "SUMMER_DAY",
+		4: "SUMMER_NIGHT",
+		5: "WINTER_DAY",
+	};
 	withoutBonuses = false;
 	withoutCrystals = false;
 	withoutSupplies = false;
-	withoutUpgrades = false;
+	withoutUpgrades = true;
+	id = null;
+	gravity = 1000;
 	proBattleEnterPrice = 150;
 	roundStarted = false;
-	scoreLimit = 0;
-	theme = "SUMMER";
-	owner = "";
-	friendlyFire = false;
-	autoBalance = true;
+	suspicionLevel = "NONE";
+	preview = 952789;
+	viewers = [];
 	fund = 0;
 
 	constructor(objData) {
 		Object.assign(this, objData);
-		this.modeBattle = this.battleMode;
-		this.equipamentsBattle = this.equipmentConstraintsMode;
-		this.themeBattle = this.theme;
-		this.previewBattle = this.map;
 	}
 
-	/**
-	 * Define o tema de batalha.
-	 *
-	 * @param {string|number} theme - O tema de batalha a ser definido, pode ser um valor numérico ou uma string.
-	 * @returns {void}
-	 */
-	set themeBattle(theme) {
-		const themes = {
-			0: "SUMMER", // Tema de batalha com valor 0 é "SUMMER"
-			1: "WINTER", // Tema de batalha com valor 1 é "WINTER"
-			2: "SPACE", // Tema de batalha com valor 2 é "SPACE"
-			3: "SUMMER_DAY", // Tema de batalha com valor 3 é "SUMMER_DAY"
-			4: "SUMMER_NIGHT", // Tema de batalha com valor 4 é "SUMMER_NIGHT"
-			5: "WINTER_DAY", // Tema de batalha com valor 5 é "WINTER_DAY"
-		};
-
-		// Verifica se o valor de "theme" está presente em "themes"
-		if (theme in themes) {
-			this.theme = themes[theme]; // Atribui o valor correspondente do objeto "themes"
-		} else if (typeof theme === "string") {
-			// Se "theme" for uma string
-			const themeUpperCase = theme.toUpperCase(); // Converte "theme" para letras maiúsculas
-			for (const key in themes) {
-				if (themes[key].toUpperCase() === themeUpperCase) {
-					// Verifica se "theme" corresponde a algum valor em "themes"
-					this.theme = themes[key]; // Atribui o valor correspondente do objeto "themes"
-					break; // Sai do loop assim que encontrar uma correspondência
-				}
-			}
-		}
-
-		if (!this.theme) {
-			// Se "this.theme" ainda não foi definido
-			this.theme = "SUMMER"; // Atribuição padrão como "SUMMER"
-		}
+	get modeInt() {
+		return parseInt(this.mode);
 	}
 
-	/**
-	 * Define o modo de batalha.
-	 *
-	 * @param {string|number} mode - O modo de batalha a ser definido, pode ser um valor numérico ou uma string.
-	 * @returns {void}
-	 */
-	set modeBattle(mode) {
-		const battleModes = {
-			0: "DM", // Modo de batalha com valor 0 é "DM"
-			1: "TDM", // Modo de batalha com valor 1 é "TDM"
-			2: "CTF", // Modo de batalha com valor 2 é "CTF"
-			3: "CP", // Modo de batalha com valor 3 é "CP"
-			4: "AS", // Modo de batalha com valor 4 é "AS"
-		};
-
-		// Verifica se o valor de "mode" está presente em "battleModes"
-		if (mode in battleModes) {
-			this.battleMode = battleModes[mode]; // Atribui o valor correspondente do objeto "battleModes"
-		} else if (typeof mode === "string") {
-			// Se "mode" for uma string
-			const modeLowerCase = mode.toLowerCase(); // Converte "mode" para letras minúsculas
-			for (const key in battleModes) {
-				if (battleModes[key].toLowerCase() === modeLowerCase) {
-					// Verifica se "mode" corresponde a algum valor em "battleModes"
-					this.battleMode = battleModes[key]; // Atribui o valor correspondente do objeto "battleModes"
-					break; // Sai do loop assim que encontrar uma correspondência
-				}
-			}
-		}
-
-		if (!this.battleMode) {
-			// Se "this.battleMode" ainda não foi definido
-			this.battleMode = "DM"; // Atribuição padrão como "DM"
-		}
-	}
-
-	/**
-	 * @param {number|string} mode
-	 */
-	set equipamentsBattle(mode) {
-		if (typeof mode == typeof 0) {
-			switch (mode) {
-				case 0:
-					this.equipmentConstraintsMode = "NONE";
-					break;
-				case 1:
-					this.equipmentConstraintsMode = "HORNET_RAILGUN";
-					break;
-				case 2:
-					this.equipmentConstraintsMode = "WASP_RAILGUN";
-					break;
-				case 3:
-					this.equipmentConstraintsMode = "HORNET_WASP_RAILGUN";
-					break;
-				default:
-					break;
-			}
+	set modeInt(value) {
+		if (!isNaN(value)) {
+			this.mode = parseInt(value);
 		} else {
-			this.equipmentConstraintsMode = mode;
+			this.mode = 0;
+			console.log(`O valor recebido não é um int`);
 		}
 	}
 
-	/**
-	 * @param {string} map
-	 */
-	set previewBattle(map) {
-		this.preview = 952789;
-		for (let index = 0; index < this.server.maps.length; index++) {
-			const element = this.server.maps[index];
-			if (element.mapId == map) {
-				this.preview = element.preview;
-				if (this.theme == element.theme) {
-					this.preview = element.preview;
-					break;
-				}
-			}
+	get modeStr() {
+		return this.modeString[this.mode];
+	}
+
+	set modeStr(value) {
+		if (typeof value === "string") {
+			const index = Object.values(this.modeString).indexOf(this.mode);
+			this.mode = index !== -1 ? index : 0;
+		} else {
+			this.mode = 0;
+			console.log(`O valor recebido não é uma string`);
 		}
+	}
+
+	get themeInt() {
+		return parseInt(this.theme);
+	}
+
+	set themeInt(value) {
+		if (!isNaN(value)) {
+			this.theme = parseInt(value);
+		} else {
+			this.theme = 0;
+			console.log(`O valor recebido não é um int`);
+		}
+	}
+
+	get themeStr() {
+		return this.themeString[this.theme];
+	}
+
+	set themeStr(value) {
+		if (typeof value === "string") {
+			const index = Object.values(this.themeString).indexOf(this.theme);
+			this.theme = index !== -1 ? index : 0;
+		} else {
+			this.theme = 0;
+			console.log(`O valor recebido não é uma string`);
+		}
+	}
+
+	get equipInt() {
+		return parseInt(this.equip);
+	}
+
+	set equipInt(value) {
+		if (!isNaN(value)) {
+			this.equip = parseInt(value);
+		} else {
+			this.equip = 0;
+			console.log(`O valor recebido não é um int`);
+		}
+	}
+
+	get equipStr() {
+		return this.equipString[this.equip];
+	}
+
+	set equipStr(value) {
+		if (typeof value === "string") {
+			const index = Object.values(this.equipString).indexOf(this.equip);
+			this.equip = index !== -1 ? index : 0;
+		} else {
+			this.equip = 0;
+			console.log(`O valor recebido não é uma string`);
+		}
+	}
+
+	get effects() {
+		return { effects: [] };
 	}
 
 	get battleToList() {
 		var obj = {
-			battleId: this.battleId,
-			battleMode: this.battleMode,
+			battleId: this.id,
+			battleMode: this.modeStr,
 			map: this.map,
 			maxPeople: this.maxPeople,
 			name: this.name,
-			privateBattle: this.privateBattle,
-			proBattle: this.proBattle,
+			privateBattle: this.private,
+			proBattle: this.pro,
 			minRank: this.minRank,
 			maxRank: this.maxRank,
 			preview: this.preview,
-			parkourMode: this.parkourMode,
-			equipmentConstraintsMode: this.equipmentConstraintsMode,
+			parkourMode: this.parkour,
+			equipmentConstraintsMode: this.equipStr,
 			suspicionLevel: this.suspicionLevel,
 		};
-		if (this.battleMode == "DM") {
-			obj.users = this.teams.dm;
+		if (this.modeStr == "DM") {
+			obj.users = [];
 		} else {
-			obj.usersBlue = this.teams.blue;
-			obj.usersRed = this.teams.red;
+			obj.usersBlue = [];
+			obj.usersRed = [];
 		}
 		return obj;
 	}
 
-	get users() {
-		var users = this.teams.dm.map((name) => {
-			return this.usersStat[name];
-		});
-		return users;
-	}
-
-	get usersRed() {
-		var users = this.teams.red.map((name) => {
-			return this.usersStat[name];
-		});
-		return users;
-	}
-
-	get usersBlue() {
-		var users = this.teams.blue.map((name) => {
-			return this.usersStat[name];
-		});
-		return users;
-	}
-
 	get show() {
+		console.log("Carregar batalha");
 		var showData = {
-			battleMode: this.battleMode,
-			itemId: this.battleId,
+			battleMode: this.modeStr,
+			itemId: this.id,
 			scoreLimit: this.scoreLimit,
 			timeLimitInSec: this.timeLimitInSec,
 			preview: this.preview,
@@ -230,11 +182,11 @@ class ProTankiBattle {
 			proBattleEnterPrice: this.proBattleEnterPrice,
 			timeLeftInSec: -1677704464,
 			proBattleTimeLeftInSec: -1,
-			equipmentConstraintsMode: this.equipmentConstraintsMode,
+			equipmentConstraintsMode: this.equipStr,
 			userPaidNoSuppliesBattle: false, // tem o cartão batalha pro ?
 			spectator: false,
 		};
-		if (this.battleMode == "DM") {
+		if (this.modeStr == "DM") {
 			showData.users = this.users;
 		} else {
 			showData.usersBlue = this.usersBlue;
@@ -255,14 +207,14 @@ class ProTankiBattle {
 		if (this.reArmorEnabled) {
 			showData.reArmorEnabled = this.reArmorEnabled;
 		}
-		if (this.proBattle) {
-			showData.proBattle = this.proBattle;
+		if (this.pro) {
+			showData.proBattle = this.pro;
 		}
 		if (this.roundStarted) {
 			showData.roundStarted = this.roundStarted;
 		}
-		if (this.parkourMode) {
-			showData.parkourMode = this.parkourMode;
+		if (this.parkour) {
+			showData.parkourMode = this.parkour;
 		}
 		if (this.withoutBonuses) {
 			showData.withoutBonuses = this.withoutBonuses;
@@ -276,157 +228,22 @@ class ProTankiBattle {
 		return showData;
 	}
 
-	get new() {
-		return {
-			battleId: this.battleId,
-			battleMode: this.battleMode,
-			map: this.map,
-			maxPeople: this.maxPeople,
-			name: this.name,
-			privateBattle: this.privateBattle,
-			proBattle: this.proBattle,
-			minRank: this.minRank,
-			maxRank: this.maxRank,
-			preview: this.preview,
-			parkourMode: this.parkourMode,
-			equipmentConstraintsMode: this.equipmentConstraintsMode,
-			suspicionLevel: this.suspicionLevel,
-			users: [],
-		};
-	}
-
-	get modeInt() {
-		var mode = 0;
-		switch (this.battleMode) {
-			case "DM":
-				mode = 0;
-				break;
-			case "TDM":
-				mode = 1;
-				break;
-			case "CTF":
-				mode = 2;
-				break;
-			case "CP":
-				mode = 3;
-				break;
-			case "AS":
-				mode = 4;
-				break;
-			default:
-				mode = 0;
-				break;
-		}
-		return mode;
-	}
-
-	get equipmentInt() {
-		var equips = 0;
-		switch (this.equipmentConstraintsMode) {
-			case "NONE":
-				equips = 0;
-				break;
-			case "HORNET_RAILGUN":
-				equips = 1;
-				break;
-			case "WASP_RAILGUN":
-				equips = 2;
-				break;
-			case "HORNET_WASP_RAILGUN":
-				equips = 3;
-				break;
-			default:
-				equips = 0;
-				break;
-		}
-		return equips;
-	}
-
-	get StatisticsModel() {
-		var packet = new ByteArray();
-
-		packet.writeInt(this.modeInt);
-		packet.writeInt(this.equipmentInt);
-		packet.writeInt(this.fund);
-		packet.writeInt(this.scoreLimit);
-		packet.writeInt(this.timeLimitInSec);
-		packet.writeUTF(this.name);
-		packet.writeInt(this.maxPeople);
-		packet.writeBoolean(this.parkourMode);
-		packet.writeInt(100); // premium bonus in percent
-		packet.writeBoolean(false); // spectator
-		packet.writeBoolean(false); // ignore ?
-		packet.writeInt(0); // suspiciousUserIds
-		packet.writeInt(-1678971475); // time left
-
-		return packet;
-	}
-
-	sendPacket(packedID, packet) {
-		this.clients.forEach((client) => {
+	sendPacketSpectator(packedID, packet = new ByteArray()) {
+		this.spectators.forEach((client) => {
+			console.log(client.user.username);
 			var _packet = new ByteArray(packet.buffer);
 			client.sendPacket(packedID, _packet);
 		});
 	}
 
-	updateToViewers(client) {
-		this.viewers.forEach((_client) => {
-			console.log("Atualizado para", _client.user.username);
-			var packet = new ByteArray();
-
-			packet.writeUTF(this.battleId);
-			packet.writeInt(this.usersStat[client.user.username].kills);
-			packet.writeInt(this.usersStat[client.user.username].score);
-			packet.writeBoolean(this.usersStat[client.user.username].suspicious);
-			packet.writeUTF(client.user.username);
-
-			_client.sendPacket(-911626491, packet);
+	sendPacket(packedID, packet = new ByteArray(), ignore = null) {
+		const allPlayers = [...this.clients, ...this.spectators];
+		allPlayers.forEach((player) => {
+			if (player != ignore) {
+				const _packet = new ByteArray(packet.buffer);
+				player.sendPacket(packedID, _packet);
+			}
 		});
-	}
-
-	addPlayer(client, team) {
-		this.usersStat[client.user.username] = {
-			deaths: 0,
-			kills: 0,
-			score: 0,
-			suspicious: false,
-			user: client.user.username,
-		};
-		if (team == 0) {
-			this.teams.red.push(client.user.username);
-		} else if (team == 1) {
-			this.teams.blue.push(client.user.username);
-		} else if (team == 2) {
-			this.teams.dm.push(client.user.username);
-		}
-		this.updateToViewers(client);
-		client.battle = this;
-		client.lobby.addPlayerInBattle(client);
-		if (!this.clients.includes(client)) {
-			this.clients.push(client);
-		}
-
-		client.loadLayout(3);
-		client.lobby.removeChat();
-		client.lobby.removeBattleList();
-		client.battle.weaponsInfos();
-	}
-
-	removePlayer(client) {
-		if (this.clients.includes(client)) {
-			this.clients = this.clients.filter(function (e) {
-				return e !== client;
-			});
-			this.teams.red = this.teams.red.filter(function (e) {
-				return e !== client.user.username;
-			});
-			this.teams.blue = this.teams.blue.filter(function (e) {
-				return e !== client.user.username;
-			});
-			this.teams.dm = this.teams.dm.filter(function (e) {
-				return e !== client.user.username;
-			});
-		}
 	}
 
 	addViewer(client) {

@@ -25,25 +25,4 @@ module.exports = class {
 			});
 		}
 	}
-
-	addPlayerInBattle(client) {
-		var packet = new ByteArray();
-
-		packet.writeUTF(client.battle.battleId);
-
-		packet.writeUTF(client.battle.name);
-
-		packet.writeInt(client.battle.modeInt);
-		packet.writeBoolean(client.battle.privateBattle);
-		packet.writeBoolean(client.battle.proBattle);
-
-		packet.writeInt(client.battle.maxRank);
-		packet.writeInt(client.battle.minRank);
-
-		packet.writeInt(1); //serverNumber
-
-		packet.writeUTF(client.user.username);
-
-		this.sendPacket(-1895446889, packet);
-	}
 };

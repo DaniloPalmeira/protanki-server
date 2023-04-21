@@ -2,76 +2,96 @@ const Sequelize = require("sequelize");
 const user = require("./user");
 const friends = require("./friends");
 
+/**
+ * Retorna um usuário pelo ID
+ * @param {number} id - O ID do usuário
+ * @returns {Promise<Object>} - O usuário encontrado ou nulo
+ */
 const getUserById = async (id) => {
-	let _user = await user.findByPk(id);
-	if (_user) {
-		return _user.dataValues;
-	}
-	return;
+	const _user = await user.findByPk(id);
+	return _user?.dataValues ?? null;
 };
 
+/**
+ * Retorna um usuário pelo nome de usuário
+ * @param {string} username - O nome de usuário
+ * @returns {Promise<Object>} - O usuário encontrado ou nulo
+ */
 const getUserByUsername = async (username) => {
-	let _user = await user.findOne({
+	const _user = await user.findOne({
 		where: Sequelize.where(
 			Sequelize.fn("lower", Sequelize.col("username")),
 			Sequelize.fn("lower", username)
 		),
 	});
-	if (_user) {
-		return _user.dataValues;
-	}
-	return;
+	return _user?.dataValues ?? null;
 };
 
+/**
+ * Retorna um usuário pelo endereço de e-mail
+ * @param {string} email - O endereço de e-mail
+ * @returns {Promise<Object>} - O usuário encontrado ou nulo
+ */
 const getUserByEmail = async (email) => {
-	let _user = await user.findOne({
+	const _user = await user.findOne({
 		where: Sequelize.where(
 			Sequelize.fn("lower", Sequelize.col("email")),
 			Sequelize.fn("lower", email)
 		),
 	});
-	if (_user) {
-		return _user.dataValues;
-	}
-	return;
+	return _user?.dataValues ?? null;
 };
 
+/**
+ * Retorna os amigos de um usuário pelo ID, criando uma entrada se ela não existir
+ * @param {number} id - O ID do usuário
+ * @returns {Promise<Object>} - Os amigos encontrados ou um objeto vazio se não houver amigos
+ */
 const getFriendsOrCreateByID = async (id) => {
-	let _friends = await friends.findOrCreate({
+	const [_friends] = await friends.findOrCreate({
 		where: { uid: id },
 		defaults: { uid: id },
 	});
-	var ObjFriends = {};
-	let keys = [
+	const ObjFriends = {};
+	const keys = [
 		"friendsAccepted",
 		"friendsAcceptedNew",
 		"friendsIncoming",
 		"friendsIncomingNew",
 		"friendsOutgoing",
 	];
-	keys.map((key) => {
-		if (ObjFriends[key] === undefined) ObjFriends[key] = {};
-		ObjFriends[key] = JSON.parse(_friends[0].dataValues[key]);
+	keys.forEach((key) => {
+		ObjFriends[key] = JSON.parse(_friends[key] ?? "[]");
 	});
 	return ObjFriends;
 };
 
+/**
+ * Atualiza os amigos de um usuário pelo ID
+ * @param {string[]} keys - As chaves dos amigos a serem atualizados
+ * @param {Object} friendsObj - O objeto de amigos atualizado
+ * @param {number} id - O ID do usuário
+ * @returns {Promise<void>}
+ */
 const updateFriends = async (keys, friendsObj, id) => {
-	let options = {};
-	for (let index = 0; index < keys.length; index++) {
-		const key = keys[index];
-		options[key] = JSON.stringify(friendsObj[key]);
-	}
-
-	friends.update(options, {
+	const options = {};
+	keys.forEach((key) => {
+		options[key] = JSON.stringify(friendsObj[key] ?? []);
+	});
+	await friends.update(options, {
 		where: { uid: id },
 	});
 };
-
+/**
+	
+	* Cria uma conta de usuário com o nome de usuário e senha fornecidos
+	* @param {string} username - O nome de usuário
+	* @param {string} password - A senha
+	* @returns {Promise<Object>} - O usuário criado
+	*/
 const createAccount = async (username, password) => {
 	return await user.create({ username, password });
 };
-
 module.exports = {
 	getUserById,
 	getUserByUsername,

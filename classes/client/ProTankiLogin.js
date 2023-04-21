@@ -69,7 +69,7 @@ module.exports = class ProTankiLogin {
 		const client = this.client;
 
 		client.loadLayout(0);
-		client.user = await client.ObtainUserByUser(user);
+		client.user = await client.ObtainUserByUser(user, true, client);
 		client.user.online = true;
 		client.profile = new ProTankiProfile(client);
 		client.profile.sendPremiumInfo();

@@ -9,6 +9,7 @@ const {
 module.exports = class ProTankiUser {
 	exist = false;
 	online = false;
+	inSpect = false;
 	username = null;
 	privLevel = 0;
 	crystal = 0;
@@ -38,7 +39,12 @@ module.exports = class ProTankiUser {
 		inventory: {},
 	};
 
-	constructor() {}
+	constructor(client = undefined) {
+		this.client = client;
+		if (client != undefined) {
+			this.profile = client.profile;
+		}
+	}
 
 	async loadByUsername(username) {
 		if (!username) {
@@ -68,117 +74,6 @@ module.exports = class ProTankiUser {
 			this.friends = await getFriendsOrCreateByID(_user.uid);
 		}
 		return;
-	}
-
-	friendRequestRecv(uid) {
-		if (
-			!this.friends.friendsIncoming.includes(uid) &&
-			!this.friends.friendsOutgoing.includes(uid) &&
-			!this.friends.friendsAccepted.includes(uid)
-		) {
-			this.friends.friendsIncomingNew.push(uid);
-			this.friends.friendsIncoming.push(uid);
-			updateFriends(
-				["friendsIncomingNew", "friendsIncoming"],
-				this.friends,
-				this.uid
-			);
-		}
-	}
-
-	friendRequestSend(uid) {
-		if (
-			!this.friends.friendsIncoming.includes(uid) &&
-			!this.friends.friendsOutgoing.includes(uid) &&
-			!this.friends.friendsAccepted.includes(uid)
-		) {
-			this.friends.friendsOutgoing.push(uid);
-			updateFriends(["friendsOutgoing"], this.friends, this.uid);
-		}
-	}
-
-	clearfriendsIncomingNew() {
-		this.friends.friendsIncomingNew = [];
-		updateFriends(["friendsIncomingNew"], this.friends, this.uid);
-	}
-
-	clearfriendsAcceptedNew() {
-		this.friends.friendsAcceptedNew = [];
-		updateFriends(["friendsAcceptedNew"], this.friends, this.uid);
-	}
-
-	async cancelFriendRequestSend(uid) {
-		this.friends.friendsOutgoing = await this.listRemoveItem(
-			this.friends.friendsOutgoing,
-			uid
-		);
-		updateFriends(["friendsOutgoing"], this.friends, this.uid);
-	}
-
-	async cancelFriendRequestRecv(uid) {
-		this.friends.friendsIncomingNew = await this.listRemoveItem(
-			this.friends.friendsIncomingNew,
-			uid
-		);
-		this.friends.friendsIncoming = await this.listRemoveItem(
-			this.friends.friendsIncoming,
-			uid
-		);
-		updateFriends(
-			["friendsIncomingNew", "friendsIncoming"],
-			this.friends,
-			this.uid
-		);
-	}
-
-	async acceptedFriendRequestRecv(uid) {
-		this.friends.friendsIncomingNew = await this.listRemoveItem(
-			this.friends.friendsIncomingNew,
-			uid
-		);
-		this.friends.friendsIncoming = await this.listRemoveItem(
-			this.friends.friendsIncoming,
-			uid
-		);
-
-		this.friends.friendsAcceptedNew.push(uid);
-		this.friends.friendsAccepted.push(uid);
-
-		updateFriends(
-			[
-				"friendsIncomingNew",
-				"friendsIncoming",
-				"friendsAcceptedNew",
-				"friendsAccepted",
-			],
-			this.friends,
-			this.uid
-		);
-	}
-
-	async acceptedFriendRequestSend(uid) {
-		this.friends.friendsOutgoing = await this.listRemoveItem(
-			this.friends.friendsOutgoing,
-			uid
-		);
-
-		this.friends.friendsAcceptedNew.push(uid);
-		this.friends.friendsAccepted.push(uid);
-
-		updateFriends(
-			["friendsOutgoing", "friendsAcceptedNew", "friendsAccepted"],
-			this.friends,
-			this.uid
-		);
-	}
-
-	async listRemoveItem(list, item) {
-		if (list.includes(item)) {
-			list = list.filter(function (e) {
-				return e !== item;
-			});
-		}
-		return list;
 	}
 
 	async updateGarage() {

@@ -71,8 +71,8 @@ module.exports = class {
 		var bData = {};
 
 		bData.autoBalance = packet.readBoolean();
-		bData.battleMode = packet.readInt(); // 0 = DM	// 1 = TDM	// 2 = CTF	// 3 = CP	// 4 = AS
-		bData.equipmentConstraintsMode = packet.readInt(); // 0 NONE; // 1 HORNET_RAILGUN; // 2 WASP_RAILGUN; // 3 HORNET_WASP_RAILGUN;
+		bData.mode = packet.readInt(); // 0 = DM	// 1 = TDM	// 2 = CTF	// 3 = CP	// 4 = AS
+		bData.equip = packet.readInt(); // 0 NONE; // 1 HORNET_RAILGUN; // 2 WASP_RAILGUN; // 3 HORNET_WASP_RAILGUN;
 		bData.friendlyFire = packet.readBoolean();
 		bData.scoreLimit = packet.readInt();
 		bData.timeLimitInSec = packet.readInt();
@@ -80,15 +80,15 @@ module.exports = class {
 		// bData.mapId = packet.readUTF();
 
 		bData.maxPeople = packet.readInt();
-		//bData.maxPeopleCount = packet.readInt();
+		// bData.maxPeopleCount = packet.readInt();
 		bData.name = packet.readUTF();
-		bData.parkourMode = packet.readBoolean();
-		bData.privateBattle = packet.readBoolean();
-		bData.proBattle = packet.readBoolean();
+		bData.parkour = packet.readBoolean();
+		bData.private = packet.readBoolean();
+		bData.pro = packet.readBoolean();
 		bData.maxRank = packet.readInt();
 		bData.minRank = packet.readInt();
 		bData.reArmorEnabled = packet.readBoolean();
-		if (!bData.proBattle) {
+		if (!bData.pro) {
 			bData.reArmorEnabled = true;
 		}
 		bData.theme = packet.readInt(); // 0 = SUMMER; // 1 = WINTER; // 2 = SPACE; // 3 = SUMMER_DAY; // 4 = SUMMER_NIGHT; // 5 = WINTER_DAY;
@@ -96,9 +96,9 @@ module.exports = class {
 		bData.withoutCrystals = packet.readBoolean();
 		bData.withoutSupplies = packet.readBoolean();
 		bData.withoutUpgrades = packet.readBoolean();
-		bData.battleId = this.client.server.randomID(16);
+		bData.id = this.client.server.randomID(16);
 
-		this.client.server.battleList[bData.battleId] = new ProTankiBattleServer({
+		this.client.server.battleList[bData.id] = new ProTankiBattleServer({
 			...bData,
 			server: this.client.server,
 			owner: this.client.user.username,
@@ -106,12 +106,12 @@ module.exports = class {
 
 		var _packet = new ByteArray();
 
-		_packet.writeUTF(
-			JSON.stringify(this.client.server.battleList[bData.battleId].new)
-		);
+		_packet.writeObject(this.client.server.battleList[bData.id].new);
 
 		this.client.lobbyServer.sendPacket(PKG.LOBBY_SEND_CREATE_BATTLE, _packet);
-		this.getBattleInfos(bData.battleId);
+		this.getBattleInfos(bData.id);
+
+		// this.sendPacket(-1491503394);
 	}
 
 	/**
@@ -130,6 +130,7 @@ module.exports = class {
 
 		// Verifica se o ID da batalha está presente na lista de batalhas do servidor
 		if (!(battleId in this.client.server.battleList)) {
+			console.log(battleId);
 			return;
 		}
 
@@ -231,10 +232,9 @@ module.exports = class {
 		};
 
 		// Converte o objeto "json" em uma string JSON e a escreve no objeto "packet"
-		packet.writeUTF(JSON.stringify(json));
+		packet.writeObject(json);
 
 		// Envia o pacote de dados para o cliente conectado com o ID do pacote -838186985
 		this.sendPacket(-838186985, packet);
 	}
-	
 };

@@ -1,4 +1,4 @@
-const ProTankiBattle = require("./server/ProTankiBattle");
+const ProTankiBattleServer = require("./server/ProTankiBattle");
 const database = require("../helpers/connection");
 const user = require("../helpers/user");
 
@@ -2652,25 +2652,28 @@ class ProTankiServer {
 
 		[
 			{
-				battleId: "892b0a8485841be5",
-				battleMode: "DM",
-				map: "map_sandbox",
+				id: "1c976322891c6e46",
+				mode: 0,
+				map: "map_cross",
 				maxPeople: 20,
-				name: "Caixa de areia DM",
-				proBattle: false,
-				minRank: 1,
+				name: "NomeDaBatalha",
+				pro: false,
+				minRank: 20,
 				maxRank: 30,
 				reArmorEnabled: true,
-				parkourMode: false,
-				scoreLimit: 0,
+				parkour: false,
+				scoreLimit: 999,
 			},
-		].map((b) => {
-			this.battleList[b.battleId] = new ProTankiBattle({ ...b, server: this });
+		].forEach((battle) => {
+			this.battleList[battle.id] = new ProTankiBattleServer({
+				...battle,
+				server: this,
+			});
 		});
 
 		this.captchaLocations = [0, 1, 2, 3, 4, 5];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];
-		this.requireInviteCode = true;
+		this.requireInviteCode = false;
 		this.database = {
 			database,
 			user,

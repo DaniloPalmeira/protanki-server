@@ -21,7 +21,7 @@ const handleConnection = (socket) => {
 	});
 };
 
-const __ports = [1330];
+const __ports = [443];
 for (const port of __ports) {
 	let serverRun = net.createServer(handleConnection);
 	serverRun.listen(port);

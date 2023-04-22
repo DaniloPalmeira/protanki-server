@@ -20,6 +20,8 @@ class ProTankiClient {
 	decrypt_keys = new Array(8);
 	encrypt_keys = new Array(8);
 
+	ping = 0;
+
 	constructor(data) {
 		Object.assign(this, data);
 		this.resources = new ProTankiResources(this);
@@ -133,12 +135,6 @@ class ProTankiClient {
 			}
 		} else {
 			this.rawDataReceived.writeIntStart(possibleLen + 4);
-			console.log(
-				"Pacote imcompleto",
-				possibleLen - 4,
-				this.rawDataReceived.bytesAvailable(),
-				this.rawDataReceived
-			);
 		}
 	}
 
@@ -337,7 +333,6 @@ class ProTankiClient {
 				this.user.battle.effects();
 				this.user.battle.objetoIndefinido();
 				this.changeLayout(3, 3);
-				console.log(this.user.inSpect);
 			} else {
 				console.log("calback", callback);
 			}
@@ -357,7 +352,6 @@ class ProTankiClient {
 			_packet.writeUTF(this.user.username);
 			_packet.writeUTF(message);
 			_packet.writeInt(2);
-			console.log("Nova mensagem no chat");
 			this.user.battle.party.sendPacket(1259981343, _packet);
 		} else if (packetID == PKG.REQUEST_CAPTCHA) {
 			this.requestCaptcha(packet);
@@ -368,7 +362,6 @@ class ProTankiClient {
 		} else if (packetID == PKG.LOGIN_CHECK_CREDENTIALS) {
 			this.login.checkCredentials(packet);
 		} else if (packetID == PKG.CHECK_CAPTCHA) {
-			console.log("VERIFICAR CAPTCHA", packet);
 			const position = packet.readInt();
 			const value = packet.readInt();
 			// VERIFICAR CAPTCHA (RECUPERAÇAO DE SENHA)
@@ -415,7 +408,6 @@ class ProTankiClient {
 		} else if (packetID == PKG.LOBBY_BATTLE_INFOS) {
 			this.lobby.getBattleInfos(packet);
 		} else if (packetID == PKG.OPEN_MISSIONS_PANEL) {
-			console.log("Tentanto abrir a tela de missões");
 			const missionsPacket = new ByteArray();
 
 			const missions = [
@@ -478,7 +470,6 @@ class ProTankiClient {
 			const missionId = packet.readInt();
 			console.log(`Mudar missão de acordo com o id ${missionId}`);
 		} else if (packetID == PKG.OPEN_BUY_PANEL) {
-			console.log("Tentanto abrir a tela de compra");
 			let _packet = new ByteArray();
 			_packet.writeInt(948382);
 			_packet.writeUTF("");
@@ -490,10 +481,8 @@ class ProTankiClient {
 			// ClientStoredSettings - Falta finalizar
 			const showDamageEnabled = packet.readBoolean();
 		} else if (packetID == PKG.OPEN_SETTINGS) {
-			console.log("Abrindo tela de config");
 			this.sendPacket(600420685);
 		} else if (packetID == PKG.GET_SETTINGS) {
-			console.log("Carregando tela de config");
 			this.socialNetworkPanel();
 			this.notificationEnabled();
 		} else if (packetID == PKG.LOBBY_SET_BATTLE_NAME) {
@@ -572,31 +561,12 @@ class ProTankiClient {
 			this.changeLayout(0, 0);
 			this.lobby.mapsList();
 			this.lobby.battleList();
-
-			// // COMPRAR ITEM NA GARAGEM
-			// var item = packet.readUTF();
-			// if (item) {
-			// 	var name = item.split("_m")[0];
-			// 	var modification = parseInt(item.split("_m")[1]);
-			// 	var quantity = packet.readInt();
-			// 	var value = packet.readInt();
-			// 	var canBuy = this.garage.tryBuyThisItem({
-			// 		name,
-			// 		modification,
-			// 		quantity,
-			// 		value,
-			// 		item,
-			// 	});
-			// }
 		} else if (packetID == PKG.BATTE_SPECTATOR_JOIN) {
 			this.user.battle = new ProTankiBattle(this);
 			this.user.battle.joinSpectator();
 		} else if (packetID == 1484572481) {
 			if (this.currentTime) {
-				const doubleInt = new ByteArray();
-				doubleInt.writeInt(5);
-				doubleInt.writeInt(new Date() - this.currentTime);
-				this.sendPacket(34068208, doubleInt);
+				this.ping = new Date() - this.currentTime;
 			}
 			setTimeout(() => {
 				this.currentTime = new Date();
@@ -627,9 +597,142 @@ class ProTankiClient {
 			this.user.battle = new ProTankiBattle(this);
 			this.user.battle.join();
 		} else if (packetID == 2074243318) {
-			// console.log("session", packet.readInt(), packet.readInt());
+			console.log("session", packet.readInt(), packet.readInt());
+			setTimeout(() => {
+				const doubleInt = new ByteArray();
+				doubleInt.writeInt(5);
+				doubleInt.writeInt(this.ping);
+				this.sendPacket(34068208, doubleInt);
+			}, 1000);
 		} else if (packetID == -1378839846) {
-			this.user.battle.updateHealth();
+			this.user.battle.spawn();
+		} else if (packetID == -114968993) {
+			// console.log("[-114968993] MS: ", packet.readInt());
+			this.user.battle.angle = packet.readFloat();
+			this.user.battle.control = packet.writeByte();
+			const incarnationId = packet.readShort();
+
+			const rotateTurretPacket = new ByteArray();
+			rotateTurretPacket.writeUTF(this.user.username);
+			rotateTurretPacket.writeFloat(this.user.battle.angle);
+			rotateTurretPacket.writeByte(this.user.battle.control);
+			this.user.battle.party.sendPacket(1927704181, rotateTurretPacket, this);
+		} else if (packetID == -1749108178) {
+			// console.log("[-1749108178] MS: ", packet.readInt());
+			const specificationId = packet.readShort();
+			const control = packet.readByte();
+			this.user.battle.control = control;
+
+			const controlPacket = new ByteArray();
+			controlPacket.writeUTF(this.user.username);
+			controlPacket.writeByte(this.user.battle.control);
+			this.user.battle.party.sendPacket(-301298508, controlPacket, this);
+		} else if (packetID == -1683279062) {
+			// console.log("[-1683279062] MS: ", packet.readInt());
+			packet.readShort(); // specificationId
+
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.write(packet.buffer);
+			this.user.battle.party.sendPacket(1516578027, nPacket, this);
+
+			let empty = packet.readBoolean(); // angularVelocity
+			if (!empty) {
+				this.user.battle.angularVelocity = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			this.user.battle.control = packet.readByte(); // control
+
+			empty = packet.readBoolean(); // linearVelocity
+			if (!empty) {
+				this.user.battle.linearVelocity = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			empty = packet.readBoolean(); // orientation
+			if (!empty) {
+				this.user.battle.orientation = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			empty = packet.readBoolean(); // position
+			if (!empty) {
+				this.user.battle.position = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			this.user.battle.turretDirection = packet.readFloat();
+		} else if (packetID == 329279865) {
+			// console.log("[329279865] MS: ", packet.readInt());
+			packet.readShort(); // specificationId
+
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.write(packet.buffer);
+			this.user.battle.party.sendPacket(-64696933, nPacket, this);
+
+			let empty = packet.readBoolean(); // angularVelocity
+			if (!empty) {
+				this.user.battle.angularVelocity = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			this.user.battle.control = packet.readByte(); // control
+
+			empty = packet.readBoolean(); // linearVelocity
+			if (!empty) {
+				this.user.battle.linearVelocity = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			empty = packet.readBoolean(); // orientation
+			if (!empty) {
+				this.user.battle.orientation = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+
+			empty = packet.readBoolean(); // position
+			if (!empty) {
+				this.user.battle.position = {
+					x: packet.readFloat(),
+					y: packet.readFloat(),
+					z: packet.readFloat(),
+				};
+			}
+		} else if (packetID == 1178028365) {
+			// console.log("Ativar tanki");
+			const tankiPacket = new ByteArray();
+			tankiPacket.writeUTF(this.user.username);
+			this.user.battle.party.sendPacket(1868573511, tankiPacket);
+		} else if (packetID == -1759063234) {
+			// TIRO ELETRICO (1)
+			const shooterPacket = new ByteArray();
+			shooterPacket.writeUTF(this.user.username);
+			this.user.battle.party.sendPacket(346830254, shooterPacket, this);
+		} else if (packetID == -484994657) {
+			// console.log("TIRO ELETRICO (2)");
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}

@@ -8,6 +8,17 @@ module.exports = class {
 	incarnation = 0;
 	health = 10000;
 	state = "suicide";
+	state_null = true;
+
+	position = { x: -22763.44140625, y: 2887.464111328125, z: 200 };
+	orientation = { x: 0, y: 0, z: -6.2829999923706055 };
+	angularVelocity = { x: 0, y: 0, z: 0 };
+	linearVelocity = { x: 0, y: 0, z: 0 };
+
+	control = 0;
+	angle = 0;
+	turretDirection = 0;
+
 	constructor(client) {
 		this.client = client;
 		this.party = client.user.selectedBattle;
@@ -259,7 +270,6 @@ module.exports = class {
 				},
 			}),
 		};
-		console.log(mapObject);
 		paramsMap.writeObject(mapObject);
 
 		this.sendPacket(-152638117, paramsMap);
@@ -362,8 +372,8 @@ module.exports = class {
 				turretResource: 839339,
 				sfxData:
 					'{"chargingPart1":114424,"chargingPart2":468379,"chargingPart3":932241,"hitMarkTexture":670581,"powTexture":963502,"ringsTexture":966691,"shotSound":900596,"smokeImage":882103,"sphereTexture":212409,"trailImage":550305,"lighting":[{"name":"charge","light":[{"attenuationBegin":200,"attenuationEnd":200,"color":16765017,"intensity":0.7,"time":0},{"attenuationBegin":200,"attenuationEnd":800,"color":16765017,"intensity":0.3,"time":600}]},{"name":"shot","light":[{"attenuationBegin":100,"attenuationEnd":600,"color":16765017,"intensity":0.7,"time":0},{"attenuationBegin":1,"attenuationEnd":2,"color":16765017,"intensity":0,"time":300}]},{"name":"hit","light":[{"attenuationBegin":200,"attenuationEnd":600,"color":16765017,"intensity":0.7,"time":0},{"attenuationBegin":1,"attenuationEnd":2,"color":16765017,"intensity":0,"time":300}]},{"name":"rail","light":[{"attenuationBegin":100,"attenuationEnd":500,"color":16765017,"intensity":0.5,"time":0},{"attenuationBegin":1,"attenuationEnd":2,"color":16765017,"intensity":0,"time":1800}]}],"bcsh":[{"brightness":9.027,"contrast":-3.54,"saturation":44.248,"hue":208.67,"key":"trail"},{"brightness":9.027,"contrast":-3.54,"saturation":44.248,"hue":208.67,"key":"charge"}]}',
-				position: { x: 0, y: 0, z: 0 },
-				orientation: { x: 0, y: 0, z: 0 },
+				position: _client.user.battle.position,
+				orientation: _client.user.battle.orientation,
 				incarnation: _client.user.battle.incarnation,
 				tank_id: _client.user.username,
 				nickname: _client.user.username,
@@ -384,7 +394,7 @@ module.exports = class {
 				kickback: 3,
 				turretTurnAcceleration: 1.7599900177110819,
 				impact_force: 7,
-				state_null: true,
+				state_null: _client.user.battle.state_null,
 			});
 			if (this.client == _client) {
 				this.party.sendPacket(-1643824092, tankPacket);
@@ -450,5 +460,52 @@ module.exports = class {
 		userHealthPacket.writeUTF(this.client.user.username);
 		userHealthPacket.writeInt(this.health);
 		this.party.sendPacket(-611961116, userHealthPacket);
+	}
+
+	spawn() {
+		this.updateHealth();
+		const prepareTankiPacket = new ByteArray();
+		prepareTankiPacket.writeUTF(this.client.user.username); // nome
+		prepareTankiPacket.writeInt(2); // team
+		prepareTankiPacket.writeByte(0); // position
+		prepareTankiPacket.writeFloat(this.position.x);
+		prepareTankiPacket.writeFloat(this.position.y);
+		prepareTankiPacket.writeFloat(this.position.z);
+		prepareTankiPacket.writeByte(0); // orientation
+		prepareTankiPacket.writeFloat(this.orientation.x);
+		prepareTankiPacket.writeFloat(this.orientation.y);
+		prepareTankiPacket.writeFloat(this.orientation.z);
+		prepareTankiPacket.writeShort(this.health); // health
+		prepareTankiPacket.writeShort(this.incarnation); // incarnationId
+		this.party.sendPacket(875259457, prepareTankiPacket);
+		this.state = "active";
+		this.state_null = false;
+	}
+
+	movePacket() {
+		const movementPacket = new ByteArray();
+		movementPacket.writeBoolean(false); // angularVelocity
+		movementPacket.writeFloat(this.angularVelocity.x); // x
+		movementPacket.writeFloat(this.angularVelocity.y); // y
+		movementPacket.writeFloat(this.angularVelocity.z); // z
+
+		movementPacket.writeByte(this.control); // control
+
+		movementPacket.writeBoolean(false); // linearVelocity
+		movementPacket.writeFloat(this.linearVelocity.x); // x
+		movementPacket.writeFloat(this.linearVelocity.y); // y
+		movementPacket.writeFloat(this.linearVelocity.z); // z
+
+		movementPacket.writeBoolean(false); // orientation
+		movementPacket.writeFloat(this.orientation.x); // x
+		movementPacket.writeFloat(this.orientation.y); // y
+		movementPacket.writeFloat(this.orientation.z); // z
+
+		movementPacket.writeBoolean(false); // position
+		movementPacket.writeFloat(this.position.x); // x
+		movementPacket.writeFloat(this.position.y); // y
+		movementPacket.writeFloat(this.position.z); // z
+
+		return movementPacket;
 	}
 };

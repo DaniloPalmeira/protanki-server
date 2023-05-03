@@ -34,9 +34,9 @@ class ProTankiServer {
 			minLength: 5,
 		};
 
-		this.paintProperties = require("../helpers/garage/paints/properties.json");
-		this.armorProperties = require("../helpers/garage/armor/properties.json");
-		this.weaponProperties = require("../helpers/garage/weapon/properties.json");
+		this.paintProperties = require("../helpers/garage/properties/paint.json");
+		this.armorProperties = require("../helpers/garage/properties/armor.json");
+		this.weaponProperties = require("../helpers/garage/properties/weapon.json");
 
 		this.garageItems = garageItems.filter((item) => {
 			if (item.category === "paint" && this.paintProperties[item.id]) {

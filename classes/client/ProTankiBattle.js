@@ -1,12 +1,15 @@
 const ByteArray = require("../ByteArray");
-const { getUserById } = require("../../helpers/db");
 
 module.exports = class {
 	score = 0;
 	kills = 0;
 	deaths = 0;
 	incarnation = 0;
+
 	health = 10000;
+	healthPart = 1;
+	healthTotal = 180;
+
 	state = "suicide";
 	state_null = true;
 
@@ -18,6 +21,11 @@ module.exports = class {
 	control = 0;
 	angle = 0;
 	turretDirection = 0;
+
+	isSpectator = false;
+
+	hull = "wasp_m0";
+	turret = "railgun_m3";
 
 	constructor(client) {
 		this.client = client;
@@ -39,7 +47,7 @@ module.exports = class {
 	}
 
 	joinSpectator() {
-		this.client.user.inSpect = true;
+		this.isSpectator = true;
 		this.party.spectators.push(this.client);
 		this.join();
 	}
@@ -60,10 +68,10 @@ module.exports = class {
 	}
 
 	join() {
-		if (!this.client.user.inSpect) {
+		if (!this.isSpectator) {
 			this.party.clients.push(this.client);
 		}
-		this.client.loadLayout(3);
+		this.client.loadLayout({ layout: 3 });
 		this.client.lobby.removeBattleList();
 		this.client.lobby.removeChat();
 		this.weaponsInfos();
@@ -212,7 +220,7 @@ module.exports = class {
 			map_id: this.party.map,
 			mapId: 684125,
 			invisible_time: 3500,
-			spectator: this.client.user.inSpect,
+			spectator: this.isSpectator,
 			active: true,
 			dustParticle: 110001,
 			battleId: this.party.id,
@@ -238,7 +246,7 @@ module.exports = class {
 				fogColor: 10543615,
 				farLimit: 10000,
 				nearLimit: 5000,
-				gravity: 1000,
+				gravity: this.party.gravity,
 				skyboxRevolutionSpeed: 0,
 				ssaoColor: 2045258,
 				dustAlpha: 0.75,
@@ -298,10 +306,21 @@ module.exports = class {
 		SMPacket.writeInt(this.party.maxPeople);
 		SMPacket.writeBoolean(this.party.parkour);
 		SMPacket.writeInt(100); // PORCENTAGEM RECEBIDA PELO PREMIUM
-		SMPacket.writeBoolean(this.client.user.inSpect); // ESPECTADOR
+		SMPacket.writeBoolean(this.isSpectator); // ESPECTADOR
 		SMPacket.writeInt(0); // LISTA DE PESSOAS SUSPEITAS
-		SMPacket.writeInt(10000); // TEMPO PARA ACABAR
-		SMPacket.writeByte(9); // valuableRound
+		let time = 0;
+		let sobra = 0;
+		if (this.party.timeLimitInSec > 256) {
+			time = (this.party.timeLimitInSec - sobra) / 256;
+			sobra = this.party.timeLimitInSec % 256;
+		} else {
+			sobra = this.party.timeLimitInSec;
+		}
+		if (sobra > 128) {
+			sobra = sobra - 256;
+		}
+		SMPacket.writeInt(time); // TEMPO PARA ACABAR
+		SMPacket.writeByte(sobra); // valuableRound
 
 		this.sendPacket(522993449, SMPacket);
 	}
@@ -317,7 +336,7 @@ module.exports = class {
 	}
 
 	suppliesPanel() {
-		if (this.client.user.inSpect) {
+		if (this.isSpectator) {
 			return;
 		}
 		const suppliesPacket = new ByteArray();
@@ -351,7 +370,13 @@ module.exports = class {
 					itemEffectTime: 60,
 					itemRestSec: 15,
 				},
-				{ id: "mine", count: 0, slotId: 5, itemEffectTime: 0, itemRestSec: 30 },
+				{
+					id: "mine",
+					count: 262609,
+					slotId: 5,
+					itemEffectTime: 0,
+					itemRestSec: 30,
+				},
 			],
 		});
 		this.sendPacket(-137249251, suppliesPacket);
@@ -360,7 +385,7 @@ module.exports = class {
 	newTank() {
 		this.party.clients.forEach((_client) => {
 			const tankPacket = new ByteArray();
-			tankPacket.writeObject({
+			const objRailgun = {
 				battleId: this.party.id,
 				colormap_id: 412123,
 				hull_id: "wasp_m3",
@@ -389,13 +414,51 @@ module.exports = class {
 				power: 13,
 				dampingCoeff: 900,
 				turret_turn_speed: 1.6999506914424771,
-				health: 0,
+				health: _client.user.battle.health,
 				rank: _client.user.rank,
 				kickback: 3,
 				turretTurnAcceleration: 1.7599900177110819,
 				impact_force: 7,
 				state_null: _client.user.battle.state_null,
-			});
+			};
+
+			const objIsida = {
+				battleId: this.party.id,
+				colormap_id: 448000,
+				hull_id: "hornet_m3",
+				turret_id: "isida_m3",
+				team_type: "NONE",
+				partsObject:
+					'{"engineIdleSound":386284,"engineStartMovingSound":226985,"engineMovingSound":75329,"turretSound":242699}',
+				hullResource: 907343,
+				turretResource: 999935,
+				sfxData:
+					'{"damagingBall":95981,"damagingRay":454272,"damagingSound":342454,"healingBall":416395,"healingRay":294478,"healingSound":153545,"idleSound":315290,"lighting":[{"name":"enemyStart","light":[{"attenuationBegin":1,"attenuationEnd":2,"color":16733773,"intensity":0,"time":0},{"attenuationBegin":250,"attenuationEnd":700,"color":16733773,"intensity":0.1,"time":200}]},{"name":"enemyLoop","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":16733773,"intensity":0.3,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":16733773,"intensity":0.2,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":16733773,"intensity":0.3,"time":400}]},{"name":"start","light":[{"attenuationBegin":1,"attenuationEnd":2,"color":4308715,"intensity":0,"time":0},{"attenuationBegin":250,"attenuationEnd":700,"color":4308715,"intensity":0.2,"time":200}]},{"name":"loop","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":4308715,"intensity":0.3,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":4308715,"intensity":0.2,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":4308715,"intensity":0.3,"time":400}]},{"name":"friendStart","light":[{"attenuationBegin":1,"attenuationEnd":2,"color":3338397,"intensity":0,"time":0},{"attenuationBegin":250,"attenuationEnd":700,"color":3338397,"intensity":0.2,"time":200}]},{"name":"friendLoop","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":3338397,"intensity":0.3,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":3338397,"intensity":0.2,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":3338397,"intensity":0.3,"time":400}]},{"name":"enemyBeam","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":16735565,"intensity":0.2,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":16735565,"intensity":0.15,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":16735565,"intensity":0.2,"time":400}]},{"name":"friendBeam","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":12382365,"intensity":0.2,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":12382365,"intensity":0.15,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":12382365,"intensity":0.2,"time":400}]}],"bcsh":[{"brightness":2.257,"contrast":1.77,"saturation":26.549,"hue":267.61,"key":"hss"},{"brightness":2.257,"contrast":1.77,"saturation":26.549,"hue":267.61,"key":"hs"},{"brightness":20.31,"contrast":-2.655,"saturation":70.796,"hue":310.62,"key":"dss"},{"brightness":20.31,"contrast":-2.655,"saturation":70.796,"hue":310.62,"key":"ds"}]}',
+				position: _client.user.battle.position,
+				orientation: _client.user.battle.orientation,
+				incarnation: _client.user.battle.incarnation,
+				tank_id: _client.user.username,
+				nickname: _client.user.username,
+				state: _client.user.battle.state,
+				maxSpeed: 12,
+				maxTurnSpeed: 2.268928,
+				acceleration: 14,
+				reverseAcceleration: 23,
+				sideAcceleration: 14,
+				turnAcceleration: 2.9670596,
+				reverseTurnAcceleration: 5.5850534,
+				mass: 2400,
+				power: 14,
+				dampingCoeff: 1250,
+				turret_turn_speed: 2.3500858378103646,
+				health: _client.user.battle.health,
+				rank: _client.user.rank,
+				kickback: 0,
+				turretTurnAcceleration: 3.850021796974292,
+				impact_force: 0,
+				state_null: _client.user.battle.state_null,
+			};
+			tankPacket.writeObject(objRailgun);
 			if (this.client == _client) {
 				this.party.sendPacket(-1643824092, tankPacket);
 			} else {
@@ -405,7 +468,7 @@ module.exports = class {
 	}
 
 	table() {
-		if (!this.client.user.inSpect) {
+		if (!this.isSpectator) {
 			this.myTankInTable();
 		}
 	}
@@ -456,13 +519,16 @@ module.exports = class {
 	}
 
 	updateHealth() {
+		console.log(this.health);
+		this.healthPart = 10000 / this.healthTotal;
 		const userHealthPacket = new ByteArray();
 		userHealthPacket.writeUTF(this.client.user.username);
-		userHealthPacket.writeInt(this.health);
+		userHealthPacket.writeFloat(this.health);
 		this.party.sendPacket(-611961116, userHealthPacket);
 	}
 
 	spawn() {
+		this.health = 10000;
 		this.updateHealth();
 		const prepareTankiPacket = new ByteArray();
 		prepareTankiPacket.writeUTF(this.client.user.username); // nome
@@ -507,5 +573,64 @@ module.exports = class {
 		movementPacket.writeFloat(this.position.z); // z
 
 		return movementPacket;
+	}
+
+	randInt(min, max) {
+		// min and max included
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	damage(targetsUsers) {
+		const damagePacket = new ByteArray();
+		damagePacket.writeInt(targetsUsers.length);
+
+		let damageList = {
+			railgun: {
+				0: this.randInt(68, 106),
+				1: this.randInt(90, 137),
+				2: this.randInt(111, 168),
+				3: this.randInt(133, 199),
+			},
+		};
+
+		const level = this.turret.charAt(this.turret.length - 1);
+		const turretName = this.turret.split("_")[0];
+		const mainDamage = damageList[turretName]?.[level] ?? 0;
+
+		targetsUsers.forEach((target) => {
+			target.battle.health -= mainDamage * target.battle.healthPart;
+			target.battle.updateHealth();
+			damagePacket.writeFloat(mainDamage);
+			if (target.battle.health <= 0) {
+				damagePacket.writeInt(2);
+				this.kill(target);
+			} else {
+				damagePacket.writeInt(0);
+			}
+			damagePacket.writeUTF(target.username);
+		});
+		this.client.sendPacket(-1165230470, damagePacket);
+	}
+
+	kill(killed) {
+		const packet = new ByteArray();
+		packet.writeUTF(killed.username);
+		packet.writeUTF(this.client.user.username);
+		packet.writeInt(3000);
+
+		this.party.sendPacket(-42520728, packet);
+	}
+
+	calculateDistance(otherPoint = {}) {
+		otherPoint = otherPoint || {};
+
+		const { x: x1, y: y1, z: z1 } = this.position;
+		const { x: x2 = 0, y: y2 = 0, z: z2 = 0 } = otherPoint;
+
+		const distance = Math.sqrt(
+			Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2)
+		);
+
+		return distance;
 	}
 };

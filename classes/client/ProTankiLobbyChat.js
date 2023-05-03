@@ -65,11 +65,32 @@ module.exports = class LobbyChat {
 		this.sendPacket(PKG.LOBBY_CHAT_DELAY, packet);
 	}
 
+	async sendMessage(packet) {
+		let local = false;
+		let mensagem = {};
+		const source = this.client.user;
+		mensagem.sourceUserStatus = source.userStatus;
+		const targetName = packet.readUTF();
+
+		if (targetName != "") {
+			const target = await this.client.ObtainUserByUsername(targetName);
+			mensagem.targetUserStatus = target.userStatus;
+		}
+		mensagem.text = packet.readUTF();
+
+		if (mensagem.text.startsWith("/")) {
+			this.client.command.parse(mensagem.text);
+			return;
+		}
+
+		this.sendMessageList([mensagem], local);
+	}
+
 	/**
 	 * Envia uma lista de mensagens de chat para o cliente.
 	 * @param {Array} messageList - A lista de mensagens de chat a serem enviadas.
 	 */
-	sendMessageList(messageList) {
+	sendMessageList(messageList, local) {
 		const packet = new ByteArray();
 		const client = this.client;
 
@@ -90,7 +111,9 @@ module.exports = class LobbyChat {
 			}
 
 			// Escreve a flag system na mensagem de chat
-			packet.writeBoolean(message.system);
+			packet.writeBoolean(
+				message.system ? true : message.warning ? true : false
+			);
 
 			// Verifica se há informações de status de usuário destinatário na mensagem
 			if (message.targetUserStatus) {
@@ -107,13 +130,13 @@ module.exports = class LobbyChat {
 			packet.writeUTF(message.text);
 
 			// Escreve a flag warning na mensagem de chat
-			packet.writeBoolean(message.warning);
+			packet.writeBoolean(message.warning ? true : false);
 		});
 
 		// Verifica se a lista de mensagens de chat possui apenas uma mensagem
 		// e se não é igual ao histórico de chat do servidor, então adiciona a mensagem
 		// ao histórico de chat do servidor e envia o pacote para o lobby de chat
-		if (messageList.length === 1 && messageList !== client.server.chatHistory) {
+		if (!local) {
 			client.server.chatHistory.push(messageList[0]);
 			client.lobbyChatServer.sendPacket(-1263520410, packet);
 		} else {
@@ -123,6 +146,6 @@ module.exports = class LobbyChat {
 	}
 
 	obtainChatMessages() {
-		this.sendMessageList(this.client.server.chatHistory);
+		this.sendMessageList(this.client.server.chatHistory, true);
 	}
 };

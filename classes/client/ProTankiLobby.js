@@ -4,6 +4,7 @@ const ProTankiBattleServer = require("../server/ProTankiBattle");
 const ByteArray = require("../ByteArray");
 // Importação do objeto PKG
 const PKG = require("../../helpers/pkg.json");
+const logger = require("../../helpers/logger");
 
 module.exports = class {
 	constructor(client) {
@@ -17,36 +18,6 @@ module.exports = class {
 	 */
 	sendPacket(packetID, packet = new ByteArray()) {
 		this.client.sendPacket(packetID, packet);
-	}
-
-	/**
-	 * Exibe as notícias para o cliente.
-	 */
-	showNews() {
-		const packet = new ByteArray();
-
-		const newsList = [
-			[
-				"https://icons.playprotanki.com/couple_mini.png",
-				"14.02.2023",
-				'Isso tudo é apenas um teste de um servidor privado de ProTanki<br><br><u><a href="https://github.com/DaniloPalmeira/protanki-server">Link do projeto</a></u>',
-			],
-		];
-
-		// newsList = [[foto, data, texto]]
-
-		// Escreve o tamanho da lista de notícias no pacote
-		packet.writeInt(newsList.length);
-
-		// Percorre a lista de notícias e escreve as informações de cada notícia no pacote
-		for (const news of newsList) {
-			for (const info of news) {
-				packet.writeUTF(info);
-			}
-		}
-
-		// Envia o pacote de notícias para o cliente usando o ID de pacote definido em PKG.LOBBY_SHOW_NEWS
-		this.sendPacket(PKG.LOBBY_SHOW_NEWS, packet);
 	}
 
 	fixBattleName(packet) {
@@ -98,20 +69,24 @@ module.exports = class {
 		bData.withoutUpgrades = packet.readBoolean();
 		bData.id = this.client.server.randomID(16);
 
-		this.client.server.battleList[bData.id] = new ProTankiBattleServer({
+		const nBattle = new ProTankiBattleServer({
 			...bData,
 			server: this.client.server,
 			owner: this.client.user.username,
 		});
 
-		var _packet = new ByteArray();
+		if (nBattle.valid) {
+			this.client.server.battleList[bData.id] = nBattle;
 
-		_packet.writeObject(this.client.server.battleList[bData.id].new);
+			var _packet = new ByteArray();
 
-		this.client.lobbyServer.sendPacket(PKG.LOBBY_SEND_CREATE_BATTLE, _packet);
-		this.getBattleInfos(bData.id);
+			_packet.writeObject(this.client.server.battleList[bData.id].new);
 
-		// this.sendPacket(-1491503394);
+			this.client.lobbyServer.sendPacket(PKG.LOBBY_SEND_CREATE_BATTLE, _packet);
+			this.getBattleInfos(bData.id);
+
+			// this.sendPacket(-1491503394); // AVISO QUE ESTÁ BANIDO E NÃO PODE CRIAR BATALHA
+		}
 	}
 
 	/**
@@ -127,6 +102,8 @@ module.exports = class {
 		} else {
 			battleId = packet.readUTF();
 		}
+
+		logger.verbose(`Obter visualização da batalha: ${battleId}`);
 
 		// Verifica se o ID da batalha está presente na lista de batalhas do servidor
 		if (!(battleId in this.client.server.battleList)) {

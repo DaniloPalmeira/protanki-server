@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const dbconnection = require("./connection");
+const dbconnection = require("../connection");
 
 const user = dbconnection.define("users", {
 	uid: {
@@ -48,6 +48,11 @@ const user = dbconnection.define("users", {
 	},
 	garage: {
 		type: Sequelize.STRING,
+	},
+	news: {
+		type: Sequelize.INTEGER,
+		allowNull: false,
+		defaultValue: 0,
 	},
 });
 

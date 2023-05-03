@@ -1,4 +1,5 @@
 const ByteArray = require("../ByteArray");
+const maps = require("../../helpers/maps.json");
 
 class ProTankiBattle {
 	_autoBalance = true;
@@ -49,12 +50,17 @@ class ProTankiBattle {
 	proBattleEnterPrice = 150;
 	roundStarted = false;
 	suspicionLevel = "NONE";
-	preview = 952789;
+	preview = 0;
 	viewers = [];
 	fund = 0;
 
+	usersBlue = [];
+	usersRed = [];
+	users = [];
+
 	constructor(objData) {
 		Object.assign(this, objData);
+		this.definePreview();
 	}
 
 	get modeInt() {
@@ -159,16 +165,42 @@ class ProTankiBattle {
 			suspicionLevel: this.suspicionLevel,
 		};
 		if (this.modeStr == "DM") {
-			obj.users = [];
+			obj.users = this.users;
 		} else {
-			obj.usersBlue = [];
-			obj.usersRed = [];
+			obj.usersBlue = this.usersBlue;
+			obj.usersRed = this.usersRed;
 		}
 		return obj;
 	}
 
+	get new() {
+		const showData = {
+			battleId: this.id,
+			battleMode: this.modeStr,
+			map: this.map,
+			maxPeople: this.maxPeople,
+			name: this.name,
+			privateBattle: this.private,
+			proBattle: this.pro,
+			minRank: this.minRank,
+			maxRank: this.maxRank,
+			preview: this.preview,
+			parkourMode: this.parkour,
+			equipmentConstraintsMode: this.equipStr,
+			suspicionLevel: this.suspicionLevel,
+		};
+
+		if (this.modeStr == "DM") {
+			showData.users = this.users;
+		} else {
+			showData.usersBlue = this.usersBlue;
+			showData.usersRed = this.usersRed;
+		}
+
+		return showData;
+	}
+
 	get show() {
-		console.log("Carregar batalha");
 		var showData = {
 			battleMode: this.modeStr,
 			itemId: this.id,
@@ -226,6 +258,29 @@ class ProTankiBattle {
 			showData.withoutSupplies = this.withoutSupplies;
 		}
 		return showData;
+	}
+
+	definePreview() {
+		maps.forEach((map) => {
+			if (map.mapId == this.map) {
+				if (map.theme == this.themeStr) {
+					this.preview = map.preview;
+					this.valid = true;
+				}
+			}
+		});
+	}
+
+	removePlayer(player) {
+		let index = this.clients.indexOf(player);
+		if (index !== -1) {
+			this.clients.splice(index, 1);
+		}
+
+		index = this.spectators.indexOf(player);
+		if (index !== -1) {
+			this.spectators.splice(index, 1);
+		}
 	}
 
 	sendPacketSpectator(packedID, packet = new ByteArray()) {

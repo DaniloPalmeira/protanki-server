@@ -1,58 +1,92 @@
+const logger = require("../helpers/logger");
+
 class ByteArray {
 	constructor(buffer) {
 		this.buffer = buffer ? Buffer.from(buffer) : Buffer.alloc(0);
 	}
 
-	writeByte(value) {
+	writeByte(value = null) {
+		if (value == null) {
+			logger.warn("writeByte não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(1);
 		buffer.writeInt8(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
 		return this;
 	}
 
-	writeUByte(value) {
+	writeUByte(value = null) {
+		if (value == null) {
+			logger.warn("writeUByte não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(1);
 		buffer.writeUInt8(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
 		return this;
 	}
 
-	writeShort(value) {
+	writeShort(value = null) {
+		if (value == null) {
+			logger.warn("writeShort não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(2);
 		buffer.writeInt16BE(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
 		return this;
 	}
 
-	writeUShort(value) {
+	writeUShort(value = null) {
+		if (value == null) {
+			logger.warn("writeUShort não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(2);
 		buffer.writeUInt16BE(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
 		return this;
 	}
 
-	writeInt(value) {
+	writeInt(value = null) {
+		if (value == null) {
+			logger.warn("writeInt não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(4);
 		buffer.writeInt32BE(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
 		return this;
 	}
 
-	writeIntStart(value) {
+	writeIntStart(value = null) {
+		if (value == null) {
+			logger.warn("writeIntStart não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(4);
 		buffer.writeInt32BE(value);
 		this.buffer = Buffer.concat([buffer, this.buffer]);
 		return this;
 	}
 
-	writeUInt(value) {
+	writeUInt(value = null) {
+		if (value == null) {
+			logger.warn("writeUInt não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(4);
 		buffer.writeUInt32BE(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
 		return this;
 	}
 
-	writeFloat(value) {
+	writeFloat(value = null) {
+		if (value == null) {
+			logger.warn("writeFloat não pode escrever um valor nulo");
+			return this;
+		}
 		let buffer = new Buffer.alloc(4);
 		buffer.writeFloatBE(value);
 		this.buffer = Buffer.concat([this.buffer, buffer]);
@@ -70,16 +104,28 @@ class ByteArray {
 		}
 	}
 
-	writeObject(obj) {
+	writeObject(obj = null) {
+		if (obj == null) {
+			logger.warn("writeObject não pode escrever um valor nulo");
+			return this;
+		}
 		const value = JSON.stringify(obj);
 		return this.writeUTF(value);
 	}
 
-	writeBoolean(value) {
+	writeBoolean(value = null) {
+		if (value == null) {
+			logger.warn("writeBoolean não pode escrever um valor nulo");
+			return this;
+		}
 		return this.writeByte(value ? 1 : 0);
 	}
 
-	write(value) {
+	write(value = null) {
+		if (value == null) {
+			logger.warn("write não pode escrever um valor nulo");
+			return this;
+		}
 		this.buffer = Buffer.concat([this.buffer, new Buffer.from(value)]);
 		return this;
 	}

@@ -1,6 +1,6 @@
-const ByteArray = require("../ByteArray");
-const PKG = require("../../helpers/pkg.json");
-const { getUserById, updateFriends } = require("../../helpers/db");
+const ByteArray = require("./ByteArray");
+const PKG = require("../helpers/pkg.json");
+const { getUserById, updateFriends } = require("../helpers/db");
 
 module.exports = class {
 	constructor(client) {

@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize");
-const user = require("./user");
-const friends = require("./friends");
+const user = require("./database/user");
+const friends = require("./database/friends");
+const news = require("./database/news");
+const logger = require("./logger");
 
 /**
  * Retorna um usuário pelo ID
@@ -43,6 +45,38 @@ const getUserByEmail = async (email) => {
 };
 
 /**
+ * Lista todos os registros da tabela 'news'
+ * @returns {Promise<Array>} - Uma Promise contendo um array de objetos que representam cada registro encontrado (apenas dataValues) ou um array vazio se não houver registros ou se ocorrer um erro
+ */
+const getNews = async () => {
+	try {
+		const _news = await news.findAll();
+		logger.debug(
+			"Obtido uma lista a partir da tabela 'news' do banco de dados"
+		);
+		return _news ? _news.map((n) => n.dataValues) : [];
+	} catch (error) {
+		logger.error(`Erro ao buscar os registros da tabela 'news': ${error}`);
+		return [];
+	}
+};
+
+/**
+ * Atualiza os amigos de um usuário pelo ID
+ * @param {string[]} lastNews - O ID da ultima noticia vista
+ * @param {number} id - O ID do usuário
+ * @returns {Promise<void>}
+ */
+const setUserNewsID = async (lastNews, id) => {
+	const options = {
+		news: lastNews,
+	};
+	await user.update(options, {
+		where: { uid: id },
+	});
+};
+
+/**
  * Retorna os amigos de um usuário pelo ID, criando uma entrada se ela não existir
  * @param {number} id - O ID do usuário
  * @returns {Promise<Object>} - Os amigos encontrados ou um objeto vazio se não houver amigos
@@ -63,6 +97,7 @@ const getFriendsOrCreateByID = async (id) => {
 	keys.forEach((key) => {
 		ObjFriends[key] = JSON.parse(_friends[key] ?? "[]");
 	});
+	logger.debug(`Lista de amigos obtida para o usuário com ID ${id}`);
 	return ObjFriends;
 };
 
@@ -82,13 +117,13 @@ const updateFriends = async (keys, friendsObj, id) => {
 		where: { uid: id },
 	});
 };
+
 /**
-	
-	* Cria uma conta de usuário com o nome de usuário e senha fornecidos
-	* @param {string} username - O nome de usuário
-	* @param {string} password - A senha
-	* @returns {Promise<Object>} - O usuário criado
-	*/
+ * Cria uma conta de usuário com o nome de usuário e senha fornecidos
+ * @param {string} username - O nome de usuário
+ * @param {string} password - A senha
+ * @returns {Promise<Object>} - O usuário criado
+ */
 const createAccount = async (username, password) => {
 	return await user.create({ username, password });
 };
@@ -97,6 +132,8 @@ module.exports = {
 	getUserByUsername,
 	getUserByEmail,
 	getFriendsOrCreateByID,
+	getNews,
+	setUserNewsID,
 	updateFriends,
 	createAccount,
 };

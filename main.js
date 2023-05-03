@@ -1,10 +1,13 @@
 const net = require("net");
+const path = require("path");
 
 const ProTankiClient = require("./classes/ProTankiClient");
 const ProTankiServer = require("./classes/ProTankiServer");
 const ProTankiGarageServer = require("./classes/server/ProTankiGarage");
 const ProTankiLobbyServer = require("./classes/server/ProTankiLobby");
 const ProTankiLobbyChatServer = require("./classes/server/ProTankiLobbyChat");
+
+const logger = require("./helpers/logger");
 
 const server = new ProTankiServer();
 const lobbyChatServer = new ProTankiLobbyChatServer();
@@ -21,9 +24,13 @@ const handleConnection = (socket) => {
 	});
 };
 
+process.on("uncaughtException", function (err) {
+	logger.error(err.stack);
+});
+
 const __ports = [443];
 for (const port of __ports) {
 	let serverRun = net.createServer(handleConnection);
 	serverRun.listen(port);
-	console.log("Servidor iniciado na porta:", port);
+	logger.info(`Servidor iniciado na porta: ${port}`);
 }

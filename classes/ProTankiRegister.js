@@ -1,6 +1,6 @@
-const ByteArray = require("../ByteArray");
-const { getUserByUsername, createAccount } = require("../../helpers/db");
-const PKG = require("../../helpers/pkg.json");
+const ByteArray = require("./ByteArray");
+const { getUserByUsername, createAccount } = require("../helpers/db");
+const PKG = require("../helpers/pkg.json");
 
 module.exports = class ProTankiRegister {
 	constructor(client) {

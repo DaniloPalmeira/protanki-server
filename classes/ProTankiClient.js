@@ -972,6 +972,12 @@ class ProTankiClient {
 
 	setLanguage(packet) {
 		this.language = packet.readUTF();
+		this.language =
+			this.language === "pt_BR" ||
+			this.language === "ru" ||
+			this.language === "en"
+				? this.language
+				: "ru";
 		if (this.language) {
 			logger.verbose(`Novo acesso no idioma: ${this.language}`);
 

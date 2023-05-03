@@ -1,7 +1,7 @@
 const ProTankiBattleServer = require("./server/ProTankiBattle");
 const maps = require("../helpers/maps.json");
 const weapons = require("../helpers/weapons.json");
-const garage = require("../helpers/garage.json");
+const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");
 
 const logger = require("../helpers/logger");
@@ -19,7 +19,7 @@ class ProTankiServer {
 		this.weapons = weapons;
 		this.maps = maps;
 		this.battleList = {};
-		this.captchaLocations = [0, 1, 2, 3, 4, 5];
+		this.captchaLocations = [];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];
 		this.requireInviteCode = false;
 		this.chatHistory = [];
@@ -33,7 +33,13 @@ class ProTankiServer {
 			maxLength: 100,
 			minLength: 5,
 		};
-		this.garage = garage;
+
+		this.garage = {
+			items: garageItems,
+			delayMountArmorInSec: 0,
+			delayMountWeaponInSec: 0,
+			delayMountColorInSec: 0,
+		};
 
 		[
 			{

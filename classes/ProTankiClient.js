@@ -14,6 +14,10 @@ const mainResources = require("../helpers/mainResources.json");
 const logger = require("../helpers/logger");
 const captcha = require("../helpers/captcha");
 
+const garagept_BR = require("../helpers/garage/i18n/pt_BR.json");
+const garageen = require("../helpers/garage/i18n/en.json");
+const garageru = require("../helpers/garage/i18n/ru.json");
+
 class ProTankiClient {
 	language = "ru";
 
@@ -25,6 +29,12 @@ class ProTankiClient {
 	encrypt_keys = new Array(8);
 
 	currentLayout = -1;
+
+	i18Garage = {
+		pt_BR: garagept_BR,
+		en: garageen,
+		ru: garageru,
+	};
 
 	constructor(data) {
 		this.serverTime = new Date();
@@ -190,56 +200,60 @@ class ProTankiClient {
 				this.initArchivaments();
 				this.loadLayout({ layout: 0, chat: true, news: true });
 			} else if (callback == 3) {
-				// LOAD USER GARAGE
-				var jsonGarageUser = {
+				// Carrega a garagem do usuário
+				const userGarage = {
 					items: [],
 					garageBoxId: 170001,
 				};
+				const buyableGarage = { ...this.server.garage, items: [] };
+				const serverGarage = this.server.garage.items.slice();
+				const userGarageItems = this.user.garage;
 
-				var jsonGarageToBuy = JSON.parse(JSON.stringify(this.server.garage));
-				jsonGarageToBuy.items = [];
-				var userGarageItems = this.user.garage;
+				for (const garageItem of serverGarage) {
+					const { category, id, modificationID, canBuy = true } = garageItem;
+					const userGarageItem = userGarageItems?.[category]?.[id];
+					const i18GarageItem = this.i18Garage[this.language]?.[id] ?? {
+						name: id,
+						description:
+							"Notifique um administrador, tradução não encontrada\n\nNotify an admin, translation not found\n\nСообщить администратору, перевод не найден",
+					};
 
-				for (let index = 0; index < this.server.garage.items.length; index++) {
-					const element = this.server.garage.items[index];
-					if (
-						element.category in userGarageItems &&
-						element.id in userGarageItems[element.category]
-					) {
-						if (element.modificationID != undefined) {
-							if (
-								element.modificationID ==
-								userGarageItems[element.category][element.id].m
-							) {
-								element.count =
-									userGarageItems[element.category][element.id].count;
-								jsonGarageUser.items.push(element);
-							} else {
-								jsonGarageToBuy.items.push(element);
-							}
-						} else {
-							element.count =
-								userGarageItems[element.category][element.id].count;
-							jsonGarageUser.items.push(element);
+					// Atribui os valores de name e description diretamente ao objeto garageItem
+					garageItem.name = i18GarageItem.name;
+					garageItem.description = i18GarageItem.description;
+
+					// Se o usuário não possui esse item na garagem e ele pode ser comprado, adicione-o à lista de itens compráveis
+					if (!userGarageItem) {
+						if (canBuy) {
+							buyableGarage.items.push(garageItem);
 						}
-					} else {
-						jsonGarageToBuy.items.push(element);
+						continue;
+					}
+
+					// Se o usuário possui o item na garagem, adicione-o à lista de itens na garagem do usuário
+					if (modificationID === userGarageItem.m || !modificationID) {
+						garageItem.count = userGarageItem.count;
+						userGarage.items.push(garageItem);
+						continue;
+					}
+
+					// Se o usuário não possui o item na garagem e ele não pode ser comprado, ignore-o
+					if (canBuy) {
+						buyableGarage.items.push(garageItem);
 					}
 				}
 
-				this.sendPacket(
-					-255516505,
-					new ByteArray().writeObject(jsonGarageUser)
-				);
+				// Envia a garagem do usuário para o cliente
+				this.sendPacket(-255516505, new ByteArray().writeObject(userGarage));
 
-				// EQUIPAR ITENS DA GARAGEM (Q ESTAVAM SALVOS)
-				for (const key in this.user.garage) {
-					const cat = this.user.garage[key];
-					if (cat.equiped != undefined) {
+				// Equipa os itens da garagem que estavam salvos
+				for (const category in this.user.garage) {
+					const categoryData = this.user.garage[category];
+					if (categoryData.equiped !== undefined) {
 						var itemToEquip =
-							cat.equiped +
+							categoryData.equiped +
 							"_m" +
-							(cat[cat.equiped].m >= 0 ? cat[cat.equiped].m : 0);
+							Math.max(categoryData[categoryData.equiped].m, 0);
 						this.sendPacket(
 							2062201643,
 							new ByteArray().writeUTF(itemToEquip).writeBoolean(true)
@@ -247,10 +261,8 @@ class ProTankiClient {
 					}
 				}
 
-				this.sendPacket(
-					-300370823,
-					new ByteArray().writeObject(jsonGarageToBuy)
-				);
+				// Envia a lista de itens compráveis para o cliente
+				this.sendPacket(-300370823, new ByteArray().writeObject(buyableGarage));
 
 				this.changeLayout(1, 1);
 			} else if (callback == 4) {

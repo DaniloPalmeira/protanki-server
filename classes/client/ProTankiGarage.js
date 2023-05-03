@@ -79,65 +79,52 @@ module.exports = class {
 	// 	return modification;
 	// }
 
-	async getItemByIdAndModification(itemName, modification) {
+	async tryBuyThisItem(item) {
 		const garage = this.client.user.garage;
 		const itemFound = Object.keys(garage).find(
 			(key) =>
-				garage[key][itemName] !== undefined && ["weapon", "armor"].includes(key)
+				garage[key][item.name] !== undefined &&
+				["weapon", "armor"].includes(key)
 		);
-		return itemFound ? modification + 1 : modification;
-	}
+		item.modification = itemFound ? item.modification + 1 : item.modification;
 
-	async tryBuyThisItem(item) {
-		item.modification = await this.getItemByIdAndModification(
-			item.name,
-			item.modification
+		const matchingItems = this.client.server.garage.items.filter(
+			(element) =>
+				element.id === item.name &&
+				(element.modificationID === item.modification ||
+					element.modificationID === undefined)
 		);
-		for (
-			let index = 0;
-			index < this.client.server.garage.items.length;
-			index++
-		) {
-			const element = this.client.server.garage.items[index];
-			if (element.id == item.name) {
-				if (
-					element.modificationID == item.modification ||
-					element.modificationID == undefined
-				) {
-					this.client.user.crystal -= element.price * item.quantity;
-					if (this.client.user.garage[element.category]) {
-						if (!this.client.user.garage[element.category][item.name]) {
-							this.client.user.garage[element.category][item.name] = {};
-						}
-						if (this.client.user.garage[element.category].equiped) {
-							if (element.modificationID != undefined) {
-								this.client.user.garage[element.category][item.name].m =
-									item.modification;
-							}
-							this.client.user.garage[element.category].equiped = item.name;
-						} else {
-							if (this.client.user.garage[element.category][item.name].count) {
-								this.client.user.garage[element.category][item.name].count +=
-									item.quantity;
-							} else {
-								this.client.user.garage[element.category][item.name].count =
-									item.quantity;
-							}
-						}
-					} else {
-						this.client.user.garage[element.category] = {};
-						this.client.user.garage[element.category][item.name] = {
-							m: item.modification,
-							count: item.quantity,
-						};
-					}
-					if (!this.client.user.garage[element.category].equiped) {
-						this.client.user.updateGarage();
-					}
-					return true;
-				}
-			}
+
+		if (matchingItems.length === 0) {
+			return false;
 		}
-		return false;
+
+		const itemData = matchingItems[0];
+		const discount = itemData.discount?.percent || 0;
+		const price = itemData.price * (1 - discount / 100);
+
+		if (this.client.user.crystal < price * item.quantity) {
+			return false;
+		}
+
+		this.client.user.crystal -= price * item.quantity;
+
+		const { category } = itemData;
+		const categoryGarage = (garage[category] = garage[category] || {});
+		const itemGarage = (categoryGarage[item.name] =
+			categoryGarage[item.name] || {});
+
+		if (categoryGarage.equiped) {
+			itemGarage.m = item.modification;
+			categoryGarage.equiped = item.name;
+		} else {
+			itemGarage.count = (itemGarage.count || 0) + item.quantity;
+		}
+
+		if (!categoryGarage.equiped) {
+			this.client.user.updateGarage();
+		}
+
+		return true;
 	}
 };

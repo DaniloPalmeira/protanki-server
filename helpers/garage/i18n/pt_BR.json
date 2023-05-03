@@ -1,0 +1,778 @@
+{
+	"1000_scores": {
+		"name": "1000 experiência",
+		"description": "Ao ganhar 1000 pontos de experiência, você está se aproximando do seu próximo rank. Ao comprar vários milhares de pontos de experiência de uma só vez, você pode subir significativamente na carreira e, assim, obter acesso a novas armas, cascos e pinturas.\n\nAtenção! \"1000 experiência\" é usado automaticamente imediatamente após a compra.\n\n<a href = \"http://ru.protankiwiki.com/images/a/a6/RankList.png\"><u>Tabela de classificação</u></a>"
+	},
+	"health": {
+		"name": "Kit de Reparação",
+		"description": "Restaura gradualmente a «saúde» a uma taxa de 30 HP/s. Cura até a cura completa ou até que todos os HPs sejam dados. A quantidade de HPs no kit médico é igual à «saúde» total do tanque. Próximo uso dentro de 30 segundos após ativação prévia do medkit. Um item obrigatório em um campo de guerra. Um conjunto de itens médicos bem equilibrados, embalados em uma caixa, ajuda a permanecer vivo em situações muito perigosas. A própria caixa pode desempenhar o papel de porta de compostagem."
+	},
+	"armor": {
+		"name": "Blindagem Dupla",
+		"description": "Dobra a proteção para um minuto.\n\nUm conjunto de placas de kevlar avançadas, montadas em slots padrão. Sendo colocadas de maneira correta, elas podem absorver até 50% da energia cinética e térmica do impacto, fornecendo blindagem dupla.\n\nOs dispositivos funcionam pelo período de um minuto."
+	},
+	"double_damage": {
+		"name": "Destruição Dupla",
+		"description": "Dobra as características do canhão para um minuto.\n\nUm dispositivo único - pequeno cluth de metal montado em um barril do destilado superior de suporte da torre com a ajuda de dois parafusos (20) e um parafuso de trava. Ele acelera várias vezes o projétil de ant nutture, plasma ou nanopeso de impulso, criando o dobro de potência para qualquer disparo. e se torna inútil."
+	},
+	"n2o": {
+		"name": "Aumento de velocidade",
+		"description": "Aumenta a velocidade por um minuto.\n\nO óxido de nitrogênio deve estar em todos os tanques. Primeiro, é um combustível maravilhoso para aceleração. Segundo, o óxido de nitrogênio também conhecido como gás hilariante pode ser usado para narcose e até mesmo por diversão. Se você conhecer você deveria saber - ele apagou o N20."
+	},
+	"mine": {
+		"name": "Mina",
+		"description": "Sinaliza os inimigos.\n\nA mina que desativou se seu dono foi morto, deixou a batalha terminada. Em batalhas de equipe, as minas não reagem aos aliados.\\n\\nA mina é amiga, camarada e irmã de um tanqueiro experiente. Para ganhar a retaguarda do inimigo e minar seu cajado, proteja os camaradas durante a retirada, bloqueie as aproximações da base - tudo isso é possível devido ao dispositivo mortal imperceptível."
+	},
+	"smoky": {
+		"name": "Canhão-fumegante",
+		"description": "Canhão de tanque de médio calibre que geralmente é usado em tanques leves e de treinamento. A chave para sua popularidade é o baixo preço e a facilidade de manutenção. Coloque-o em um casco leve e use uma estratégia de desgaste contra tanques pesados e desajeitados de seus oponentes. Vários upgrades podem aumentar significativamente o dano causado por este bebezinho. Lembre-se que a eficácia do canhão-fumegante diminui com a distância."
+	},
+	"flamethrower": {
+		"name": "Lança-chamas",
+		"description": "Quando as batalhas acontecem de perto, não há arma melhor do que um pássaro de fogo. Esta é uma arma de aniquilação em massa que pode e vai derreter qualquer tanque e sua tripulação em pouco tempo. É altamente eficaz em espaços confinados contra movimentos lentos Firebird é relativamente lento quando se trata de recarregar, mas você também pode atirar com uma arma parcialmente recarregada."
+	},
+	"twins": {
+		"name": "Gêmeos",
+		"description": "Esta arma de plasma de dois canos de disparo rápido derreterá o inimigo em segundos. Levando em conta o fato de que, ao atingir outros tanques com Twins, você derruba a mira, a arma é ideal quando se trata de tiroteio dinâmico a distâncias médias."
+	},
+	"railgun": {
+		"name": "Canhão-elétrico",
+		"description": "Se armas de calibre médio não são suficientes para sua auto-expressão, esta arma é certa para você. Arma de grande calibre com enorme velocidade de boca e projéteis usando urânio empobrecido. Projéteis cinéticos extremamente poderosos e precisos podem atravessar o tanque do inimigo ou acerte vários alvos na linha de fogo com um único tiro. Uma escolha ideal para guerra de trincheiras de longo alcance e sniping. Lembre-se de que leva muito tempo para recarregar a arma e garantir que seus oponentes não tirem vantagem disso."
+	},
+	"isida": {
+		"name": "Isida",
+		"description": "A ideia desta arma única surgiu nos tempos da guerra fria, mas só ganhou vida com o desenvolvimento da física quântica e das nanotecnologias. O coração desta máquina-maravilha é gerador de nanorrobôs capazes de reproduzir ou destruir a estrutura de qualquer material não biológico. A arma é equipada com emissor de impulso que permite transportar nanomassa no canal magnético a uma distância de cerca de vinte metros. Material molecular, derivado quando nanorrobôs estão funcionando no modo de destruição de alvos, é usado para fixar o próprio chassi do atirador . Assim, Isida causa dano a inimigos e cura aliados, o que a torna inestimável em batalhas de equipe."
+	},
+	"thunder": {
+		"name": "Trovão",
+		"description": "sta arma de calibre médio de segunda geração é a melhor escolha para batalhas dinâmicas. Dano de respingo (certifique-se de não se acertar!) permite que você ataque um grupo de veículos inimigos. Recarga rápida lhe dará uma vantagem distinta sobre tanques pesados do inimigo. Equipado com armadura leve, o trovão é uma das armas mais perigosas no campo de batalha."
+	},
+	"shotgun": {
+		"name": "Martelo",
+		"description": "A equipe por trás do desenvolvimento desta torreta anti-tanque, realmente penso fora da caixa. Em vez de usar armadura-perfurando escudos regulares, esta torreta dispara estilhaços, carregados com pentes de tungstênio. Estes são carregador para dentro da torreta usando um sistema de carregamento cilíndrico robótico. O resultado é uma torreta que praticamente martela tanques inimidos. Devido à sua mecânica única, esta é uma torreta que é melhor usada para combates de curto e médio alcance, porque perde o seu \"soco\" conforme aumenta a distância."
+	},
+	"freeze": {
+		"name": "Lança-gelo",
+		"description": "A ideia do sistema de armas Freeze nasceu em uma aldeia russa desolada. Usando uma velha geladeira quebrada «Sever» e um aspirador de pó «Buran», o inventor local fez o «atirador de gelo». Um engenheiro profissional que estava pescando perto da aldeia notou isso a invenção e a trouxe para o Instituto de Pesquisa Zhukov. Lá, o desajeitado \"atirador de gelo\" tornou-se a formidável arma de congelamento. Ela inunda o inimigo com a composição química baseada em freon. As vítimas sofrem danos e todos os seus movimentos e processos se tornam mais lentos. Embora um fluxo de fogo pode descongelar o alvo."
+	},
+	"ricochet": {
+		"name": "Ricochete",
+		"description": "A arma de plasma ricochete é um novo projeto secreto de cientistas siberianos. Para produzir esta equipe de armas de 22 profissionais de alta classe, trabalham no bunker subterrâneo há mais de três anos sem permissão para sair na superfície. E eles criaram uma arma única . Ele lança cargas de plasma camufladas com um campo negativo inteligente. Quando tal carga atinge o tanque, ela explode, mas salta de qualquer outra superfície. Então, com Ricochete, você pode aquecer alvos fora do seu alcance de visibilidade. Mas tenha cuidado! Não fique no como uma carga liberada, pois você não pode causar danos a si mesmo."
+	},
+	"shaft": {
+		"name": "Shaft",
+		"description": "A arma Shaft foi projetada por cientistas que deram suas enormes possibilidades. Ela pode fazer café, entregar pizzas, pagar contas, mas sua principal característica é o modo sniper, que permite que você fique um passo à frente de seus oponentes. Tenha uma oportunidade única para lutar a longas e curtas distâncias, pois você pode disparar do Shaft sem usar sua mira de atirador."
+	},
+	"wasp": {
+		"name": "Vespa",
+		"description": "Leve, econômico, fácil de operar - Vespa é uma carroceria perfeito para iniciantes. Vespa atualizado pode atingir uma alta velocidade, que em combinação com tamanho pequeno dá liberdade de ação no campo de batalha. Devido ao baixo peso, Vespa pode ser facilmente enrolado pelo tiro de um inimigo."
+	},
+	"hornet": {
+		"name": "Zangão",
+		"description": "Esta carrocería compacta utilização de materiais compósitos de última geração, o que o torna leve, rápido e garante alta capacidade de sobrevivência mesmo após um golpe direto. Zangão é perfeito para ataques rápidos."
+	},
+	"hunter": {
+		"name": "Caçador",
+		"description": "Caçador é a carroceria mais versátil do jogo. Graças ao equilíbrio entre placas de armadura de aço reforçadas e baixo consumo de energia, esta armadura é para todos os fins. É boa para todos, de velocistas a atiradores. Sendo tão versátil, você nunca fique sem emprego em um campo de guerra."
+	},
+	"dictator": {
+		"name": "Ditador",
+		"description": "Devido ao sistema de defesa ativo aprimorado e ao uso dos mais novos materiais compostos, esta blindagem absorve efetivamente a energia de um impacto de quase qualquer arma de calibre. Com o Dictator, você pode lutar na linha de frente de qualquer batalha. Sendo um dos cascos mais rápidos e protegidos no jogo, o Ditador é grande, o que o torna um alvo fácil."
+	},
+	"viking": {
+		"name": "Viking",
+		"description": "Esta blindagem incorpora todas as tecnologias militares modernas. A blindagem reforçada e o motor «Tipo 2» fazem do Viking uma das carrocerias mais versáteis. Ataque o inimigo ou cubra seus companheiros de equipe – esta carroceria provará ser bom e confiável em qualquer situação."
+	},
+	"titan": {
+		"name": "Titã",
+		"description": "Placas de armadura de liga Titan combinadas com geometria especial tornam esta carroceria altamente eficaz mesmo contra armas de grande calibre. Com o Titan, você pode mergulhar no meio de uma batalha sem qualquer hesitação. Observe que, devido à baixa velocidade, esta carroceria não é adequado para ataques rápidos atrás das linhas inimigas."
+	},
+	"mammoth": {
+		"name": "Mamute",
+		"description": "Este não é um tanque - é uma fortaleza sobre trilhos. Mamute é o carro-chefe entre outras carrocerias. Extremamente pesado, reforçado com superconcreto este casco é lento, o que não impede o Mamute de lutar com sucesso contra vários tanques inimigos."
+	},
+	"green": {
+		"name": "Verde",
+		"description": "Um tributo à tradição do tanque clássico, esta cor simples, tão amada por designers de todo o mundo, tornou-se uma tinta padrão para modelos de fábrica."
+	},
+	"holiday": {
+		"name": "Feriado",
+		"description": "Uma tinta única e «inteligente» que pode mudar sua aparência dependendo da ocasião. Em um dia normal, é simplesmente uma textura quadriculada em preto e branco. Mas quando chega um feriado, sua aparência muda drasticamente."
+	},
+	"red": {
+		"name": "Vermelha",
+		"description": "A cor vermelha - a personificação da raiva e da coragem. Também tem a aplicação prática de poder esconder qualquer vestígio de sangue inimigo."
+	},
+	"blue": {
+		"name": "Azul",
+		"description": "Esta pintura foi adicionada à lista oficial em memória de um projeto fracassado - o desenvolvimento de um tanque anfíbio codinome «Catfish». Os designers estavam planejando dar ao <Catfish> a capacidade de se mover sob as águas de rios rasos, permitindo que ele tomar posição atrás das linhas inimigas. A cor azul seria perfeita para camuflagem."
+	},
+	"black": {
+		"name": "Preta",
+		"description": "Esta cor tornou-se o padrão não oficial para a divisão de tanques sabotadores, cuja principal tarefa é penetrar no território inimigo durante a noite. Dentro dos círculos militares, essas divisões de elite foram apelidadas de «Os pontos negros da morte»."
+	},
+	"white": {
+		"name": "Branca",
+		"description": "Esta tinta foi desenvolvida especificamente para operações terrestres em países com clima frio. Em áreas com neve, pode reduzir significativamente a probabilidade de detecção. Para aumentar as vendas, alguns fabricantes incluíram na embalagem um casaco quente e botas."
+	},
+	"orange": {
+		"name": "Laranja",
+		"description": "Originalmente, não havia planos para incluir essa cor na lista oficial, pois não tinha nenhum valor prático, exceto talvez uma camuflagem decente em áreas desérticas. No entanto, psicólogos do exército provaram que esse tom específico de laranja tem um efeito terapêutico positivo. em tanques em estado de choque."
+	},
+	"flora": {
+		"name": "Flora",
+		"description": "Esta é uma das duas tintas projetadas especificamente para operações terrestres em um clima de latitude média. De acordo com relatórios da organização independente «True Camouflage», um tanque usando essa combinação específica de amarelo, verde e marrom tem menos probabilidade de ser detectado em tais regiões."
+	},
+	"marine": {
+		"name": "Marinha",
+		"description": "Devido à sua alta resistência ao contato prolongado com água salgada, os navios-tanque inteligentes usam essa cor para pintar seus tanques por dentro, usando-o como um grande barril para salgar pepinos durante o inverno."
+	},
+	"swamp": {
+		"name": "Pântano",
+		"description": "Esta pintura foi criada depois que um líder de batalhão de tanques acidentalmente adormeceu e levou seus companheiros para um pântano, onde uma operação secreta para treinar sapos sabotadores estava sendo conduzida."
+	},
+	"forester": {
+		"name": "Florestal",
+		"description": "Esta é uma das duas tintas projetadas especificamente para operações terrestres em um clima de latitude média. De acordo com relatórios da organização independente «True Camouflage», é menos provável que um tanque usando essa combinação específica de verde claro e escuro seja detectado em tal regiões."
+	},
+	"magma": {
+		"name": "Magma",
+		"description": "O revestimento é usado por tanques lança-chamas para simular um fluxo de lava ao invadir áreas fortemente fortificadas. Esta tática induz facilmente um terror primordial nas fileiras da força defensora."
+	},
+	"safari": {
+		"name": "Safari",
+		"description": "Projetado por quem ama a emoção do safári, esta pintura mascara o tanque como uma zebra inócua, o que o torna perfeito para caçar predadores africanos, bem como petroleiros ingênuos."
+	},
+	"metallic": {
+		"name": "Metálica",
+		"description": "Existe o equívoco de que esta tinta se destina a substituir o envernizamento de superfícies. Na realidade, a natureza reflexiva desta tinta destina-se a interferir com dispositivos de rastreamento e radar."
+	},
+	"lava": {
+		"name": "Lava",
+		"description": "Uma cor experimental, testada pela primeira vez durante o conflito local na África Oriental. De acordo com psicólogos militares, esse padrão específico semelhante a um fogo divino desencadeará uma sensação de pânico nos inimigos."
+	},
+	"dragon": {
+		"name": "Dragão",
+		"description": "A inspiração para o protótipo desta complexa criação foi a escama do dragão. Cada escama é desenhada à mão em uma peça reforçada de armadura de placas de titânio."
+	},
+	"lead": {
+		"name": "Chumbo",
+		"description": "O chumbo é conhecido há muito tempo por sua proteção contra a radiação. Essa tinta com infusão de chumbo aproveita essas propriedades."
+	},
+	"mary": {
+		"name": "Mary",
+		"description": "Coberta com manchas vermelhas sangrentas, esta tinta foi feita para infligir horror ao inimigo. No entanto, os tanqueiros altamente experientes provavelmente perceberão que o que parece sangue é na verdade suco de tomate. Não é de admirar que a tinta seja chamada «Mary»."
+	},
+	"storm": {
+		"name": "Tempestade",
+		"description": "Um disfarce perfeito para operações noturnas secretas, esta tinta torna o tanque praticamente invisível ao entardecer."
+	},
+	"carbon": {
+		"name": "Carbono",
+		"description": "Uma combinação de fibra de carbono de alta tecnologia e tinta de alta resistência. Inclui uma substância especial destinada a interromper os sistemas de mira inimigos, embora isso seja proibido pela Diretoria de Inspeção de Movimento de Tanques."
+	},
+	"roger": {
+		"name": "Caveira",
+		"description": "O temível motivo de caveira e ossos popularizado pelos piratas sedentos de sangue dos sete mares."
+	},
+	"chainmail": {
+		"name": "Ringmaiden",
+		"description": "A cobertura única, estilizada e inspirada no correio em cadeia foi projetada para recriar as batalhas medievais em tanques. De acordo com a idéia do autor, as máquinas de aço com armadura de cavaleiro deveriam lutar por sua honra e pelo coração de uma bela garota tanque. Estamos absolutamente certos de que ninguém, ao criar esta tinta, jamais questionou se existiam tanques na Idade Média."
+	},
+	"corrosion": {
+		"name": "Corrosão",
+		"description": "Para o petroleiro que quer ir além do uso de balas e se aventurar no reino da guerra química movida a tétano, a tinta «Corrosion» é a companhia perfeita."
+	},
+	"tundra": {
+		"name": "Tundra",
+		"description": "Dá ao seu tanque um visual intimidador e endurecido pela batalha. Ninguém ousará mexer com você."
+	},
+	"alien": {
+		"name": "Alienígena",
+		"description": "Há rumores de que esta camuflagem é uma réplica da cobertura de uma nave alienígena que foi derrubada no século passado pelas forças de «AVISO: Esta informação é confidencial — Mais investigações sobre o assunto serão recebidas com força mortal.»"
+	},
+	"swash": {
+		"name": "Marinho",
+		"description": "A fórmula da capa «Marinho» foi roubada de um laboratório secreto de codinome <Aqua>, especializado em experimentos genéticos em peixes. Graças às suas propriedades especiais de reflexão de calor, esta tinta dá ao ar dentro do tanque um frescor refrescante à beira-mar."
+	},
+	"pixel": {
+		"name": "Pixel",
+		"description": "Camuflagem florestal feita com tecnologia experimental de pixels. Irrita ainda mais os entusiastas de alta resolução do que os pixels quebrados na tela."
+	},
+	"cedar": {
+		"name": "Cedro",
+		"description": "Esta tinta é composta de flocos de pinha triturados. É ecologicamente correta e vem com dois sacos de pinhões descascados a cada segunda lata de tinta comprada."
+	},
+	"in_love": {
+		"name": "Apaixonado",
+		"description": "Projetado para os sofisticados e românticos, esta pintura irá satisfazer seu desejo por atributos militares esteticamente agradáveis. Também lhe renderá alguns segundos valiosos ao fascinar seu inimigo com a aparência extravagante de seu tanque, coberto de corações vermelhos."
+	},
+	"desert": {
+		"name": "Deserto",
+		"description": "Uma tinta especial ideal para operações no deserto. É criada pela pulverização de pó cristalino extraído dos dentes de um verme da areia. Para manter sua textura única, esta tinta não deve ser lavada."
+	},
+	"dirty": {
+		"name": "Lama",
+		"description": "Esta foi originalmente concebida como a terceira tinta projetada para operações terrestres em um clima de latitude média. No entanto, os militares decidiram mais tarde não incluí-la no pacote padrão, após repetidas tentativas de funcionários de limpeza para remover a textura de lama pintada da tampa."
+	},
+	"jaguar": {
+		"name": "Jaguar",
+		"description": "Este sistema de proteção com o codinome «Jaguar» tem textura irregular do nobre predador, além de proteger seu tanque de todos os tipos de armas."
+	},
+	"savanna": {
+		"name": "Savâna",
+		"description": "Perfeito para se esconder entre folhagens espessas, como ambientes de selva. Mas cuidado... os gorilas são conhecidos por usar folhas para fins de «limpeza»."
+	},
+	"loam": {
+		"name": "Argila",
+		"description": "Ninguém presta muita atenção em veículos sujos. A tinta «Argila» usa esse elemento psicológico para a vantagem do seu tanque, disfarçando-o como uma máquina suja. E quando seu inimigo vira as costas para você, é quando você ataca!"
+	},
+	"urban": {
+		"name": "Urbana",
+		"description": "A melhor tinta para a batalha em ambientes urbanos. Funciona especialmente bem com arbustos de beira de estrada."
+	},
+	"atom": {
+		"name": "Átomo",
+		"description": "Um revestimento de proteção para tanques de cobertura em centros de pesquisa nuclear. O revestimento é tão de alta tecnologia que pode resistir a um impacto direto de uma carga nuclear, mas apenas ao custo de vaporizar instantaneamente o tanque sob o revestimento."
+	},
+	"digital": {
+		"name": "Digital",
+		"description": "Além de ter propriedades de camuflagem excepcionais, esta tinta é extremamente durável e contém nanobots especiais para limpeza automática da pintura em combate."
+	},
+	"hohloma": {
+		"name": "Hohloma",
+		"description": "Uma criação cuja beleza lembra a habilidade dos artesãos russos, trabalhando em pequenas oficinas com paciência e dedicação."
+	},
+	"electra": {
+		"name": "Electra",
+		"description": "Uma pintura incrivelmente bonita que captura a elegância de um arco de eletricidade voando pelo ar."
+	},
+	"rustle": {
+		"name": "Farfalha",
+		"description": "As folhas de outono podem farfalhar sob os rastros do seu tanque, mas seus oponentes ainda não poderão detectá-lo graças à mistura única de tons desta tinta."
+	},
+	"python": {
+		"name": "Píton",
+		"description": "Esta tinta é uma réplica exata da pele de uma píton gigante. Ela também replica as propriedades de extrema elasticidade da cobra, bem como sua textura escamosa."
+	},
+	"sandstone": {
+		"name": "Arenito",
+		"description": "A tinta combina as propriedades de mascaramento da areia, com a pedra temperada pelo vento. O conjunto «Sandstone» vem com calção de banho ou biquíni de escolha, óculos escuros e guarda-sol."
+	},
+	"spark": {
+		"name": "Faísca",
+		"description": "Luzes de fadas, luzes de palco, música das esferas - esta pintura pode ser descrita com muitas palavras, mas nenhuma delas pode descrevê-la completamente. A pintura «Spark» é escolhida por aqueles tanqueiros para quem o tanque não é apenas uma batalha máquina, mas também um meio de expressão."
+	},
+	"winter": {
+		"name": "Inverno",
+		"description": "Esta tinta foi desenvolvida especialmente para batalhas em terrenos cobertos de neve. Originalmente, pretendia incluir uma pá de neve, mas o departamento financeiro não aprovou o custo extra."
+	},
+	"needle": {
+		"name": "Agulha",
+		"description": "Usando abeto de áreas sustentáveis, a tinta «Needle» é preparada usando 25 metros quadrados de abeto, cortado e triturado em agulhas de madeira em miniatura e unidas usando um tipo especial de resina."
+	},
+	"zeus": {
+		"name": "Zeus",
+		"description": "Formada em homenagem ao deus grego conhecido por seu amor por raios, esta pintura sinalizará aos seus inimigos que você é uma força que não deve ser tomada de ânimo leve."
+	},
+	"rock": {
+		"name": "Rocha",
+		"description": "As placas blindadas chamadas «The Rock» são extraídas de enormes formações rochosas, usando uma tecnologia egípcia antiga. Estacas secas são marteladas na rocha, depois encharcadas com água até incharem, quebrando a rocha em blocos lisos de pedra. Esta camuflagem é a definição de «feito à mão»."
+	},
+	"mars": {
+		"name": "Marte",
+		"description": "Diz-se que este revestimento estava sendo desenvolvido para uma divisão espacial para garantir a rápida liberação de Marte dos invasores alienígenas. A tinta foi colocada à venda somente para levantar fundos para transferir uma divisão de tanques para Marte."
+	},
+	"prodigi": {
+		"name": "Pródigo",
+		"description": "Uma pintura digital aprimorada com um padrão que se destina a distrair e desorientar seu inimigo, tornando-o mais propenso a errar ao atirar em você."
+	},
+	"irbis": {
+		"name": "Irbis",
+		"description": "Um dos felinos mais misteriosos, o Irbis também é conhecido como o «leopardo-das-neves». Após uma série de expedições de alto risco e quinze acidentes, nossos pesquisadores conseguiram conter um leopardo-das-neves por tempo suficiente para copiar sua pelagem e criar o «Irbis» pintar."
+	},
+	"emerald": {
+		"name": "Esmeralda",
+		"description": "Os pesquisadores do laboratório de tintas «Style and Grill» trabalham há muito tempo em uma tinta que retenha o tom verde clássico de um tanque, ao mesmo tempo em que enfatiza o alto status de seu proprietário. O resultado é a tinta «Emerald», que parece ser iluminado por dentro."
+	},
+	"inferno": {
+		"name": "Inferno",
+		"description": "A tinta «Inferno» é entregue por meios obscuros ao mercado negro das oficinas de sopro de vidro da China. Segundo os próprios produtores, sua aparência desafiadora simboliza força, coragem, sorte e longevidade. Uma tinta excelente para um atacante feroz."
+	},
+	"nano": {
+		"name": "Nano",
+		"description": "Uma camada espessa de nanoporonal é colocada no tanque a partir de uma lata pequena com uma escova ainda menor. O processo é longo, mas o resultado é agradável aos olhos. Do ponto de vista militar, esta é uma das mais dignas tentativas de adaptar a nanotecnologia aos tanques."
+	},
+	"clay": {
+		"name": "Barro",
+		"description": "Esta tinta foi projetada para operações de sabotagem no pântano. Os tanques que usavam essa tinta estavam tão bem camuflados que nem as sanguessugas os notaram."
+	},
+	"taiga": {
+		"name": "Taiga",
+		"description": "A pintura de camuflagem «Taiga» mascara o tanque tão bem na vegetação densa, que você provavelmente poderia se aproximar de um alce com seu tanque."
+	},
+	"tiger": {
+		"name": "Tigre",
+		"description": "Este revestimento não só parece uma pele de tigre, mas também torna seu tanque macio e fofo ao toque. Olhando para seu tanque neste revestimento, você pode treinar seu olho de tigre, o que lhe permitirá imobilizar os adversários assustados."
+	},
+	"jade": {
+		"name": "Jade",
+		"description": "Um spray de um raro jade marrom. Bonito, perfeito para camuflagem e ecologicamente correto."
+	},
+	"picasso": {
+		"name": "Picasso",
+		"description": "Picasso recebeu o nome de Pablo Picasso, o famoso artista cubista. Finos fragmentos poligonais da armadura formam um padrão abstrato verdadeiramente único, que difunde até os golpes mais poderosos. Esta pintura é a escolha dos verdadeiros críticos de arte!"
+	},
+	"rename": {
+		"name": "Renomear",
+		"description": "Este passe permite que você renomeie sua conta. Ative-o clicando em «Usar» e seguindo as instruções."
+	},
+	"newbie": {
+		"name": "Passe Iniciante",
+		"description": "Com um Passe de Principiante, o jogador recebe 50% mais experiência e 100% mais cristais para cada batalha jogada."
+	},
+	"up_score": {
+		"name": "Passe Multiplicador de Pontos",
+		"description": "Aumenta em 30% o XP recebido.\n\nDura 1 mês.\n\nAtenção, a assinatura não dá vantagem em batalhas de equipe!"
+	},
+	"pro_battle": {
+		"name": "Passe de Batalha PRO",
+		"description": "A duração é de 1 mês. Permite que você crie suas próprias batalhas e escolha suas configurações, além de participar de «Batalhas PRO» um número ilimitado de vezes dentro de 31 dias a partir da data da compra.\n\nPágina da assinatura em N."
+	},
+	"inventory_100": {
+		"name": "«Suprimentos 100»",
+		"description": ""
+	},
+	"inventory_200": {
+		"name": "«Suprimentos 200»",
+		"description": ""
+	},
+	"inventory_300": {
+		"name": "«Suprimentos 300»",
+		"description": ""
+	},
+	"inventory_400": {
+		"name": "«Suprimentos 400»",
+		"description": ""
+	},
+	"inventory_500": {
+		"name": "«Suprimentos 500»",
+		"description": ""
+	},
+	"inventory_600": {
+		"name": "«Suprimentos 600»",
+		"description": ""
+	},
+	"inventory_700": {
+		"name": "«Suprimentos 700»",
+		"description": ""
+	},
+	"inventory_800": {
+		"name": "«Suprimentos 800»",
+		"description": ""
+	},
+	"inventory_900": {
+		"name": "«Suprimentos 900»",
+		"description": ""
+	},
+	"inventory_1000": {
+		"name": "«Suprimentos 1000»",
+		"description": ""
+	},
+	"inventory_1100": {
+		"name": "«Suprimentos 1100»",
+		"description": ""
+	},
+	"inventory_1200": {
+		"name": "«Suprimentos 1200»",
+		"description": ""
+	},
+	"inventory_1300": {
+		"name": "«Suprimentos 1300»",
+		"description": ""
+	},
+	"inventory_1500": {
+		"name": "«Suprimentos 1500»",
+		"description": ""
+	},
+	"almighty": {
+		"name": "«Poderoso»",
+		"description": ""
+	},
+	"universal_soldier": {
+		"name": "«Soldado Universal»",
+		"description": ""
+	},
+	"yin_yang": {
+		"name": "«Yin yang»",
+		"description": ""
+	},
+	"commando": {
+		"name": "«Comando»",
+		"description": ""
+	},
+	"siberian": {
+		"name": "«Siberiano»",
+		"description": ""
+	},
+	"pirate": {
+		"name": "«Pirata»",
+		"description": ""
+	},
+	"firefly": {
+		"name": "«Vaga-Lume»",
+		"description": ""
+	},
+	"savage": {
+		"name": "«Selvagem»",
+		"description": ""
+	},
+	"lizard": {
+		"name": "«Lagarto»",
+		"description": ""
+	},
+	"keeper": {
+		"name": "«Guardador»",
+		"description": ""
+	},
+	"tsunami": {
+		"name": "«Tsunami»",
+		"description": ""
+	},
+	"mjolnir": {
+		"name": "«Mjollnir»",
+		"description": ""
+	},
+	"vampire": {
+		"name": "«Vampiro»",
+		"description": ""
+	},
+	"hero": {
+		"name": "«Herói»",
+		"description": ""
+	},
+	"bulldog": {
+		"name": "«Bulldog»",
+		"description": ""
+	},
+	"gunslinger": {
+		"name": "«Pistoleiro»",
+		"description": ""
+	},
+	"blizzard": {
+		"name": "«Nevasca»",
+		"description": ""
+	},
+	"buffalo": {
+		"name": "«Búfalo»",
+		"description": ""
+	},
+	"die_hard": {
+		"name": "«Die Hard»",
+		"description": ""
+	},
+	"matrix": {
+		"name": "«Matriz»",
+		"description": ""
+	},
+	"cupid": {
+		"name": "«Cupido»",
+		"description": ""
+	},
+	"knight": {
+		"name": "«Cavaleiro»",
+		"description": ""
+	},
+	"piranha": {
+		"name": "«Piranha»",
+		"description": ""
+	},
+	"striker": {
+		"name": "«Grevista»",
+		"description": ""
+	},
+	"hooligan": {
+		"name": "«Hooligan»",
+		"description": ""
+	},
+	"predator": {
+		"name": "«Predador»",
+		"description": ""
+	},
+	"firewall": {
+		"name": "«GuardaFogo»",
+		"description": ""
+	},
+	"aborigine": {
+		"name": "«Aborígine»",
+		"description": ""
+	},
+	"corsair": {
+		"name": "«Corsário»",
+		"description": ""
+	},
+	"firebolt": {
+		"name": "«Relâmpago»",
+		"description": ""
+	},
+	"mosquito": {
+		"name": "«Mosquito»",
+		"description": ""
+	},
+	"pitbull": {
+		"name": "«Pitbull»",
+		"description": ""
+	},
+	"atlas": {
+		"name": "«Atlas»",
+		"description": ""
+	},
+	"ram": {
+		"name": "«Carneiro»",
+		"description": ""
+	},
+	"osaka": {
+		"name": "«Osaka»",
+		"description": ""
+	},
+	"voltage": {
+		"name": "«Voltagem»",
+		"description": ""
+	},
+	"cobra": {
+		"name": "«Cobra»",
+		"description": ""
+	},
+	"stinger": {
+		"name": "«Ferrão»",
+		"description": ""
+	},
+	"tornado": {
+		"name": "«Tornado»",
+		"description": ""
+	},
+	"firework": {
+		"name": "«Fogos de artifício»",
+		"description": ""
+	},
+	"simoom": {
+		"name": "«Furacão»",
+		"description": ""
+	},
+	"guard": {
+		"name": "«Guarda»",
+		"description": ""
+	},
+	"avalanche": {
+		"name": "«Avalanche»",
+		"description": ""
+	},
+	"boar": {
+		"name": "«Javali»",
+		"description": ""
+	},
+	"fortress": {
+		"name": "«Fortaleza»",
+		"description": ""
+	},
+	"goalkeeper": {
+		"name": "«Guarda-redes»",
+		"description": ""
+	},
+	"annihilator": {
+		"name": "«Aniquilador»",
+		"description": ""
+	},
+	"cyclops": {
+		"name": "«Ciclope»",
+		"description": ""
+	},
+	"dj": {
+		"name": "«Dj»",
+		"description": ""
+	},
+	"ice": {
+		"name": "«Gelo»",
+		"description": ""
+	},
+	"juggler": {
+		"name": "«Malabarista»",
+		"description": ""
+	},
+	"chiropractor": {
+		"name": "«Quiroprata»",
+		"description": ""
+	},
+	"northerner": {
+		"name": "«Nortenho»",
+		"description": ""
+	},
+	"turtle": {
+		"name": "«Neve»",
+		"description": ""
+	},
+	"prometheus": {
+		"name": "«Prometheus»",
+		"description": ""
+	},
+	"minotaur": {
+		"name": "«Minotauro»",
+		"description": ""
+	},
+	"ghost": {
+		"name": "«Fantasma»",
+		"description": ""
+	},
+	"vandal": {
+		"name": "«Vândalo»",
+		"description": ""
+	},
+	"pyromancer": {
+		"name": "«Pyromancer»",
+		"description": ""
+	},
+	"cardinal": {
+		"name": "«Cardeal»",
+		"description": ""
+	},
+	"guardian": {
+		"name": "«Guardião»",
+		"description": ""
+	},
+	"touche": {
+		"name": "«Touché»",
+		"description": ""
+	},
+	"nomad": {
+		"name": "«Nômade»",
+		"description": ""
+	},
+	"ant": {
+		"name": "«Formiga»",
+		"description": ""
+	},
+	"academician": {
+		"name": "«Acadêmico»",
+		"description": ""
+	},
+	"huntsman": {
+		"name": "«Penhasco»",
+		"description": ""
+	},
+	"man_o_war": {
+		"name": "«Guerreiro»",
+		"description": ""
+	},
+	"legend": {
+		"name": "«Lenda»",
+		"description": ""
+	},
+	"healer": {
+		"name": "«Curandeiro»",
+		"description": ""
+	},
+	"boreas": {
+		"name": "«Boreas»",
+		"description": ""
+	},
+	"bulldozer": {
+		"name": "«Escavadeira»",
+		"description": ""
+	},
+	"redneck": {
+		"name": "«Camponês»",
+		"description": ""
+	},
+	"maestro": {
+		"name": "«Maestro»",
+		"description": ""
+	},
+	"giant": {
+		"name": "«Gigante»",
+		"description": ""
+	},
+	"rock_climber": {
+		"name": "«Alpinista»",
+		"description": ""
+	},
+	"destroyer": {
+		"name": "«Destruidor»",
+		"description": ""
+	},
+	"centaur": {
+		"name": "«Centauro»",
+		"description": ""
+	},
+	"jackhammer": {
+		"name": "«Martelo de demolição»",
+		"description": ""
+	},
+	"stonecutter": {
+		"name": "«Pedreiro»",
+		"description": ""
+	},
+	"sniper": {
+		"name": "«Sniper»",
+		"description": ""
+	},
+	"regrigerator": {
+		"name": "«Trovoada»",
+		"description": ""
+	},
+	"medic": {
+		"name": "«Paramédico»",
+		"description": ""
+	},
+	"raiden": {
+		"name": "«Raiden»",
+		"description": ""
+	},
+	"paladin": {
+		"name": "«Paladino»",
+		"description": ""
+	},
+	"master_of_the_taiga": {
+		"name": "«Milícia»",
+		"description": ""
+	},
+	"badge": {
+		"name": "Broche",
+		"description": "Um broche de marca é a melhor maneira de dizer a um amigo que ele é um verdadeiro tanker."
+	},
+	"like": {
+		"name": "Curtir",
+		"description": "Envie um joinha para alguém que tenha te impressionado em uma batalha."
+	},
+	"dislike": {
+		"name": "Descurtir",
+		"description": "Um polegar para baixo é a resposta perfeita para qualquer coisa que você não gosta."
+	},
+	"brofist": {
+		"name": "Parça!",
+		"description": "Uma estatueta Tanki concedendo +1 ao frescor."
+	},
+	"helmet": {
+		"name": "Capacete",
+		"description": "Um capacete de tanque é uma peça essencial de equipamento para qualquer jogador experiente."
+	},
+	"teddybear": {
+		"name": "Ursinho",
+		"description": "A melhor maneira de confessar seus sentimentos a alguém de quem você gosta."
+	},
+	"tangled_turret": {
+		"name": "Torreta Entrelaçada",
+		"description": "Às vezes você acaba jogando no mesmo time desses caras. Isso dói, nós sabemos."
+	},
+	"claws": {
+		"name": "Garras",
+		"description": "Quando as mãos de alguém simplesmente não devem ser usadas para jogar videogames ..."
+	},
+	"wrench": {
+		"name": "Chave inglesa Dourada",
+		"description": "Uma chave inglesa dourada é o presente perfeito, mesmo para tankers com gosto mais sofisticado."
+	},
+	"blue_sphere": {
+		"name": "Esfera Azul",
+		"description": "A lendária Esfera Azul. Sim é ela mesmo."
+	}
+}

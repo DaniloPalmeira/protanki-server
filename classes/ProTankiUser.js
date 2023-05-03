@@ -32,8 +32,8 @@ module.exports = class ProTankiUser {
 		},
 		paint: {
 			equiped: "green",
-			green: {},
-			holiday: {},
+			green: { m: 0 },
+			holiday: { m: 0 },
 		},
 		inventory: {},
 	};

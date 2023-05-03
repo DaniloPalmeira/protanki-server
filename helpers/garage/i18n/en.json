@@ -1,0 +1,762 @@
+{
+	"health": {
+		"name": "First Aid",
+		"description": "Gradually restores «heath» at the rate of 30 HP/sec. Heals till full healing or till all HPs are given. The amount of HPs in the medkit is equal to full «health» of the tank. Next use within 30 seconds after previous medkit activation. A must have item at a warfield. A set of well balanced medical items, packed in a box, helps to stay alive in a very dangerous situations. The box itself can play the role of composting tollet."
+	},
+	"armor": {
+		"name": "Double Armor",
+		"description": "Doubles protection to one minute.\n\nA set of advanced kevlar plates, mounted in standart slots. Being set in a right way they can take up 50% of kinetic and thermal energy of the impact, provided double power armor.\n\nThe devices function for the period of one minute."
+	},
+	"double_damage": {
+		"name": "Double Power",
+		"description": "Doubles gun characteristics to one minute.\n\nA unique devise - small metal cluth mounted on a barrel of the turret support upper distillate with the help on two bolts (20) and one lock screw. It speeds up for several times the shell of ant nuture, plasma or impulse nanoweight, creating double power boost to any shot. Unfortunately, due to high power consumption of the electromagnetic modulator which speeds up the substance in the barrel, independent nuclear supply sourse which gives it power supply, runs down quickly and becomes useless."
+	},
+	"n2o": {
+		"name": "Nitro",
+		"description": "Increases speed for one minute.\n\nNitrogen oxide should be in every tank. First, it is wonderful fuel for acceleration. Second, nitrogen oxide also known as laughing gas can be use for narcosis and even just for fun. If you meet silly giggling tankman you should know - he has snuffed N20."
+	},
+	"mine": {
+		"name": "Mine",
+		"description": "Undermines enemies.\n\nThe mine it deactivated if its owner was killed, left the battle was finished. In team battles mines don't react to allies.\n\nThe mine is the friend, comrade and brother of an experienced tanker. To gain the rear of the enemy and mine his staff, protect the comrades while retreat, block approaches to the base - all this is prossible due to the inconspicuous deadly device."
+	},
+	"smoky": {
+		"name": "Smoky",
+		"description": "Medium-caliber tank gun which is generally used in light and training tanks. The key to its popularity is low price and ease of maintenance. Put it on a light hull and use wearing-out strategy against heavy clumsy tanks of your opponents. Several upgrades can significantly increase the damage dealt by this little baby. Remember that Smoky’s effectiveness decreases with distance."
+	},
+	"flamethrower": {
+		"name": "Firebird",
+		"description": "When battles take place in close quarters, there is no better weapon than a firebird. This is a weapon of mass annihilation which can and will melt down any tank and its crew in no time. It is highly effective in confined spaces against slow moving tanks. Firebird is relatively slow when it comes to recharging but you can also shoot with a partially recharged gun."
+	},
+	"twins": {
+		"name": "Twins",
+		"description": "This rapid-firing two-barreled plasma gun will melt enemy in seconds. Taking into account the fact that by hitting other tanks with Twins you knock off their aim, the weapon is ideal when it comes to dynamic firefight at medium distances."
+	},
+	"railgun": {
+		"name": "Railgun",
+		"description": "If mid-caliber guns are not enough for your self-expression, this weapon is right for you. Large-caliber gun with huge muzzle speed and shells using depleted uranium. Extremely powerful and accurate kinetic projectile can go right through the enemy’s tank or hit several targets standing on the line of fire with a single shot. An ideal choice for long-range trench warfare and sniping. Remember that it takes a lot of time to recharge the gun and make sure your opponents will not take advantage of it."
+	},
+	"isida": {
+		"name": "Isida",
+		"description": "The idea of this unique weapon arose in the times of the cold war but was brought to life only with the development of quantum physics and nanotechnologies. The heart of this wonder-machine is generator of nanorobots able to reproduce or destroy the structure of any non-biologocal material. The weapon is equipped with impulse emitter which allows transporting nanomass in the magnetic channel at a distance of about twenty meters. Molecular material, derived when nanorobots are functioning in the mode of target destruction, is used to fix shooter’s own chassis. Thus, Isida deals damage to enemies and heals allies, which makes it invaluable in team battles."
+	},
+	"thunder": {
+		"name": "Thunder",
+		"description": "This second generation middle-caliber gun is the best choice for dynamic battle. Splash damage (make sure you don’t hit yourself!) allows you to attack a group of enemy vehicles. Quick recharge will give you a distinct advantage over heavy tanks of enemy. Equipped with light armor Thunder is one of the most dangerous weapons on the battlefield."
+	},
+	"shotgun": {
+		"name": "Hammer",
+		"description": "Engineers chose to use unorthodox methods to create this turret. Instead of armor-piercing shells, it uses a shrapnel projectile with tungsten arrows, and its reloading system is replaced with a robotic cylinder, not unlike a revolver. A final result is a reliable tool for nailing tanks into the ground. The only thing left is for the tanker to get close to the enemies, since the turret’s rounds spread too much over long distances."
+	},
+	"freeze": {
+		"name": "Freeze",
+		"description": "The idea of Freeze weapon system was born in a desolate Russian village. Using an old broken refrigerator «Sever» and avacuum cleaner «Buran» local inventor made the «freeze thrower». A professional engineer who had been fishing near the village noticed this invention and brought it to the Zhukov Research Institute. There the clumsy «freeze thrower» became the formidable Freeze gun. It showers enemy with the chemical composition based on freon. Victims take damage and all their movements and processes become slower. Though a flow of fire can unfreeze the target."
+	},
+	"ricochet": {
+		"name": "Ricochet",
+		"description": "Ricochet plasma gun is a new secret project of Siberian scientists. To produce this gun team of 22 high-class professionals have been working in the underground bunker more than three years without permission to exit on the surface. And they have created a unique weapon. It throws plasma charges cloaked with clever minus-field. When such charge hits the tank it explodes but it bounces of any other surface. So with Ricochet you can heat targets out of your visibility range. But be careful! Do not stand in the way of a released charge, as you can't do damage to yourself."
+	},
+	"shaft": {
+		"name": "Shaft",
+		"description": "The Shaft gun was designed by scientists who gave its enormous possibilities. It can make coffee, deliver pizzas, pay bills, but its main feature is the sniper mode, which allows you to stay one step ahead of your opponents. Get a unique opportunity to fight at long and short distances, as you can fire from Shaft without using its sniper scope."
+	},
+	"wasp": {
+		"name": "Wasp",
+		"description": "Lightweight, economical, easy to operate – Wasp is a perfect hull for beginners. Upgraded wasp can reach fairly high speed, which in combination with small size gives the freedom of action on the battlefield. Because of low weight, Wasp can easily be rolled over by an enemy’s gunfire."
+	},
+	"hornet": {
+		"name": "Hornet",
+		"description": "This compact hull uses the latest generation of composite materials, which makes it light, quick and grants high survivability even after a direct hit. Hornet is perfect for quick attacks."
+	},
+	"hunter": {
+		"name": "Hunter",
+		"description": "Hunter is the most versatile hull in the game. Thanks to balance between reinforced steel armor plates and low energy consumption this armor is an all-purpose one. It is good for everybody, from sprinters to snipers. Being so versatile, you'll never stay without a job on a field of war."
+	},
+	"dictator": {
+		"name": "Dictator",
+		"description": "Because of improved active defense system and usage of newest composite materials, this armor effectively absorbs energy of an impact of almost any caliber gun. With Dictator you can fight on the front line of any battle. Being one of the fastest and best protected hulls in the game, Dictator is large which makes it an easy target."
+	},
+	"viking": {
+		"name": "Viking",
+		"description": "This armor incorporates all modern military technologies. Reinforced armor and «Type 2» engine make Viking one of the most versatile hulls. Attack the enemy or cover your teammates – this hull will prove itself as a good and trustful one in any situation."
+	},
+	"titan": {
+		"name": "Titan",
+		"description": "Titan alloy armor plates combined with special geometry make this hull highly effective even against large-caliber weapons. With Titan, you can plunge into the thick of a battle without any hesitation. Please note that due to low speed this hull is not suitable for fast attacks behind enemy lines."
+	},
+	"mammoth": {
+		"name": "Mammoth",
+		"description": "This is not a tank – this is a fortress on tracks. Mammoth is the flagship among other hulls. Extremely heavy, strengthened with super-concrete this hull is slow, which does not prevent Mammoth from successfully fighting against several enemy tanks."
+	},
+	"red": {
+		"name": "Red",
+		"description": "The red color - the embodiment of rage and courage. It also has the practical application of being able to hide any traces of enemy blood."
+	},
+	"blue": {
+		"name": "Blue",
+		"description": "This paint was added to the official list in memory of a failed project - the development of an amphibious tank codenamed «Catfish». Designers were planning on giving the <Catfish> the ability to move beneath the waters of shallow rivers, allowing it to take position behind enemy lines. The blue color would have been perfect for camouflage."
+	},
+	"black": {
+		"name": "Black",
+		"description": "This color has become the unofficial standard for the saboteur tank division, whose main task is to penetrate enemy territory during the night. Within military circles, these elite divisions have been nicknamed «The black spots of death»."
+	},
+	"white": {
+		"name": "White",
+		"description": "This paint has been developed specifically for ground operations in countries with cold climates. In snowy areas, it can significantly reduce the likelihood of detection. In order to increase the sales, some manufacturers included a warm coat and boots in the package."
+	},
+	"orange": {
+		"name": "Orange",
+		"description": "Originally, there were no plans to include this color in the official list, as it lacked any practical value, except maybe a decent camouflage in desert areas. However, army psychologists have proved that this particular hue of orange has a positive, therapeutic effect on shell-shocked tanks."
+	},
+	"flora": {
+		"name": "Flora",
+		"description": "This is one of two paints specifically designed for ground operations in a mid latitude climate. According to reports from the independent organization «True Camouflage», a tank wearing this particular combination of yellow, green and brown, is less likely to be detected in such regions."
+	},
+	"marine": {
+		"name": "Marine",
+		"description": "Due to its high resistance to prolonged contact with salty water, smart tankers use this colour to paint their tanks from the inside, using it as a large barrel for salting cucumbers during winter time."
+	},
+	"swamp": {
+		"name": "Swamp",
+		"description": "This paint was created after a tank battalion leader accidentally fell asleep, and drove his comrades into a swamp, where a secret operation for training saboteur frogs was being conducted."
+	},
+	"forester": {
+		"name": "Forester",
+		"description": "This is one of two paints specifically designed for ground operations in a mid latitude climate. According to reports from the independent organization «True Camouflage», a tank wearing this particular combination of light and dark green, is less likely to be detected in such regions."
+	},
+	"magma": {
+		"name": "Magma",
+		"description": "This paint is often used on tanks equipped with flamethrowers. It gives the impression that lava is flowing through the tank itself, terrorizing the opposition."
+	},
+	"safari": {
+		"name": "Safari",
+		"description": "Designed by those who love the thrill of the safari, this paint masks the tank as an innocuous zebra, which makes it perfect for hunting African predators, as well as naive tankers."
+	},
+	"metallic": {
+		"name": "Metallic",
+		"description": "There is the misconception that this paint is intended as a replacement for varnishing surfaces. In reality, the reflective nature of this paint is intended to interfere with tracking and radar devices."
+	},
+	"lava": {
+		"name": "Lava",
+		"description": "An experimental color, first tested during the local conflict in East Africa. According to military psychologists, this specific pattern resembling a divine fire will trigger a sense of panic within enemies."
+	},
+	"dragon": {
+		"name": "Dragon",
+		"description": "The inspiration for the prototype of this complex creation, was the dragon scale. Each scale is drawn by hand on a reinforced piece of titanium plate armor."
+	},
+	"lead": {
+		"name": "Lead",
+		"description": "Lead has long been known for its protection against radiation. This lead-infused paint takes advantage of these properties."
+	},
+	"mary": {
+		"name": "Mary",
+		"description": "Covered with bloody red stains, this paint is meant to inflict horror upon the enemy. However, highly experienced tankers will probably notice that what looks like blood is actually tomato juice. No wonder the paint is called «Mary»."
+	},
+	"storm": {
+		"name": "Storm",
+		"description": "A perfect disguise for covert night time operations, this paint makes the tank virtually invisible at dusk."
+	},
+	"carbon": {
+		"name": "Carbon",
+		"description": "A combination of high-tech carbon fiber and high-resistance paint. Includes a special substance meant for disrupting enemy sighting systems, even though this is prohibited by the Tank Movement Inspection Directorate."
+	},
+	"roger": {
+		"name": "Roger",
+		"description": "The fearsome skull and bones motif popularized by the blood-thirsty pirates of the seven seas."
+	},
+	"chainmail": {
+		"name": "Chainmail",
+		"description": "A unique, stylized chainmail cover developed for the purpose of medieval-themed tank battles. Of course, whether tanks existed in the middle ages, and whether they actually wore chainmail armor, is a different matter altogether."
+	},
+	"corrosion": {
+		"name": "Corrosion",
+		"description": "For the tanker who wants to go beyond using bullets, and venture into the realm of chemical tetanus-powered warfare, the «Corrosion» paint is the perfect companion."
+	},
+	"tundra": {
+		"name": "Tundra",
+		"description": "Gives your tank an intimidating, battle-hardened look. Nobody will dare mess with you."
+	},
+	"alien": {
+		"name": "Alien",
+		"description": "Rumor has it that this camouflage is a replica of the cover of an alien ship that was knocked down in the last century by the forces of «WARNING: This information is classified — Further inquiries on the matter will be met with deadly force.»"
+	},
+	"swash": {
+		"name": "Swash",
+		"description": "The formula of the «Swash» cover was stolen from a secret laboratory codenamed <Aqua>, specializing in genetic experiments on fish. Thanks to its special heat-reflecting properties, this paint gives the air inside the tank a refreshing seaside freshness."
+	},
+	"pixel": {
+		"name": "Pixel",
+		"description": "In a battlefield made of pixels, a paint made of pixels offers the perfect camouflage for melting into the background. No dead pixels on this one!"
+	},
+	"cedar": {
+		"name": "Cedar",
+		"description": "This paint is composed of pounded pine cone flakes. It is environmentally friendly and comes with two bags of peeled pine nuts with every second canister of paint purchased."
+	},
+	"in_love": {
+		"name": "In love",
+		"description": "Designed for the sophisticated and romantic ones, this paint will satisfy your desire for aesthetically pleasing military attributes. It will also earn you a few valuable seconds by fascinating your enemy with the extravagant looks of your tank, covered in red hearts."
+	},
+	"desert": {
+		"name": "Desert",
+		"description": "A special paint ideal for desert operations. It is created by spraying crystalline powder extracted from a sandworm's teeth. To maintain its unique texture, this paint should not be washed."
+	},
+	"dirty": {
+		"name": "Dirty",
+		"description": "This was originally intended as the third paint designed for ground operations in a mid-latitude climate. However, the military later decided not to include it in the standard package, after repeated attempts by staff cleaners to remove the painted mud texture from the cover."
+	},
+	"jaguar": {
+		"name": "Jaguar",
+		"description": "This protection system codenamed «Jaguar» has spotty texture of the noble predator as well as protects your tank from all kinds of weapons."
+	},
+	"savanna": {
+		"name": "Savanna",
+		"description": "Perfect for hiding among thick foliage such as jungle environments. Careful though... gorillas are known to use leaves for «cleaning» purposes."
+	},
+	"loam": {
+		"name": "Loam",
+		"description": "Nobody pays much attention to dirty vehicles. The «Loam» paint uses this psychological element to your tank's advantage by disguising it as a dirty piece of machinery. And once your enemy turns his back on you, that's when you strike!"
+	},
+	"urban": {
+		"name": "Urban",
+		"description": "The best paint for battle in urban environments. Works especially well with roadside bushes."
+	},
+	"atom": {
+		"name": "Atom",
+		"description": "A protective cover for tanks guarding nuclear research centers. The cover is so high-tech that it is able to withstand a direct nuclear charge hit. Unfortunately, while the paint will be untouched, the tank beneath it will still evaporate."
+	},
+	"digital": {
+		"name": "Digital",
+		"description": "Besides having exceptional camouflage properties, this paint is extremely durable and contains special nanobots for automatic cleaning of the paint while in combat."
+	},
+	"hohloma": {
+		"name": "Hohloma",
+		"description": "A creation whose beauty recalls the skill of Russian artisans, working in tiny workshops with patience and dedication."
+	},
+	"electra": {
+		"name": "Electra",
+		"description": "A shockingly beautiful paint that captures the elegance of an arc of electricity flying through the air."
+	},
+	"rustle": {
+		"name": "Rustle",
+		"description": "Autumn leaves may rustle beneath your tank's tracks, but your opponents still won't be able to detect you thanks to this paint's unique blend of hues."
+	},
+	"python": {
+		"name": "Python",
+		"description": "This paint is an exact replica of a giant python's skin. It also replicates the snake's properties of extreme elasticity, as well as its scaly texture."
+	},
+	"sandstone": {
+		"name": "Sandstone",
+		"description": "The paint combines the masking properties of sand, with wind-tempered stone. The «Sandstone» set comes bundled with bathing trunks or bikini of choice, sunglasses and a parasol."
+	},
+	"spark": {
+		"name": "Spark",
+		"description": "Fairy lights, stage lights, music of the spheres - this paint can be described using many words, but none of them can ever fully describe it. The «Spark» paint is chosen by those tankers for whom the tank is not only a battle machine, but also a means of expression."
+	},
+	"winter": {
+		"name": "Winter",
+		"description": "This paint was specially developed for battle on snow-covered land. It was originally intended to include a snow shovel, but the finance department didn't approve the extra cost."
+	},
+	"needle": {
+		"name": "Needle",
+		"description": "Using spruce from sustainable-only areas, the «Needle» paint is prepared using 25 square meters of spruce, cut down and shredded into miniature wooden needles, and bound together using a special type of resin."
+	},
+	"zeus": {
+		"name": "Zeus",
+		"description": "Fashioned after the Greek god known for his love of thunderbolts, this paint will signal to your enemies that you're a force not to be taken lightly."
+	},
+	"rock": {
+		"name": "Rock",
+		"description": "The armored plates called «The Rock» are mined from huge rock formations, using an ancient Egyptian technology. Dry pegs are hammered into the rock, then soaked with water till they swell, breaking the rock into smooth blocks of stone. This camouflage is the definition of «hand-made»."
+	},
+	"mars": {
+		"name": "Mars",
+		"description": "According to rumors, this cover was developed for space landing divisions, intended for lightning-fast missions to save Mars from alien invaders. The paint was eventually sold to raise funds for a mission that would send a tank division to Mars."
+	},
+	"prodigi": {
+		"name": "Prodigi",
+		"description": "An enhanced digital paint with a pattern that is intended to distract and disorient your enemy, making them more likely to miss when firing at you."
+	},
+	"irbis": {
+		"name": "Irbis",
+		"description": "One of the most mysterious felines, the Irbis is also known as the «snow leopard». After a series of high-risk expeditions and fifteen accidents, our researchers managed to restrain a snow leopard long enough to copy its coat and create the «Irbis» paint."
+	},
+	"emerald": {
+		"name": "Emerald",
+		"description": "The researchers at the paint laboratory «Style and Grill» have long worked on a paint that would retain the classic green tone of a tank, while at the same time emphasizing the high status of its owner. The result is the «Emerald» paint, which appears to be illuminated from within."
+	},
+	"inferno": {
+		"name": "Inferno",
+		"description": "The «Inferno» paint is delivered via shady means to the black market of China's glass-blowing workshops. According to the producers themselves, its defiant appearance symbolizes strength, courage, luck and longevity. An excellent paint for a fierce attacker."
+	},
+	"nano": {
+		"name": "Nano",
+		"description": "A thick layer of nanoporolon is applied to the tank from a small jar with an even smaller brush. It is a long process, but the result pleases the eye. According to military specialists, this has been the most successful attempt at adapting nanotechnology to tanks."
+	},
+	"clay": {
+		"name": "Clay",
+		"description": "This paint was designed for sabotage operations in the marshland. The tanks wearing this paint were camouflaged so well that not even the leeches noticed them."
+	},
+	"taiga": {
+		"name": "Taiga",
+		"description": "The «Taiga» camouflage paint masks the tank so well in thick vegetation, that you could probably sneak up on a moose with your tank."
+	},
+	"tiger": {
+		"name": "Tiger",
+		"description": "This camouflage not only looks like a tiger's fur, but also feels soft and fluffy to the touch. It will also inspire you to achieve the eye of the tiger and terrorize your enemies."
+	},
+	"jade": {
+		"name": "Jade",
+		"description": "A spray from a rare brown jade. Beautiful, perfect for camouflage, and ecologically friendly."
+	},
+	"picasso": {
+		"name": "Picasso",
+		"description": "Picasso was named after Pablo Picasso, the famous cubist artist. Thin polygonal fragments of the armor form a truly unique abstract pattern, which diffuses even the most powerful hits. This paint is the choice of true art critics!"
+	},
+	"rename": {
+		"name": "Rename",
+		"description": "This pass allows you to rename your account. Activate it by clicking on «Use» and following the instructions."
+	},
+	"up_score": {
+		"name": "Up score",
+		"description": "Increases XP that you receive by 30%.\n\nLasts 1 month.\n\nAttention, the subscription does not give an advantage in team battles!"
+	},
+	"pro_battle": {
+		"name": "PRO Battle",
+		"description": "The duration is 1 month. Allows you to create your own battles and choose their settings, as well as participate in «Professional Battles» an unlimited number of times within 31 days from the date of purchase.\n\nPage of the subscription in N."
+	},
+	"inventory_100": {
+		"name": "«Supplies 100»",
+		"description": ""
+	},
+	"inventory_200": {
+		"name": "«Supplies 200»",
+		"description": ""
+	},
+	"inventory_300": {
+		"name": "«Supplies 300»",
+		"description": ""
+	},
+	"inventory_400": {
+		"name": "«Supplies 400»",
+		"description": ""
+	},
+	"inventory_500": {
+		"name": "«Supplies 500»",
+		"description": ""
+	},
+	"inventory_600": {
+		"name": "«Supplies 600»",
+		"description": ""
+	},
+	"inventory_700": {
+		"name": "«Supplies 700»",
+		"description": ""
+	},
+	"inventory_800": {
+		"name": "«Supplies 800»",
+		"description": ""
+	},
+	"inventory_900": {
+		"name": "«Supplies 900»",
+		"description": ""
+	},
+	"inventory_1000": {
+		"name": "«Supplies 1000»",
+		"description": ""
+	},
+	"inventory_1100": {
+		"name": "«Supplies 1100»",
+		"description": ""
+	},
+	"inventory_1200": {
+		"name": "«Supplies 1200»",
+		"description": ""
+	},
+	"inventory_1300": {
+		"name": "«Supplies 1300»",
+		"description": ""
+	},
+	"inventory_1500": {
+		"name": "«Supplies 1500»",
+		"description": ""
+	},
+	"almighty": {
+		"name": "«Almighty»",
+		"description": ""
+	},
+	"universal_soldier": {
+		"name": "«Universal soldier»",
+		"description": ""
+	},
+	"yin_yang": {
+		"name": "«Yin yang»",
+		"description": ""
+	},
+	"commando": {
+		"name": "«Commando»",
+		"description": ""
+	},
+	"siberian": {
+		"name": "«Siberian»",
+		"description": ""
+	},
+	"pirate": {
+		"name": "«Pirate»",
+		"description": ""
+	},
+	"firefly": {
+		"name": "«Firefly»",
+		"description": ""
+	},
+	"savage": {
+		"name": "«Savage»",
+		"description": ""
+	},
+	"lizard": {
+		"name": "«Lizard»",
+		"description": ""
+	},
+	"keeper": {
+		"name": "«Keeper»",
+		"description": ""
+	},
+	"tsunami": {
+		"name": "«Tsunami»",
+		"description": ""
+	},
+	"mjolnir": {
+		"name": "«Mjolnir»",
+		"description": ""
+	},
+	"vampire": {
+		"name": "«Vampire»",
+		"description": ""
+	},
+	"hero": {
+		"name": "«Hero»",
+		"description": ""
+	},
+	"bulldog": {
+		"name": "«Bulldog»",
+		"description": ""
+	},
+	"gunslinger": {
+		"name": "«Gunslinger»",
+		"description": ""
+	},
+	"blizzard": {
+		"name": "«Blizzard»",
+		"description": ""
+	},
+	"buffalo": {
+		"name": "«Buffalo»",
+		"description": ""
+	},
+	"die_hard": {
+		"name": "«Die Hard»",
+		"description": ""
+	},
+	"matrix": {
+		"name": "«Matrix»",
+		"description": ""
+	},
+	"cupid": {
+		"name": "«Cupid»",
+		"description": ""
+	},
+	"knight": {
+		"name": "«Knight»",
+		"description": ""
+	},
+	"piranha": {
+		"name": "«Piranha»",
+		"description": ""
+	},
+	"striker": {
+		"name": "«Striker»",
+		"description": ""
+	},
+	"hooligan": {
+		"name": "«Hooligan»",
+		"description": ""
+	},
+	"predator": {
+		"name": "«Predator»",
+		"description": ""
+	},
+	"firewall": {
+		"name": "«Firewall»",
+		"description": ""
+	},
+	"aborigine": {
+		"name": "«Aborigine»",
+		"description": ""
+	},
+	"corsair": {
+		"name": "«Corsair»",
+		"description": ""
+	},
+	"firebolt": {
+		"name": "«Firebolt»",
+		"description": ""
+	},
+	"mosquito": {
+		"name": "«Mosquito»",
+		"description": ""
+	},
+	"pitbull": {
+		"name": "«Pitbull»",
+		"description": ""
+	},
+	"atlas": {
+		"name": "«Atlas»",
+		"description": ""
+	},
+	"ram": {
+		"name": "«Ram»",
+		"description": ""
+	},
+	"osaka": {
+		"name": "«Osaka»",
+		"description": ""
+	},
+	"voltage": {
+		"name": "«Voltage»",
+		"description": ""
+	},
+	"cobra": {
+		"name": "«Cobra»",
+		"description": ""
+	},
+	"stinger": {
+		"name": "«Stinger»",
+		"description": ""
+	},
+	"tornado": {
+		"name": "«Tornado»",
+		"description": ""
+	},
+	"firework": {
+		"name": "«Firework»",
+		"description": ""
+	},
+	"simoom": {
+		"name": "«Simoom»",
+		"description": ""
+	},
+	"guard": {
+		"name": "«Guard»",
+		"description": ""
+	},
+	"avalanche": {
+		"name": "«Avalanche»",
+		"description": ""
+	},
+	"boar": {
+		"name": "«Boar»",
+		"description": ""
+	},
+	"fortress": {
+		"name": "«Fortress»",
+		"description": ""
+	},
+	"goalkeeper": {
+		"name": "«Goalkeeper»",
+		"description": ""
+	},
+	"annihilator": {
+		"name": "«Annihilator»",
+		"description": ""
+	},
+	"cyclops": {
+		"name": "«Cyclops»",
+		"description": ""
+	},
+	"dj": {
+		"name": "«Dj»",
+		"description": ""
+	},
+	"ice": {
+		"name": "«Ice»",
+		"description": ""
+	},
+	"juggler": {
+		"name": "«Juggler»",
+		"description": ""
+	},
+	"chiropractor": {
+		"name": "«Chiropractor»",
+		"description": ""
+	},
+	"northerner": {
+		"name": "«Northerner»",
+		"description": ""
+	},
+	"turtle": {
+		"name": "«Hail»",
+		"description": ""
+	},
+	"prometheus": {
+		"name": "«Prometheus»",
+		"description": ""
+	},
+	"minotaur": {
+		"name": "«Minotaur»",
+		"description": ""
+	},
+	"ghost": {
+		"name": "«Ghost»",
+		"description": ""
+	},
+	"vandal": {
+		"name": "«Vandal»",
+		"description": ""
+	},
+	"pyromancer": {
+		"name": "«Pyromancer»",
+		"description": ""
+	},
+	"cardinal": {
+		"name": "«Cardinal»",
+		"description": ""
+	},
+	"guardian": {
+		"name": "«Guardian»",
+		"description": ""
+	},
+	"touche": {
+		"name": "«Touche»",
+		"description": ""
+	},
+	"nomad": {
+		"name": "«Nomad»",
+		"description": ""
+	},
+	"ant": {
+		"name": "«Ant»",
+		"description": ""
+	},
+	"academician": {
+		"name": "«Academician»",
+		"description": ""
+	},
+	"huntsman": {
+		"name": "«Cliff»",
+		"description": ""
+	},
+	"man_o_war": {
+		"name": "«Man o War»",
+		"description": ""
+	},
+	"legend": {
+		"name": "«Legend»",
+		"description": ""
+	},
+	"healer": {
+		"name": "«Healer»",
+		"description": ""
+	},
+	"boreas": {
+		"name": "«Boreas»",
+		"description": ""
+	},
+	"bulldozer": {
+		"name": "«Bulldozer»",
+		"description": ""
+	},
+	"redneck": {
+		"name": "«Redneck»",
+		"description": ""
+	},
+	"maestro": {
+		"name": "«Maestro»",
+		"description": ""
+	},
+	"giant": {
+		"name": "«Giant»",
+		"description": ""
+	},
+	"rock_climber": {
+		"name": "«Rock climber»",
+		"description": ""
+	},
+	"destroyer": {
+		"name": "«Destroyer»",
+		"description": ""
+	},
+	"centaur": {
+		"name": "«Centaur»",
+		"description": ""
+	},
+	"jackhammer": {
+		"name": "«Jackhammer»",
+		"description": ""
+	},
+	"stonecutter": {
+		"name": "«Stonecutter» ",
+		"description": ""
+	},
+	"sniper": {
+		"name": "«Sniper» ",
+		"description": ""
+	},
+	"regrigerator": {
+		"name": "«Storm»",
+		"description": ""
+	},
+	"medic": {
+		"name": "«Medic»",
+		"description": ""
+	},
+	"raiden": {
+		"name": "«Raiden»",
+		"description": ""
+	},
+	"paladin": {
+		"name": "«Paladin»",
+		"description": ""
+	},
+	"master_of_the_taiga": {
+		"name": "«Master of the taiga»",
+		"description": ""
+	},
+	"badge": {
+		"name": "Badge",
+		"description": "A company badge is the easiest way to tell a friend that he is a real tanker."
+	},
+	"like": {
+		"name": "Like",
+		"description": "Send a thumbs up to someone who has impressed you in a battle."
+	},
+	"dislike": {
+		"name": "Dislike",
+		"description": "A thumbs down is the perfect answer to anything you don't like."
+	},
+	"brofist": {
+		"name": "Bro!",
+		"description": "A Tanki statuette granting +1 to coolness."
+	},
+	"helmet": {
+		"name": "Helmet",
+		"description": "A tank helmet is an essential piece of equipment for any seasoned player."
+	},
+	"teddybear": {
+		"name": "Teddy Bear",
+		"description": "The best way to confess your feelings to someone you care about."
+	},
+	"tangled_turret": {
+		"name": "Tangled Turret",
+		"description": "Sometimes they just come into your team..."
+	},
+	"claws": {
+		"name": "Claws",
+		"description": "When someone's hands are simply not meant to be used for playing video games..."
+	},
+	"wrench": {
+		"name": "Golden Wrench",
+		"description": "A golden wrench is the perfect gift, even for tankers with the most sophisticated taste."
+	},
+	"blue_sphere": {
+		"name": "Blue Sphere",
+		"description": "The legendary blue ball. Yes, that's him."
+	}
+}

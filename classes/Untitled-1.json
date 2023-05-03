@@ -1,0 +1,21 @@
+{
+	"weapon": {
+		"equiped": "railgun",
+		"smoky": { "m": 0 },
+		"flamethrower": { "m": 1 },
+		"twins": { "m": 2 },
+		"railgun": { "m": 3 }
+	},
+	"armor": {
+		"equiped": "titan",
+		"hunter": { "m": 2 },
+		"wasp": { "m": 0 },
+		"hornet": { "m": 1 },
+		"dictator": { "m": 3 },
+		"viking": { "m": 0 },
+		"titan": { "m": 3 },
+		"mammoth": { "m": 2 }
+	},
+	"paint": { "equiped": "red", "green": {}, "holiday": {}, "red": { "m": 0 } },
+	"inventory": {}
+}

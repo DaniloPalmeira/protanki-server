@@ -34,8 +34,39 @@ class ProTankiServer {
 			minLength: 5,
 		};
 
+		this.paintProperties = require("../helpers/garage/paints/properties.json");
+
+		this.garageItems = garageItems.filter((item) => {
+			if (item.category === "paint" && this.paintProperties[item.id]) {
+				const requiredProperties = ["resistances", "preview", "coloring"];
+				const hasAllProperties = requiredProperties.every(
+					(prop) => prop in this.paintProperties[item.id]
+				);
+				if (hasAllProperties) {
+					const properties = this.paintProperties[item.id].resistances;
+					const properts = Object.entries(properties || {}).map(
+						([property, value]) => ({
+							property,
+							value: value.value,
+							subproperties: value.subproperties,
+						})
+					);
+
+					item.baseItemId = this.paintProperties[item.id].preview;
+					item.previewResourceId = this.paintProperties[item.id].preview;
+					item.coloring = this.paintProperties[item.id].coloring;
+					item.properts = properts;
+
+					return true; // Mantém o item na lista
+				} else {
+					return false; // Remove o item da lista
+				}
+			}
+			return true;
+		});
+
 		this.garage = {
-			items: garageItems,
+			items: this.garageItems,
 			delayMountArmorInSec: 0,
 			delayMountWeaponInSec: 0,
 			delayMountColorInSec: 0,

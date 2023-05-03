@@ -1,0 +1,455 @@
+{
+	"green": { "preview": 388967, "coloring": 966681, "resistances": {} },
+	"holiday": { "preview": 971083, "coloring": 423333, "resistances": {} },
+	"red": { "preview": 471061, "coloring": 529101, "resistances": {} },
+	"blue": { "preview": 350240, "coloring": 98644, "resistances": {} },
+	"black": { "preview": 468704, "coloring": 976299, "resistances": {} },
+	"white": { "preview": 912977, "coloring": 996274, "resistances": {} },
+	"orange": { "preview": 456516, "coloring": 104412, "resistances": {} },
+	"flora": {
+		"preview": 95646,
+		"coloring": 817810,
+		"resistances": {
+			"SMOKY_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"marine": {
+		"preview": 682329,
+		"coloring": 662824,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"swamp": {
+		"preview": 300293,
+		"coloring": 172172,
+		"resistances": {
+			"TWINS_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"forester": {
+		"preview": 769778,
+		"coloring": 554337,
+		"resistances": {
+			"RAILGUN_RESISTANCE": { "value": 12, "subproperties": null }
+		}
+	},
+	"magma": {
+		"preview": 123601,
+		"coloring": 412159,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 12, "subproperties": null }
+		}
+	},
+	"safari": {
+		"preview": 981027,
+		"coloring": 258487,
+		"resistances": { "ISIS_RESISTANCE": { "value": 15, "subproperties": null } }
+	},
+	"metallic": {
+		"preview": 246572,
+		"coloring": 542023,
+		"resistances": {
+			"THUNDER_RESISTANCE": { "value": 18, "subproperties": null }
+		}
+	},
+	"lava": {
+		"preview": 201158,
+		"coloring": 498645,
+		"resistances": {
+			"FREEZE_RESISTANCE": { "value": 18, "subproperties": null }
+		}
+	},
+	"dragon": {
+		"preview": 107643,
+		"coloring": 192378,
+		"resistances": {
+			"RICOCHET_RESISTANCE": { "value": 22, "subproperties": null }
+		}
+	},
+	"lead": {
+		"preview": 829177,
+		"coloring": 560996,
+		"resistances": {
+			"SHAFT_RESISTANCE": { "value": 25, "subproperties": null }
+		}
+	},
+	"mary": {
+		"preview": 564917,
+		"coloring": 523797,
+		"resistances": {
+			"FREEZE_RESISTANCE": { "value": 15, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 8, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 8, "subproperties": null }
+		}
+	},
+	"storm": {
+		"preview": 364130,
+		"coloring": 265602,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 17, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 7, "subproperties": null },
+			"SHOTGUN_RESISTANCE": { "value": 6, "subproperties": null }
+		}
+	},
+	"carbon": {
+		"preview": 865963,
+		"coloring": 739386,
+		"resistances": {
+			"TWINS_RESISTANCE": { "value": 6, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 18, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 6, "subproperties": null }
+		}
+	},
+	"roger": {
+		"preview": 968399,
+		"coloring": 929509,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 8, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 16, "subproperties": null },
+			"SHOTGUN_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"chainmail": {
+		"preview": 123600,
+		"coloring": 412158,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 22, "subproperties": null },
+			"ISIS_RESISTANCE": { "value": 11, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 5, "subproperties": null }
+		}
+	},
+	"corrosion": {
+		"preview": 92554,
+		"coloring": 967180,
+		"resistances": {
+			"RAILGUN_RESISTANCE": { "value": 10, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 15, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 15, "subproperties": null }
+		}
+	},
+	"tundra": {
+		"preview": 985440,
+		"coloring": 689436,
+		"resistances": {
+			"SMOKY_RESISTANCE": { "value": 11, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 27, "subproperties": null }
+		}
+	},
+	"alien": {
+		"preview": 254675,
+		"coloring": 931624,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 25, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 9, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 9, "subproperties": null }
+		}
+	},
+	"swash": {
+		"preview": 344971,
+		"coloring": 48688,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 10, "subproperties": null },
+			"FIREBIRD_RESISTANCE": { "value": 18, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 11, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 5, "subproperties": null }
+		}
+	},
+	"pixel": {
+		"preview": 123604,
+		"coloring": 412162,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 30, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 16, "subproperties": null }
+		}
+	},
+	"cedar": {
+		"preview": 5343,
+		"coloring": 438964,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 8, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 30, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 8, "subproperties": null }
+		}
+	},
+	"in_love": {
+		"preview": 277983,
+		"coloring": 493495,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 13, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 24, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"desert": {
+		"preview": 112041,
+		"coloring": 82151,
+		"resistances": {
+			"TWINS_RESISTANCE": { "value": 8, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 26, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 8, "subproperties": null },
+			"SHOTGUN_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"dirty": {
+		"preview": 201886,
+		"coloring": 386784,
+		"resistances": {
+			"RAILGUN_RESISTANCE": { "value": 24, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 32, "subproperties": null }
+		}
+	},
+	"jaguar": {
+		"preview": 46357,
+		"coloring": 952497,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 17, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 30, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"savanna": {
+		"preview": 388701,
+		"coloring": 299478,
+		"resistances": {
+			"RICOCHET_RESISTANCE": { "value": 15, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 30, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 16, "subproperties": null }
+		}
+	},
+	"loam": {
+		"preview": 600886,
+		"coloring": 53082,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 30, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 11, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 11, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 11, "subproperties": null }
+		}
+	},
+	"urban": {
+		"preview": 739321,
+		"coloring": 868766,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 15, "subproperties": null },
+			"FIREBIRD_RESISTANCE": { "value": 10, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 32, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"atom": {
+		"preview": 123599,
+		"coloring": 412157,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 33, "subproperties": null },
+			"FIREBIRD_RESISTANCE": { "value": 18, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 11, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 11, "subproperties": null }
+		}
+	},
+	"digital": {
+		"preview": 332230,
+		"coloring": 444408,
+		"resistances": {
+			"SMOKY_RESISTANCE": { "value": 24, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 35, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 14, "subproperties": null }
+		}
+	},
+	"hohloma": {
+		"preview": 327089,
+		"coloring": 140028,
+		"resistances": {
+			"FREEZE_RESISTANCE": { "value": 22, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 30, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 22, "subproperties": null }
+		}
+	},
+	"electra": {
+		"preview": 964904,
+		"coloring": 858789,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 38, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 20, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 20, "subproperties": null }
+		}
+	},
+	"rustle": {
+		"preview": 49564,
+		"coloring": 60284,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 15, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 30, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 40, "subproperties": null }
+		}
+	},
+	"python": {
+		"preview": 167323,
+		"coloring": 704601,
+		"resistances": {
+			"FREEZE_RESISTANCE": { "value": 44, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 40, "subproperties": null }
+		}
+	},
+	"sandstone": {
+		"preview": 379571,
+		"coloring": 519187,
+		"resistances": {
+			"TWINS_RESISTANCE": { "value": 12, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 22, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 34, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 22, "subproperties": null }
+		}
+	},
+	"spark": {
+		"preview": 184125,
+		"coloring": 378667,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 30, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 18, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 42, "subproperties": null }
+		}
+	},
+	"winter": {
+		"preview": 791701,
+		"coloring": 285466,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 12, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 26, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 12, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 45, "subproperties": null }
+		}
+	},
+	"needle": {
+		"preview": 648950,
+		"coloring": 216783,
+		"resistances": {
+			"RICOCHET_RESISTANCE": { "value": 22, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 50, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 28, "subproperties": null }
+		}
+	},
+	"zeus": {
+		"preview": 123565,
+		"coloring": 412123,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 50, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 25, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 25, "subproperties": null }
+		}
+	},
+	"rock": {
+		"preview": 669820,
+		"coloring": 473605,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 28, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 12, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 50, "subproperties": null },
+			"SHOTGUN_RESISTANCE": { "value": 10, "subproperties": null }
+		}
+	},
+	"mars": {
+		"preview": 123602,
+		"coloring": 412160,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 50, "subproperties": null },
+			"FIREBIRD_RESISTANCE": { "value": 30, "subproperties": null },
+			"ISIS_RESISTANCE": { "value": 20, "subproperties": null }
+		}
+	},
+	"prodigi": {
+		"preview": 645131,
+		"coloring": 78411,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 7, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 23, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 50, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 20, "subproperties": null }
+		}
+	},
+	"irbis": {
+		"preview": 494974,
+		"coloring": 931954,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 50, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 27, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 23, "subproperties": null }
+		}
+	},
+	"emerald": {
+		"preview": 16227,
+		"coloring": 448000,
+		"resistances": {
+			"TWINS_RESISTANCE": { "value": 35, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 50, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 15, "subproperties": null }
+		}
+	},
+	"inferno": {
+		"preview": 186119,
+		"coloring": 200304,
+		"resistances": {
+			"FIREBIRD_RESISTANCE": { "value": 36, "subproperties": null },
+			"FREEZE_RESISTANCE": { "value": 50, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 14, "subproperties": null }
+		}
+	},
+	"nano": {
+		"preview": 123603,
+		"coloring": 412161,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 35, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 32, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 22, "subproperties": null },
+			"FIREBIRD_RESISTANCE": { "value": 11, "subproperties": null }
+		}
+	},
+	"clay": {
+		"preview": 700822,
+		"coloring": 141405,
+		"resistances": {
+			"RICOCHET_RESISTANCE": { "value": 50, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 20, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 30, "subproperties": null }
+		}
+	},
+	"taiga": {
+		"preview": 184733,
+		"coloring": 32379,
+		"resistances": {
+			"ISIS_RESISTANCE": { "value": 35, "subproperties": null },
+			"FIREBIRD_RESISTANCE": { "value": 24, "subproperties": null },
+			"TWINS_RESISTANCE": { "value": 17, "subproperties": null },
+			"RICOCHET_RESISTANCE": { "value": 24, "subproperties": null }
+		}
+	},
+	"tiger": {
+		"preview": 123605,
+		"coloring": 412163,
+		"resistances": {
+			"SHOTGUN_RESISTANCE": { "value": 47, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 35, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 18, "subproperties": null }
+		}
+	},
+	"jade": {
+		"preview": 866855,
+		"coloring": 746058,
+		"resistances": {
+			"THUNDER_RESISTANCE": { "value": 11, "subproperties": null },
+			"SMOKY_RESISTANCE": { "value": 24, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 50, "subproperties": null },
+			"SHOTGUN_RESISTANCE": { "value": 15, "subproperties": null }
+		}
+	},
+	"picasso": {
+		"preview": 337676,
+		"coloring": 906593,
+		"resistances": {
+			"FREEZE_RESISTANCE": { "value": 20, "subproperties": null },
+			"THUNDER_RESISTANCE": { "value": 20, "subproperties": null },
+			"RAILGUN_RESISTANCE": { "value": 27, "subproperties": null },
+			"SHAFT_RESISTANCE": { "value": 33, "subproperties": null }
+		}
+	}
+}

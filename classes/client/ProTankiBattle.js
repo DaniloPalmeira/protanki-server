@@ -28,6 +28,10 @@ module.exports = class {
 		this.client = client;
 
 		const { armor, weapon, paint } = this.client.user.garage;
+		const paintProps = {
+			...this.client.server.paintProperties[paint.equiped],
+			id: paint.equiped,
+		};
 
 		this.equipament = {
 			hull: {
@@ -38,10 +42,7 @@ module.exports = class {
 				id: weapon.equiped,
 				m: weapon[weapon.equiped].m,
 			},
-			paint: {
-				id: paint.equiped,
-				resource: 412123,
-			},
+			paint: paintProps,
 		};
 
 		this.party = client.user.selectedBattle;
@@ -405,7 +406,7 @@ module.exports = class {
 		const tankPacket = new ByteArray();
 		const tankiInfos = {
 			battleId: this.party.id,
-			colormap_id: equipament.paint.resource,
+			colormap_id: equipament.paint.coloring,
 			hull_id: `${equipament.hull.id}_m${equipament.hull.m}`,
 			turret_id: `${equipament.turret.id}_m${equipament.turret.m}`,
 			team_type: "NONE",

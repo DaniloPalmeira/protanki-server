@@ -149,11 +149,7 @@
 				"property": "DAMAGE",
 				"value": null,
 				"subproperties": [
-					{
-						"property": "DAMAGE_FROM",
-						"value": "22",
-						"subproperties": null
-					},
+					{ "property": "DAMAGE_FROM", "value": "22", "subproperties": null },
 					{ "property": "DAMAGE_TO", "value": "28", "subproperties": null }
 				]
 			},
@@ -645,11 +641,7 @@
 				"property": "DAMAGE",
 				"value": null,
 				"subproperties": [
-					{
-						"property": "DAMAGE_FROM",
-						"value": "8.8",
-						"subproperties": null
-					},
+					{ "property": "DAMAGE_FROM", "value": "8.8", "subproperties": null },
 					{ "property": "DAMAGE_TO", "value": "10.5", "subproperties": null }
 				]
 			},
@@ -704,11 +696,7 @@
 				"property": "DAMAGE",
 				"value": null,
 				"subproperties": [
-					{
-						"property": "DAMAGE_FROM",
-						"value": "11.4",
-						"subproperties": null
-					},
+					{ "property": "DAMAGE_FROM", "value": "11.4", "subproperties": null },
 					{ "property": "DAMAGE_TO", "value": "13.9", "subproperties": null }
 				]
 			},
@@ -944,11 +932,7 @@
 					}
 				]
 			},
-			{
-				"property": "TURRET_TURN_SPEED",
-				"value": "70",
-				"subproperties": null
-			},
+			{ "property": "TURRET_TURN_SPEED", "value": "70", "subproperties": null },
 			{
 				"property": "WEAPON_WEAKENING_COEFF",
 				"value": "56.90",
@@ -983,11 +967,7 @@
 				"property": "DAMAGE",
 				"value": null,
 				"subproperties": [
-					{
-						"property": "DAMAGE_FROM",
-						"value": "111",
-						"subproperties": null
-					},
+					{ "property": "DAMAGE_FROM", "value": "111", "subproperties": null },
 					{ "property": "DAMAGE_TO", "value": "168", "subproperties": null }
 				]
 			},
@@ -1042,11 +1022,7 @@
 				"property": "DAMAGE",
 				"value": null,
 				"subproperties": [
-					{
-						"property": "DAMAGE_FROM",
-						"value": "133",
-						"subproperties": null
-					},
+					{ "property": "DAMAGE_FROM", "value": "133", "subproperties": null },
 					{ "property": "DAMAGE_TO", "value": "199", "subproperties": null }
 				]
 			},
@@ -1389,11 +1365,7 @@
 					}
 				]
 			},
-			{
-				"property": "TURRET_TURN_SPEED",
-				"value": "77",
-				"subproperties": null
-			},
+			{ "property": "TURRET_TURN_SPEED", "value": "77", "subproperties": null },
 			{
 				"property": "SHOT_RANGE",
 				"value": null,
@@ -2396,11 +2368,7 @@
 					}
 				]
 			},
-			{
-				"property": "TURRET_TURN_SPEED",
-				"value": "75",
-				"subproperties": null
-			}
+			{ "property": "TURRET_TURN_SPEED", "value": "75", "subproperties": null }
 		],
 		"discount": {
 			"percent": 0,
@@ -2611,11 +2579,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "94", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "10.80", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "93.9",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "93.9", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "1376", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -2743,11 +2707,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "180", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "13.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "150",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "150", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "2200", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -2787,11 +2747,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "122", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "10.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "90.8",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "90.8", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "1616", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -2919,11 +2875,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "210", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "12.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "130",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "130", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "2400", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -2963,11 +2915,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "144", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "8.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "75.8",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "75.8", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "1965", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3007,11 +2955,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "187", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "8.60", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "95.3",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "95.3", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "2280", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3095,11 +3039,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "285", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "10.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "140",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "140", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "3000", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3267,11 +3207,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "345", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "8.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "130",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "130", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "3300", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3311,11 +3247,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "195", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "7.80", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "80.6",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "80.6", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "2235", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3355,11 +3287,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "244", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "8.30", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "92.7",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "92.7", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "2550", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3443,11 +3371,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "315", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "9.00", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "110",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "110", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "3000", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3487,11 +3411,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "224", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "5.30", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "55.7",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "55.7", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "3571", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3531,11 +3451,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "289", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "5.50", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "67.1",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "67.1", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "4047", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3575,11 +3491,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "355", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "5.80", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "78.6",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "78.6", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "4524", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3699,11 +3611,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "339", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "4.60", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "64.1",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "64.1", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "4743", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3743,11 +3651,7 @@
 		"properts": [
 			{ "property": "HULL_ARMOR", "value": "409", "subproperties": null },
 			{ "property": "HULL_SPEED", "value": "4.90", "subproperties": null },
-			{
-				"property": "HULL_TURN_SPEED",
-				"value": "74.2",
-				"subproperties": null
-			},
+			{ "property": "HULL_TURN_SPEED", "value": "74.2", "subproperties": null },
 			{ "property": "HULL_MASS", "value": "5225", "subproperties": null },
 			{
 				"property": "HULL_POWER",
@@ -3819,12 +3723,9 @@
 		"next_price": 0,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 388967,
-		"previewResourceId": 388967,
 		"price": 0,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3832,8 +3733,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 966681
+		"isForRent": false
 	},
 	{
 		"id": "holiday",
@@ -3842,12 +3742,9 @@
 		"next_price": 0,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 971083,
-		"previewResourceId": 971083,
 		"price": 0,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3855,8 +3752,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 423333
+		"isForRent": false
 	},
 	{
 		"id": "red",
@@ -3865,12 +3761,9 @@
 		"next_price": 100,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 471061,
-		"previewResourceId": 471061,
 		"price": 100,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3878,8 +3771,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 529101
+		"isForRent": false
 	},
 	{
 		"id": "blue",
@@ -3888,12 +3780,9 @@
 		"next_price": 100,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 350240,
-		"previewResourceId": 350240,
 		"price": 100,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3901,8 +3790,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 98644
+		"isForRent": false
 	},
 	{
 		"id": "black",
@@ -3911,12 +3799,9 @@
 		"next_price": 100,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 468704,
-		"previewResourceId": 468704,
 		"price": 100,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3924,8 +3809,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 976299
+		"isForRent": false
 	},
 	{
 		"id": "white",
@@ -3934,12 +3818,9 @@
 		"next_price": 100,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 912977,
-		"previewResourceId": 912977,
 		"price": 100,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3947,8 +3828,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 996274
+		"isForRent": false
 	},
 	{
 		"id": "orange",
@@ -3957,12 +3837,9 @@
 		"next_price": 100,
 		"next_rank": 1,
 		"type": 3,
-		"baseItemId": 456516,
-		"previewResourceId": 456516,
 		"price": 100,
 		"rank": 1,
 		"category": "paint",
-		"properts": [],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3970,8 +3847,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 104412
+		"isForRent": false
 	},
 	{
 		"id": "flora",
@@ -3980,14 +3856,9 @@
 		"next_price": 500,
 		"next_rank": 2,
 		"type": 3,
-		"baseItemId": 95646,
-		"previewResourceId": 95646,
 		"price": 500,
 		"rank": 2,
 		"category": "paint",
-		"properts": [
-			{ "property": "SMOKY_RESISTANCE", "value": "10", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -3995,8 +3866,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 817810
+		"isForRent": false
 	},
 	{
 		"id": "marine",
@@ -4005,18 +3875,9 @@
 		"next_price": 500,
 		"next_rank": 2,
 		"type": 3,
-		"baseItemId": 682329,
-		"previewResourceId": 682329,
 		"price": 500,
 		"rank": 2,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4024,8 +3885,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 662824
+		"isForRent": false
 	},
 	{
 		"id": "swamp",
@@ -4034,14 +3894,9 @@
 		"next_price": 900,
 		"next_rank": 3,
 		"type": 3,
-		"baseItemId": 300293,
-		"previewResourceId": 300293,
 		"price": 900,
 		"rank": 3,
 		"category": "paint",
-		"properts": [
-			{ "property": "TWINS_RESISTANCE", "value": "10", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4049,8 +3904,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 172172
+		"isForRent": false
 	},
 	{
 		"id": "forester",
@@ -4059,18 +3913,9 @@
 		"next_price": 1350,
 		"next_rank": 4,
 		"type": 3,
-		"baseItemId": 769778,
-		"previewResourceId": 769778,
 		"price": 1350,
 		"rank": 4,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "12",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4078,8 +3923,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 554337
+		"isForRent": false
 	},
 	{
 		"id": "magma",
@@ -4088,18 +3932,9 @@
 		"next_price": 1350,
 		"next_rank": 4,
 		"type": 3,
-		"baseItemId": 123601,
-		"previewResourceId": 123601,
 		"price": 1350,
 		"rank": 4,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "12",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4107,8 +3942,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412159
+		"isForRent": false
 	},
 	{
 		"id": "safari",
@@ -4117,14 +3951,9 @@
 		"next_price": 1750,
 		"next_rank": 5,
 		"type": 3,
-		"baseItemId": 981027,
-		"previewResourceId": 981027,
 		"price": 1750,
 		"rank": 5,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "15", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4132,8 +3961,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 258487
+		"isForRent": false
 	},
 	{
 		"id": "metallic",
@@ -4142,18 +3970,9 @@
 		"next_price": 2100,
 		"next_rank": 6,
 		"type": 3,
-		"baseItemId": 246572,
-		"previewResourceId": 246572,
 		"price": 2100,
 		"rank": 6,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4161,8 +3980,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 542023
+		"isForRent": false
 	},
 	{
 		"id": "lava",
@@ -4171,18 +3989,9 @@
 		"next_price": 2100,
 		"next_rank": 6,
 		"type": 3,
-		"baseItemId": 201158,
-		"previewResourceId": 201158,
 		"price": 2100,
 		"rank": 6,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4190,8 +3999,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 498645
+		"isForRent": false
 	},
 	{
 		"id": "dragon",
@@ -4200,18 +4008,9 @@
 		"next_price": 2500,
 		"next_rank": 7,
 		"type": 3,
-		"baseItemId": 107643,
-		"previewResourceId": 107643,
 		"price": 2500,
 		"rank": 7,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "22",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4219,8 +4018,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 192378
+		"isForRent": false
 	},
 	{
 		"id": "lead",
@@ -4229,14 +4027,9 @@
 		"next_price": 3000,
 		"next_rank": 8,
 		"type": 3,
-		"baseItemId": 829177,
-		"previewResourceId": 829177,
 		"price": 3000,
 		"rank": 8,
 		"category": "paint",
-		"properts": [
-			{ "property": "SHAFT_RESISTANCE", "value": "25", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4244,8 +4037,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 560996
+		"isForRent": false
 	},
 	{
 		"id": "mary",
@@ -4254,20 +4046,9 @@
 		"next_price": 6500,
 		"next_rank": 9,
 		"type": 3,
-		"baseItemId": 564917,
-		"previewResourceId": 564917,
 		"price": 6500,
 		"rank": 9,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "15",
-				"subproperties": null
-			},
-			{ "property": "TWINS_RESISTANCE", "value": "8", "subproperties": null },
-			{ "property": "SMOKY_RESISTANCE", "value": "8", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4275,8 +4056,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 523797
+		"isForRent": false
 	},
 	{
 		"id": "storm",
@@ -4285,28 +4065,9 @@
 		"next_price": 6500,
 		"next_rank": 9,
 		"type": 3,
-		"baseItemId": 364130,
-		"previewResourceId": 364130,
 		"price": 6500,
 		"rank": 9,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "17",
-				"subproperties": null
-			},
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "7",
-				"subproperties": null
-			},
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "6",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4314,8 +4075,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 265602
+		"isForRent": false
 	},
 	{
 		"id": "carbon",
@@ -4324,20 +4084,9 @@
 		"next_price": 6500,
 		"next_rank": 9,
 		"type": 3,
-		"baseItemId": 865963,
-		"previewResourceId": 865963,
 		"price": 6500,
 		"rank": 9,
 		"category": "paint",
-		"properts": [
-			{ "property": "TWINS_RESISTANCE", "value": "6", "subproperties": null },
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "6", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4345,8 +4094,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 739386
+		"isForRent": false
 	},
 	{
 		"id": "roger",
@@ -4355,28 +4103,9 @@
 		"next_price": 12500,
 		"next_rank": 10,
 		"type": 3,
-		"baseItemId": 968399,
-		"previewResourceId": 968399,
 		"price": 12500,
 		"rank": 10,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "8",
-				"subproperties": null
-			},
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "16",
-				"subproperties": null
-			},
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4384,8 +4113,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 929509
+		"isForRent": false
 	},
 	{
 		"id": "chainmail",
@@ -4394,24 +4122,9 @@
 		"next_price": 18500,
 		"next_rank": 11,
 		"type": 3,
-		"baseItemId": 123600,
-		"previewResourceId": 123600,
 		"price": 18500,
 		"rank": 11,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "22",
-				"subproperties": null
-			},
-			{ "property": "ISIS_RESISTANCE", "value": "11", "subproperties": null },
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "5",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4419,8 +4132,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412158
+		"isForRent": false
 	},
 	{
 		"id": "corrosion",
@@ -4429,24 +4141,9 @@
 		"next_price": 18500,
 		"next_rank": 11,
 		"type": 3,
-		"baseItemId": 92554,
-		"previewResourceId": 92554,
 		"price": 18500,
 		"rank": 11,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "15",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "15", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4454,8 +4151,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 967180
+		"isForRent": false
 	},
 	{
 		"id": "tundra",
@@ -4464,23 +4160,9 @@
 		"next_price": 18500,
 		"next_rank": 11,
 		"type": 3,
-		"baseItemId": 985440,
-		"previewResourceId": 985440,
 		"price": 18500,
 		"rank": 11,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "27",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4488,8 +4170,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 689436
+		"isForRent": false
 	},
 	{
 		"id": "alien",
@@ -4498,24 +4179,9 @@
 		"next_price": 24500,
 		"next_rank": 12,
 		"type": 3,
-		"baseItemId": 254675,
-		"previewResourceId": 254675,
 		"price": 24500,
 		"rank": 12,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "25", "subproperties": null },
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "9",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "9",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4523,8 +4189,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 931624
+		"isForRent": false
 	},
 	{
 		"id": "swash",
@@ -4533,25 +4198,9 @@
 		"next_price": 24500,
 		"next_rank": 12,
 		"type": 3,
-		"baseItemId": 344971,
-		"previewResourceId": 344971,
 		"price": 24500,
 		"rank": 12,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "10", "subproperties": null },
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			},
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "5", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4559,8 +4208,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 48688
+		"isForRent": false
 	},
 	{
 		"id": "pixel",
@@ -4569,19 +4217,9 @@
 		"next_price": 30500,
 		"next_rank": 13,
 		"type": 3,
-		"baseItemId": 123604,
-		"previewResourceId": 123604,
 		"price": 30500,
 		"rank": 13,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "16", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4589,8 +4227,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412162
+		"isForRent": false
 	},
 	{
 		"id": "cedar",
@@ -4599,20 +4236,9 @@
 		"next_price": 30500,
 		"next_rank": 13,
 		"type": 3,
-		"baseItemId": 5343,
-		"previewResourceId": 5343,
 		"price": 30500,
 		"rank": 13,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "8", "subproperties": null },
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "8", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4620,8 +4246,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 438964
+		"isForRent": false
 	},
 	{
 		"id": "in_love",
@@ -4630,24 +4255,9 @@
 		"next_price": 30500,
 		"next_rank": 13,
 		"type": 3,
-		"baseItemId": 277983,
-		"previewResourceId": 277983,
 		"price": 30500,
 		"rank": 13,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "13", "subproperties": null },
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "24",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4655,8 +4265,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 493495
+		"isForRent": false
 	},
 	{
 		"id": "desert",
@@ -4665,25 +4274,9 @@
 		"next_price": 36500,
 		"next_rank": 14,
 		"type": 3,
-		"baseItemId": 112041,
-		"previewResourceId": 112041,
 		"price": 36500,
 		"rank": 14,
 		"category": "paint",
-		"properts": [
-			{ "property": "TWINS_RESISTANCE", "value": "8", "subproperties": null },
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "26",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "8", "subproperties": null },
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4691,8 +4284,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 82151
+		"isForRent": false
 	},
 	{
 		"id": "dirty",
@@ -4701,19 +4293,9 @@
 		"next_price": 42500,
 		"next_rank": 15,
 		"type": 3,
-		"baseItemId": 201886,
-		"previewResourceId": 201886,
 		"price": 42500,
 		"rank": 15,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "24",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "32", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4721,8 +4303,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 386784
+		"isForRent": false
 	},
 	{
 		"id": "jaguar",
@@ -4731,28 +4312,9 @@
 		"next_price": 42500,
 		"next_rank": 15,
 		"type": 3,
-		"baseItemId": 46357,
-		"previewResourceId": 46357,
 		"price": 42500,
 		"rank": 15,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "17",
-				"subproperties": null
-			},
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4760,8 +4322,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 952497
+		"isForRent": false
 	},
 	{
 		"id": "savanna",
@@ -4770,28 +4331,9 @@
 		"next_price": 50500,
 		"next_rank": 16,
 		"type": 3,
-		"baseItemId": 388701,
-		"previewResourceId": 388701,
 		"price": 50500,
 		"rank": 16,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "15",
-				"subproperties": null
-			},
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "16",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4799,8 +4341,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 299478
+		"isForRent": false
 	},
 	{
 		"id": "loam",
@@ -4809,33 +4350,9 @@
 		"next_price": 50500,
 		"next_rank": 16,
 		"type": 3,
-		"baseItemId": 600886,
-		"previewResourceId": 600886,
 		"price": 50500,
 		"rank": 16,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4843,8 +4360,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 53082
+		"isForRent": false
 	},
 	{
 		"id": "urban",
@@ -4853,29 +4369,9 @@
 		"next_price": 63500,
 		"next_rank": 17,
 		"type": 3,
-		"baseItemId": 739321,
-		"previewResourceId": 739321,
 		"price": 63500,
 		"rank": 17,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "15", "subproperties": null },
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			},
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "32",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4883,8 +4379,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 868766
+		"isForRent": false
 	},
 	{
 		"id": "atom",
@@ -4893,29 +4388,9 @@
 		"next_price": 76600,
 		"next_rank": 18,
 		"type": 3,
-		"baseItemId": 123599,
-		"previewResourceId": 123599,
 		"price": 76600,
 		"rank": 18,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "33",
-				"subproperties": null
-			},
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			},
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			},
-			{ "property": "TWINS_RESISTANCE", "value": "11", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4923,8 +4398,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412157
+		"isForRent": false
 	},
 	{
 		"id": "digital",
@@ -4933,24 +4407,9 @@
 		"next_price": 76600,
 		"next_rank": 18,
 		"type": 3,
-		"baseItemId": 332230,
-		"previewResourceId": 332230,
 		"price": 76600,
 		"rank": 18,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "24",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "35",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "14", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4958,8 +4417,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 444408
+		"isForRent": false
 	},
 	{
 		"id": "hohloma",
@@ -4968,24 +4426,9 @@
 		"next_price": 76600,
 		"next_rank": 18,
 		"type": 3,
-		"baseItemId": 327089,
-		"previewResourceId": 327089,
 		"price": 76600,
 		"rank": 18,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "22",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "22", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -4993,8 +4436,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 140028
+		"isForRent": false
 	},
 	{
 		"id": "electra",
@@ -5003,20 +4445,9 @@
 		"next_price": 90000,
 		"next_rank": 19,
 		"type": 3,
-		"baseItemId": 964904,
-		"previewResourceId": 964904,
 		"price": 90000,
 		"rank": 19,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "38", "subproperties": null },
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "20",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "20", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5024,8 +4455,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 858789
+		"isForRent": false
 	},
 	{
 		"id": "rustle",
@@ -5034,24 +4464,9 @@
 		"next_price": 103000,
 		"next_rank": 20,
 		"type": 3,
-		"baseItemId": 49564,
-		"previewResourceId": 49564,
 		"price": 103000,
 		"rank": 20,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "15", "subproperties": null },
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "40",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5059,8 +4474,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 60284
+		"isForRent": false
 	},
 	{
 		"id": "python",
@@ -5069,19 +4483,9 @@
 		"next_price": 103000,
 		"next_rank": 20,
 		"type": 3,
-		"baseItemId": 167323,
-		"previewResourceId": 167323,
 		"price": 103000,
 		"rank": 20,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "44",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "40", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5089,8 +4493,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 704601
+		"isForRent": false
 	},
 	{
 		"id": "sandstone",
@@ -5099,29 +4502,9 @@
 		"next_price": 116000,
 		"next_rank": 21,
 		"type": 3,
-		"baseItemId": 379571,
-		"previewResourceId": 379571,
 		"price": 116000,
 		"rank": 21,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "12",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "22",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "34",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "22", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5129,8 +4512,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 519187
+		"isForRent": false
 	},
 	{
 		"id": "spark",
@@ -5139,28 +4521,9 @@
 		"next_price": 116000,
 		"next_rank": 21,
 		"type": 3,
-		"baseItemId": 184125,
-		"previewResourceId": 184125,
 		"price": 116000,
 		"rank": 21,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "42",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5168,8 +4531,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 378667
+		"isForRent": false
 	},
 	{
 		"id": "winter",
@@ -5178,29 +4540,9 @@
 		"next_price": 129000,
 		"next_rank": 22,
 		"type": 3,
-		"baseItemId": 791701,
-		"previewResourceId": 791701,
 		"price": 129000,
 		"rank": 22,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "12",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "26",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "12",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "45", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5208,8 +4550,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 285466
+		"isForRent": false
 	},
 	{
 		"id": "needle",
@@ -5218,24 +4559,9 @@
 		"next_price": 180000,
 		"next_rank": 24,
 		"type": 3,
-		"baseItemId": 648950,
-		"previewResourceId": 648950,
 		"price": 180000,
 		"rank": 24,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "22",
-				"subproperties": null
-			},
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "28", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5243,8 +4569,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 216783
+		"isForRent": false
 	},
 	{
 		"id": "zeus",
@@ -5253,24 +4578,9 @@
 		"next_price": 180000,
 		"next_rank": 24,
 		"type": 3,
-		"baseItemId": 123565,
-		"previewResourceId": 123565,
 		"price": 180000,
 		"rank": 24,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "25",
-				"subproperties": null
-			},
-			{ "property": "SMOKY_RESISTANCE", "value": "25", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5278,8 +4588,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412123
+		"isForRent": false
 	},
 	{
 		"id": "rock",
@@ -5288,29 +4597,9 @@
 		"next_price": 192000,
 		"next_rank": 25,
 		"type": 3,
-		"baseItemId": 669820,
-		"previewResourceId": 669820,
 		"price": 192000,
 		"rank": 25,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "28", "subproperties": null },
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "12",
-				"subproperties": null
-			},
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "10",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5318,8 +4607,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 473605
+		"isForRent": false
 	},
 	{
 		"id": "mars",
@@ -5328,24 +4616,9 @@
 		"next_price": 204000,
 		"next_rank": 26,
 		"type": 3,
-		"baseItemId": 123602,
-		"previewResourceId": 123602,
 		"price": 204000,
 		"rank": 26,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			},
-			{ "property": "ISIS_RESISTANCE", "value": "20", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5353,8 +4626,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412160
+		"isForRent": false
 	},
 	{
 		"id": "prodigi",
@@ -5363,29 +4635,9 @@
 		"next_price": 204000,
 		"next_rank": 26,
 		"type": 3,
-		"baseItemId": 645131,
-		"previewResourceId": 645131,
 		"price": 204000,
 		"rank": 26,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "7",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "23",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "20", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5393,8 +4645,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 78411
+		"isForRent": false
 	},
 	{
 		"id": "irbis",
@@ -5403,24 +4654,9 @@
 		"next_price": 216000,
 		"next_rank": 27,
 		"type": 3,
-		"baseItemId": 494974,
-		"previewResourceId": 494974,
 		"price": 216000,
 		"rank": 27,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "50", "subproperties": null },
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "27",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "23",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5428,8 +4664,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 931954
+		"isForRent": false
 	},
 	{
 		"id": "emerald",
@@ -5438,28 +4673,9 @@
 		"next_price": 228000,
 		"next_rank": 28,
 		"type": 3,
-		"baseItemId": 16227,
-		"previewResourceId": 16227,
 		"price": 228000,
 		"rank": 28,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "35",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "15",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5467,8 +4683,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 448000
+		"isForRent": false
 	},
 	{
 		"id": "inferno",
@@ -5477,24 +4692,9 @@
 		"next_price": 228000,
 		"next_rank": 28,
 		"type": 3,
-		"baseItemId": 186119,
-		"previewResourceId": 186119,
 		"price": 228000,
 		"rank": 28,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "36",
-				"subproperties": null
-			},
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{ "property": "TWINS_RESISTANCE", "value": "14", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5502,8 +4702,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 200304
+		"isForRent": false
 	},
 	{
 		"id": "nano",
@@ -5512,33 +4711,9 @@
 		"next_price": 240000,
 		"next_rank": 29,
 		"type": 3,
-		"baseItemId": 123603,
-		"previewResourceId": 123603,
 		"price": 240000,
 		"rank": 29,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "35",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "32",
-				"subproperties": null
-			},
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "22",
-				"subproperties": null
-			},
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5546,8 +4721,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412161
+		"isForRent": false
 	},
 	{
 		"id": "clay",
@@ -5556,28 +4730,9 @@
 		"next_price": 240000,
 		"next_rank": 29,
 		"type": 3,
-		"baseItemId": 700822,
-		"previewResourceId": 700822,
 		"price": 240000,
 		"rank": 29,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "20",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "30",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5585,8 +4740,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 141405
+		"isForRent": false
 	},
 	{
 		"id": "taiga",
@@ -5595,29 +4749,9 @@
 		"next_price": 240000,
 		"next_rank": 29,
 		"type": 3,
-		"baseItemId": 184733,
-		"previewResourceId": 184733,
 		"price": 240000,
 		"rank": 29,
 		"category": "paint",
-		"properts": [
-			{ "property": "ISIS_RESISTANCE", "value": "35", "subproperties": null },
-			{
-				"property": "FIREBIRD_RESISTANCE",
-				"value": "24",
-				"subproperties": null
-			},
-			{
-				"property": "TWINS_RESISTANCE",
-				"value": "17",
-				"subproperties": null
-			},
-			{
-				"property": "RICOCHET_RESISTANCE",
-				"value": "24",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5625,8 +4759,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 32379
+		"isForRent": false
 	},
 	{
 		"id": "tiger",
@@ -5635,28 +4768,9 @@
 		"next_price": 250000,
 		"next_rank": 30,
 		"type": 3,
-		"baseItemId": 123605,
-		"previewResourceId": 123605,
 		"price": 250000,
 		"rank": 30,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "47",
-				"subproperties": null
-			},
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "35",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "18",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5664,8 +4778,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 412163
+		"isForRent": false
 	},
 	{
 		"id": "jade",
@@ -5674,33 +4787,9 @@
 		"next_price": 250000,
 		"next_rank": 30,
 		"type": 3,
-		"baseItemId": 866855,
-		"previewResourceId": 866855,
 		"price": 250000,
 		"rank": 30,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "11",
-				"subproperties": null
-			},
-			{
-				"property": "SMOKY_RESISTANCE",
-				"value": "24",
-				"subproperties": null
-			},
-			{
-				"property": "SHAFT_RESISTANCE",
-				"value": "50",
-				"subproperties": null
-			},
-			{
-				"property": "SHOTGUN_RESISTANCE",
-				"value": "15",
-				"subproperties": null
-			}
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5708,8 +4797,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 746058
+		"isForRent": false
 	},
 	{
 		"id": "picasso",
@@ -5718,29 +4806,9 @@
 		"next_price": 250000,
 		"next_rank": 30,
 		"type": 3,
-		"baseItemId": 337676,
-		"previewResourceId": 337676,
 		"price": 250000,
 		"rank": 30,
 		"category": "paint",
-		"properts": [
-			{
-				"property": "FREEZE_RESISTANCE",
-				"value": "20",
-				"subproperties": null
-			},
-			{
-				"property": "THUNDER_RESISTANCE",
-				"value": "20",
-				"subproperties": null
-			},
-			{
-				"property": "RAILGUN_RESISTANCE",
-				"value": "27",
-				"subproperties": null
-			},
-			{ "property": "SHAFT_RESISTANCE", "value": "33", "subproperties": null }
-		],
 		"discount": {
 			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
@@ -5748,8 +4816,7 @@
 		},
 		"remainingTimeInSec": -1,
 		"grouped": false,
-		"isForRent": false,
-		"coloring": 906593
+		"isForRent": false
 	},
 	{
 		"id": "rename",

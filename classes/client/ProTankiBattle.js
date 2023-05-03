@@ -24,11 +24,26 @@ module.exports = class {
 
 	isSpectator = false;
 
-	hull = "wasp_m0";
-	turret = "railgun_m3";
-
 	constructor(client) {
 		this.client = client;
+
+		const { armor, weapon, paint } = this.client.user.garage;
+
+		this.equipament = {
+			hull: {
+				id: armor.equiped,
+				m: armor[armor.equiped].m,
+			},
+			turret: {
+				id: weapon.equiped,
+				m: weapon[weapon.equiped].m,
+			},
+			paint: {
+				id: paint.equiped,
+				resource: 412123,
+			},
+		};
+
 		this.party = client.user.selectedBattle;
 		this.party.removeViewer(client);
 	}
@@ -382,83 +397,163 @@ module.exports = class {
 		this.sendPacket(-137249251, suppliesPacket);
 	}
 
+	buildTankPacket(client) {
+		const { user } = client;
+		const { battle } = user;
+		const { equipament } = battle;
+
+		const tankPacket = new ByteArray();
+		const tankiInfos = {
+			battleId: this.party.id,
+			colormap_id: equipament.paint.resource,
+			hull_id: `${equipament.hull.id}_m${equipament.hull.m}`,
+			turret_id: `${equipament.turret.id}_m${equipament.turret.m}`,
+			team_type: "NONE",
+			partsObject: JSON.stringify({
+				engineIdleSound: 386284,
+				engineStartMovingSound: 226985,
+				engineMovingSound: 75329,
+				turretSound: 242699,
+			}),
+			hullResource: 20647,
+			turretResource: 839339,
+			sfxData: JSON.stringify({
+				chargingPart1: 114424,
+				chargingPart2: 468379,
+				chargingPart3: 932241,
+				hitMarkTexture: 670581,
+				powTexture: 963502,
+				ringsTexture: 966691,
+				shotSound: 900596,
+				smokeImage: 882103,
+				sphereTexture: 212409,
+				trailImage: 550305,
+				lighting: [
+					{
+						name: "charge",
+						light: [
+							{
+								attenuationBegin: 200,
+								attenuationEnd: 200,
+								color: 16765017,
+								intensity: 0.7,
+								time: 0,
+							},
+							{
+								attenuationBegin: 200,
+								attenuationEnd: 800,
+								color: 16765017,
+								intensity: 0.3,
+								time: 600,
+							},
+						],
+					},
+					{
+						name: "shot",
+						light: [
+							{
+								attenuationBegin: 100,
+								attenuationEnd: 600,
+								color: 16765017,
+								intensity: 0.7,
+								time: 0,
+							},
+							{
+								attenuationBegin: 1,
+								attenuationEnd: 2,
+								color: 16765017,
+								intensity: 0,
+								time: 300,
+							},
+						],
+					},
+					{
+						name: "hit",
+						light: [
+							{
+								attenuationBegin: 200,
+								attenuationEnd: 600,
+								color: 16765017,
+								intensity: 0.7,
+								time: 0,
+							},
+							{
+								attenuationBegin: 1,
+								attenuationEnd: 2,
+								color: 16765017,
+								intensity: 0,
+								time: 300,
+							},
+						],
+					},
+					{
+						name: "rail",
+						light: [
+							{
+								attenuationBegin: 100,
+								attenuationEnd: 500,
+								color: 16765017,
+								intensity: 0.5,
+								time: 0,
+							},
+							{
+								attenuationBegin: 1,
+								attenuationEnd: 2,
+								color: 16765017,
+								intensity: 0,
+								time: 1800,
+							},
+						],
+					},
+				],
+				bcsh: [
+					{
+						brightness: 9.027,
+						contrast: -3.54,
+						saturation: 44.248,
+						hue: 208.67,
+						key: "trail",
+					},
+					{
+						brightness: 9.027,
+						contrast: -3.54,
+						saturation: 44.248,
+						hue: 208.67,
+						key: "charge",
+					},
+				],
+			}),
+			position: battle.position,
+			orientation: battle.orientation,
+			incarnation: battle.incarnation,
+			tank_id: user.username,
+			nickname: user.username,
+			state: battle.state,
+			maxSpeed: 13,
+			maxTurnSpeed: 2.6179938,
+			acceleration: 13,
+			reverseAcceleration: 17,
+			sideAcceleration: 24,
+			turnAcceleration: 3.4906585,
+			reverseTurnAcceleration: 6.4577184,
+			mass: 2200,
+			power: 13,
+			dampingCoeff: 900,
+			turret_turn_speed: 1.6999506914424771,
+			health: battle.health,
+			rank: user.rank,
+			kickback: 3,
+			turretTurnAcceleration: 1.7599900177110819,
+			impact_force: 7,
+			state_null: battle.state_null,
+		};
+		tankPacket.writeObject(tankiInfos);
+		return tankPacket;
+	}
+
 	newTank() {
 		this.party.clients.forEach((_client) => {
-			const tankPacket = new ByteArray();
-			const objRailgun = {
-				battleId: this.party.id,
-				colormap_id: 412123,
-				hull_id: "wasp_m3",
-				turret_id: "railgun_m3",
-				team_type: "NONE",
-				partsObject:
-					'{"engineIdleSound":386284,"engineStartMovingSound":226985,"engineMovingSound":75329,"turretSound":242699}',
-				hullResource: 20647,
-				turretResource: 839339,
-				sfxData:
-					'{"chargingPart1":114424,"chargingPart2":468379,"chargingPart3":932241,"hitMarkTexture":670581,"powTexture":963502,"ringsTexture":966691,"shotSound":900596,"smokeImage":882103,"sphereTexture":212409,"trailImage":550305,"lighting":[{"name":"charge","light":[{"attenuationBegin":200,"attenuationEnd":200,"color":16765017,"intensity":0.7,"time":0},{"attenuationBegin":200,"attenuationEnd":800,"color":16765017,"intensity":0.3,"time":600}]},{"name":"shot","light":[{"attenuationBegin":100,"attenuationEnd":600,"color":16765017,"intensity":0.7,"time":0},{"attenuationBegin":1,"attenuationEnd":2,"color":16765017,"intensity":0,"time":300}]},{"name":"hit","light":[{"attenuationBegin":200,"attenuationEnd":600,"color":16765017,"intensity":0.7,"time":0},{"attenuationBegin":1,"attenuationEnd":2,"color":16765017,"intensity":0,"time":300}]},{"name":"rail","light":[{"attenuationBegin":100,"attenuationEnd":500,"color":16765017,"intensity":0.5,"time":0},{"attenuationBegin":1,"attenuationEnd":2,"color":16765017,"intensity":0,"time":1800}]}],"bcsh":[{"brightness":9.027,"contrast":-3.54,"saturation":44.248,"hue":208.67,"key":"trail"},{"brightness":9.027,"contrast":-3.54,"saturation":44.248,"hue":208.67,"key":"charge"}]}',
-				position: _client.user.battle.position,
-				orientation: _client.user.battle.orientation,
-				incarnation: _client.user.battle.incarnation,
-				tank_id: _client.user.username,
-				nickname: _client.user.username,
-				state: _client.user.battle.state,
-				maxSpeed: 13,
-				maxTurnSpeed: 2.6179938,
-				acceleration: 13,
-				reverseAcceleration: 17,
-				sideAcceleration: 24,
-				turnAcceleration: 3.4906585,
-				reverseTurnAcceleration: 6.4577184,
-				mass: 2200,
-				power: 13,
-				dampingCoeff: 900,
-				turret_turn_speed: 1.6999506914424771,
-				health: _client.user.battle.health,
-				rank: _client.user.rank,
-				kickback: 3,
-				turretTurnAcceleration: 1.7599900177110819,
-				impact_force: 7,
-				state_null: _client.user.battle.state_null,
-			};
-
-			const objIsida = {
-				battleId: this.party.id,
-				colormap_id: 448000,
-				hull_id: "hornet_m3",
-				turret_id: "isida_m3",
-				team_type: "NONE",
-				partsObject:
-					'{"engineIdleSound":386284,"engineStartMovingSound":226985,"engineMovingSound":75329,"turretSound":242699}',
-				hullResource: 907343,
-				turretResource: 999935,
-				sfxData:
-					'{"damagingBall":95981,"damagingRay":454272,"damagingSound":342454,"healingBall":416395,"healingRay":294478,"healingSound":153545,"idleSound":315290,"lighting":[{"name":"enemyStart","light":[{"attenuationBegin":1,"attenuationEnd":2,"color":16733773,"intensity":0,"time":0},{"attenuationBegin":250,"attenuationEnd":700,"color":16733773,"intensity":0.1,"time":200}]},{"name":"enemyLoop","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":16733773,"intensity":0.3,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":16733773,"intensity":0.2,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":16733773,"intensity":0.3,"time":400}]},{"name":"start","light":[{"attenuationBegin":1,"attenuationEnd":2,"color":4308715,"intensity":0,"time":0},{"attenuationBegin":250,"attenuationEnd":700,"color":4308715,"intensity":0.2,"time":200}]},{"name":"loop","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":4308715,"intensity":0.3,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":4308715,"intensity":0.2,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":4308715,"intensity":0.3,"time":400}]},{"name":"friendStart","light":[{"attenuationBegin":1,"attenuationEnd":2,"color":3338397,"intensity":0,"time":0},{"attenuationBegin":250,"attenuationEnd":700,"color":3338397,"intensity":0.2,"time":200}]},{"name":"friendLoop","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":3338397,"intensity":0.3,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":3338397,"intensity":0.2,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":3338397,"intensity":0.3,"time":400}]},{"name":"enemyBeam","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":16735565,"intensity":0.2,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":16735565,"intensity":0.15,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":16735565,"intensity":0.2,"time":400}]},{"name":"friendBeam","light":[{"attenuationBegin":250,"attenuationEnd":700,"color":12382365,"intensity":0.2,"time":0},{"attenuationBegin":100,"attenuationEnd":600,"color":12382365,"intensity":0.15,"time":200},{"attenuationBegin":250,"attenuationEnd":700,"color":12382365,"intensity":0.2,"time":400}]}],"bcsh":[{"brightness":2.257,"contrast":1.77,"saturation":26.549,"hue":267.61,"key":"hss"},{"brightness":2.257,"contrast":1.77,"saturation":26.549,"hue":267.61,"key":"hs"},{"brightness":20.31,"contrast":-2.655,"saturation":70.796,"hue":310.62,"key":"dss"},{"brightness":20.31,"contrast":-2.655,"saturation":70.796,"hue":310.62,"key":"ds"}]}',
-				position: _client.user.battle.position,
-				orientation: _client.user.battle.orientation,
-				incarnation: _client.user.battle.incarnation,
-				tank_id: _client.user.username,
-				nickname: _client.user.username,
-				state: _client.user.battle.state,
-				maxSpeed: 12,
-				maxTurnSpeed: 2.268928,
-				acceleration: 14,
-				reverseAcceleration: 23,
-				sideAcceleration: 14,
-				turnAcceleration: 2.9670596,
-				reverseTurnAcceleration: 5.5850534,
-				mass: 2400,
-				power: 14,
-				dampingCoeff: 1250,
-				turret_turn_speed: 2.3500858378103646,
-				health: _client.user.battle.health,
-				rank: _client.user.rank,
-				kickback: 0,
-				turretTurnAcceleration: 3.850021796974292,
-				impact_force: 0,
-				state_null: _client.user.battle.state_null,
-			};
-			tankPacket.writeObject(objRailgun);
+			const tankPacket = this.buildTankPacket(_client);
 			if (this.client == _client) {
 				this.party.sendPacket(-1643824092, tankPacket);
 			} else {
@@ -593,8 +688,8 @@ module.exports = class {
 			},
 		};
 
-		const level = this.turret.charAt(this.turret.length - 1);
-		const turretName = this.turret.split("_")[0];
+		const level = this.equipament.turret.m;
+		const turretName = this.equipament.turret.id;
 		const mainDamage = damageList[turretName]?.[level] ?? 0;
 
 		targetsUsers.forEach((target) => {

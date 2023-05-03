@@ -227,8 +227,13 @@ class ProTankiClient {
 					}
 
 					// Se o usuário possui o item na garagem, adicione-o à lista de itens na garagem do usuário
-					if (modificationID === userGarageItem.m || !modificationID) {
-						garageItem.count = userGarageItem.count;
+					if (
+						modificationID === userGarageItem.m ||
+						modificationID === undefined
+					) {
+						if (userGarageItem.count) {
+							garageItem.count = userGarageItem.count;
+						}
 						userGarage.items.push(garageItem);
 						continue;
 					}

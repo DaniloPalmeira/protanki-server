@@ -1,0 +1,5170 @@
+{
+	"smoky": {
+		"0": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "22", "subproperties": null },
+				"DAMAGE_TO": { "value": "28", "subproperties": null },
+				"IMPACT_FORCE": { "value": "175", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "71.5", "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": "8", "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": "50", "subproperties": null }
+			},
+			"object3ds": 205731,
+			"baseItemId": 651066,
+			"previewResourceId": 651066,
+			"sfxData": {
+				"criticalHitSize": 375,
+				"criticalHitTexture": 110004,
+				"explosionMarkTexture": 1000077,
+				"explosionSize": 300,
+				"explosionSound": 667431,
+				"explosionTexture": 785656,
+				"shotSound": 223994,
+				"shotTexture": 1000076,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 450,
+								"color": 16571766,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16571766,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "29", "subproperties": null },
+				"DAMAGE_TO": { "value": "37", "subproperties": null },
+				"IMPACT_FORCE": { "value": "222", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "87.1", "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": "12", "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": "65", "subproperties": null }
+			},
+			"object3ds": 31170,
+			"baseItemId": 651066,
+			"previewResourceId": 825544,
+			"sfxData": {
+				"criticalHitSize": 375,
+				"criticalHitTexture": 110004,
+				"explosionMarkTexture": 1000077,
+				"explosionSize": 300,
+				"explosionSound": 667431,
+				"explosionTexture": 785657,
+				"shotSound": 223994,
+				"shotTexture": 1000076,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 450,
+								"color": 16571766,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16571766,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "35", "subproperties": null },
+				"DAMAGE_TO": { "value": "45", "subproperties": null },
+				"IMPACT_FORCE": { "value": "269", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "102.6", "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": "15", "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": "80", "subproperties": null }
+			},
+			"object3ds": 458970,
+			"baseItemId": 651066,
+			"previewResourceId": 592136,
+			"sfxData": {
+				"criticalHitSize": 375,
+				"criticalHitTexture": 110004,
+				"explosionMarkTexture": 1000077,
+				"explosionSize": 300,
+				"explosionSound": 667431,
+				"explosionTexture": 785658,
+				"shotSound": 223994,
+				"shotTexture": 1000076,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 450,
+								"color": 16571766,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16571766,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "44", "subproperties": null },
+				"DAMAGE_TO": { "value": "56", "subproperties": null },
+				"IMPACT_FORCE": { "value": "330", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "122.6", "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": "20", "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": "100", "subproperties": null }
+			},
+			"object3ds": 768112,
+			"baseItemId": 651066,
+			"previewResourceId": 379077,
+			"sfxData": {
+				"criticalHitSize": 375,
+				"criticalHitTexture": 110004,
+				"explosionMarkTexture": 1000077,
+				"explosionSize": 300,
+				"explosionSound": 667431,
+				"explosionTexture": 785659,
+				"shotSound": 223994,
+				"shotTexture": 1000076,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 450,
+								"color": 16571766,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16571766,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 16760576,
+								"intensity": 0,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		}
+	},
+	"flamethrower": {
+		"0": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "41", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "12.00", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "95.3", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "23.7", "subproperties": null },
+				"FIRE_DAMAGE": {
+					"value": null,
+					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
+				},
+				"FLAME_TEMPERATURE_LIMIT": { "value": "5.9", "subproperties": null }
+			},
+			"object3ds": 521900,
+			"baseItemId": 43761,
+			"previewResourceId": 43761,
+			"sfxData": {
+				"fireTexture": 731304,
+				"flameSound": 461967,
+				"muzzlePlaneTexture": 810405,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [],
+				"colorTransform": [
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 100,
+						"greenOffset": 150,
+						"blueOffset": 100,
+						"alphaOffset": 0,
+						"t": 0
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 100,
+						"blueOffset": 60,
+						"alphaOffset": 0,
+						"t": 0.05
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 100,
+						"greenOffset": 100,
+						"blueOffset": 40,
+						"alphaOffset": 0,
+						"t": 0.1
+					},
+					{
+						"redMultiplier": 0.5,
+						"greenMultiplier": 0.3,
+						"blueMultiplier": 0.3,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 80,
+						"blueOffset": 50,
+						"alphaOffset": 0,
+						"t": 0.65
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 50,
+						"blueOffset": 50,
+						"alphaOffset": 0,
+						"t": 0.75
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 0,
+						"redOffset": 20,
+						"greenOffset": 20,
+						"blueOffset": 20,
+						"alphaOffset": 0,
+						"t": 1
+					}
+				]
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "50", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "11.39", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "116.9", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "25.6", "subproperties": null },
+				"FIRE_DAMAGE": {
+					"value": null,
+					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
+				},
+				"FLAME_TEMPERATURE_LIMIT": { "value": "10.2", "subproperties": null }
+			},
+			"object3ds": 18283,
+			"baseItemId": 43761,
+			"previewResourceId": 608063,
+			"sfxData": {
+				"fireTexture": 731304,
+				"flameSound": 461967,
+				"muzzlePlaneTexture": 810406,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [],
+				"colorTransform": [
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 100,
+						"greenOffset": 150,
+						"blueOffset": 100,
+						"alphaOffset": 0,
+						"t": 0
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 100,
+						"blueOffset": 60,
+						"alphaOffset": 0,
+						"t": 0.05
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 100,
+						"greenOffset": 100,
+						"blueOffset": 40,
+						"alphaOffset": 0,
+						"t": 0.1
+					},
+					{
+						"redMultiplier": 0.5,
+						"greenMultiplier": 0.3,
+						"blueMultiplier": 0.3,
+						"alphaMultiplier": 1,
+						"redOffset": 180,
+						"greenOffset": 80,
+						"blueOffset": 40,
+						"alphaOffset": 0,
+						"t": 0.65
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 50,
+						"blueOffset": 50,
+						"alphaOffset": 0,
+						"t": 0.75
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 0,
+						"redOffset": 20,
+						"greenOffset": 20,
+						"blueOffset": 20,
+						"alphaOffset": 0,
+						"t": 1
+					}
+				]
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "60", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "10.78", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "138.4", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "27.5", "subproperties": null },
+				"FIRE_DAMAGE": {
+					"value": null,
+					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
+				},
+				"FLAME_TEMPERATURE_LIMIT": { "value": "14.5", "subproperties": null }
+			},
+			"object3ds": 456708,
+			"baseItemId": 43761,
+			"previewResourceId": 508353,
+			"sfxData": {
+				"fireTexture": 731304,
+				"flameSound": 461967,
+				"muzzlePlaneTexture": 810407,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [],
+				"colorTransform": [
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 100,
+						"greenOffset": 150,
+						"blueOffset": 100,
+						"alphaOffset": 0,
+						"t": 0
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 100,
+						"blueOffset": 60,
+						"alphaOffset": 0,
+						"t": 0.05
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 200,
+						"greenOffset": 110,
+						"blueOffset": 30,
+						"alphaOffset": 0,
+						"t": 0.1
+					},
+					{
+						"redMultiplier": 0.5,
+						"greenMultiplier": 0.3,
+						"blueMultiplier": 0.3,
+						"alphaMultiplier": 1,
+						"redOffset": 200,
+						"greenOffset": 80,
+						"blueOffset": 30,
+						"alphaOffset": 0,
+						"t": 0.65
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 50,
+						"blueOffset": 50,
+						"alphaOffset": 0,
+						"t": 0.75
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 0,
+						"redOffset": 20,
+						"greenOffset": 20,
+						"blueOffset": 20,
+						"alphaOffset": 0,
+						"t": 1
+					}
+				]
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "72", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "10.00", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "166.2", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "30", "subproperties": null },
+				"FIRE_DAMAGE": {
+					"value": null,
+					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
+				},
+				"FLAME_TEMPERATURE_LIMIT": { "value": "20", "subproperties": null }
+			},
+			"object3ds": 758687,
+			"baseItemId": 43761,
+			"previewResourceId": 553103,
+			"sfxData": {
+				"fireTexture": 731304,
+				"flameSound": 461967,
+				"muzzlePlaneTexture": 810408,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16746496,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 100
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 800,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 300
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1000,
+								"color": 16746496,
+								"intensity": 1,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [],
+				"colorTransform": [
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 100,
+						"greenOffset": 150,
+						"blueOffset": 100,
+						"alphaOffset": 0,
+						"t": 0
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 50,
+						"greenOffset": 100,
+						"blueOffset": 60,
+						"alphaOffset": 0,
+						"t": 0.05
+					},
+					{
+						"redMultiplier": 1,
+						"greenMultiplier": 1,
+						"blueMultiplier": 1,
+						"alphaMultiplier": 1,
+						"redOffset": 255,
+						"greenOffset": 100,
+						"blueOffset": 30,
+						"alphaOffset": 0,
+						"t": 0.1
+					},
+					{
+						"redMultiplier": 0.5,
+						"greenMultiplier": 0.3,
+						"blueMultiplier": 0.3,
+						"alphaMultiplier": 1,
+						"redOffset": 140,
+						"greenOffset": 60,
+						"blueOffset": 40,
+						"alphaOffset": 0,
+						"t": 0.65
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 1,
+						"redOffset": 40,
+						"greenOffset": 40,
+						"blueOffset": 40,
+						"alphaOffset": 0,
+						"t": 0.75
+					},
+					{
+						"redMultiplier": 0,
+						"greenMultiplier": 0,
+						"blueMultiplier": 0,
+						"alphaMultiplier": 0,
+						"redOffset": 20,
+						"greenOffset": 20,
+						"blueOffset": 20,
+						"alphaOffset": 0,
+						"t": 1
+					}
+				]
+			}
+		}
+	},
+	"twins": {
+		"0": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "8.8", "subproperties": null },
+				"DAMAGE_TO": { "value": "10.5", "subproperties": null },
+				"IMPACT_FORCE": { "value": "97", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "89.6", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "60.7", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "5.8", "subproperties": null }
+			},
+			"object3ds": 495014,
+			"baseItemId": 103660,
+			"previewResourceId": 103660,
+			"sfxData": {
+				"explosionTexture": 236695,
+				"hitMarkTexture": 828576,
+				"muzzleFlashTexture": 179480,
+				"shotSound": 457612,
+				"shotTexture": 433995,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 65535,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 400,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
+						"key": "flash"
+					},
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
+						"key": "shot"
+					},
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
+						"key": "expl"
+					}
+				]
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "11.4", "subproperties": null },
+				"DAMAGE_TO": { "value": "13.9", "subproperties": null },
+				"IMPACT_FORCE": { "value": "117", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "103.9", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "65.2", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "10.3", "subproperties": null }
+			},
+			"object3ds": 132033,
+			"baseItemId": 103660,
+			"previewResourceId": 686147,
+			"sfxData": {
+				"explosionTexture": 236695,
+				"hitMarkTexture": 828576,
+				"muzzleFlashTexture": 179480,
+				"shotSound": 457612,
+				"shotTexture": 433995,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 500,
+								"color": 6700287,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 6700287,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 6700287,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 400,
+								"color": 6700287,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 6700287,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 46.19,
+						"key": "flash"
+					},
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 46.19,
+						"key": "shot"
+					},
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 46.19,
+						"key": "expl"
+					}
+				]
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "14", "subproperties": null },
+				"DAMAGE_TO": { "value": "17.2", "subproperties": null },
+				"IMPACT_FORCE": { "value": "137", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "118.3", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "69.8", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "14.8", "subproperties": null }
+			},
+			"object3ds": 875465,
+			"baseItemId": 103660,
+			"previewResourceId": 595904,
+			"sfxData": {
+				"explosionTexture": 236695,
+				"hitMarkTexture": 828576,
+				"muzzleFlashTexture": 179480,
+				"shotSound": 457612,
+				"shotTexture": 433995,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 500,
+								"color": 7694305,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 7694305,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 14742338,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 400,
+								"color": 14742338,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 14742338,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 30.465,
+						"contrast": 2.655,
+						"saturation": -17.699,
+						"hue": 73.27,
+						"key": "flash"
+					},
+					{
+						"brightness": 30.465,
+						"contrast": 2.655,
+						"saturation": -8.85,
+						"hue": 226.19,
+						"key": "shot"
+					},
+					{
+						"brightness": 30.465,
+						"contrast": 2.655,
+						"saturation": -8.85,
+						"hue": 226.19,
+						"key": "expl"
+					}
+				]
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "17", "subproperties": null },
+				"DAMAGE_TO": { "value": "21", "subproperties": null },
+				"IMPACT_FORCE": { "value": "160", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "134.7", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "75", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "20", "subproperties": null }
+			},
+			"object3ds": 499715,
+			"baseItemId": 103660,
+			"previewResourceId": 705554,
+			"sfxData": {
+				"explosionTexture": 236695,
+				"hitMarkTexture": 828576,
+				"muzzleFlashTexture": 179480,
+				"shotSound": 457612,
+				"shotTexture": 433995,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 500,
+								"color": 7241215,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 7241215,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 300,
+								"color": 65280,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 400,
+								"color": 65280,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65280,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 10.155,
+						"contrast": 1.77,
+						"saturation": -17.699,
+						"hue": 73.27,
+						"key": "flash"
+					},
+					{
+						"brightness": 10.155,
+						"contrast": 1.77,
+						"saturation": -8.85,
+						"hue": 297.88,
+						"key": "shot"
+					},
+					{
+						"brightness": 10.155,
+						"contrast": 1.77,
+						"saturation": -8.85,
+						"hue": 297.88,
+						"key": "expl"
+					}
+				]
+			}
+		}
+	},
+	"railgun": {
+		"0": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "68", "subproperties": null },
+				"DAMAGE_TO": { "value": "106", "subproperties": null },
+				"IMPACT_FORCE": { "value": "369", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "5.85", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "56.2", "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": "35.36", "subproperties": null }
+			},
+			"object3ds": 906685,
+			"baseItemId": 882259,
+			"previewResourceId": 882259,
+			"sfxData": {
+				"chargingPart1": 114424,
+				"chargingPart2": 468379,
+				"chargingPart3": 932241,
+				"hitMarkTexture": 670581,
+				"powTexture": 963502,
+				"ringsTexture": 966691,
+				"shotSound": 900596,
+				"smokeImage": 882103,
+				"sphereTexture": 212409,
+				"trailImage": 550305,
+				"lighting": [
+					{
+						"name": "charge",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 200,
+								"color": 5883129,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 5883129,
+								"intensity": 0.3,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 5883129,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 5883129,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 5883129,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 5883129,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "rail",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 5883129,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 5883129,
+								"intensity": 0,
+								"time": 1800
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
+						"key": "trail"
+					},
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
+						"key": "charge"
+					}
+				]
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "90", "subproperties": null },
+				"DAMAGE_TO": { "value": "137", "subproperties": null },
+				"IMPACT_FORCE": { "value": "479", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "5.38", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "70", "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": "56.90", "subproperties": null }
+			},
+			"object3ds": 369990,
+			"baseItemId": 882259,
+			"previewResourceId": 603365,
+			"sfxData": {
+				"chargingPart1": 114424,
+				"chargingPart2": 468379,
+				"chargingPart3": 932241,
+				"hitMarkTexture": 670581,
+				"powTexture": 963502,
+				"ringsTexture": 966691,
+				"shotSound": 900596,
+				"smokeImage": 882103,
+				"sphereTexture": 212409,
+				"trailImage": 550305,
+				"lighting": [
+					{
+						"name": "charge",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 200,
+								"color": 5286399,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 5286399,
+								"intensity": 0.3,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 5286399,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 5286399,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 5286399,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 5286399,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "rail",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 5286399,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 5286399,
+								"intensity": 0,
+								"time": 1800
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 10.155,
+						"contrast": -2.655,
+						"saturation": 61.947,
+						"hue": 344.07,
+						"key": "trail"
+					},
+					{
+						"brightness": 10.155,
+						"contrast": -2.655,
+						"saturation": 44.248,
+						"hue": 340.88,
+						"key": "charge"
+					}
+				]
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "111", "subproperties": null },
+				"DAMAGE_TO": { "value": "168", "subproperties": null },
+				"IMPACT_FORCE": { "value": "589", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "4.91", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "78.5", "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": "78.45", "subproperties": null }
+			},
+			"object3ds": 73852,
+			"baseItemId": 882259,
+			"previewResourceId": 762220,
+			"sfxData": {
+				"chargingPart1": 114424,
+				"chargingPart2": 468379,
+				"chargingPart3": 932241,
+				"hitMarkTexture": 670581,
+				"powTexture": 963502,
+				"ringsTexture": 966691,
+				"shotSound": 900596,
+				"smokeImage": 882103,
+				"sphereTexture": 212409,
+				"trailImage": 550305,
+				"lighting": [
+					{
+						"name": "charge",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 200,
+								"color": 13597945,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 13597945,
+								"intensity": 0.3,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 13597945,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 13597945,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 13597945,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 13597945,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "rail",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 13597945,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 13597945,
+								"intensity": 0,
+								"time": 1800
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 7.898,
+						"contrast": -2.655,
+						"saturation": 35.398,
+						"hue": 78.05,
+						"key": "trail"
+					},
+					{
+						"brightness": 7.898,
+						"contrast": -2.655,
+						"saturation": 35.398,
+						"hue": 78.05,
+						"key": "charge"
+					}
+				]
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "133", "subproperties": null },
+				"DAMAGE_TO": { "value": "199", "subproperties": null },
+				"IMPACT_FORCE": { "value": "700", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "4.44", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "97.4", "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": "100.00", "subproperties": null }
+			},
+			"object3ds": 839339,
+			"baseItemId": 882259,
+			"previewResourceId": 387778,
+			"sfxData": {
+				"chargingPart1": 114424,
+				"chargingPart2": 468379,
+				"chargingPart3": 932241,
+				"hitMarkTexture": 670581,
+				"powTexture": 963502,
+				"ringsTexture": 966691,
+				"shotSound": 900596,
+				"smokeImage": 882103,
+				"sphereTexture": 212409,
+				"trailImage": 550305,
+				"lighting": [
+					{
+						"name": "charge",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 200,
+								"color": 16765017,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16765017,
+								"intensity": 0.3,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16765017,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16765017,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 16765017,
+								"intensity": 0.7,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16765017,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					},
+					{
+						"name": "rail",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 16765017,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16765017,
+								"intensity": 0,
+								"time": 1800
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 9.027,
+						"contrast": -3.54,
+						"saturation": 44.248,
+						"hue": 208.67,
+						"key": "trail"
+					},
+					{
+						"brightness": 9.027,
+						"contrast": -3.54,
+						"saturation": 44.248,
+						"hue": 208.67,
+						"key": "charge"
+					}
+				]
+			}
+		}
+	},
+	"isida": {
+		"0": {
+			"propers": {
+				"ISIS_HEALING_PER_SECOND": {
+					"value": null,
+					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
+				},
+				"ISIS_HEALING_PER_PERIOD": { "value": "22", "subproperties": null },
+				"ISIS_DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "40", "subproperties": null },
+				"ISIS_SELF_HEALING_PERCENT": {
+					"value": "35.97",
+					"subproperties": null
+				},
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "11.11", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "91.7", "subproperties": null }
+			},
+			"object3ds": 638066,
+			"baseItemId": 896849,
+			"previewResourceId": 896849,
+			"sfxData": {
+				"damagingBall": 95981,
+				"damagingRay": 454272,
+				"damagingSound": 342454,
+				"healingBall": 416395,
+				"healingRay": 294478,
+				"healingSound": 153545,
+				"idleSound": 315290,
+				"lighting": [
+					{
+						"name": "enemyStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16640272,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "enemyLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16640272,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 4308715,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 65535,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "friendLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 8255999,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "enemyBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16640272,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 8255999,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 0,
+						"contrast": -1.77,
+						"saturation": 0,
+						"hue": 0,
+						"key": "hss"
+					},
+					{
+						"brightness": 0,
+						"contrast": -1.77,
+						"saturation": 0,
+						"hue": 0,
+						"key": "hs"
+					},
+					{
+						"brightness": 22.566,
+						"contrast": -2.655,
+						"saturation": 0,
+						"hue": 15.93,
+						"key": "dss"
+					},
+					{
+						"brightness": 22.566,
+						"contrast": -2.655,
+						"saturation": 0,
+						"hue": 15.93,
+						"key": "ds"
+					}
+				]
+			}
+		},
+		"1": {
+			"propers": {
+				"ISIS_HEALING_PER_SECOND": {
+					"value": null,
+					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
+				},
+				"ISIS_HEALING_PER_PERIOD": { "value": "28", "subproperties": null },
+				"ISIS_DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "50", "subproperties": null },
+				"ISIS_SELF_HEALING_PERCENT": {
+					"value": "40.88",
+					"subproperties": null
+				},
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "10.37", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "106.7", "subproperties": null }
+			},
+			"object3ds": 332851,
+			"baseItemId": 896849,
+			"previewResourceId": 216993,
+			"sfxData": {
+				"damagingBall": 95981,
+				"damagingRay": 454272,
+				"damagingSound": 342454,
+				"healingBall": 416395,
+				"healingRay": 294478,
+				"healingSound": 153545,
+				"idleSound": 315290,
+				"lighting": [
+					{
+						"name": "enemyStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16640272,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "enemyLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16640272,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16640272,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 4308715,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 2405089,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 2405089,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "friendLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 2405089,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 2405089,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 2405089,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "enemyBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 15782695,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 15782695,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 15782695,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 2405089,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 2405089,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 2405089,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 19.181,
+						"contrast": -1.77,
+						"saturation": 8.85,
+						"hue": 316.99,
+						"key": "hss"
+					},
+					{
+						"brightness": 19.181,
+						"contrast": -1.77,
+						"saturation": 8.85,
+						"hue": 316.99,
+						"key": "hs"
+					},
+					{
+						"brightness": 28.208,
+						"contrast": -3.54,
+						"saturation": 53.097,
+						"hue": 340.88,
+						"key": "dss"
+					},
+					{
+						"brightness": 28.208,
+						"contrast": -3.54,
+						"saturation": 53.097,
+						"hue": 340.88,
+						"key": "ds"
+					}
+				]
+			}
+		},
+		"2": {
+			"propers": {
+				"ISIS_HEALING_PER_SECOND": {
+					"value": null,
+					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
+				},
+				"ISIS_HEALING_PER_PERIOD": { "value": "33", "subproperties": null },
+				"ISIS_DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "61", "subproperties": null },
+				"ISIS_SELF_HEALING_PERCENT": {
+					"value": "45.79",
+					"subproperties": null
+				},
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "9.63", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "121.8", "subproperties": null }
+			},
+			"object3ds": 77397,
+			"baseItemId": 896849,
+			"previewResourceId": 807842,
+			"sfxData": {
+				"damagingBall": 95981,
+				"damagingRay": 454272,
+				"damagingSound": 342454,
+				"healingBall": 416395,
+				"healingRay": 294478,
+				"healingSound": 153545,
+				"idleSound": 315290,
+				"lighting": [
+					{
+						"name": "enemyStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16758811,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16758811,
+								"intensity": 0.1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "enemyLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16758811,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16758811,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16758811,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 4308715,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 65535,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "friendLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 8255999,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "enemyBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16763392,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16763392,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16763392,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 8255999,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 8255999,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 4.513,
+						"contrast": -1.77,
+						"saturation": 8.85,
+						"hue": 299.47,
+						"key": "hss"
+					},
+					{
+						"brightness": 4.513,
+						"contrast": -1.77,
+						"saturation": 8.85,
+						"hue": 299.47,
+						"key": "hs"
+					},
+					{
+						"brightness": 19.181,
+						"contrast": 3.54,
+						"saturation": 61.947,
+						"hue": 329.73,
+						"key": "dss"
+					},
+					{
+						"brightness": 19.181,
+						"contrast": 3.54,
+						"saturation": 61.947,
+						"hue": 329.73,
+						"key": "ds"
+					}
+				]
+			}
+		},
+		"3": {
+			"propers": {
+				"ISIS_HEALING_PER_SECOND": {
+					"value": null,
+					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
+				},
+				"ISIS_HEALING_PER_PERIOD": { "value": "38", "subproperties": null },
+				"ISIS_DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "70", "subproperties": null },
+				"ISIS_SELF_HEALING_PERCENT": {
+					"value": "50.00",
+					"subproperties": null
+				},
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "9.00", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "134.7", "subproperties": null }
+			},
+			"object3ds": 999935,
+			"baseItemId": 896849,
+			"previewResourceId": 677721,
+			"sfxData": {
+				"damagingBall": 95981,
+				"damagingRay": 454272,
+				"damagingSound": 342454,
+				"healingBall": 416395,
+				"healingRay": 294478,
+				"healingSound": 153545,
+				"idleSound": 315290,
+				"lighting": [
+					{
+						"name": "enemyStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16733773,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16733773,
+								"intensity": 0.1,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "enemyLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16733773,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16733773,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16733773,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 4308715,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 4308715,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 4308715,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendStart",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 3338397,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 3338397,
+								"intensity": 0.2,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "friendLoop",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 3338397,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 3338397,
+								"intensity": 0.2,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 3338397,
+								"intensity": 0.3,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "enemyBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16735565,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 16735565,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 16735565,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					},
+					{
+						"name": "friendBeam",
+						"light": [
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 12382365,
+								"intensity": 0.2,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 600,
+								"color": 12382365,
+								"intensity": 0.15,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 250,
+								"attenuationEnd": 700,
+								"color": 12382365,
+								"intensity": 0.2,
+								"time": 400
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 2.257,
+						"contrast": 1.77,
+						"saturation": 26.549,
+						"hue": 267.61,
+						"key": "hss"
+					},
+					{
+						"brightness": 2.257,
+						"contrast": 1.77,
+						"saturation": 26.549,
+						"hue": 267.61,
+						"key": "hs"
+					},
+					{
+						"brightness": 20.31,
+						"contrast": -2.655,
+						"saturation": 70.796,
+						"hue": 310.62,
+						"key": "dss"
+					},
+					{
+						"brightness": 20.31,
+						"contrast": -2.655,
+						"saturation": 70.796,
+						"hue": 310.62,
+						"key": "ds"
+					}
+				]
+			}
+		}
+	},
+	"thunder": {
+		"0": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "42", "subproperties": null },
+				"DAMAGE_TO": { "value": "68", "subproperties": null },
+				"IMPACT_FORCE": { "value": "169", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "3.15", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "77", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "56.9", "subproperties": null }
+			},
+			"object3ds": 503709,
+			"baseItemId": 205433,
+			"previewResourceId": 205433,
+			"sfxData": {
+				"explosionMarkTexture": 262233,
+				"explosionSize": 1000,
+				"explosionSound": 373285,
+				"explosionTexture": 435325,
+				"shotSound": 337970,
+				"shotTexture": 215691,
+				"lighting": [
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0.8,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 700
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 16741656,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 250
+							}
+						]
+					},
+					{
+						"name": "shellLightAnimation",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "55", "subproperties": null },
+				"DAMAGE_TO": { "value": "83", "subproperties": null },
+				"IMPACT_FORCE": { "value": "217", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "2.91", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "94.6", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "61.8", "subproperties": null }
+			},
+			"object3ds": 15411,
+			"baseItemId": 205433,
+			"previewResourceId": 282433,
+			"sfxData": {
+				"explosionMarkTexture": 262233,
+				"explosionSize": 1000,
+				"explosionSound": 373285,
+				"explosionTexture": 435326,
+				"shotSound": 337970,
+				"shotTexture": 215691,
+				"lighting": [
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0.8,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 700
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 16741656,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 250
+							}
+						]
+					},
+					{
+						"name": "shellLightAnimation",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "68", "subproperties": null },
+				"DAMAGE_TO": { "value": "99", "subproperties": null },
+				"IMPACT_FORCE": { "value": "265", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "2.67", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "112.3", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "66.6", "subproperties": null }
+			},
+			"object3ds": 104552,
+			"baseItemId": 205433,
+			"previewResourceId": 770995,
+			"sfxData": {
+				"explosionMarkTexture": 262233,
+				"explosionSize": 1000,
+				"explosionSound": 373285,
+				"explosionTexture": 435327,
+				"shotSound": 337970,
+				"shotTexture": 215691,
+				"lighting": [
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0.8,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 700
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 16741656,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 250
+							}
+						]
+					},
+					{
+						"name": "shellLightAnimation",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "78", "subproperties": null },
+				"DAMAGE_TO": { "value": "110", "subproperties": null },
+				"IMPACT_FORCE": { "value": "300", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "2.50", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "124.9", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "70", "subproperties": null }
+			},
+			"object3ds": 551825,
+			"baseItemId": 205433,
+			"previewResourceId": 875152,
+			"sfxData": {
+				"explosionMarkTexture": 262233,
+				"explosionSize": 1000,
+				"explosionSound": 373285,
+				"explosionTexture": 435328,
+				"shotSound": 337970,
+				"shotTexture": 215691,
+				"lighting": [
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0.8,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 800,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 700
+							}
+						]
+					},
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 500,
+								"color": 16741656,
+								"intensity": 0.9,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 250
+							}
+						]
+					},
+					{
+						"name": "shellLightAnimation",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		}
+	},
+	"shotgun": {
+		"0": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "57.5", "subproperties": null },
+				"IMPACT_FORCE": { "value": "22", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "2.16", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "87.2", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "50.4", "subproperties": null }
+			},
+			"object3ds": 412744,
+			"baseItemId": 412745,
+			"previewResourceId": 412745,
+			"sfxData": {
+				"magazineReloadSound": 223995,
+				"reloadSound": 223996,
+				"shotSound": 223997,
+				"explosionMarkTexture0": 756745,
+				"explosionMarkTexture1": 756746,
+				"explosionMarkTexture2": 756747,
+				"explosionMarkTexture3": 756748,
+				"smokeTexture": 756749,
+				"sparkleTexture": 756750,
+				"pelletTrailTexture": 756751,
+				"shotAlongTexture": 423332,
+				"shotAcrossTexture": 234233,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 700,
+								"color": 16431616,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16431616,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "75.6", "subproperties": null },
+				"IMPACT_FORCE": { "value": "29", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "2.04", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "104", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "55.2", "subproperties": null }
+			},
+			"object3ds": 412746,
+			"baseItemId": 412745,
+			"previewResourceId": 412747,
+			"sfxData": {
+				"magazineReloadSound": 223995,
+				"reloadSound": 223996,
+				"shotSound": 223997,
+				"explosionMarkTexture0": 756745,
+				"explosionMarkTexture1": 756746,
+				"explosionMarkTexture2": 756747,
+				"explosionMarkTexture3": 756748,
+				"smokeTexture": 756749,
+				"sparkleTexture": 756750,
+				"pelletTrailTexture": 756751,
+				"shotAlongTexture": 423332,
+				"shotAcrossTexture": 234233,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 700,
+								"color": 16431616,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16431616,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "93.4", "subproperties": null },
+				"IMPACT_FORCE": { "value": "35", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "1.92", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "120.8", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "60.1", "subproperties": null }
+			},
+			"object3ds": 412748,
+			"baseItemId": 412745,
+			"previewResourceId": 412749,
+			"sfxData": {
+				"magazineReloadSound": 223995,
+				"reloadSound": 223996,
+				"shotSound": 223997,
+				"explosionMarkTexture0": 756745,
+				"explosionMarkTexture1": 756746,
+				"explosionMarkTexture2": 756747,
+				"explosionMarkTexture3": 756748,
+				"smokeTexture": 756749,
+				"sparkleTexture": 756750,
+				"pelletTrailTexture": 756751,
+				"shotAlongTexture": 423332,
+				"shotAcrossTexture": 234233,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 700,
+								"color": 16431616,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16431616,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "111.3", "subproperties": null },
+				"IMPACT_FORCE": { "value": "42", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "1.80", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "137.5", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "65", "subproperties": null }
+			},
+			"object3ds": 412750,
+			"baseItemId": 412745,
+			"previewResourceId": 412751,
+			"sfxData": {
+				"magazineReloadSound": 223995,
+				"reloadSound": 223996,
+				"shotSound": 223997,
+				"explosionMarkTexture0": 756745,
+				"explosionMarkTexture1": 756746,
+				"explosionMarkTexture2": 756747,
+				"explosionMarkTexture3": 756748,
+				"smokeTexture": 756749,
+				"sparkleTexture": 756750,
+				"pelletTrailTexture": 756751,
+				"shotAlongTexture": 423332,
+				"shotAcrossTexture": 234233,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 700,
+								"color": 16431616,
+								"intensity": 1,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16431616,
+								"intensity": 0,
+								"time": 300
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		}
+	},
+	"freeze": {
+		"0": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "48", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "13.48", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "125.1", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "24.8", "subproperties": null }
+			},
+			"object3ds": 791739,
+			"baseItemId": 262762,
+			"previewResourceId": 262762,
+			"sfxData": {
+				"particleSpeed": 3000,
+				"particleTextureResource": 44573,
+				"planeTextureResource": 689821,
+				"shotSoundResource": 842049,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "60", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "12.57", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "151.2", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "26.7", "subproperties": null }
+			},
+			"object3ds": 679592,
+			"baseItemId": 262762,
+			"previewResourceId": 581830,
+			"sfxData": {
+				"particleSpeed": 3000,
+				"particleTextureResource": 44573,
+				"planeTextureResource": 689821,
+				"shotSoundResource": 842049,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "72", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "11.65", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "177.3", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "28.6", "subproperties": null }
+			},
+			"object3ds": 115070,
+			"baseItemId": 262762,
+			"previewResourceId": 926940,
+			"sfxData": {
+				"particleSpeed": 3000,
+				"particleTextureResource": 44573,
+				"planeTextureResource": 689821,
+				"shotSoundResource": 842049,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE_PER_SECOND": {
+					"value": null,
+					"subproperties": ["DAMAGE_PER_PERIOD"]
+				},
+				"DAMAGE_PER_PERIOD": { "value": "80", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "11.00", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "196", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "30", "subproperties": null }
+			},
+			"object3ds": 388185,
+			"baseItemId": 262762,
+			"previewResourceId": 918917,
+			"sfxData": {
+				"particleSpeed": 3000,
+				"particleTextureResource": 44573,
+				"planeTextureResource": 689821,
+				"shotSoundResource": 842049,
+				"lighting": [
+					{
+						"name": "start",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loop",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					},
+					{
+						"name": "startFire",
+						"light": [
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 65535,
+								"intensity": 0,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							}
+						]
+					},
+					{
+						"name": "loopFire",
+						"light": [
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 200
+							},
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 400
+							},
+							{
+								"attenuationBegin": 150,
+								"attenuationEnd": 1000,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 600
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 1500,
+								"color": 65535,
+								"intensity": 0.3,
+								"time": 800
+							}
+						]
+					}
+				],
+				"bcsh": []
+			}
+		}
+	},
+	"ricochet": {
+		"0": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "19", "subproperties": null },
+				"DAMAGE_TO": { "value": "23", "subproperties": null },
+				"IMPACT_FORCE": { "value": "164", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "0.56", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "91.3", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "67.4", "subproperties": null }
+			},
+			"object3ds": 833050,
+			"baseItemId": 86316,
+			"previewResourceId": 86316,
+			"sfxData": {
+				"bumpFlashTexture": 110005,
+				"explosionTexture": 110005,
+				"explosionSound": 898926,
+				"ricochetSound": 700620,
+				"shotFlashTexture": 142378,
+				"shotSound": 292255,
+				"shotTexture": 110006,
+				"tailTrailTexutre": 228333,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 500,
+								"color": 16754944,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16754944,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "ricochet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 400,
+								"color": 16754944,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 200,
+								"color": 16754944,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16754944,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16754944,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16754944,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 14.668,
+						"contrast": 0,
+						"saturation": -8.85,
+						"hue": 6.37,
+						"key": "shot"
+					},
+					{
+						"brightness": 14.668,
+						"contrast": 0,
+						"saturation": -8.85,
+						"hue": 6.37,
+						"key": "expl"
+					},
+					{
+						"brightness": 14.668,
+						"contrast": 0,
+						"saturation": -8.85,
+						"hue": 6.37,
+						"key": "trail"
+					}
+				]
+			}
+		},
+		"1": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "24", "subproperties": null },
+				"DAMAGE_TO": { "value": "29", "subproperties": null },
+				"IMPACT_FORCE": { "value": "193", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "0.53", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "110.2", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "72.3", "subproperties": null }
+			},
+			"object3ds": 544500,
+			"baseItemId": 86316,
+			"previewResourceId": 9428,
+			"sfxData": {
+				"bumpFlashTexture": 110005,
+				"explosionTexture": 110005,
+				"explosionSound": 898926,
+				"ricochetSound": 700620,
+				"shotFlashTexture": 142378,
+				"shotSound": 292255,
+				"shotTexture": 110006,
+				"tailTrailTexutre": 228333,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 500,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "ricochet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 400,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 200,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 345.66,
+						"key": "shot"
+					},
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 345.66,
+						"key": "expl"
+					},
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 345.66,
+						"key": "trail"
+					}
+				]
+			}
+		},
+		"2": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "29", "subproperties": null },
+				"DAMAGE_TO": { "value": "35", "subproperties": null },
+				"IMPACT_FORCE": { "value": "223", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "0.49", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "129", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "77.2", "subproperties": null }
+			},
+			"object3ds": 263824,
+			"baseItemId": 86316,
+			"previewResourceId": 67785,
+			"sfxData": {
+				"bumpFlashTexture": 110005,
+				"explosionTexture": 110005,
+				"explosionSound": 898926,
+				"ricochetSound": 700620,
+				"shotFlashTexture": 142378,
+				"shotSound": 292255,
+				"shotTexture": 110006,
+				"tailTrailTexutre": 228333,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 500,
+								"color": 16750336,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16750336,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "ricochet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 400,
+								"color": 16750336,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 200,
+								"color": 16750336,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16750336,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16750336,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16750336,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 1.59,
+						"key": "shot"
+					},
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 1.59,
+						"key": "expl"
+					},
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 1.59,
+						"key": "trail"
+					}
+				]
+			}
+		},
+		"3": {
+			"propers": {
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "32", "subproperties": null },
+				"DAMAGE_TO": { "value": "38", "subproperties": null },
+				"IMPACT_FORCE": { "value": "240", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "0.47", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "139.8", "subproperties": null },
+				"SHOT_RANGE": {
+					"value": null,
+					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
+				},
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "80", "subproperties": null }
+			},
+			"object3ds": 482110,
+			"baseItemId": 86316,
+			"previewResourceId": 9711,
+			"sfxData": {
+				"bumpFlashTexture": 110005,
+				"explosionTexture": 110005,
+				"explosionSound": 898926,
+				"ricochetSound": 700620,
+				"shotFlashTexture": 142378,
+				"shotSound": 292255,
+				"shotTexture": 110006,
+				"tailTrailTexutre": 228333,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 500,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "ricochet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 400,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 50,
+								"attenuationEnd": 200,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 600,
+								"color": 16741656,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "bullet",
+						"light": [
+							{
+								"attenuationBegin": 100,
+								"attenuationEnd": 350,
+								"color": 16741656,
+								"intensity": 0.5,
+								"time": 0
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 353.63,
+						"key": "shot"
+					},
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 353.63,
+						"key": "expl"
+					},
+					{
+						"brightness": 1.128,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 353.63,
+						"key": "trail"
+					}
+				]
+			}
+		}
+	},
+	"shaft": {
+		"0": {
+			"propers": {
+				"AIMING_MODE_DAMAGE": {
+					"value": null,
+					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
+				},
+				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
+					"value": "187",
+					"subproperties": null
+				},
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "55", "subproperties": null },
+				"DAMAGE_TO": { "value": "68", "subproperties": null },
+				"IMPACT_FORCE": { "value": "199", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "3.59", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "75", "subproperties": null }
+			},
+			"object3ds": 740019,
+			"baseItemId": 507813,
+			"previewResourceId": 507813,
+			"sfxData": {
+				"explosionSound": 686923,
+				"explosionTexture": 970970,
+				"hitMarkTexture": 870536,
+				"muzzleFlashTexture": 75337,
+				"shotSound": 600555,
+				"targetingSound": 938575,
+				"trailTexture": 500334,
+				"zoomModeSound": 632224,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 15772719,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 15772719,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 700,
+								"color": 15772719,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 15772719,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 0,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
+						"key": "def"
+					}
+				]
+			}
+		},
+		"1": {
+			"propers": {
+				"AIMING_MODE_DAMAGE": {
+					"value": null,
+					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
+				},
+				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
+					"value": "235",
+					"subproperties": null
+				},
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "69", "subproperties": null },
+				"DAMAGE_TO": { "value": "83", "subproperties": null },
+				"IMPACT_FORCE": { "value": "253", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "3.35", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "91.1", "subproperties": null }
+			},
+			"object3ds": 431730,
+			"baseItemId": 507813,
+			"previewResourceId": 581114,
+			"sfxData": {
+				"explosionSound": 686923,
+				"explosionTexture": 970970,
+				"hitMarkTexture": 870536,
+				"muzzleFlashTexture": 75337,
+				"shotSound": 600555,
+				"targetingSound": 938575,
+				"trailTexture": 500334,
+				"zoomModeSound": 632224,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 16756480,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16756480,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 700,
+								"color": 16756480,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16756480,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 18.053,
+						"contrast": -2.655,
+						"saturation": 44.248,
+						"hue": 339.29,
+						"key": "def"
+					}
+				]
+			}
+		},
+		"2": {
+			"propers": {
+				"AIMING_MODE_DAMAGE": {
+					"value": null,
+					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
+				},
+				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
+					"value": "282",
+					"subproperties": null
+				},
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "84", "subproperties": null },
+				"DAMAGE_TO": { "value": "99", "subproperties": null },
+				"IMPACT_FORCE": { "value": "307", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "3.10", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "107.2", "subproperties": null }
+			},
+			"object3ds": 65798,
+			"baseItemId": 507813,
+			"previewResourceId": 810956,
+			"sfxData": {
+				"explosionSound": 686923,
+				"explosionTexture": 970970,
+				"hitMarkTexture": 870536,
+				"muzzleFlashTexture": 75337,
+				"shotSound": 600555,
+				"targetingSound": 938575,
+				"trailTexture": 500334,
+				"zoomModeSound": 632224,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 16741376,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741376,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 700,
+								"color": 16741376,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16741376,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 14.668,
+						"contrast": -5.31,
+						"saturation": 61.947,
+						"hue": 313.81,
+						"key": "def"
+					}
+				]
+			}
+		},
+		"3": {
+			"propers": {
+				"AIMING_MODE_DAMAGE": {
+					"value": null,
+					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
+				},
+				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
+					"value": "302",
+					"subproperties": null
+				},
+				"DAMAGE": {
+					"value": null,
+					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
+				},
+				"DAMAGE_FROM": { "value": "90", "subproperties": null },
+				"DAMAGE_TO": { "value": "106", "subproperties": null },
+				"IMPACT_FORCE": { "value": "330", "subproperties": null },
+				"WEAPON_CHARGE_RATE": {
+					"value": null,
+					"subproperties": ["WEAPON_RELOAD_TIME"]
+				},
+				"WEAPON_RELOAD_TIME": { "value": "3.00", "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": "114.1", "subproperties": null }
+			},
+			"object3ds": 933781,
+			"baseItemId": 507813,
+			"previewResourceId": 772221,
+			"sfxData": {
+				"explosionSound": 686923,
+				"explosionTexture": 970970,
+				"hitMarkTexture": 870536,
+				"muzzleFlashTexture": 75337,
+				"shotSound": 600555,
+				"targetingSound": 938575,
+				"trailTexture": 500334,
+				"zoomModeSound": 632224,
+				"lighting": [
+					{
+						"name": "shot",
+						"light": [
+							{
+								"attenuationBegin": 200,
+								"attenuationEnd": 600,
+								"color": 16719390,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16719390,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					},
+					{
+						"name": "hit",
+						"light": [
+							{
+								"attenuationBegin": 300,
+								"attenuationEnd": 700,
+								"color": 16719390,
+								"intensity": 0.5,
+								"time": 0
+							},
+							{
+								"attenuationBegin": 1,
+								"attenuationEnd": 2,
+								"color": 16719390,
+								"intensity": 0,
+								"time": 600
+							}
+						]
+					}
+				],
+				"bcsh": [
+					{
+						"brightness": 11.283,
+						"contrast": -5.31,
+						"saturation": 150.442,
+						"hue": 302.65,
+						"key": "def"
+					}
+				]
+			}
+		}
+	}
+}

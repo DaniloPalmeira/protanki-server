@@ -35,10 +35,16 @@ module.exports = class {
 
 		this.equipament = {
 			hull: {
+				...this.client.server.armorProperties[armor.equiped][
+					armor[armor.equiped].m.toString()
+				],
 				id: armor.equiped,
 				m: armor[armor.equiped].m,
 			},
 			turret: {
+				...this.client.server.weaponProperties[weapon.equiped][
+					weapon[weapon.equiped].m.toString()
+				],
 				id: weapon.equiped,
 				m: weapon[weapon.equiped].m,
 			},
@@ -416,114 +422,9 @@ module.exports = class {
 				engineMovingSound: 75329,
 				turretSound: 242699,
 			}),
-			hullResource: 20647,
-			turretResource: 839339,
-			sfxData: JSON.stringify({
-				chargingPart1: 114424,
-				chargingPart2: 468379,
-				chargingPart3: 932241,
-				hitMarkTexture: 670581,
-				powTexture: 963502,
-				ringsTexture: 966691,
-				shotSound: 900596,
-				smokeImage: 882103,
-				sphereTexture: 212409,
-				trailImage: 550305,
-				lighting: [
-					{
-						name: "charge",
-						light: [
-							{
-								attenuationBegin: 200,
-								attenuationEnd: 200,
-								color: 16765017,
-								intensity: 0.7,
-								time: 0,
-							},
-							{
-								attenuationBegin: 200,
-								attenuationEnd: 800,
-								color: 16765017,
-								intensity: 0.3,
-								time: 600,
-							},
-						],
-					},
-					{
-						name: "shot",
-						light: [
-							{
-								attenuationBegin: 100,
-								attenuationEnd: 600,
-								color: 16765017,
-								intensity: 0.7,
-								time: 0,
-							},
-							{
-								attenuationBegin: 1,
-								attenuationEnd: 2,
-								color: 16765017,
-								intensity: 0,
-								time: 300,
-							},
-						],
-					},
-					{
-						name: "hit",
-						light: [
-							{
-								attenuationBegin: 200,
-								attenuationEnd: 600,
-								color: 16765017,
-								intensity: 0.7,
-								time: 0,
-							},
-							{
-								attenuationBegin: 1,
-								attenuationEnd: 2,
-								color: 16765017,
-								intensity: 0,
-								time: 300,
-							},
-						],
-					},
-					{
-						name: "rail",
-						light: [
-							{
-								attenuationBegin: 100,
-								attenuationEnd: 500,
-								color: 16765017,
-								intensity: 0.5,
-								time: 0,
-							},
-							{
-								attenuationBegin: 1,
-								attenuationEnd: 2,
-								color: 16765017,
-								intensity: 0,
-								time: 1800,
-							},
-						],
-					},
-				],
-				bcsh: [
-					{
-						brightness: 9.027,
-						contrast: -3.54,
-						saturation: 44.248,
-						hue: 208.67,
-						key: "trail",
-					},
-					{
-						brightness: 9.027,
-						contrast: -3.54,
-						saturation: 44.248,
-						hue: 208.67,
-						key: "charge",
-					},
-				],
-			}),
+			hullResource: equipament.hull.object3ds,
+			turretResource: equipament.turret.object3ds,
+			sfxData: JSON.stringify(equipament.turret.sfxData || {}),
 			position: battle.position,
 			orientation: battle.orientation,
 			incarnation: battle.incarnation,

@@ -35,6 +35,8 @@ class ProTankiServer {
 		};
 
 		this.paintProperties = require("../helpers/garage/paints/properties.json");
+		this.armorProperties = require("../helpers/garage/armor/properties.json");
+		this.weaponProperties = require("../helpers/garage/weapon/properties.json");
 
 		this.garageItems = garageItems.filter((item) => {
 			if (item.category === "paint" && this.paintProperties[item.id]) {
@@ -61,6 +63,24 @@ class ProTankiServer {
 				} else {
 					return false; // Remove o item da lista
 				}
+			} else if (item.category === "armor" && this.armorProperties[item.id]) {
+				const { object3ds, baseItemId, previewResourceId } =
+					this.armorProperties[item.id][item.modificationID];
+				item.properts = this.PropertiesToArmor(
+					this.armorProperties[item.id][item.modificationID].propers
+				);
+				item.object3ds = object3ds;
+				item.baseItemId = baseItemId;
+				item.previewResourceId = previewResourceId;
+			} else if (item.category === "weapon" && this.weaponProperties[item.id]) {
+				const { object3ds, baseItemId, previewResourceId } =
+					this.weaponProperties[item.id][item.modificationID];
+				item.properts = this.PropertiesToArmor(
+					this.weaponProperties[item.id][item.modificationID].propers
+				);
+				item.object3ds = object3ds;
+				item.baseItemId = baseItemId;
+				item.previewResourceId = previewResourceId;
 			}
 			return true;
 		});
@@ -101,6 +121,47 @@ class ProTankiServer {
 
 	async getNews() {
 		this.newsList = await getNews();
+	}
+
+	PropertiesToArmor(originalObject) {
+		const transformedObject = [];
+
+		// Percorre cada propriedade do objeto original
+		for (const property in originalObject) {
+			if (originalObject.hasOwnProperty(property)) {
+				const currentProp = originalObject[property];
+
+				if (currentProp.subproperties !== null) {
+					// Se a propriedade tiver subpropriedades, adiciona elas como um objeto aninhado
+					const subproperties = [];
+					for (const subprop of currentProp.subproperties) {
+						subproperties.push({
+							property: subprop,
+							value: originalObject[subprop].value,
+							subproperties: null,
+						});
+
+						delete originalObject[subprop];
+					}
+
+					// Adiciona a propriedade principal como um objeto no resultado, mas com "subproperties" definido como um array aninhado
+					transformedObject.push({
+						property: property,
+						value: currentProp.value,
+						subproperties: subproperties.length > 0 ? subproperties : null,
+					});
+				} else {
+					// Se a propriedade não tiver subpropriedades, adiciona ela como um objeto separado no resultado
+					transformedObject.push({
+						property: property,
+						value: currentProp.value,
+						subproperties: null,
+					});
+				}
+			}
+		}
+
+		return transformedObject;
 	}
 
 	/**

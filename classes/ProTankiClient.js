@@ -14,10 +14,6 @@ const mainResources = require("../helpers/mainResources.json");
 const logger = require("../helpers/logger");
 const captcha = require("../helpers/captcha");
 
-const garagept_BR = require("../helpers/garage/i18n/pt_BR.json");
-const garageen = require("../helpers/garage/i18n/en.json");
-const garageru = require("../helpers/garage/i18n/ru.json");
-
 class ProTankiClient {
 	language = "ru";
 
@@ -31,9 +27,9 @@ class ProTankiClient {
 	currentLayout = -1;
 
 	i18Garage = {
-		pt_BR: garagept_BR,
-		en: garageen,
-		ru: garageru,
+		pt_BR: require("../helpers/garage/i18n/pt_BR.json"),
+		en: require("../helpers/garage/i18n/en.json"),
+		ru: require("../helpers/garage/i18n/ru.json"),
 	};
 
 	constructor(data) {

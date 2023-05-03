@@ -19,6 +19,18 @@
 		"name": "Mine",
 		"description": "Undermines enemies.\n\nThe mine it deactivated if its owner was killed, left the battle was finished. In team battles mines don't react to allies.\n\nThe mine is the friend, comrade and brother of an experienced tanker. To gain the rear of the enemy and mine his staff, protect the comrades while retreat, block approaches to the base - all this is prossible due to the inconspicuous deadly device."
 	},
+	"green": {
+		"name": "Green",
+		"description": "A tribute to the tradition of the classic tank, this simple color, so beloved by designers all over the world, has become a standard paint for factory models. This legendary color has the true connoisseurs returning to it, having tried everything in the world."
+	},
+	"newbie": {
+		"name": "Beginner Pass",
+		"description": "With a Beginner's Pass, the player receives 50% more experience and 100% more crystals for each battle played."
+	},
+	"holiday": {
+		"name": "Holiday",
+		"description": "A unique and «smart» paint that can change its appearance depending on the occasion. On a regular day it is simply a black and white, checkered texture. But when a holiday kicks in, its appearance changes dramatically."
+	},
 	"smoky": {
 		"name": "Smoky",
 		"description": "Medium-caliber tank gun which is generally used in light and training tanks. The key to its popularity is low price and ease of maintenance. Put it on a light hull and use wearing-out strategy against heavy clumsy tanks of your opponents. Several upgrades can significantly increase the damage dealt by this little baby. Remember that Smoky’s effectiveness decreases with distance."

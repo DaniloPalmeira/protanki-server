@@ -14,7 +14,9 @@ module.exports = class {
 				} catch (e) {
 					this.replySystem(e.stack);
 				}
+				return true;
 			}
+			return false;
 		},
 		p: function (command) {
 			if (this.requiredPrivLevel(1)) {
@@ -24,7 +26,36 @@ module.exports = class {
 				} catch (e) {
 					this.replySystem(e.stack);
 				}
+				return true;
 			}
+			return false;
+		},
+		g: function (command) {
+			if (this.requiredPrivLevel(1)) {
+				let bonus = "health_0";
+				let timeMS = 30000;
+				try {
+					if (command.argCount == 1) {
+						bonus = command.args[0];
+					} else {
+						bonus = command.args[0];
+						timeMS = parseInt(command.args[1]);
+					}
+					const bonusPacket = new ByteArray();
+					bonusPacket.writeUTF(bonus);
+					bonusPacket.writeBoolean(false);
+					bonusPacket.writeFloat(this.client.user.battle.position.x);
+					bonusPacket.writeFloat(this.client.user.battle.position.y);
+					bonusPacket.writeFloat(this.client.user.battle.position.z + 1000);
+					bonusPacket.writeInt(timeMS);
+					this.client.user.battle.party.sendPacket(1831462385, bonusPacket);
+					this.replySystem("Comando executado sem erros!");
+				} catch (e) {
+					this.replySystem(e.stack);
+				}
+				return true;
+			}
+			return false;
 		},
 	};
 

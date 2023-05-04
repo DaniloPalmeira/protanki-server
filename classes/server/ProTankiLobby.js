@@ -25,4 +25,12 @@ module.exports = class {
 			});
 		}
 	}
+
+	addPlayerInBattle(battleid, username) {
+		const packet = new ByteArray();
+		packet.writeUTF(battleid);
+		packet.writeUTF(username);
+		this.sendPacket(1447204641, packet);
+		this.sendPacket(-2133657895, packet);
+	}
 };

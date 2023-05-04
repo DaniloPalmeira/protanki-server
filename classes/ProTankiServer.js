@@ -108,7 +108,7 @@ class ProTankiServer {
 		[
 			{
 				id: "1c976322891c6e46",
-				mode: 0,
+				mode: 1,
 				map: "map_cross",
 				maxPeople: 20,
 				name: "Batalha Inicial",
@@ -118,6 +118,7 @@ class ProTankiServer {
 				reArmorEnabled: true,
 				parkour: false,
 				scoreLimit: 0,
+				theme: 0,
 			},
 		].forEach((battle) => {
 			const nBattle = new ProTankiBattleServer({

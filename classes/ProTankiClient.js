@@ -783,6 +783,9 @@ class ProTankiClient {
 				this.user.battle.state = "suicide";
 				this.user.battle.state_null = true;
 			}, 10 * 1000);
+		} else if (packetID == -1047185003) {
+			// REMOVER BONUS DO MAPA
+			this.user.battle.party.sendPacket(-1291499147, packet);
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}

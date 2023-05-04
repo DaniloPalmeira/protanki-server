@@ -180,7 +180,41 @@ module.exports = class {
 		}
 		if (!this.isSpectator) {
 			this.party.clients.push(this.client);
+
+			const packetb = new ByteArray();
+			packetb.writeUTF(this.party.id);
+
+			this.client.lobbyServer.sendPacket(-344514517, packetb);
+
+			packetb.writeUTF(this.client.user.username);
+			if (this.party.modeStr == "DM") {
+				this.client.lobbyServer.sendPacket(-2133657895, packetb);
+			} else {
+				packetb.writeInt(this.team);
+				this.client.lobbyServer.sendPacket(-169305322, packetb);
+			}
+
+			const packeta = new ByteArray();
+			packeta.writeUTF(this.party.id);
+			packeta.writeInt(this.kills);
+			packeta.writeInt(this.score);
+			packeta.writeBoolean(true); // suspeito
+			packeta.writeUTF(this.client.user.username);
+			if (this.party.modeStr == "DM") {
+				this.client.lobbyServer.sendPacket(-911626491, packeta);
+			} else {
+				packeta.writeInt(this.team);
+				this.client.lobbyServer.sendPacket(118447426, packeta);
+
+				// ADICIONAR JOGADOR PARA OS OUTROS PLAYERS
+				const myInfos = new ByteArray();
+				myInfos.writeUTF(this.client.user.username);
+				myInfos.writeBoolean(false);
+
+				this.party.sendPacket(2040021062, myInfos, this.client);
+			}
 		}
+
 		this.client.loadLayout({ layout: 3 });
 		this.client.lobby.removeBattleList();
 		this.client.lobby.removeChat();
@@ -578,17 +612,23 @@ module.exports = class {
 		}
 	}
 
+	CodecUserInfo(user) {
+		const userInfoPacket = new ByteArray();
+		userInfoPacket.writeInt(user.privLevel); // mod level
+		userInfoPacket.writeInt(user.battle.deaths); // deahts
+		userInfoPacket.writeInt(user.battle.kills); // kills
+		userInfoPacket.writeByte(user.rank); // rank
+		userInfoPacket.writeInt(user.battle.score); // score
+		userInfoPacket.writeUTF(user.username); // uid
+		return userInfoPacket.buffer;
+	}
+
 	CodecStatisticsDMCC() {
 		const statDMPacket = new ByteArray();
 		statDMPacket.writeInt(this.party.users.length);
 
 		this.party.users.forEach((user) => {
-			statDMPacket.writeInt(user.privLevel); // mod level
-			statDMPacket.writeInt(user.battle.deaths); // deahts
-			statDMPacket.writeInt(user.battle.kills); // kills
-			statDMPacket.writeByte(user.rank); // rank
-			statDMPacket.writeInt(user.battle.score); // score
-			statDMPacket.writeUTF(user.username); // uid
+			statDMPacket.write(this.CodecUserInfo(user));
 		});
 
 		this.sendPacket(-1959138292, statDMPacket);
@@ -602,42 +642,57 @@ module.exports = class {
 
 		statTeamPacket.writeInt(usersBlue.length);
 		usersBlue.forEach((user) => {
-			statTeamPacket.writeInt(user.privLevel); // mod level
-			statTeamPacket.writeInt(user.battle.deaths); // deahts
-			statTeamPacket.writeInt(user.battle.kills); // kills
-			statTeamPacket.writeByte(user.rank); // rank
-			statTeamPacket.writeInt(user.battle.score); // score
-			statTeamPacket.writeUTF(user.username); // uid
+			statTeamPacket.write(this.CodecUserInfo(user));
 		});
 
 		statTeamPacket.writeInt(usersRed.length);
 		usersRed.forEach((user) => {
-			statTeamPacket.writeInt(user.privLevel); // mod level
-			statTeamPacket.writeInt(user.battle.deaths); // deahts
-			statTeamPacket.writeInt(user.battle.kills); // kills
-			statTeamPacket.writeByte(user.rank); // rank
-			statTeamPacket.writeInt(user.battle.score); // score
-			statTeamPacket.writeUTF(user.username); // uid
+			statTeamPacket.write(this.CodecUserInfo(user));
 		});
 
 		this.sendPacket(-1233891872, statTeamPacket);
 	}
 
+	/**
+	 * Envia as informações dos jogadores da equipe do cliente para a rede.
+	 */
 	userPlayingInfos() {
-		const usersInfos = new ByteArray();
-		usersInfos.writeUTF(this.client.user.username);
-		usersInfos.writeInt(this.party.clients.length);
+		// Cria um objeto ByteArray para armazenar os dados dos usuários.
+		const userByteData = new ByteArray();
 
-		this.party.clients.forEach((_client) => {
-			usersInfos.writeInt(_client.user.privLevel); // mod level
-			usersInfos.writeInt(_client.user.battle.deaths); // deahts
-			usersInfos.writeInt(_client.user.battle.kills); // kills
-			usersInfos.writeByte(_client.user.rank); // rank
-			usersInfos.writeInt(_client.user.battle.score); // score
-			usersInfos.writeUTF(_client.user.username); // uid
+		// Adiciona o nome do usuário cliente ao início do objeto ByteArray.
+		userByteData.writeUTF(this.client.user.username);
+
+		// Obtém a lista de usuários com base no valor da variável `team`.
+		let usersList;
+		switch (this.team) {
+			case 0:
+				usersList = this.party.usersRed;
+				break;
+			case 1:
+				usersList = this.party.usersBlue;
+				break;
+			default:
+				usersList = this.party.users;
+				break;
+		}
+
+		// Adiciona o número total de usuários ao objeto ByteArray.
+		userByteData.writeInt(usersList.length);
+
+		// Adiciona as informações de cada usuário ao objeto ByteArray.
+		usersList.forEach((user) => {
+			userByteData.write(this.CodecUserInfo(user));
 		});
 
-		this.party.sendPacket(862913394, usersInfos, this.client);
+		// Envia os dados dos usuários para a equipe correspondente.
+		if (this.team === 2) {
+			this.party.sendPacket(862913394, userByteData, this.client);
+		} else {
+			// Adiciona o número da equipe ao objeto ByteArray antes de enviá-lo.
+			userByteData.writeInt(this.team);
+			this.party.sendPacket(2040021062, userByteData, this.client);
+		}
 	}
 
 	updateHealth() {
@@ -734,15 +789,44 @@ module.exports = class {
 	}
 
 	kill(killed) {
+		let valueToIncreaseFund =
+			killed.rank / 6 +
+			killed.battle.equipament.hull.propers.HULL_ARMOR.value / 100;
+		this.updateFund(valueToIncreaseFund);
+
+		killed.battle.deaths++;
 		killed.battle.state = "suicide";
 		killed.battle.state_null = true;
 		killed.battle.incarnation++;
+		killed.battle.updateStat();
+
+		this.kills += 1;
+		this.updateStat();
+
 		const packet = new ByteArray();
 		packet.writeUTF(killed.username);
 		packet.writeUTF(this.client.user.username);
 		packet.writeInt(3000);
-
 		this.party.sendPacket(-42520728, packet);
+	}
+
+	updateStat() {
+		const statPacket = new ByteArray();
+		const { deaths, kills } = this;
+		console.log({ deaths, kills });
+		statPacket.writeInt(this.deaths);
+		statPacket.writeInt(this.kills);
+		statPacket.writeInt(this.score);
+		statPacket.writeUTF(this.client.user.username);
+		statPacket.writeInt(this.team);
+		this.party.sendPacket(-497293992, statPacket);
+	}
+
+	updateFund(increase) {
+		this.party.fund += increase;
+		const fundPacket = new ByteArray();
+		fundPacket.writeInt(Math.floor(this.party.fund));
+		this.party.sendPacket(1149211509, fundPacket);
 	}
 
 	enableTanki() {

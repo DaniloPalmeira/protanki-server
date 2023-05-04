@@ -1,5 +1,5 @@
 const ProTankiBattleServer = require("./server/ProTankiBattle");
-const maps = require("../helpers/maps.json");
+const maps = require("../helpers/map/items.json");
 const weapons = require("../helpers/weapons.json");
 const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");

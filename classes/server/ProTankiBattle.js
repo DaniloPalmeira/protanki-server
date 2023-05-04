@@ -1,5 +1,12 @@
 const ByteArray = require("../ByteArray");
-const maps = require("../../helpers/maps.json");
+const maps = require("../../helpers/map/items.json");
+
+function removerItem(lista, item) {
+	let index = lista.indexOf(item);
+	if (index !== -1) {
+		lista.splice(index, 1);
+	}
+}
 
 class ProTankiBattle {
 	_autoBalance = true;
@@ -289,15 +296,11 @@ class ProTankiBattle {
 	}
 
 	removePlayer(player) {
-		let index = this.clients.indexOf(player);
-		if (index !== -1) {
-			this.clients.splice(index, 1);
-		}
-
-		index = this.spectators.indexOf(player);
-		if (index !== -1) {
-			this.spectators.splice(index, 1);
-		}
+		removerItem(this.clients, player);
+		removerItem(this.spectators, player);
+		removerItem(this.users, player.user);
+		removerItem(this.usersBlue, player.user);
+		removerItem(this.usersRed, player.user);
 	}
 
 	sendPacketSpectator(packedID, packet = new ByteArray()) {

@@ -36,7 +36,7 @@
 		"category": "inventory",
 		"properts": [],
 		"discount": {
-			"percent": 99,
+			"percent": 0,
 			"timeLeftInSeconds": -1679201183,
 			"timeToStartInSeconds": -1679201183
 		},
@@ -223,8 +223,8 @@
 		"rank": 1,
 		"category": "weapon",
 		"discount": {
-			"percent": 50,
-			"timeLeftInSeconds": 10,
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
 			"timeToStartInSeconds": -1679201183
 		},
 		"remainingTimeInSec": -1,

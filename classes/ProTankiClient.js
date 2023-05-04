@@ -749,9 +749,7 @@ class ProTankiClient {
 				};
 			}
 		} else if (packetID == PKG.BATTLE_READ_TO_ENABLE) {
-			const tankiPacket = new ByteArray();
-			tankiPacket.writeUTF(this.user.username);
-			this.user.battle.party.sendPacket(1868573511, tankiPacket);
+			this.user.battle.enableTanki();
 		} else if (packetID == PKG.BATTLE_RAILGUN_START) {
 			// TIRO ELETRICO (1)
 			const shooterPacket = new ByteArray();
@@ -782,6 +780,8 @@ class ProTankiClient {
 
 			setTimeout(() => {
 				this.user?.battle?.party?.sendPacket(162656882, _packet);
+				this.user.battle.state = "suicide";
+				this.user.battle.state_null = true;
 			}, 10 * 1000);
 		} else {
 			console.warn("Adicionar:", packetID, packet);

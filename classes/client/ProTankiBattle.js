@@ -10,7 +10,7 @@ module.exports = class {
 	healthPart = 1;
 	healthTotal = 1;
 
-	state = "suicide";
+	state = "newcome";
 	state_null = true;
 
 	team = 2;
@@ -665,7 +665,7 @@ module.exports = class {
 		prepareTankiPacket.writeShort(this.health); // health
 		prepareTankiPacket.writeShort(this.incarnation); // incarnationId
 		this.party.sendPacket(875259457, prepareTankiPacket);
-		this.state = "active";
+		this.state = "newcome";
 		this.state_null = false;
 	}
 
@@ -734,6 +734,8 @@ module.exports = class {
 	}
 
 	kill(killed) {
+		killed.battle.state = "suicide";
+		killed.battle.state_null = true;
 		killed.battle.incarnation++;
 		const packet = new ByteArray();
 		packet.writeUTF(killed.username);
@@ -741,6 +743,13 @@ module.exports = class {
 		packet.writeInt(3000);
 
 		this.party.sendPacket(-42520728, packet);
+	}
+
+	enableTanki() {
+		const tankiPacket = new ByteArray();
+		this.state = "active";
+		tankiPacket.writeUTF(this.client.user.username);
+		this.party.sendPacket(1868573511, tankiPacket);
 	}
 
 	calculateDistance(otherPoint = {}) {

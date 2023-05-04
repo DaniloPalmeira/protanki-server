@@ -6,12 +6,12 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "22", "subproperties": null },
-				"DAMAGE_TO": { "value": "28", "subproperties": null },
-				"IMPACT_FORCE": { "value": "175", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "71.5", "subproperties": null },
-				"CRITICAL_HIT_CHANCE": { "value": "8", "subproperties": null },
-				"CRITICAL_HIT_DAMAGE": { "value": "50", "subproperties": null }
+				"DAMAGE_FROM": { "value": 22, "subproperties": null },
+				"DAMAGE_TO": { "value": 28, "subproperties": null },
+				"IMPACT_FORCE": { "value": 175, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 71.5, "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": 8, "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": 50, "subproperties": null }
 			},
 			"object3ds": 205731,
 			"baseItemId": 651066,
@@ -74,12 +74,12 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "29", "subproperties": null },
-				"DAMAGE_TO": { "value": "37", "subproperties": null },
-				"IMPACT_FORCE": { "value": "222", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "87.1", "subproperties": null },
-				"CRITICAL_HIT_CHANCE": { "value": "12", "subproperties": null },
-				"CRITICAL_HIT_DAMAGE": { "value": "65", "subproperties": null }
+				"DAMAGE_FROM": { "value": 29, "subproperties": null },
+				"DAMAGE_TO": { "value": 37, "subproperties": null },
+				"IMPACT_FORCE": { "value": 222, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 87.1, "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": 12, "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": 65, "subproperties": null }
 			},
 			"object3ds": 31170,
 			"baseItemId": 651066,
@@ -142,12 +142,12 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "35", "subproperties": null },
-				"DAMAGE_TO": { "value": "45", "subproperties": null },
-				"IMPACT_FORCE": { "value": "269", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "102.6", "subproperties": null },
-				"CRITICAL_HIT_CHANCE": { "value": "15", "subproperties": null },
-				"CRITICAL_HIT_DAMAGE": { "value": "80", "subproperties": null }
+				"DAMAGE_FROM": { "value": 35, "subproperties": null },
+				"DAMAGE_TO": { "value": 45, "subproperties": null },
+				"IMPACT_FORCE": { "value": 269, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 102.6, "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": 15, "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": 80, "subproperties": null }
 			},
 			"object3ds": 458970,
 			"baseItemId": 651066,
@@ -210,12 +210,12 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "44", "subproperties": null },
-				"DAMAGE_TO": { "value": "56", "subproperties": null },
-				"IMPACT_FORCE": { "value": "330", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "122.6", "subproperties": null },
-				"CRITICAL_HIT_CHANCE": { "value": "20", "subproperties": null },
-				"CRITICAL_HIT_DAMAGE": { "value": "100", "subproperties": null }
+				"DAMAGE_FROM": { "value": 44, "subproperties": null },
+				"DAMAGE_TO": { "value": 56, "subproperties": null },
+				"IMPACT_FORCE": { "value": 330, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 122.6, "subproperties": null },
+				"CRITICAL_HIT_CHANCE": { "value": 20, "subproperties": null },
+				"CRITICAL_HIT_DAMAGE": { "value": 100, "subproperties": null }
 			},
 			"object3ds": 768112,
 			"baseItemId": 651066,
@@ -280,23 +280,23 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "41", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 41, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "12.00", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "95.3", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 12.0, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 95.3, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "23.7", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 23.7, "subproperties": null },
 				"FIRE_DAMAGE": {
 					"value": null,
 					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
 				},
-				"FLAME_TEMPERATURE_LIMIT": { "value": "5.9", "subproperties": null }
+				"FLAME_TEMPERATURE_LIMIT": { "value": 5.9, "subproperties": null }
 			},
 			"object3ds": 521900,
 			"baseItemId": 43761,
@@ -502,23 +502,23 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "50", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 50, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "11.39", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "116.9", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 11.39, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 116.9, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "25.6", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 25.6, "subproperties": null },
 				"FIRE_DAMAGE": {
 					"value": null,
 					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
 				},
-				"FLAME_TEMPERATURE_LIMIT": { "value": "10.2", "subproperties": null }
+				"FLAME_TEMPERATURE_LIMIT": { "value": 10.2, "subproperties": null }
 			},
 			"object3ds": 18283,
 			"baseItemId": 43761,
@@ -724,23 +724,23 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "60", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 60, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "10.78", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "138.4", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 10.78, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 138.4, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "27.5", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 27.5, "subproperties": null },
 				"FIRE_DAMAGE": {
 					"value": null,
 					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
 				},
-				"FLAME_TEMPERATURE_LIMIT": { "value": "14.5", "subproperties": null }
+				"FLAME_TEMPERATURE_LIMIT": { "value": 14.5, "subproperties": null }
 			},
 			"object3ds": 456708,
 			"baseItemId": 43761,
@@ -946,23 +946,23 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "72", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 72, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "10.00", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "166.2", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 10.0, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 166.2, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "30", "subproperties": null },
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 30, "subproperties": null },
 				"FIRE_DAMAGE": {
 					"value": null,
 					"subproperties": ["FLAME_TEMPERATURE_LIMIT"]
 				},
-				"FLAME_TEMPERATURE_LIMIT": { "value": "20", "subproperties": null }
+				"FLAME_TEMPERATURE_LIMIT": { "value": 20, "subproperties": null }
 			},
 			"object3ds": 758687,
 			"baseItemId": 43761,
@@ -1170,16 +1170,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "8.8", "subproperties": null },
-				"DAMAGE_TO": { "value": "10.5", "subproperties": null },
-				"IMPACT_FORCE": { "value": "97", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "89.6", "subproperties": null },
+				"DAMAGE_FROM": { "value": 8.8, "subproperties": null },
+				"DAMAGE_TO": { "value": 10.5, "subproperties": null },
+				"IMPACT_FORCE": { "value": 97, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 89.6, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "60.7", "subproperties": null },
-				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "5.8", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 60.7, "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": 5.8, "subproperties": null }
 			},
 			"object3ds": 495014,
 			"baseItemId": 103660,
@@ -1273,16 +1273,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "11.4", "subproperties": null },
-				"DAMAGE_TO": { "value": "13.9", "subproperties": null },
-				"IMPACT_FORCE": { "value": "117", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "103.9", "subproperties": null },
+				"DAMAGE_FROM": { "value": 11.4, "subproperties": null },
+				"DAMAGE_TO": { "value": 13.9, "subproperties": null },
+				"IMPACT_FORCE": { "value": 117, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 103.9, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "65.2", "subproperties": null },
-				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "10.3", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 65.2, "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": 10.3, "subproperties": null }
 			},
 			"object3ds": 132033,
 			"baseItemId": 103660,
@@ -1376,16 +1376,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "14", "subproperties": null },
-				"DAMAGE_TO": { "value": "17.2", "subproperties": null },
-				"IMPACT_FORCE": { "value": "137", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "118.3", "subproperties": null },
+				"DAMAGE_FROM": { "value": 14, "subproperties": null },
+				"DAMAGE_TO": { "value": 17.2, "subproperties": null },
+				"IMPACT_FORCE": { "value": 137, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 118.3, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "69.8", "subproperties": null },
-				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "14.8", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 69.8, "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": 14.8, "subproperties": null }
 			},
 			"object3ds": 875465,
 			"baseItemId": 103660,
@@ -1479,16 +1479,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "17", "subproperties": null },
-				"DAMAGE_TO": { "value": "21", "subproperties": null },
-				"IMPACT_FORCE": { "value": "160", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "134.7", "subproperties": null },
+				"DAMAGE_FROM": { "value": 17, "subproperties": null },
+				"DAMAGE_TO": { "value": 21, "subproperties": null },
+				"IMPACT_FORCE": { "value": 160, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 134.7, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "75", "subproperties": null },
-				"WEAPON_MIN_DAMAGE_PERCENT": { "value": "20", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 75, "subproperties": null },
+				"WEAPON_MIN_DAMAGE_PERCENT": { "value": 20, "subproperties": null }
 			},
 			"object3ds": 499715,
 			"baseItemId": 103660,
@@ -1584,16 +1584,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "68", "subproperties": null },
-				"DAMAGE_TO": { "value": "106", "subproperties": null },
-				"IMPACT_FORCE": { "value": "369", "subproperties": null },
+				"DAMAGE_FROM": { "value": 68, "subproperties": null },
+				"DAMAGE_TO": { "value": 106, "subproperties": null },
+				"IMPACT_FORCE": { "value": 369, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "5.85", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "56.2", "subproperties": null },
-				"WEAPON_WEAKENING_COEFF": { "value": "35.36", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 5.85, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 56.2, "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": 35.36, "subproperties": null }
 			},
 			"object3ds": 906685,
 			"baseItemId": 882259,
@@ -1711,16 +1711,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "90", "subproperties": null },
-				"DAMAGE_TO": { "value": "137", "subproperties": null },
-				"IMPACT_FORCE": { "value": "479", "subproperties": null },
+				"DAMAGE_FROM": { "value": 90, "subproperties": null },
+				"DAMAGE_TO": { "value": 137, "subproperties": null },
+				"IMPACT_FORCE": { "value": 479, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "5.38", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "70", "subproperties": null },
-				"WEAPON_WEAKENING_COEFF": { "value": "56.90", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 5.38, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 70, "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": 56.9, "subproperties": null }
 			},
 			"object3ds": 369990,
 			"baseItemId": 882259,
@@ -1838,16 +1838,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "111", "subproperties": null },
-				"DAMAGE_TO": { "value": "168", "subproperties": null },
-				"IMPACT_FORCE": { "value": "589", "subproperties": null },
+				"DAMAGE_FROM": { "value": 111, "subproperties": null },
+				"DAMAGE_TO": { "value": 168, "subproperties": null },
+				"IMPACT_FORCE": { "value": 589, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "4.91", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "78.5", "subproperties": null },
-				"WEAPON_WEAKENING_COEFF": { "value": "78.45", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 4.91, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 78.5, "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": 78.45, "subproperties": null }
 			},
 			"object3ds": 73852,
 			"baseItemId": 882259,
@@ -1965,16 +1965,16 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "133", "subproperties": null },
-				"DAMAGE_TO": { "value": "199", "subproperties": null },
-				"IMPACT_FORCE": { "value": "700", "subproperties": null },
+				"DAMAGE_FROM": { "value": 133, "subproperties": null },
+				"DAMAGE_TO": { "value": 199, "subproperties": null },
+				"IMPACT_FORCE": { "value": 700, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "4.44", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "97.4", "subproperties": null },
-				"WEAPON_WEAKENING_COEFF": { "value": "100.00", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 4.44, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 97.4, "subproperties": null },
+				"WEAPON_WEAKENING_COEFF": { "value": 100.0, "subproperties": null }
 			},
 			"object3ds": 839339,
 			"baseItemId": 882259,
@@ -2094,22 +2094,22 @@
 					"value": null,
 					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
 				},
-				"ISIS_HEALING_PER_PERIOD": { "value": "22", "subproperties": null },
+				"ISIS_HEALING_PER_PERIOD": { "value": 22, "subproperties": null },
 				"ISIS_DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "40", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 40, "subproperties": null },
 				"ISIS_SELF_HEALING_PERCENT": {
-					"value": "35.97",
+					"value": 35.97,
 					"subproperties": null
 				},
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "11.11", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "91.7", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 11.11, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 91.7, "subproperties": null }
 			},
 			"object3ds": 638066,
 			"baseItemId": 896849,
@@ -2349,22 +2349,22 @@
 					"value": null,
 					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
 				},
-				"ISIS_HEALING_PER_PERIOD": { "value": "28", "subproperties": null },
+				"ISIS_HEALING_PER_PERIOD": { "value": 28, "subproperties": null },
 				"ISIS_DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "50", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 50, "subproperties": null },
 				"ISIS_SELF_HEALING_PERCENT": {
-					"value": "40.88",
+					"value": 40.88,
 					"subproperties": null
 				},
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "10.37", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "106.7", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 10.37, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 106.7, "subproperties": null }
 			},
 			"object3ds": 332851,
 			"baseItemId": 896849,
@@ -2604,22 +2604,22 @@
 					"value": null,
 					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
 				},
-				"ISIS_HEALING_PER_PERIOD": { "value": "33", "subproperties": null },
+				"ISIS_HEALING_PER_PERIOD": { "value": 33, "subproperties": null },
 				"ISIS_DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "61", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 61, "subproperties": null },
 				"ISIS_SELF_HEALING_PERCENT": {
-					"value": "45.79",
+					"value": 45.79,
 					"subproperties": null
 				},
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "9.63", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "121.8", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 9.63, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 121.8, "subproperties": null }
 			},
 			"object3ds": 77397,
 			"baseItemId": 896849,
@@ -2859,22 +2859,22 @@
 					"value": null,
 					"subproperties": ["ISIS_HEALING_PER_PERIOD"]
 				},
-				"ISIS_HEALING_PER_PERIOD": { "value": "38", "subproperties": null },
+				"ISIS_HEALING_PER_PERIOD": { "value": 38, "subproperties": null },
 				"ISIS_DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "70", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 70, "subproperties": null },
 				"ISIS_SELF_HEALING_PERCENT": {
-					"value": "50.00",
+					"value": 50.0,
 					"subproperties": null
 				},
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "9.00", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "134.7", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 9.0, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 134.7, "subproperties": null }
 			},
 			"object3ds": 999935,
 			"baseItemId": 896849,
@@ -3116,20 +3116,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "42", "subproperties": null },
-				"DAMAGE_TO": { "value": "68", "subproperties": null },
-				"IMPACT_FORCE": { "value": "169", "subproperties": null },
+				"DAMAGE_FROM": { "value": 42, "subproperties": null },
+				"DAMAGE_TO": { "value": 68, "subproperties": null },
+				"IMPACT_FORCE": { "value": 169, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "3.15", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "77", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 3.15, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 77, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "56.9", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 56.9, "subproperties": null }
 			},
 			"object3ds": 503709,
 			"baseItemId": 205433,
@@ -3202,20 +3202,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "55", "subproperties": null },
-				"DAMAGE_TO": { "value": "83", "subproperties": null },
-				"IMPACT_FORCE": { "value": "217", "subproperties": null },
+				"DAMAGE_FROM": { "value": 55, "subproperties": null },
+				"DAMAGE_TO": { "value": 83, "subproperties": null },
+				"IMPACT_FORCE": { "value": 217, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "2.91", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "94.6", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 2.91, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 94.6, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "61.8", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 61.8, "subproperties": null }
 			},
 			"object3ds": 15411,
 			"baseItemId": 205433,
@@ -3288,20 +3288,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "68", "subproperties": null },
-				"DAMAGE_TO": { "value": "99", "subproperties": null },
-				"IMPACT_FORCE": { "value": "265", "subproperties": null },
+				"DAMAGE_FROM": { "value": 68, "subproperties": null },
+				"DAMAGE_TO": { "value": 99, "subproperties": null },
+				"IMPACT_FORCE": { "value": 265, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "2.67", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "112.3", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 2.67, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 112.3, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "66.6", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 66.6, "subproperties": null }
 			},
 			"object3ds": 104552,
 			"baseItemId": 205433,
@@ -3374,20 +3374,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "78", "subproperties": null },
-				"DAMAGE_TO": { "value": "110", "subproperties": null },
-				"IMPACT_FORCE": { "value": "300", "subproperties": null },
+				"DAMAGE_FROM": { "value": 78, "subproperties": null },
+				"DAMAGE_TO": { "value": 110, "subproperties": null },
+				"IMPACT_FORCE": { "value": 300, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "2.50", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "124.9", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 2.5, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 124.9, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "70", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 70, "subproperties": null }
 			},
 			"object3ds": 551825,
 			"baseItemId": 205433,
@@ -3462,19 +3462,19 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "57.5", "subproperties": null },
-				"IMPACT_FORCE": { "value": "22", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 57.5, "subproperties": null },
+				"IMPACT_FORCE": { "value": 22, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "2.16", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "87.2", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 2.16, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 87.2, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "50.4", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 50.4, "subproperties": null }
 			},
 			"object3ds": 412744,
 			"baseItemId": 412745,
@@ -3522,19 +3522,19 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "75.6", "subproperties": null },
-				"IMPACT_FORCE": { "value": "29", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 75.6, "subproperties": null },
+				"IMPACT_FORCE": { "value": 29, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "2.04", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "104", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 2.04, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 104, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "55.2", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 55.2, "subproperties": null }
 			},
 			"object3ds": 412746,
 			"baseItemId": 412745,
@@ -3582,19 +3582,19 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "93.4", "subproperties": null },
-				"IMPACT_FORCE": { "value": "35", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 93.4, "subproperties": null },
+				"IMPACT_FORCE": { "value": 35, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "1.92", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "120.8", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 1.92, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 120.8, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "60.1", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 60.1, "subproperties": null }
 			},
 			"object3ds": 412748,
 			"baseItemId": 412745,
@@ -3642,19 +3642,19 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "111.3", "subproperties": null },
-				"IMPACT_FORCE": { "value": "42", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 111.3, "subproperties": null },
+				"IMPACT_FORCE": { "value": 42, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "1.80", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "137.5", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 1.8, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 137.5, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "65", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 65, "subproperties": null }
 			},
 			"object3ds": 412750,
 			"baseItemId": 412745,
@@ -3704,18 +3704,18 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "48", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 48, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "13.48", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "125.1", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 13.48, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 125.1, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "24.8", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 24.8, "subproperties": null }
 			},
 			"object3ds": 791739,
 			"baseItemId": 262762,
@@ -3854,18 +3854,18 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "60", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 60, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "12.57", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "151.2", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 12.57, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 151.2, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "26.7", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 26.7, "subproperties": null }
 			},
 			"object3ds": 679592,
 			"baseItemId": 262762,
@@ -4004,18 +4004,18 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "72", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 72, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "11.65", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "177.3", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 11.65, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 177.3, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "28.6", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 28.6, "subproperties": null }
 			},
 			"object3ds": 115070,
 			"baseItemId": 262762,
@@ -4154,18 +4154,18 @@
 					"value": null,
 					"subproperties": ["DAMAGE_PER_PERIOD"]
 				},
-				"DAMAGE_PER_PERIOD": { "value": "80", "subproperties": null },
+				"DAMAGE_PER_PERIOD": { "value": 80, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "11.00", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "196", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 11.0, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 196, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "30", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 30, "subproperties": null }
 			},
 			"object3ds": 388185,
 			"baseItemId": 262762,
@@ -4306,20 +4306,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "19", "subproperties": null },
-				"DAMAGE_TO": { "value": "23", "subproperties": null },
-				"IMPACT_FORCE": { "value": "164", "subproperties": null },
+				"DAMAGE_FROM": { "value": 19, "subproperties": null },
+				"DAMAGE_TO": { "value": 23, "subproperties": null },
+				"IMPACT_FORCE": { "value": 164, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "0.56", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "91.3", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 0.56, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 91.3, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "67.4", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 67.4, "subproperties": null }
 			},
 			"object3ds": 833050,
 			"baseItemId": 86316,
@@ -4435,20 +4435,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "24", "subproperties": null },
-				"DAMAGE_TO": { "value": "29", "subproperties": null },
-				"IMPACT_FORCE": { "value": "193", "subproperties": null },
+				"DAMAGE_FROM": { "value": 24, "subproperties": null },
+				"DAMAGE_TO": { "value": 29, "subproperties": null },
+				"IMPACT_FORCE": { "value": 193, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "0.53", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "110.2", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 0.53, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 110.2, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "72.3", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 72.3, "subproperties": null }
 			},
 			"object3ds": 544500,
 			"baseItemId": 86316,
@@ -4564,20 +4564,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "29", "subproperties": null },
-				"DAMAGE_TO": { "value": "35", "subproperties": null },
-				"IMPACT_FORCE": { "value": "223", "subproperties": null },
+				"DAMAGE_FROM": { "value": 29, "subproperties": null },
+				"DAMAGE_TO": { "value": 35, "subproperties": null },
+				"IMPACT_FORCE": { "value": 223, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "0.49", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "129", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 0.49, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 129, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "77.2", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 77.2, "subproperties": null }
 			},
 			"object3ds": 263824,
 			"baseItemId": 86316,
@@ -4693,20 +4693,20 @@
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "32", "subproperties": null },
-				"DAMAGE_TO": { "value": "38", "subproperties": null },
-				"IMPACT_FORCE": { "value": "240", "subproperties": null },
+				"DAMAGE_FROM": { "value": 32, "subproperties": null },
+				"DAMAGE_TO": { "value": 38, "subproperties": null },
+				"IMPACT_FORCE": { "value": 240, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "0.47", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "139.8", "subproperties": null },
+				"WEAPON_RELOAD_TIME": { "value": 0.47, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 139.8, "subproperties": null },
 				"SHOT_RANGE": {
 					"value": null,
 					"subproperties": ["WEAPON_MIN_DAMAGE_RADIUS"]
 				},
-				"WEAPON_MIN_DAMAGE_RADIUS": { "value": "80", "subproperties": null }
+				"WEAPON_MIN_DAMAGE_RADIUS": { "value": 80, "subproperties": null }
 			},
 			"object3ds": 482110,
 			"baseItemId": 86316,
@@ -4825,22 +4825,22 @@
 					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
 				},
 				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
-					"value": "187",
+					"value": 187,
 					"subproperties": null
 				},
 				"DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "55", "subproperties": null },
-				"DAMAGE_TO": { "value": "68", "subproperties": null },
-				"IMPACT_FORCE": { "value": "199", "subproperties": null },
+				"DAMAGE_FROM": { "value": 55, "subproperties": null },
+				"DAMAGE_TO": { "value": 68, "subproperties": null },
+				"IMPACT_FORCE": { "value": 199, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "3.59", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "75", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 3.59, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 75, "subproperties": null }
 			},
 			"object3ds": 740019,
 			"baseItemId": 507813,
@@ -4912,22 +4912,22 @@
 					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
 				},
 				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
-					"value": "235",
+					"value": 235,
 					"subproperties": null
 				},
 				"DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "69", "subproperties": null },
-				"DAMAGE_TO": { "value": "83", "subproperties": null },
-				"IMPACT_FORCE": { "value": "253", "subproperties": null },
+				"DAMAGE_FROM": { "value": 69, "subproperties": null },
+				"DAMAGE_TO": { "value": 83, "subproperties": null },
+				"IMPACT_FORCE": { "value": 253, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "3.35", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "91.1", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 3.35, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 91.1, "subproperties": null }
 			},
 			"object3ds": 431730,
 			"baseItemId": 507813,
@@ -4999,22 +4999,22 @@
 					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
 				},
 				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
-					"value": "282",
+					"value": 282,
 					"subproperties": null
 				},
 				"DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "84", "subproperties": null },
-				"DAMAGE_TO": { "value": "99", "subproperties": null },
-				"IMPACT_FORCE": { "value": "307", "subproperties": null },
+				"DAMAGE_FROM": { "value": 84, "subproperties": null },
+				"DAMAGE_TO": { "value": 99, "subproperties": null },
+				"IMPACT_FORCE": { "value": 307, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "3.10", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "107.2", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 3.1, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 107.2, "subproperties": null }
 			},
 			"object3ds": 65798,
 			"baseItemId": 507813,
@@ -5086,22 +5086,22 @@
 					"subproperties": ["SHAFT_AIMING_MODE_MAX_DAMAGE"]
 				},
 				"SHAFT_AIMING_MODE_MAX_DAMAGE": {
-					"value": "302",
+					"value": 302,
 					"subproperties": null
 				},
 				"DAMAGE": {
 					"value": null,
 					"subproperties": ["DAMAGE_FROM", "DAMAGE_TO"]
 				},
-				"DAMAGE_FROM": { "value": "90", "subproperties": null },
-				"DAMAGE_TO": { "value": "106", "subproperties": null },
-				"IMPACT_FORCE": { "value": "330", "subproperties": null },
+				"DAMAGE_FROM": { "value": 90, "subproperties": null },
+				"DAMAGE_TO": { "value": 106, "subproperties": null },
+				"IMPACT_FORCE": { "value": 330, "subproperties": null },
 				"WEAPON_CHARGE_RATE": {
 					"value": null,
 					"subproperties": ["WEAPON_RELOAD_TIME"]
 				},
-				"WEAPON_RELOAD_TIME": { "value": "3.00", "subproperties": null },
-				"TURRET_TURN_SPEED": { "value": "114.1", "subproperties": null }
+				"WEAPON_RELOAD_TIME": { "value": 3.0, "subproperties": null },
+				"TURRET_TURN_SPEED": { "value": 114.1, "subproperties": null }
 			},
 			"object3ds": 933781,
 			"baseItemId": 507813,

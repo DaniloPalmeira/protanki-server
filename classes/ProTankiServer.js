@@ -124,6 +124,7 @@ class ProTankiServer {
 	}
 
 	PropertiesToArmor(originalObject) {
+		originalObject = JSON.parse(JSON.stringify(originalObject));
 		const transformedObject = [];
 
 		// Percorre cada propriedade do objeto original

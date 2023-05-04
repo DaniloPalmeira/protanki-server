@@ -2,12 +2,12 @@
 	"wasp": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "94", "subproperties": null },
-				"HULL_SPEED": { "value": "10.80", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "93.9", "subproperties": null },
-				"HULL_MASS": { "value": "1376", "subproperties": null },
+				"HULL_ARMOR": { "value": 94, "subproperties": null },
+				"HULL_SPEED": { "value": 10.8, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 93.9, "subproperties": null },
+				"HULL_MASS": { "value": 1376, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "9", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 9, "subproperties": null }
 			},
 			"object3ds": 160287,
 			"baseItemId": 629496,
@@ -15,12 +15,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "121", "subproperties": null },
-				"HULL_SPEED": { "value": "11.50", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "111.7", "subproperties": null },
-				"HULL_MASS": { "value": "1638", "subproperties": null },
+				"HULL_ARMOR": { "value": 121, "subproperties": null },
+				"HULL_SPEED": { "value": 11.5, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 111.7, "subproperties": null },
+				"HULL_MASS": { "value": 1638, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "10", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 10, "subproperties": null }
 			},
 			"object3ds": 557817,
 			"baseItemId": 629496,
@@ -28,12 +28,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "149", "subproperties": null },
-				"HULL_SPEED": { "value": "12.20", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "129.6", "subproperties": null },
-				"HULL_MASS": { "value": "1901", "subproperties": null },
+				"HULL_ARMOR": { "value": 149, "subproperties": null },
+				"HULL_SPEED": { "value": 12.2, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 129.6, "subproperties": null },
+				"HULL_MASS": { "value": 1901, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "11", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 11, "subproperties": null }
 			},
 			"object3ds": 653204,
 			"baseItemId": 629496,
@@ -41,12 +41,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "180", "subproperties": null },
-				"HULL_SPEED": { "value": "13.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "150", "subproperties": null },
-				"HULL_MASS": { "value": "2200", "subproperties": null },
+				"HULL_ARMOR": { "value": 180, "subproperties": null },
+				"HULL_SPEED": { "value": 13.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 150, "subproperties": null },
+				"HULL_MASS": { "value": 2200, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "13", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 13, "subproperties": null }
 			},
 			"object3ds": 20647,
 			"baseItemId": 629496,
@@ -56,12 +56,12 @@
 	"hornet": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "122", "subproperties": null },
-				"HULL_SPEED": { "value": "10.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "90.8", "subproperties": null },
-				"HULL_MASS": { "value": "1616", "subproperties": null },
+				"HULL_ARMOR": { "value": 122, "subproperties": null },
+				"HULL_SPEED": { "value": 10.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 90.8, "subproperties": null },
+				"HULL_MASS": { "value": 1616, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "10", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 10, "subproperties": null }
 			},
 			"object3ds": 916624,
 			"baseItemId": 209092,
@@ -69,12 +69,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "154", "subproperties": null },
-				"HULL_SPEED": { "value": "10.70", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "105.2", "subproperties": null },
-				"HULL_MASS": { "value": "1905", "subproperties": null },
+				"HULL_ARMOR": { "value": 154, "subproperties": null },
+				"HULL_SPEED": { "value": 10.7, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 105.2, "subproperties": null },
+				"HULL_MASS": { "value": 1905, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "11", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 11, "subproperties": null }
 			},
 			"object3ds": 682348,
 			"baseItemId": 209092,
@@ -82,12 +82,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "187", "subproperties": null },
-				"HULL_SPEED": { "value": "11.50", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "119.7", "subproperties": null },
-				"HULL_MASS": { "value": "2194", "subproperties": null },
+				"HULL_ARMOR": { "value": 187, "subproperties": null },
+				"HULL_SPEED": { "value": 11.5, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 119.7, "subproperties": null },
+				"HULL_MASS": { "value": 2194, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "13", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 13, "subproperties": null }
 			},
 			"object3ds": 46049,
 			"baseItemId": 209092,
@@ -95,12 +95,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "210", "subproperties": null },
-				"HULL_SPEED": { "value": "12.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "130", "subproperties": null },
-				"HULL_MASS": { "value": "2400", "subproperties": null },
+				"HULL_ARMOR": { "value": 210, "subproperties": null },
+				"HULL_SPEED": { "value": 12.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 130, "subproperties": null },
+				"HULL_MASS": { "value": 2400, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "14", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 14, "subproperties": null }
 			},
 			"object3ds": 907343,
 			"baseItemId": 209092,
@@ -110,12 +110,12 @@
 	"hunter": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "144", "subproperties": null },
-				"HULL_SPEED": { "value": "8.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "75.8", "subproperties": null },
-				"HULL_MASS": { "value": "1965", "subproperties": null },
+				"HULL_ARMOR": { "value": 144, "subproperties": null },
+				"HULL_SPEED": { "value": 8.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 75.8, "subproperties": null },
+				"HULL_MASS": { "value": 1965, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "9", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 9, "subproperties": null }
 			},
 			"object3ds": 227169,
 			"baseItemId": 826132,
@@ -123,12 +123,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "187", "subproperties": null },
-				"HULL_SPEED": { "value": "8.60", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "95.3", "subproperties": null },
-				"HULL_MASS": { "value": "2280", "subproperties": null },
+				"HULL_ARMOR": { "value": 187, "subproperties": null },
+				"HULL_SPEED": { "value": 8.6, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 95.3, "subproperties": null },
+				"HULL_MASS": { "value": 2280, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "10", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 10, "subproperties": null }
 			},
 			"object3ds": 377977,
 			"baseItemId": 826132,
@@ -136,12 +136,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "230", "subproperties": null },
-				"HULL_SPEED": { "value": "9.20", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "114.9", "subproperties": null },
-				"HULL_MASS": { "value": "2595", "subproperties": null },
+				"HULL_ARMOR": { "value": 230, "subproperties": null },
+				"HULL_SPEED": { "value": 9.2, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 114.9, "subproperties": null },
+				"HULL_MASS": { "value": 2595, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "12", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 12, "subproperties": null }
 			},
 			"object3ds": 271004,
 			"baseItemId": 826132,
@@ -149,12 +149,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "285", "subproperties": null },
-				"HULL_SPEED": { "value": "10.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "140", "subproperties": null },
-				"HULL_MASS": { "value": "3000", "subproperties": null },
+				"HULL_ARMOR": { "value": 285, "subproperties": null },
+				"HULL_SPEED": { "value": 10.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 140, "subproperties": null },
+				"HULL_MASS": { "value": 3000, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "14", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 14, "subproperties": null }
 			},
 			"object3ds": 257012,
 			"baseItemId": 826132,
@@ -164,12 +164,12 @@
 	"dictator": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "188", "subproperties": null },
-				"HULL_SPEED": { "value": "7.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "89", "subproperties": null },
-				"HULL_MASS": { "value": "2410", "subproperties": null },
+				"HULL_ARMOR": { "value": 188, "subproperties": null },
+				"HULL_SPEED": { "value": 7.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 89, "subproperties": null },
+				"HULL_MASS": { "value": 2410, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "10", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 10, "subproperties": null }
 			},
 			"object3ds": 931026,
 			"baseItemId": 904690,
@@ -177,12 +177,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "243", "subproperties": null },
-				"HULL_SPEED": { "value": "7.30", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "103.3", "subproperties": null },
-				"HULL_MASS": { "value": "2722", "subproperties": null },
+				"HULL_ARMOR": { "value": 243, "subproperties": null },
+				"HULL_SPEED": { "value": 7.3, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 103.3, "subproperties": null },
+				"HULL_MASS": { "value": 2722, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "12", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 12, "subproperties": null }
 			},
 			"object3ds": 6338,
 			"baseItemId": 904690,
@@ -190,12 +190,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "298", "subproperties": null },
-				"HULL_SPEED": { "value": "7.70", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "117.7", "subproperties": null },
-				"HULL_MASS": { "value": "3033", "subproperties": null },
+				"HULL_ARMOR": { "value": 298, "subproperties": null },
+				"HULL_SPEED": { "value": 7.7, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 117.7, "subproperties": null },
+				"HULL_MASS": { "value": 3033, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "13", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 13, "subproperties": null }
 			},
 			"object3ds": 890676,
 			"baseItemId": 904690,
@@ -203,12 +203,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "345", "subproperties": null },
-				"HULL_SPEED": { "value": "8.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "130", "subproperties": null },
-				"HULL_MASS": { "value": "3300", "subproperties": null },
+				"HULL_ARMOR": { "value": 345, "subproperties": null },
+				"HULL_SPEED": { "value": 8.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 130, "subproperties": null },
+				"HULL_MASS": { "value": 3300, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "15", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 15, "subproperties": null }
 			},
 			"object3ds": 802804,
 			"baseItemId": 904690,
@@ -218,12 +218,12 @@
 	"viking": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "195", "subproperties": null },
-				"HULL_SPEED": { "value": "7.80", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "80.6", "subproperties": null },
-				"HULL_MASS": { "value": "2235", "subproperties": null },
+				"HULL_ARMOR": { "value": 195, "subproperties": null },
+				"HULL_SPEED": { "value": 7.8, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 80.6, "subproperties": null },
+				"HULL_MASS": { "value": 2235, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "11", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 11, "subproperties": null }
 			},
 			"object3ds": 513347,
 			"baseItemId": 730749,
@@ -231,12 +231,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "244", "subproperties": null },
-				"HULL_SPEED": { "value": "8.30", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "92.7", "subproperties": null },
-				"HULL_MASS": { "value": "2550", "subproperties": null },
+				"HULL_ARMOR": { "value": 244, "subproperties": null },
+				"HULL_SPEED": { "value": 8.3, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 92.7, "subproperties": null },
+				"HULL_MASS": { "value": 2550, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "12", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 12, "subproperties": null }
 			},
 			"object3ds": 347843,
 			"baseItemId": 730749,
@@ -244,12 +244,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "294", "subproperties": null },
-				"HULL_SPEED": { "value": "8.80", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "104.8", "subproperties": null },
-				"HULL_MASS": { "value": "2865", "subproperties": null },
+				"HULL_ARMOR": { "value": 294, "subproperties": null },
+				"HULL_SPEED": { "value": 8.8, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 104.8, "subproperties": null },
+				"HULL_MASS": { "value": 2865, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "14", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 14, "subproperties": null }
 			},
 			"object3ds": 153457,
 			"baseItemId": 730749,
@@ -257,12 +257,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "315", "subproperties": null },
-				"HULL_SPEED": { "value": "9.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "110", "subproperties": null },
-				"HULL_MASS": { "value": "3000", "subproperties": null },
+				"HULL_ARMOR": { "value": 315, "subproperties": null },
+				"HULL_SPEED": { "value": 9.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 110, "subproperties": null },
+				"HULL_MASS": { "value": 3000, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "15", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 15, "subproperties": null }
 			},
 			"object3ds": 937522,
 			"baseItemId": 730749,
@@ -272,12 +272,12 @@
 	"titan": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "224", "subproperties": null },
-				"HULL_SPEED": { "value": "5.30", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "55.7", "subproperties": null },
-				"HULL_MASS": { "value": "3571", "subproperties": null },
+				"HULL_ARMOR": { "value": 224, "subproperties": null },
+				"HULL_SPEED": { "value": 5.3, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 55.7, "subproperties": null },
+				"HULL_MASS": { "value": 3571, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "11", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 11, "subproperties": null }
 			},
 			"object3ds": 819540,
 			"baseItemId": 882375,
@@ -285,12 +285,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "289", "subproperties": null },
-				"HULL_SPEED": { "value": "5.50", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "67.1", "subproperties": null },
-				"HULL_MASS": { "value": "4047", "subproperties": null },
+				"HULL_ARMOR": { "value": 289, "subproperties": null },
+				"HULL_SPEED": { "value": 5.5, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 67.1, "subproperties": null },
+				"HULL_MASS": { "value": 4047, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "13", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 13, "subproperties": null }
 			},
 			"object3ds": 385322,
 			"baseItemId": 882375,
@@ -298,12 +298,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "355", "subproperties": null },
-				"HULL_SPEED": { "value": "5.80", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "78.6", "subproperties": null },
-				"HULL_MASS": { "value": "4524", "subproperties": null },
+				"HULL_ARMOR": { "value": 355, "subproperties": null },
+				"HULL_SPEED": { "value": 5.8, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 78.6, "subproperties": null },
+				"HULL_MASS": { "value": 4524, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "14", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 14, "subproperties": null }
 			},
 			"object3ds": 175994,
 			"baseItemId": 882375,
@@ -311,12 +311,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "420", "subproperties": null },
-				"HULL_SPEED": { "value": "6.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "90", "subproperties": null },
-				"HULL_MASS": { "value": "5000", "subproperties": null },
+				"HULL_ARMOR": { "value": 420, "subproperties": null },
+				"HULL_SPEED": { "value": 6.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 90, "subproperties": null },
+				"HULL_MASS": { "value": 5000, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "16", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 16, "subproperties": null }
 			},
 			"object3ds": 142350,
 			"baseItemId": 882375,
@@ -326,12 +326,12 @@
 	"mammoth": {
 		"0": {
 			"propers": {
-				"HULL_ARMOR": { "value": "268", "subproperties": null },
-				"HULL_SPEED": { "value": "4.40", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "54", "subproperties": null },
-				"HULL_MASS": { "value": "4262", "subproperties": null },
+				"HULL_ARMOR": { "value": 268, "subproperties": null },
+				"HULL_SPEED": { "value": 4.4, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 54, "subproperties": null },
+				"HULL_MASS": { "value": 4262, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "11", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 11, "subproperties": null }
 			},
 			"object3ds": 139472,
 			"baseItemId": 542698,
@@ -339,12 +339,12 @@
 		},
 		"1": {
 			"propers": {
-				"HULL_ARMOR": { "value": "339", "subproperties": null },
-				"HULL_SPEED": { "value": "4.60", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "64.1", "subproperties": null },
-				"HULL_MASS": { "value": "4743", "subproperties": null },
+				"HULL_ARMOR": { "value": 339, "subproperties": null },
+				"HULL_SPEED": { "value": 4.6, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 64.1, "subproperties": null },
+				"HULL_MASS": { "value": 4743, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "12", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 12, "subproperties": null }
 			},
 			"object3ds": 219122,
 			"baseItemId": 542698,
@@ -352,12 +352,12 @@
 		},
 		"2": {
 			"propers": {
-				"HULL_ARMOR": { "value": "409", "subproperties": null },
-				"HULL_SPEED": { "value": "4.90", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "74.2", "subproperties": null },
-				"HULL_MASS": { "value": "5225", "subproperties": null },
+				"HULL_ARMOR": { "value": 409, "subproperties": null },
+				"HULL_SPEED": { "value": 4.9, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 74.2, "subproperties": null },
+				"HULL_MASS": { "value": 5225, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "14", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 14, "subproperties": null }
 			},
 			"object3ds": 550964,
 			"baseItemId": 542698,
@@ -365,12 +365,12 @@
 		},
 		"3": {
 			"propers": {
-				"HULL_ARMOR": { "value": "450", "subproperties": null },
-				"HULL_SPEED": { "value": "5.00", "subproperties": null },
-				"HULL_TURN_SPEED": { "value": "80", "subproperties": null },
-				"HULL_MASS": { "value": "5500", "subproperties": null },
+				"HULL_ARMOR": { "value": 450, "subproperties": null },
+				"HULL_SPEED": { "value": 5.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 80, "subproperties": null },
+				"HULL_MASS": { "value": 5500, "subproperties": null },
 				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
-				"HULL_ACCELERATION": { "value": "15", "subproperties": null }
+				"HULL_ACCELERATION": { "value": 15, "subproperties": null }
 			},
 			"object3ds": 165165,
 			"baseItemId": 542698,

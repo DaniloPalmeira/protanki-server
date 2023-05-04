@@ -8,7 +8,7 @@ module.exports = class {
 
 	health = 10000;
 	healthPart = 1;
-	healthTotal = 180;
+	healthTotal = 1;
 
 	state = "suicide";
 	state_null = true;
@@ -51,6 +51,11 @@ module.exports = class {
 			paint: paintProps,
 		};
 
+		this.supplies = this.client.user.garage.inventory;
+
+		this.healthTotal = this.equipament.hull.propers.HULL_ARMOR.value;
+		this.healthPart = 10000 / this.healthTotal;
+
 		this.party = client.user.selectedBattle;
 		this.party.removeViewer(client);
 	}
@@ -58,6 +63,58 @@ module.exports = class {
 	// FUNÇÕES SINCRONAS
 	sendPacket(packetID, packet = new ByteArray()) {
 		this.client.sendPacket(packetID, packet);
+	}
+
+	updateTankiData() {
+		const tankiPacket = new ByteArray();
+		tankiPacket.writeUTF(this.client.user.username);
+		tankiPacket.writeFloat(this.equipament.hull.propers.HULL_SPEED.value); // maxSpeed
+		tankiPacket.writeFloat(
+			this.equipament.hull.propers.HULL_TURN_SPEED.value / 57.2957
+		); // maxTurnSpeed
+		tankiPacket.writeFloat(1.6999506950378418); // maxTurretRotationSpeed
+		tankiPacket.writeFloat(
+			this.equipament.hull.propers.HULL_ACCELERATION.value
+		); // acceleration
+		tankiPacket.writeShort(1); // specificationId
+		this.sendPacket(-1672577397, tankiPacket);
+
+		this.prepareCameraPosition();
+	}
+
+	prepareCameraPosition() {
+		if (!this.isSpectator) {
+			const spawnPoints = [
+				{
+					position: {
+						x: -22763.44140625,
+						y: 2887.464111328125,
+						z: 200,
+					},
+					orientation: {
+						x: 0,
+						y: 0,
+						z: 0,
+					},
+				},
+			];
+
+			const spawnPoint =
+				spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
+
+			this.position = spawnPoint.position;
+			this.orientation = spawnPoint.orientation;
+			const tankiPOPacket = new ByteArray();
+			tankiPOPacket.writeBoolean(false);
+			tankiPOPacket.writeFloat(spawnPoint.position.x); // position - x
+			tankiPOPacket.writeFloat(spawnPoint.position.y); // position - y
+			tankiPOPacket.writeFloat(spawnPoint.position.z); // position - z
+			tankiPOPacket.writeBoolean(false);
+			tankiPOPacket.writeFloat(spawnPoint.orientation.x); // orientation - x
+			tankiPOPacket.writeFloat(spawnPoint.orientation.y); // orientation - y
+			tankiPOPacket.writeFloat(spawnPoint.orientation.z); // orientation - z
+			this.sendPacket(-157204477, tankiPOPacket);
+		}
 	}
 
 	weaponsInfos() {
@@ -358,7 +415,7 @@ module.exports = class {
 	}
 
 	suppliesPanel() {
-		if (this.isSpectator) {
+		if (this.isSpectator || this.party.withoutSupplies) {
 			return;
 		}
 		const suppliesPacket = new ByteArray();
@@ -366,35 +423,35 @@ module.exports = class {
 			items: [
 				{
 					id: "health",
-					count: 2218,
+					count: this.supplies?.health?.count ?? 0,
 					slotId: 1,
 					itemEffectTime: 0,
 					itemRestSec: 30,
 				},
 				{
 					id: "armor",
-					count: 2587,
+					count: this.supplies?.armor?.count ?? 0,
 					slotId: 2,
 					itemEffectTime: 60,
 					itemRestSec: 15,
 				},
 				{
 					id: "double_damage",
-					count: 2714,
+					count: this.supplies?.double_damage?.count ?? 0,
 					slotId: 3,
 					itemEffectTime: 60,
 					itemRestSec: 15,
 				},
 				{
 					id: "n2o",
-					count: 2626,
+					count: this.supplies?.n2o?.count ?? 0,
 					slotId: 4,
 					itemEffectTime: 60,
 					itemRestSec: 15,
 				},
 				{
 					id: "mine",
-					count: 262609,
+					count: this.supplies?.mine?.count ?? 0,
 					slotId: 5,
 					itemEffectTime: 0,
 					itemRestSec: 30,
@@ -407,14 +464,14 @@ module.exports = class {
 	buildTankPacket(client) {
 		const { user } = client;
 		const { battle } = user;
-		const { equipament } = battle;
+		const { hull, turret, paint } = battle.equipament;
 
 		const tankPacket = new ByteArray();
 		const tankiInfos = {
 			battleId: this.party.id,
-			colormap_id: equipament.paint.coloring,
-			hull_id: `${equipament.hull.id}_m${equipament.hull.m}`,
-			turret_id: `${equipament.turret.id}_m${equipament.turret.m}`,
+			colormap_id: paint.coloring,
+			hull_id: `${hull.id}_m${hull.m}`,
+			turret_id: `${turret.id}_m${turret.m}`,
 			team_type: "NONE",
 			partsObject: JSON.stringify({
 				engineIdleSound: 386284,
@@ -422,24 +479,24 @@ module.exports = class {
 				engineMovingSound: 75329,
 				turretSound: 242699,
 			}),
-			hullResource: equipament.hull.object3ds,
-			turretResource: equipament.turret.object3ds,
-			sfxData: JSON.stringify(equipament.turret.sfxData || {}),
+			hullResource: hull.object3ds,
+			turretResource: turret.object3ds,
+			sfxData: JSON.stringify(turret.sfxData || {}),
 			position: battle.position,
 			orientation: battle.orientation,
 			incarnation: battle.incarnation,
 			tank_id: user.username,
 			nickname: user.username,
 			state: battle.state,
-			maxSpeed: 13,
-			maxTurnSpeed: 2.6179938,
-			acceleration: 13,
+			maxSpeed: hull.propers.HULL_SPEED.value,
+			maxTurnSpeed: hull.propers.HULL_TURN_SPEED.value / 57.2957,
+			acceleration: hull.propers.HULL_ACCELERATION.value,
 			reverseAcceleration: 17,
 			sideAcceleration: 24,
 			turnAcceleration: 3.4906585,
 			reverseTurnAcceleration: 6.4577184,
-			mass: 2200,
-			power: 13,
+			mass: hull.propers.HULL_MASS.value,
+			power: hull.propers.HULL_ACCELERATION.value,
 			dampingCoeff: 900,
 			turret_turn_speed: 1.6999506914424771,
 			health: battle.health,
@@ -517,7 +574,6 @@ module.exports = class {
 
 	updateHealth() {
 		console.log(this.health);
-		this.healthPart = 10000 / this.healthTotal;
 		const userHealthPacket = new ByteArray();
 		userHealthPacket.writeUTF(this.client.user.username);
 		userHealthPacket.writeFloat(this.health);
@@ -610,6 +666,7 @@ module.exports = class {
 	}
 
 	kill(killed) {
+		killed.battle.incarnation++;
 		const packet = new ByteArray();
 		packet.writeUTF(killed.username);
 		packet.writeUTF(this.client.user.username);

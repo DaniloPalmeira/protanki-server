@@ -617,47 +617,7 @@ class ProTankiClient {
 		} else if (packetID == -1376947245000000000) {
 			this.removeLoading();
 		} else if (packetID == 268832557) {
-			const tankiPacket = new ByteArray();
-			tankiPacket.writeUTF(this.user.username);
-			tankiPacket.writeFloat(13); // maxSpeed
-			tankiPacket.writeFloat(2.6179938316345215); // maxTurnSpeed
-			tankiPacket.writeFloat(1.6999506950378418); // maxTurretRotationSpeed
-			tankiPacket.writeFloat(13); // acceleration
-			tankiPacket.writeShort(1); // specificationId
-			this.sendPacket(-1672577397, tankiPacket);
-
-			if (!this.user.battle.isSpectator) {
-				const spawnPoints = [
-					{
-						position: {
-							x: -22763.44140625,
-							y: 2887.464111328125,
-							z: 200,
-						},
-						orientation: {
-							x: 0,
-							y: 0,
-							z: 0,
-						},
-					},
-				];
-
-				const spawnPoint =
-					spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
-
-				this.user.battle.position = spawnPoint.position;
-				this.user.battle.orientation = spawnPoint.orientation;
-				const tankiPOPacket = new ByteArray();
-				tankiPOPacket.writeBoolean(false);
-				tankiPOPacket.writeFloat(spawnPoint.position.x); // position - x
-				tankiPOPacket.writeFloat(spawnPoint.position.y); // position - y
-				tankiPOPacket.writeFloat(spawnPoint.position.z); // position - z
-				tankiPOPacket.writeBoolean(false);
-				tankiPOPacket.writeFloat(spawnPoint.orientation.x); // orientation - x
-				tankiPOPacket.writeFloat(spawnPoint.orientation.y); // orientation - y
-				tankiPOPacket.writeFloat(spawnPoint.orientation.z); // orientation - z
-				this.sendPacket(-157204477, tankiPOPacket);
-			}
+			this.user.battle.updateTankiData();
 		} else if (packetID == PKG.BATTLE_JOIN) {
 			if (!this.user.battle) {
 				this.user.battle = new ProTankiBattle(this);

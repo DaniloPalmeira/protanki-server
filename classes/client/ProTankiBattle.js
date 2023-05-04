@@ -331,7 +331,7 @@ module.exports = class {
 			mapId: 684125,
 			invisible_time: 3500,
 			spectator: this.isSpectator,
-			active: false,
+			active: true,
 			dustParticle: 110001,
 			battleId: this.party.id,
 			minRank: this.party.minRank,

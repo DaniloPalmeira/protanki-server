@@ -18,6 +18,11 @@ class ProTankiServer {
 
 		this.weapons = weapons;
 		this.maps = maps;
+		this.mapsNames = {
+			pt_BR: require("../helpers/map/i18n/pt_BR.json"),
+			en: require("../helpers/map/i18n/en.json"),
+			ru: require("../helpers/map/i18n/ru.json"),
+		};
 		this.battleList = {};
 		this.captchaLocations = [];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];

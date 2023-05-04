@@ -204,6 +204,10 @@ module.exports = class {
 					// se o usuário tiver um rank igual a 1, desabilita todos os mapas
 					item.enabled = false;
 				}
+				item.mapName =
+					this.client.server.mapsNames[this.client.language]?.[item.mapId] ??
+					`Unnamed - ${item.mapId}`;
+				delete item.props;
 				return item;
 			}),
 		};

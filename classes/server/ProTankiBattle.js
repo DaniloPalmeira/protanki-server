@@ -56,7 +56,7 @@ class ProTankiBattle {
 	gravity = 1000;
 	proBattleEnterPrice = 150;
 	roundStarted = false;
-	suspicionLevel = "NONE";
+	suspicionLevel = "NONE"; // NONE, LOW, HIGH
 	preview = 0;
 	viewers = [];
 	fund = 0;

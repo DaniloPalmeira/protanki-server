@@ -326,7 +326,7 @@ module.exports = class {
 		// map_zone
 		const paramsMap = new ByteArray();
 		const mapObject = {
-			kick_period_ms: 900000,
+			kick_period_ms: 300000,
 			map_id: this.party.map,
 			mapId: 684125,
 			invisible_time: 3500,
@@ -352,10 +352,10 @@ module.exports = class {
 				angleZ: -0.5,
 				lightColor: 13090219,
 				shadowColor: 5530735,
-				fogAlpha: 1,
-				fogColor: 12447999,
-				farLimit: 7000,
-				nearLimit: 0,
+				fogAlpha: 0.25,
+				fogColor: 10543615,
+				farLimit: 10000,
+				nearLimit: 5000,
 				gravity: this.party.gravity,
 				skyboxRevolutionSpeed: 0,
 				ssaoColor: 2045258,

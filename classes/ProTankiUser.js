@@ -90,158 +90,252 @@ module.exports = class ProTankiUser {
 		);
 	}
 
+	getDataByRank(rank) {
+		let objData;
+		if (rank == 1 || rank > 30) {
+			objData = { currentRankScore: 0, nextRankScore: 100, bonusCrystals: 0 };
+		} else if (rank == 2) {
+			objData = {
+				currentRankScore: 100,
+				nextRankScore: 500,
+				bonusCrystals: 10,
+			};
+		} else if (rank == 3) {
+			objData = {
+				currentRankScore: 500,
+				nextRankScore: 1500,
+				bonusCrystals: 40,
+			};
+		} else if (rank == 4) {
+			objData = {
+				currentRankScore: 1500,
+				nextRankScore: 3700,
+				bonusCrystals: 120,
+			};
+		} else if (rank == 5) {
+			objData = {
+				currentRankScore: 3700,
+				nextRankScore: 7100,
+				bonusCrystals: 230,
+			};
+		} else if (rank == 6) {
+			objData = {
+				currentRankScore: 7100,
+				nextRankScore: 12300,
+				bonusCrystals: 420,
+			};
+		} else if (rank == 7) {
+			objData = {
+				currentRankScore: 12300,
+				nextRankScore: 20000,
+				bonusCrystals: 740,
+			};
+		} else if (rank == 8) {
+			objData = {
+				currentRankScore: 20000,
+				nextRankScore: 29000,
+				bonusCrystals: 950,
+			};
+		} else if (rank == 9) {
+			objData = {
+				currentRankScore: 29000,
+				nextRankScore: 41000,
+				bonusCrystals: 1400,
+			};
+		} else if (rank == 10) {
+			objData = {
+				currentRankScore: 41000,
+				nextRankScore: 57000,
+				bonusCrystals: 2000,
+			};
+		} else if (rank == 11) {
+			objData = {
+				currentRankScore: 57000,
+				nextRankScore: 76000,
+				bonusCrystals: 2500,
+			};
+		} else if (rank == 12) {
+			objData = {
+				currentRankScore: 76000,
+				nextRankScore: 98000,
+				bonusCrystals: 3100,
+			};
+		} else if (rank == 13) {
+			objData = {
+				currentRankScore: 98000,
+				nextRankScore: 125000,
+				bonusCrystals: 3900,
+			};
+		} else if (rank == 14) {
+			objData = {
+				currentRankScore: 125000,
+				nextRankScore: 156000,
+				bonusCrystals: 4600,
+			};
+		} else if (rank == 15) {
+			objData = {
+				currentRankScore: 156000,
+				nextRankScore: 192000,
+				bonusCrystals: 5600,
+			};
+		} else if (rank == 16) {
+			objData = {
+				currentRankScore: 192000,
+				nextRankScore: 233000,
+				bonusCrystals: 6600,
+			};
+		} else if (rank == 17) {
+			objData = {
+				currentRankScore: 233000,
+				nextRankScore: 280000,
+				bonusCrystals: 7900,
+			};
+		} else if (rank == 18) {
+			objData = {
+				currentRankScore: 280000,
+				nextRankScore: 332000,
+				bonusCrystals: 8900,
+			};
+		} else if (rank == 19) {
+			objData = {
+				currentRankScore: 332000,
+				nextRankScore: 390000,
+				bonusCrystals: 10000,
+			};
+		} else if (rank == 20) {
+			objData = {
+				currentRankScore: 390000,
+				nextRankScore: 455000,
+				bonusCrystals: 12000,
+			};
+		} else if (rank == 21) {
+			objData = {
+				currentRankScore: 455000,
+				nextRankScore: 527000,
+				bonusCrystals: 14000,
+			};
+		} else if (rank == 22) {
+			objData = {
+				currentRankScore: 527000,
+				nextRankScore: 606000,
+				bonusCrystals: 16000,
+			};
+		} else if (rank == 23) {
+			objData = {
+				currentRankScore: 606000,
+				nextRankScore: 692000,
+				bonusCrystals: 17000,
+			};
+		} else if (rank == 24) {
+			objData = {
+				currentRankScore: 692000,
+				nextRankScore: 787000,
+				bonusCrystals: 20000,
+			};
+		} else if (rank == 25) {
+			objData = {
+				currentRankScore: 787000,
+				nextRankScore: 889000,
+				bonusCrystals: 22000,
+			};
+		} else if (rank == 26) {
+			objData = {
+				currentRankScore: 889000,
+				nextRankScore: 1000000,
+				bonusCrystals: 24000,
+			};
+		} else if (rank == 27) {
+			objData = {
+				currentRankScore: 1000000,
+				nextRankScore: 1122000,
+				bonusCrystals: 28000,
+			};
+		} else if (rank == 28) {
+			objData = {
+				currentRankScore: 1122000,
+				nextRankScore: 1255000,
+				bonusCrystals: 31000,
+			};
+		} else if (rank == 29) {
+			objData = {
+				currentRankScore: 1255000,
+				nextRankScore: 1400000,
+				bonusCrystals: 34000,
+			};
+		} else if (rank == 30) {
+			objData = {
+				currentRankScore: 1400000,
+				nextRankScore: 0,
+				bonusCrystals: 37000,
+			};
+		}
+		return objData;
+	}
+
 	async updateProgress() {
 		if (this.experience < 100) {
 			this.rank = 1;
-			this.currentRankScore = 0;
-			this.nextRankScore = 100;
-			this.bonusCrystals = 0;
 		} else if (this.experience < 500) {
 			this.rank = 2;
-			this.currentRankScore = 100;
-			this.nextRankScore = 500;
-			this.bonusCrystals = 10;
 		} else if (this.experience < 1500) {
 			this.rank = 3;
-			this.currentRankScore = 500;
-			this.nextRankScore = 1500;
-			this.bonusCrystals = 40;
 		} else if (this.experience < 3700) {
 			this.rank = 4;
-			this.currentRankScore = 1500;
-			this.nextRankScore = 3700;
-			this.bonusCrystals = 120;
 		} else if (this.experience < 7100) {
 			this.rank = 5;
-			this.currentRankScore = 3700;
-			this.nextRankScore = 7100;
-			this.bonusCrystals = 230;
 		} else if (this.experience < 12300) {
 			this.rank = 6;
-			this.currentRankScore = 7100;
-			this.nextRankScore = 12300;
-			this.bonusCrystals = 420;
 		} else if (this.experience < 20000) {
 			this.rank = 7;
-			this.currentRankScore = 12300;
-			this.nextRankScore = 20000;
-			this.bonusCrystals = 740;
 		} else if (this.experience < 29000) {
 			this.rank = 8;
-			this.currentRankScore = 20000;
-			this.nextRankScore = 29000;
-			this.bonusCrystals = 950;
 		} else if (this.experience < 41000) {
 			this.rank = 9;
-			this.currentRankScore = 29000;
-			this.nextRankScore = 41000;
-			this.bonusCrystals = 1400;
 		} else if (this.experience < 57000) {
 			this.rank = 10;
-			this.currentRankScore = 41000;
-			this.nextRankScore = 57000;
-			this.bonusCrystals = 2000;
 		} else if (this.experience < 76000) {
 			this.rank = 11;
-			this.currentRankScore = 57000;
-			this.nextRankScore = 76000;
-			this.bonusCrystals = 2500;
 		} else if (this.experience < 98000) {
 			this.rank = 12;
-			this.currentRankScore = 76000;
-			this.nextRankScore = 98000;
-			this.bonusCrystals = 3100;
 		} else if (this.experience < 125000) {
 			this.rank = 13;
-			this.currentRankScore = 98000;
-			this.nextRankScore = 125000;
-			this.bonusCrystals = 3900;
 		} else if (this.experience < 156000) {
 			this.rank = 14;
-			this.currentRankScore = 125000;
-			this.nextRankScore = 156000;
-			this.bonusCrystals = 4600;
 		} else if (this.experience < 192000) {
 			this.rank = 15;
-			this.currentRankScore = 156000;
-			this.nextRankScore = 192000;
-			this.bonusCrystals = 5600;
 		} else if (this.experience < 233000) {
 			this.rank = 16;
-			this.currentRankScore = 192000;
-			this.nextRankScore = 233000;
-			this.bonusCrystals = 6600;
 		} else if (this.experience < 280000) {
 			this.rank = 17;
-			this.currentRankScore = 233000;
-			this.nextRankScore = 280000;
-			this.bonusCrystals = 7900;
 		} else if (this.experience < 332000) {
 			this.rank = 18;
-			this.currentRankScore = 280000;
-			this.nextRankScore = 332000;
-			this.bonusCrystals = 8900;
 		} else if (this.experience < 390000) {
 			this.rank = 19;
-			this.currentRankScore = 332000;
-			this.nextRankScore = 390000;
-			this.bonusCrystals = 10000;
 		} else if (this.experience < 455000) {
 			this.rank = 20;
-			this.currentRankScore = 390000;
-			this.nextRankScore = 455000;
-			this.bonusCrystals = 12000;
 		} else if (this.experience < 527000) {
 			this.rank = 21;
-			this.currentRankScore = 455000;
-			this.nextRankScore = 527000;
-			this.bonusCrystals = 14000;
 		} else if (this.experience < 606000) {
 			this.rank = 22;
-			this.currentRankScore = 527000;
-			this.nextRankScore = 606000;
-			this.bonusCrystals = 16000;
 		} else if (this.experience < 692000) {
 			this.rank = 23;
-			this.currentRankScore = 606000;
-			this.nextRankScore = 692000;
-			this.bonusCrystals = 17000;
 		} else if (this.experience < 787000) {
 			this.rank = 24;
-			this.currentRankScore = 692000;
-			this.nextRankScore = 787000;
-			this.bonusCrystals = 20000;
 		} else if (this.experience < 889000) {
 			this.rank = 25;
-			this.currentRankScore = 787000;
-			this.nextRankScore = 889000;
-			this.bonusCrystals = 22000;
 		} else if (this.experience < 1000000) {
 			this.rank = 26;
-			this.currentRankScore = 889000;
-			this.nextRankScore = 1000000;
-			this.bonusCrystals = 24000;
 		} else if (this.experience < 1122000) {
 			this.rank = 27;
-			this.currentRankScore = 1000000;
-			this.nextRankScore = 1122000;
-			this.bonusCrystals = 28000;
 		} else if (this.experience < 1255000) {
 			this.rank = 28;
-			this.currentRankScore = 1122000;
-			this.nextRankScore = 1255000;
-			this.bonusCrystals = 31000;
 		} else if (this.experience < 1400000) {
 			this.rank = 29;
-			this.currentRankScore = 1255000;
-			this.nextRankScore = 1400000;
-			this.bonusCrystals = 34000;
 		} else if (this.experience >= 1400000) {
 			this.rank = 30;
-			this.currentRankScore = 1400000;
-			this.nextRankScore = 0;
-			this.bonusCrystals = 37000;
 		}
+
+		Object.assign(this, this.getDataByRank(this.rank));
 		return;
 	}
 

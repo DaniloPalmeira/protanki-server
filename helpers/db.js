@@ -77,6 +77,36 @@ const setUserNewsID = async (lastNews, id) => {
 };
 
 /**
+ * Atualiza os cristais de um usuário pelo ID
+ * @param {number} crystal - A quantidade de cristais a ser atualizada
+ * @param {number} id - O ID do usuário
+ * @returns {Promise<void>}
+ */
+const updateCrystal = async (crystal, id) => {
+	const options = {
+		crystal,
+	};
+	await user.update(options, {
+		where: { uid: id },
+	});
+};
+
+/**
+ * Atualiza a experiência de um usuário pelo ID
+ * @param {number} experience - A quantidade de experiência a ser atualizada
+ * @param {number} id - O ID do usuário
+ * @returns {Promise<void>}
+ */
+const updateExperience = async (experience, id) => {
+	const options = {
+		experience,
+	};
+	await user.update(options, {
+		where: { uid: id },
+	});
+};
+
+/**
  * Retorna os amigos de um usuário pelo ID, criando uma entrada se ela não existir
  * @param {number} id - O ID do usuário
  * @returns {Promise<Object>} - Os amigos encontrados ou um objeto vazio se não houver amigos
@@ -136,4 +166,6 @@ module.exports = {
 	setUserNewsID,
 	updateFriends,
 	createAccount,
+	updateCrystal,
+	updateExperience,
 };

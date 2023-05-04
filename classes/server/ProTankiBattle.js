@@ -87,6 +87,28 @@ class ProTankiBattle {
 		};
 	}
 
+	get userInfosList() {
+		function getParams(user) {
+			return {
+				user: user.username,
+				kills: user.battle.kills,
+				score: user.battle.score,
+				suspicious: false,
+			};
+		}
+		return {
+			none: this.users.map((user) => {
+				return getParams(user);
+			}),
+			red: this.usersRed.map((user) => {
+				return getParams(user);
+			}),
+			blue: this.usersBlue.map((user) => {
+				return getParams(user);
+			}),
+		};
+	}
+
 	get modeInt() {
 		return parseInt(this.mode);
 	}
@@ -189,7 +211,7 @@ class ProTankiBattle {
 			suspicionLevel: this.suspicionLevel,
 		};
 		if (this.modeStr == "DM") {
-			obj.users = this.usernameList["dm"];
+			obj.users = this.usernameList["none"];
 		} else {
 			obj.usersBlue = this.usernameList["blue"];
 			obj.usersRed = this.usernameList["red"];
@@ -215,7 +237,7 @@ class ProTankiBattle {
 		};
 
 		if (this.modeStr == "DM") {
-			showData.users = this.usernameList["dm"];
+			showData.users = this.usernameList["none"];
 		} else {
 			showData.usersBlue = this.usernameList["blue"];
 			showData.usersRed = this.usernameList["red"];
@@ -243,10 +265,10 @@ class ProTankiBattle {
 			spectator: false,
 		};
 		if (this.modeStr == "DM") {
-			showData.users = this.usernameList["dm"];
+			showData.users = this.userInfosList["none"];
 		} else {
-			showData.usersBlue = this.usernameList["blue"];
-			showData.usersRed = this.usernameList["red"];
+			showData.usersBlue = this.userInfosList["blue"];
+			showData.usersRed = this.userInfosList["red"];
 			if (this.scoreBlue) {
 				showData.scoreBlue = this.scoreBlue;
 			}

@@ -39,6 +39,14 @@ class ProTankiServer {
 			minLength: 5,
 		};
 
+		this.battleLimits = [
+			{ battleMode: "DM", scoreLimit: 999, timeLimitInSec: 59940 },
+			{ battleMode: "TDM", scoreLimit: 999, timeLimitInSec: 59940 },
+			{ battleMode: "CTF", scoreLimit: 999, timeLimitInSec: 59940 },
+			{ battleMode: "CP", scoreLimit: 999, timeLimitInSec: 59940 },
+			{ battleMode: "AS", scoreLimit: 999, timeLimitInSec: 59940 },
+		];
+
 		this.paintProperties = require("../helpers/garage/properties/paint.json");
 		this.armorProperties = require("../helpers/garage/properties/armor.json");
 		this.weaponProperties = require("../helpers/garage/properties/weapon.json");

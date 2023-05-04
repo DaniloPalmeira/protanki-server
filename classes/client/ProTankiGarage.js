@@ -100,14 +100,19 @@ module.exports = class {
 		}
 
 		const itemData = matchingItems[0];
-		const discount = itemData.discount?.percent || 0;
-		const price = itemData.price * (1 - discount / 100);
+		const discount = Math.floor(itemData.discount?.percent || 0);
+		const price = Math.floor(itemData.price * (1 - discount / 100));
+		const total = price * item.quantity;
 
-		if (this.client.user.crystal < price * item.quantity) {
+		if (total != item.value) {
 			return false;
 		}
 
-		this.client.user.crystal -= price * item.quantity;
+		if (this.client.user.crystal < total) {
+			return false;
+		}
+
+		this.client.user.crystal -= total;
 
 		const { category } = itemData;
 		const categoryGarage = (garage[category] = garage[category] || {});

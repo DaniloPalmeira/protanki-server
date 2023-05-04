@@ -13,6 +13,13 @@ module.exports = class {
 	state = "suicide";
 	state_null = true;
 
+	team = 2;
+	teamString = {
+		0: "RED",
+		1: "BLUE",
+		2: "NONE",
+	};
+
 	position = { x: -22763.44140625, y: 2887.464111328125, z: 200 };
 	orientation = { x: 0, y: 0, z: -6.2829999923706055 };
 	angularVelocity = { x: 0, y: 0, z: 0 };
@@ -58,6 +65,20 @@ module.exports = class {
 
 		this.party = client.user.selectedBattle;
 		this.party.removeViewer(client);
+	}
+
+	get teamStr() {
+		return this.teamString[this.team];
+	}
+
+	set teamStr(value) {
+		if (typeof value === "string") {
+			const index = Object.values(this.teamString).indexOf(this.team);
+			this.team = index !== -1 ? index : 0;
+		} else {
+			this.team = 0;
+			console.log(`O valor recebido não é uma string`);
+		}
 	}
 
 	// FUNÇÕES SINCRONAS
@@ -146,7 +167,17 @@ module.exports = class {
 		}
 	}
 
-	join() {
+	join(team = null) {
+		if (team !== null) {
+			this.team = team;
+			if (team == 0) {
+				this.party.usersRed.push(this.client.user);
+			} else if (team == 1) {
+				this.party.usersBlue.push(this.client.user);
+			} else if (team == 2) {
+				this.party.users.push(this.client.user);
+			}
+		}
 		if (!this.isSpectator) {
 			this.party.clients.push(this.client);
 		}
@@ -295,12 +326,12 @@ module.exports = class {
 		// map_zone
 		const paramsMap = new ByteArray();
 		const mapObject = {
-			kick_period_ms: 300000,
+			kick_period_ms: 900000,
 			map_id: this.party.map,
 			mapId: 684125,
 			invisible_time: 3500,
 			spectator: this.isSpectator,
-			active: true,
+			active: false,
 			dustParticle: 110001,
 			battleId: this.party.id,
 			minRank: this.party.minRank,
@@ -321,10 +352,10 @@ module.exports = class {
 				angleZ: -0.5,
 				lightColor: 13090219,
 				shadowColor: 5530735,
-				fogAlpha: 0.25,
-				fogColor: 10543615,
-				farLimit: 10000,
-				nearLimit: 5000,
+				fogAlpha: 1,
+				fogColor: 12447999,
+				farLimit: 7000,
+				nearLimit: 0,
 				gravity: this.party.gravity,
 				skyboxRevolutionSpeed: 0,
 				ssaoColor: 2045258,
@@ -472,7 +503,7 @@ module.exports = class {
 			colormap_id: paint.coloring,
 			hull_id: `${hull.id}_m${hull.m}`,
 			turret_id: `${turret.id}_m${turret.m}`,
-			team_type: "NONE",
+			team_type: battle.teamStr,
 			partsObject: JSON.stringify({
 				engineIdleSound: 386284,
 				engineStartMovingSound: 226985,
@@ -539,20 +570,57 @@ module.exports = class {
 		});
 	}
 
+	CodecStatistics() {
+		if (this.party.modeStr === "DM") {
+			this.CodecStatisticsDMCC();
+		} else {
+			this.CodecStatisticsTeamCC();
+		}
+	}
+
 	CodecStatisticsDMCC() {
 		const statDMPacket = new ByteArray();
-		statDMPacket.writeInt(this.party.clients.length);
+		statDMPacket.writeInt(this.party.users.length);
 
-		this.party.clients.forEach((_client) => {
-			statDMPacket.writeInt(_client.user.privLevel); // mod level
-			statDMPacket.writeInt(_client.user.battle.deaths); // deahts
-			statDMPacket.writeInt(_client.user.battle.kills); // kills
-			statDMPacket.writeByte(_client.user.rank); // rank
-			statDMPacket.writeInt(_client.user.battle.score); // score
-			statDMPacket.writeUTF(_client.user.username); // uid
+		this.party.users.forEach((user) => {
+			statDMPacket.writeInt(user.privLevel); // mod level
+			statDMPacket.writeInt(user.battle.deaths); // deahts
+			statDMPacket.writeInt(user.battle.kills); // kills
+			statDMPacket.writeByte(user.rank); // rank
+			statDMPacket.writeInt(user.battle.score); // score
+			statDMPacket.writeUTF(user.username); // uid
 		});
 
 		this.sendPacket(-1959138292, statDMPacket);
+	}
+
+	CodecStatisticsTeamCC() {
+		const statTeamPacket = new ByteArray();
+		const { scoreBlue, scoreRed, usersBlue, usersRed } = this.party;
+		statTeamPacket.writeInt(scoreBlue);
+		statTeamPacket.writeInt(scoreRed);
+
+		statTeamPacket.writeInt(usersBlue.length);
+		usersBlue.forEach((user) => {
+			statTeamPacket.writeInt(user.privLevel); // mod level
+			statTeamPacket.writeInt(user.battle.deaths); // deahts
+			statTeamPacket.writeInt(user.battle.kills); // kills
+			statTeamPacket.writeByte(user.rank); // rank
+			statTeamPacket.writeInt(user.battle.score); // score
+			statTeamPacket.writeUTF(user.username); // uid
+		});
+
+		statTeamPacket.writeInt(usersRed.length);
+		usersRed.forEach((user) => {
+			statTeamPacket.writeInt(user.privLevel); // mod level
+			statTeamPacket.writeInt(user.battle.deaths); // deahts
+			statTeamPacket.writeInt(user.battle.kills); // kills
+			statTeamPacket.writeByte(user.rank); // rank
+			statTeamPacket.writeInt(user.battle.score); // score
+			statTeamPacket.writeUTF(user.username); // uid
+		});
+
+		this.sendPacket(-1233891872, statTeamPacket);
 	}
 
 	userPlayingInfos() {
@@ -585,7 +653,7 @@ module.exports = class {
 		this.updateHealth();
 		const prepareTankiPacket = new ByteArray();
 		prepareTankiPacket.writeUTF(this.client.user.username); // nome
-		prepareTankiPacket.writeInt(2); // team
+		prepareTankiPacket.writeInt(this.team); // team
 		prepareTankiPacket.writeByte(0); // position
 		prepareTankiPacket.writeFloat(this.position.x);
 		prepareTankiPacket.writeFloat(this.position.y);

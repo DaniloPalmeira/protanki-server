@@ -352,7 +352,7 @@ class ProTankiClient {
 				// this.sendPacket(-305710715); // possivel ping
 				this.user.battle.CodecBattleMineCC();
 				this.sendPacket(930618015);
-				this.user.battle.CodecStatisticsDMCC();
+				this.user.battle.CodecStatistics();
 				this.sendPacket(1953272681);
 				this.user.battle.CodecBattleMineCC();
 				this.user.battle.suppliesPanel();
@@ -619,9 +619,10 @@ class ProTankiClient {
 		} else if (packetID == 268832557) {
 			this.user.battle.updateTankiData();
 		} else if (packetID == PKG.BATTLE_JOIN) {
+			const team = packet.readInt();
 			if (!this.user.battle) {
 				this.user.battle = new ProTankiBattle(this);
-				this.user.battle.join();
+				this.user.battle.join(team);
 			}
 		} else if (packetID == 2074243318) {
 			// VERIFY CLIENT AND SERVER MS

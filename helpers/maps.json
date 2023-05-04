@@ -1349,7 +1349,7 @@
 		"preview": 708934,
 		"maxRank": 30,
 		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
+		"supportedModes": ["DM", "TDM", "CTF", "CP", "AS"],
 		"theme": "SUMMER"
 	},
 	{
@@ -1360,7 +1360,7 @@
 		"preview": 376683,
 		"maxRank": 30,
 		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
+		"supportedModes": ["DM", "TDM", "CTF", "CP", "AS"],
 		"theme": "WINTER"
 	},
 	{

@@ -421,12 +421,16 @@ class ProTankiClient {
 			var _packet = new ByteArray();
 			_packet.writeUTF(this.user.username);
 			_packet.writeUTF(message);
-			_packet.writeInt(2);
+			_packet.writeInt(this.user.battle.team);
 			if (message.startsWith("/")) {
 				this.command.parse(message);
 				return;
 			}
-			this.user.battle.party.sendPacket(1259981343, _packet);
+			if (teamOnly) {
+				this.user.battle.sendPacketTeam(-449356094, _packet);
+			} else {
+				this.user.battle.party.sendPacket(1259981343, _packet);
+			}
 		} else if (packetID == PKG.REQUEST_CAPTCHA) {
 			this.requestCaptcha(packet);
 		} else if (packetID == PKG.REGISTER_VERIFY_USERNAME) {
@@ -832,14 +836,15 @@ class ProTankiClient {
 	}
 
 	sendPacket(packetID, packet = new ByteArray(), encryption = true) {
+		const nPacket = new ByteArray().write(packet.buffer);
 		if (encryption) {
-			this.encryptPacket(packet);
+			this.encryptPacket(nPacket);
 		}
 
 		var byteA = new ByteArray()
-			.writeInt(packet.buffer.length + 8)
+			.writeInt(nPacket.buffer.length + 8)
 			.writeInt(packetID)
-			.write(packet.buffer).buffer;
+			.write(nPacket.buffer).buffer;
 
 		this.socket.write(byteA);
 	}

@@ -86,6 +86,18 @@ module.exports = class {
 		this.client.sendPacket(packetID, packet);
 	}
 
+	sendPacketTeam(packetID, packet = new ByteArray()) {
+		const users = [
+			...this.party.userListByTeam[this.teamStr.toLowerCase()],
+			...this.party.spectators.map((_client) => {
+				return _client.user;
+			}),
+		];
+		users.forEach((user) => {
+			user.client.sendPacket(packetID, packet);
+		});
+	}
+
 	updateTankiData() {
 		const tankiPacket = new ByteArray();
 		tankiPacket.writeUTF(this.client.user.username);

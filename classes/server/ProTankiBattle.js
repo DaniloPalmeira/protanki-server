@@ -75,6 +75,20 @@ class ProTankiBattle {
 		this.definePreview();
 	}
 
+	get userListByTeam() {
+		return {
+			none: this.users.map((user) => {
+				return user;
+			}),
+			red: this.usersRed.map((user) => {
+				return user;
+			}),
+			blue: this.usersBlue.map((user) => {
+				return user;
+			}),
+		};
+	}
+
 	get usernameList() {
 		return {
 			none: this.users.map((user) => {

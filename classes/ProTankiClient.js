@@ -992,6 +992,7 @@ class ProTankiClient {
 		logger.debug(
 			`1941694508 do usário ${_user.username} foi enviado para o ${this.user.username}`
 		);
+
 		//CodecPremiumNotifierData
 		var _packet_C = new ByteArray();
 		_packet_A.writeInt(32989); //tempo em segundos

@@ -12,7 +12,30 @@ module.exports = class {
 		this.client = client;
 
 		this.commands = {
-			t: {
+			help: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: (command) => {
+					Object.keys(this.commands).forEach((cmd) => {
+						const minArgsCount = this.commands[cmd].minArgsCount;
+						if (this.hasRequiredPrivilegeLevel(this.commands[cmd])) {
+							const args = Array.from(
+								{ length: minArgsCount },
+								(_, i) => `arg${i + 1}`
+							);
+							this.replySystem(`/${cmd} ${args.join(" ")}`);
+						}
+					});
+				},
+			},
+			e: {
+				privilegeLevel: PRIVILEGE_LEVELS.LOW,
+				minArgsCount: 1,
+				execute: (command) => {
+					eval(command.combinedArgs);
+				},
+			},
+			take: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 0,
 				execute: (command) => {
@@ -24,7 +47,7 @@ module.exports = class {
 					}
 				},
 			},
-			gb: {
+			gold: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,
 				execute: (command) => {
@@ -36,13 +59,6 @@ module.exports = class {
 					}
 				},
 			},
-			e: {
-				privilegeLevel: PRIVILEGE_LEVELS.NONE,
-				minArgsCount: 1,
-				execute: (command) => {
-					eval(command.combinedArgs);
-				},
-			},
 			god: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 0,
@@ -50,15 +66,15 @@ module.exports = class {
 					this.client.user.battle.healthPart = 1;
 				},
 			},
-			r: {
-				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+			reload: {
+				privilegeLevel: PRIVILEGE_LEVELS.LOW,
 				minArgsCount: 0,
 				execute: (command) => {
 					this.client.reloadClass();
 				},
 			},
-			p: {
-				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+			packet: {
+				privilegeLevel: PRIVILEGE_LEVELS.LOW,
 				minArgsCount: 1,
 				execute: (command) => {
 					this.client.sendPacket(command.args[0]);
@@ -199,15 +215,13 @@ module.exports = class {
 					updateExperience(user.experience, user.uid);
 				},
 			},
-			g: {
+			drop: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,
 				execute: (command) => {
 					this.client.user.battle.party.bonusId++;
 					let bonus = `${command.args[0]}_${this.client.user.battle.party.bonusId}`;
-
 					this.client.user.battle.party.bonusList.push(bonus);
-
 					let timeMS = 30000;
 					if (command.argCount == 2) {
 						timeMS = parseInt(command.args[1]);

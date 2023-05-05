@@ -246,7 +246,7 @@ module.exports = class {
 		this.party.clients.forEach((_client) => {
 			const notifierDataPacket = new ByteArray();
 			notifierDataPacket.write(notifierDataPacketBase.buffer);
-			notifierDataPacket.writeUTF(this.client.user.username);
+			notifierDataPacket.writeUTF(_client.user.username);
 			this.sendPacket(-1895446889, notifierDataPacket);
 		});
 

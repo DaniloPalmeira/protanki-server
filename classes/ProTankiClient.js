@@ -95,7 +95,11 @@ class ProTankiClient {
 	onConnectionClose() {
 		if (this.user !== undefined) {
 			this.user.online = false;
+			if (this.user.battle) {
+				this.user.battle.leave();
+			}
 		}
+
 		this.server.removeClient(this);
 		logger.verbose(`Conexão encerrada com o IP: ${this.socket.remoteAddress}`);
 	}
@@ -801,23 +805,9 @@ class ProTankiClient {
 		} else if (packetID == PKG.BATTLE_RAILGUN_FINISH) {
 			this.railgunHit(packet);
 		} else if (packetID == PKG.BATTLE_LEAVE) {
-			this.sendPacket(-985579124); // REMOVER TELA DA BATALHA
-			if (this.layout.front == 0) {
-				this.lobby.removeBattleList();
-			}
-			this.user.battle.party.removePlayer(this);
-			// SAIR DA PARTIDA
 			const layout = packet.readInt();
-			const usernamePacket = new ByteArray();
-			usernamePacket.writeUTF(this.user.username);
-			this.user.battle.party.sendPacket(1719707347, usernamePacket);
-			if (this.user.battle.party.mode == 0) {
-				this.user.battle.party.sendPacket(-1689876764, usernamePacket);
-			} else {
-				this.user.battle.party.sendPacket(1411656080, usernamePacket);
-			}
+			this.user.battle.leave(layout);
 			this.user.battle = null;
-			this.loadLayout({ layout, chat: true });
 		} else if (packetID == -523392052) {
 			// COMPRAR KIT
 			const kitName = packet.readUTF();

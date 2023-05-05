@@ -817,6 +817,25 @@ module.exports = class {
 		this.party.sendPacket(-42520728, packet);
 	}
 
+	leave(layout = null) {
+		this.sendPacket(-985579124); // REMOVER TELA DA BATALHA
+		if (this.client.layout.front == 0) {
+			this.client.lobby.removeBattleList();
+		}
+		this.party.removePlayer(this.client);
+		const usernamePacket = new ByteArray();
+		usernamePacket.writeUTF(this.client.user.username);
+		this.party.sendPacket(1719707347, usernamePacket);
+		if (this.party.mode == 0) {
+			this.party.sendPacket(-1689876764, usernamePacket);
+		} else {
+			this.party.sendPacket(1411656080, usernamePacket);
+		}
+		if (layout !== null) {
+			this.client.loadLayout({ layout, chat: true });
+		}
+	}
+
 	updateStat() {
 		const statPacket = new ByteArray();
 		const { deaths, kills } = this;

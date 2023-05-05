@@ -72,6 +72,8 @@ module.exports = class {
 					user.crystal += Number(command.args[0]) || 0;
 					if (user.crystal < 0) {
 						user.crystal = 0;
+					} else if (user.crystal > 99999999) {
+						user.crystal = 99999999;
 					}
 
 					const crysPacket = new ByteArray();
@@ -149,6 +151,8 @@ module.exports = class {
 					user.experience += Number(command.args[0]) || 0;
 					if (user.experience < 0) {
 						user.experience = 0;
+					} else if (user.experience > 99999999) {
+						user.experience = 99999999;
 					}
 					user.updateProgress();
 					const newRank = user.rank;

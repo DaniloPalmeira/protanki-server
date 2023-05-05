@@ -70,6 +70,8 @@ class ProTankiBattle {
 	scoreBlue = 0;
 	scoreRed = 0;
 
+	bonusList = [];
+
 	constructor(objData) {
 		Object.assign(this, objData);
 		this.definePreview();

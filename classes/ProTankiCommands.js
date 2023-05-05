@@ -206,6 +206,8 @@ module.exports = class {
 					this.client.user.battle.party.bonusId++;
 					let bonus = `${command.args[0]}_${this.client.user.battle.party.bonusId}`;
 
+					this.client.user.battle.party.bonusList.push(bonus);
+
 					let timeMS = 30000;
 					if (command.argCount == 2) {
 						timeMS = parseInt(command.args[1]);

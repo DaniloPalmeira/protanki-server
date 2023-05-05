@@ -829,7 +829,23 @@ class ProTankiClient {
 			}, 10 * 1000);
 		} else if (packetID == -1047185003) {
 			// REMOVER BONUS DO MAPA
-			this.user.battle.party.sendPacket(-1291499147, packet);
+			const bonusId = packet.readUTF();
+			if (this.user.battle.party.bonusList.includes(bonusId)) {
+				var index = this.user.battle.party.bonusList.indexOf(bonusId);
+				if (index !== -1) {
+					this.user.battle.party.bonusList.splice(index, 1);
+				}
+				const bonus = bonusId.split(`_`)[0];
+				if (["special", "gold", "moon", "pumpkin"].includes(bonus)) {
+					this.user.battle.party.sendPacket(
+						463494974,
+						new ByteArray().writeUTF(this.user.username)
+					);
+				}
+				const _packet = new ByteArray();
+				_packet.writeUTF(bonusId);
+				this.user.battle.party.sendPacket(-1291499147, _packet);
+			}
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}

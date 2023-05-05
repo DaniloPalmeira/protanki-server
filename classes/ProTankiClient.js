@@ -927,7 +927,7 @@ class ProTankiClient {
 		// 3 = battle
 		// 4 = reload_space
 
-		logger.verbose(`Mudando para o layout: ${state}`);
+		logger.verbose(`Mudando layout: ${state}`);
 
 		this.sendPacket(-593368100, packet);
 	}

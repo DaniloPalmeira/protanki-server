@@ -774,6 +774,13 @@ module.exports = class {
 		const mainDamage = damageList[turretName]?.[level] ?? 0;
 
 		targetsUsers.forEach((target) => {
+			if (
+				target.battle.team == this.team &&
+				this.party.mode != 0 &&
+				!this.party.friendlyFire
+			) {
+				return;
+			}
 			target.battle.health -= mainDamage * target.battle.healthPart;
 			target.battle.updateHealth();
 			damagePacket.writeFloat(mainDamage);

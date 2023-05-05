@@ -810,8 +810,12 @@ class ProTankiClient {
 			const layout = packet.readInt();
 			const usernamePacket = new ByteArray();
 			usernamePacket.writeUTF(this.user.username);
-			this.user.battle.party.sendPacket(-1689876764, usernamePacket, this);
-			this.user.battle.party.sendPacket(1719707347, usernamePacket, this);
+			this.user.battle.party.sendPacket(1719707347, usernamePacket);
+			if (this.user.battle.party.mode == 0) {
+				this.user.battle.party.sendPacket(-1689876764, usernamePacket);
+			} else {
+				this.user.battle.party.sendPacket(1411656080, usernamePacket);
+			}
 			this.user.battle = null;
 			this.loadLayout({ layout, chat: true });
 		} else if (packetID == -523392052) {

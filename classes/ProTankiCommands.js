@@ -175,7 +175,8 @@ module.exports = class {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,
 				execute: (command) => {
-					let bonus = command.args[0];
+					this.client.user.battle.party.bonusId++;
+					let bonus = `${command.args[0]}_${this.client.user.battle.party.bonusId}`;
 
 					let timeMS = 30000;
 					if (command.argCount == 2) {

@@ -61,6 +61,8 @@ class ProTankiBattle {
 	viewers = [];
 	fund = 0;
 
+	bonusId = 0;
+
 	usersBlue = [];
 	usersRed = [];
 	users = [];

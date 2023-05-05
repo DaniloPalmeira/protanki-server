@@ -1,10 +1,6 @@
 const Sequelize = require("sequelize");
 const user = require("../helpers/database/user");
-const {
-	getUserByUsername,
-	getFriendsOrCreateByID,
-	updateFriends,
-} = require("../helpers/db");
+const { getUserByUsername, getFriendsOrCreateByID } = require("../helpers/db");
 
 module.exports = class ProTankiUser {
 	exist = false;
@@ -76,7 +72,7 @@ module.exports = class ProTankiUser {
 	}
 
 	async updateGarage() {
-		var infos = await user.update(
+		await user.update(
 			{
 				garage: JSON.stringify(this.garage),
 				crystal: this.crystal,

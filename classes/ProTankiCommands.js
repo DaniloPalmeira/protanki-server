@@ -16,20 +16,24 @@ module.exports = class {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 0,
 				execute: (command) => {
-					this.sendPacket(
-						463494974,
-						new ByteArray().writeUTF(this.client.user.username)
-					);
+					if (this.client.user.battle) {
+						this.client.user.battle.party.sendPacket(
+							463494974,
+							new ByteArray().writeUTF(this.client.user.username)
+						);
+					}
 				},
 			},
 			gb: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,
 				execute: (command) => {
-					this.sendPacket(
-						-666893269,
-						new ByteArray().writeUTF(command.combinedArgs).writeInt(490113)
-					);
+					if (this.client.user.battle) {
+						this.client.user.battle.party.sendPacket(
+							-666893269,
+							new ByteArray().writeUTF(command.combinedArgs).writeInt(490113)
+						);
+					}
 				},
 			},
 			e: {

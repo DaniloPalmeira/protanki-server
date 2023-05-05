@@ -19,6 +19,23 @@ module.exports = class {
 					eval(command.combinedArgs);
 				},
 			},
+			live: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: (command) => {
+					console.log(this.client.user.battle.healthPart);
+					console.log(this.client.user.battle.healthTotal);
+					this.client.user.battle.healthPart = 0;
+					console.log(this.client.user.battle.healthPart);
+				},
+			},
+			r: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: (command) => {
+					this.client.reloadClass();
+				},
+			},
 			p: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,

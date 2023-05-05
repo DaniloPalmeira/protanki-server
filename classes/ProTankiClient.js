@@ -1,8 +1,6 @@
 const ByteArray = require("./ByteArray");
-const ProTankiUser = require("./ProTankiUser");
 const { getUserByEmail, setUserNewsID } = require("../helpers/db");
 const ProTankiRegister = require("./ProTankiRegister");
-const ProTankiCommands = require("./ProTankiCommands");
 const ProTankiLogin = require("./ProTankiLogin");
 const ProTankiLobby = require("./client/ProTankiLobby");
 const ProTankiLobbyChat = require("./client/ProTankiLobbyChat");
@@ -13,6 +11,8 @@ const PKG = require("../helpers/pkg.json");
 const mainResources = require("../helpers/mainResources.json");
 const logger = require("../helpers/logger");
 const captcha = require("../helpers/captcha");
+
+const fs = require("fs");
 
 class ProTankiClient {
 	language = "ru";
@@ -32,6 +32,34 @@ class ProTankiClient {
 		ru: require("../helpers/garage/i18n/ru.json"),
 	};
 
+	classBackup = {};
+
+	reloadClassFile(className, client = this) {
+		const classCode = fs.readFileSync(__dirname + className, "utf8");
+		const compiledClass = eval(classCode);
+		const novaInstancia = new compiledClass(client);
+
+		if (client === this) {
+			if (className in client.classBackup) {
+				Object.getOwnPropertyNames(client.classBackup[className]).forEach(
+					(propriedade) => {
+						if (
+							typeof client.classBackup[className][propriedade] !==
+								"function" &&
+							propriedade != "commands"
+						) {
+							novaInstancia[propriedade] =
+								client.classBackup[className][propriedade];
+						}
+					}
+				);
+			}
+			client.classBackup[className] = novaInstancia;
+		}
+
+		return novaInstancia;
+	}
+
 	constructor(data) {
 		this.serverTime = new Date();
 		Object.assign(this, data);
@@ -48,10 +76,17 @@ class ProTankiClient {
 		this.server.addClient(this);
 		this.gerateCryptKeys();
 
-		this.user = new ProTankiUser(this);
+		this.user = this.reloadClassFile("/ProTankiUser.js");
 		this.register = new ProTankiRegister(this);
 		this.login = new ProTankiLogin(this);
-		this.command = new ProTankiCommands(this);
+		this.command = this.reloadClassFile("/ProTankiCommands.js");
+	}
+
+	reloadClass() {
+		this.command = this.reloadClassFile("/ProTankiCommands.js");
+		this.login = this.reloadClassFile("/ProTankiCommands.js");
+		this.register = this.reloadClassFile("/ProTankiCommands.js");
+		this.user = this.reloadClassFile("/ProTankiUser.js");
 	}
 
 	onConnectionClose() {
@@ -1162,7 +1197,7 @@ class ProTankiClient {
 		client = undefined
 	) {
 		if (!(username in this.server.users) || forceUpdate) {
-			let _user = new ProTankiUser(client);
+			let _user = this.reloadClassFile("/ProTankiUser.js", client);
 			await _user.loadByUsername(username);
 			if (_user.exist) {
 				this.server.users[username] = _user;
@@ -1176,7 +1211,7 @@ class ProTankiClient {
 
 	async ObtainUserByUser(_userObj, forceUpdate = false, client = undefined) {
 		if (!(_userObj.username in this.server.users) || forceUpdate) {
-			let _user = new ProTankiUser(client);
+			let _user = this.reloadClassFile("/ProTankiUser.js", client);
 			await _user.loadByUser(_userObj);
 			if (_user.exist) {
 				this.server.users[_userObj.username] = _user;

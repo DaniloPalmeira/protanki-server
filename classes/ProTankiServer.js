@@ -3,6 +3,7 @@ const maps = require("../helpers/map/items.json");
 const weapons = require("../helpers/weapons.json");
 const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");
+const database = require("../helpers/connection");
 
 const logger = require("../helpers/logger");
 
@@ -14,7 +15,7 @@ class ProTankiServer {
 		this.ClientfromUID = {};
 		this.UIDfromClient = {};
 
-		// database.sync({ alter: true });
+		database.sync({ alter: true });
 
 		this.weapons = weapons;
 		this.maps = maps;

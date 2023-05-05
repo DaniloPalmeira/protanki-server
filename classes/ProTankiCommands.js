@@ -19,14 +19,11 @@ module.exports = class {
 					eval(command.combinedArgs);
 				},
 			},
-			live: {
+			god: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 0,
 				execute: (command) => {
-					console.log(this.client.user.battle.healthPart);
-					console.log(this.client.user.battle.healthTotal);
-					this.client.user.battle.healthPart = 0;
-					console.log(this.client.user.battle.healthPart);
+					this.client.user.battle.healthPart = 1;
 				},
 			},
 			r: {

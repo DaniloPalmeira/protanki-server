@@ -17,14 +17,17 @@ const fs = require("fs");
 class ProTankiClient {
 	language = "ru";
 
+	layout = {
+		front: 0,
+		back: 0,
+	};
+
 	decrypt_position = 0;
 	encrypt_position = 0;
 
 	encryptionLenght = 8;
 	decrypt_keys = new Array(8);
 	encrypt_keys = new Array(8);
-
-	currentLayout = -1;
 
 	i18Garage = {
 		pt_BR: require("../helpers/garage/i18n/pt_BR.json"),
@@ -300,7 +303,7 @@ class ProTankiClient {
 				// Envia a lista de itens compráveis para o cliente
 				this.sendPacket(-300370823, new ByteArray().writeObject(buyableGarage));
 
-				this.changeLayout(1, 1);
+				this.changeLayout();
 			} else if (callback == 4) {
 				this.resources.loadByJSON(
 					{
@@ -395,7 +398,7 @@ class ProTankiClient {
 				this.user.battle.table();
 				this.user.battle.effects();
 				this.user.battle.objetoIndefinido();
-				this.changeLayout(3, 3);
+				this.changeLayout();
 			} else {
 				console.log("calback", callback);
 			}
@@ -612,7 +615,7 @@ class ProTankiClient {
 				var modification = parseInt(item.split("_m")[1]);
 				var quantity = packet.readInt();
 				var value = packet.readInt();
-				var canBuy = this.garage.tryBuyThisItem({
+				this.garage.tryBuyThisItem({
 					name,
 					modification,
 					quantity,
@@ -622,15 +625,20 @@ class ProTankiClient {
 			}
 		} else if (packetID == PKG.LOBBY_REQUEST_BATTLE_LIST) {
 			// PEDIR LISTA DE BATALHAS
-			if (this.currentLayout == 0) {
+			if (this.layout.front == 0) {
 				this.lobby.removeBattleList();
 				this.loadLayout({ layout: 3 });
+				this.changeLayout();
 				return;
-			} else if (this.currentLayout == 1) {
+			} else if (this.layout.front == 1) {
 				this.sendPacket(1211186637); // REMOVER GARAGEM
-			} else if (this.currentLayout == 3) {
+				this.loadLayout({ layout: 0 });
+				return;
+			} else if (this.layout.front == 3) {
+				this.loadLayout({ layout: 0, back: 3 });
+				return;
 			}
-			this.loadLayout({ layout: 0 });
+			// this.loadLayout({ layout: 0 });
 		} else if (packetID == PKG.BATTE_SPECTATOR_JOIN) {
 			if (!this.user.battle) {
 				this.user.battle = new ProTankiBattle(this);
@@ -794,6 +802,9 @@ class ProTankiClient {
 			this.railgunHit(packet);
 		} else if (packetID == PKG.BATTLE_LEAVE) {
 			this.sendPacket(-985579124); // REMOVER TELA DA BATALHA
+			if (this.layout.front == 0) {
+				this.lobby.removeBattleList();
+			}
 			this.user.battle.party.removePlayer(this);
 			// SAIR DA PARTIDA
 			const layout = packet.readInt();
@@ -891,11 +902,11 @@ class ProTankiClient {
 		this.sendPacket(-583564465, packet);
 	}
 
-	changeLayout(origin, state) {
+	changeLayout() {
 		var packet = new ByteArray();
 
-		packet.writeInt(origin);
-		packet.writeInt(state);
+		packet.writeInt(this.layout.back);
+		packet.writeInt(this.layout.front);
 
 		this.lobbyServer.removePlayer(this);
 		this.garageServer.removePlayer(this);
@@ -903,7 +914,7 @@ class ProTankiClient {
 		this.battle = null;
 		this.garage = null;
 
-		switch (state) {
+		switch (this.layout.front) {
 			case 0:
 				this.lobbyChatServer.addPlayer(this);
 				this.lobbyServer.addPlayer(this);
@@ -927,7 +938,9 @@ class ProTankiClient {
 		// 3 = battle
 		// 4 = reload_space
 
-		logger.verbose(`Mudando layout: ${state}`);
+		logger.verbose(
+			`Mudando layout: ${this.layout.back} -> ${this.layout.front}`
+		);
 
 		this.sendPacket(-593368100, packet);
 	}
@@ -1073,10 +1086,14 @@ class ProTankiClient {
 	}
 
 	loadLayout(objValues) {
-		const { layout, chat, news } = objValues;
+		const { layout, chat, news, back } = objValues;
+
+		this.layout = {
+			front: layout,
+			back: back ?? layout,
+		};
 
 		this.currentLayout = layout;
-		logger.debug(`loadLayout ${objValues}`);
 		logger.verbose(`Carregando layout: ${layout}`);
 
 		var packet = new ByteArray();
@@ -1102,7 +1119,7 @@ class ProTankiClient {
 			}
 			this.lobby.mapsList();
 			this.lobby.battleList();
-			this.changeLayout(0, 0);
+			this.changeLayout();
 		} else if (layout == 1) {
 			this.sendPacket(-324155151);
 
@@ -1224,7 +1241,17 @@ class ProTankiClient {
 	}
 
 	openGarage() {
-		this.loadLayout({ layout: 1 });
+		if (this.layout.front != 1) {
+			if (this.user.battle) {
+				this.loadLayout({ layout: 1, back: 3 });
+			} else {
+				this.loadLayout({ layout: 1 });
+			}
+		} else {
+			this.sendPacket(1211186637); // REMOVER GARAGEM
+			this.loadLayout({ layout: 3 });
+			this.changeLayout();
+		}
 	}
 
 	/**

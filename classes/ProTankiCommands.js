@@ -12,6 +12,26 @@ module.exports = class {
 		this.client = client;
 
 		this.commands = {
+			t: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: (command) => {
+					this.sendPacket(
+						463494974,
+						new ByteArray().writeUTF(this.client.user.username)
+					);
+				},
+			},
+			gb: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 1,
+				execute: (command) => {
+					this.sendPacket(
+						-666893269,
+						new ByteArray().writeUTF(command.combinedArgs).writeInt(490113)
+					);
+				},
+			},
 			e: {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,

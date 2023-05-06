@@ -310,7 +310,7 @@ module.exports = class {
 		const argCount = args.length;
 
 		return {
-			cmd: cmd.slice(1)x.toLowerCase(),
+			cmd: cmd.slice(1).toLowerCase(),
 			args,
 			combinedArgs,
 			argCount,

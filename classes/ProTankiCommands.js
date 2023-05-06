@@ -305,12 +305,12 @@ module.exports = class {
 	}
 
 	parseCommand(commandString) {
-		const [cmd, ...args] = commandString.split(" ").map((x) => x.toLowerCase());
+		const [cmd, ...args] = commandString.split(" ");
 		const combinedArgs = args.join(" ");
 		const argCount = args.length;
 
 		return {
-			cmd: cmd.slice(1),
+			cmd: cmd.slice(1)x.toLowerCase(),
 			args,
 			combinedArgs,
 			argCount,

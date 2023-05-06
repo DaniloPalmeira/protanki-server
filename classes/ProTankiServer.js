@@ -108,15 +108,31 @@ class ProTankiServer {
 
 		[
 			{
-				id: "1c976322891c6e46",
-				mode: 1,
+				id: "abcdef0123456789",
+				mode: 0,
 				map: "map_cross",
 				maxPeople: 20,
-				name: "Batalha Inicial",
+				name: "Batalha Inicial DM",
 				pro: false,
 				minRank: 1,
 				maxRank: 30,
 				reArmorEnabled: true,
+				parkour: false,
+				scoreLimit: 0,
+				theme: 0,
+			},
+			{
+				id: "abcdef9876543210",
+				mode: 2,
+				map: "map_cross",
+				maxPeople: 20,
+				name: "Batalha Inicial CTF",
+				pro: false,
+				minRank: 1,
+				maxRank: 30,
+				reArmorEnabled: true,
+				withoutSupplies: true,
+				autobalance: true,
 				parkour: false,
 				scoreLimit: 0,
 				theme: 0,
@@ -185,7 +201,7 @@ class ProTankiServer {
 	 */
 	randomID(length) {
 		let result = "";
-		const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+		const characters = "abcdef0123456789";
 		const charactersLength = characters.length;
 		for (let i = 0; i < length; i++) {
 			result += characters.charAt(Math.floor(Math.random() * charactersLength));

@@ -605,15 +605,17 @@ module.exports = class {
 	}
 
 	myTankInTable() {
-		this.party.clients.forEach((_client) => {
-			const statsPacket = new ByteArray();
-			statsPacket.writeInt(this.deaths); // deaths
-			statsPacket.writeInt(this.kills); // kills
-			statsPacket.writeInt(this.score); // score
-			statsPacket.writeUTF(this.client.user.username); // user
+		if (this.team == 2) {
+			this.party.clients.forEach((_client) => {
+				const statsPacket = new ByteArray();
+				statsPacket.writeInt(this.deaths); // deaths
+				statsPacket.writeInt(this.kills); // kills
+				statsPacket.writeInt(this.score); // score
+				statsPacket.writeUTF(this.client.user.username); // user
 
-			this.sendPacket(696140460, statsPacket);
-		});
+				this.sendPacket(696140460, statsPacket);
+			});
+		}
 	}
 
 	CodecStatistics() {
@@ -717,6 +719,7 @@ module.exports = class {
 
 	spawn() {
 		this.health = 10000;
+		console.log("Meu time:", this.team);
 		this.updateHealth();
 		const prepareTankiPacket = new ByteArray();
 		prepareTankiPacket.writeUTF(this.client.user.username); // nome
@@ -849,15 +852,17 @@ module.exports = class {
 	}
 
 	updateStat() {
-		const statPacket = new ByteArray();
-		const { deaths, kills } = this;
-		console.log({ deaths, kills });
-		statPacket.writeInt(this.deaths);
-		statPacket.writeInt(this.kills);
-		statPacket.writeInt(this.score);
-		statPacket.writeUTF(this.client.user.username);
-		statPacket.writeInt(this.team);
-		this.party.sendPacket(-497293992, statPacket);
+		if (this.party.mode !== 0) {
+			const statPacket = new ByteArray();
+			const { deaths, kills } = this;
+			console.log({ deaths, kills });
+			statPacket.writeInt(this.deaths);
+			statPacket.writeInt(this.kills);
+			statPacket.writeInt(this.score);
+			statPacket.writeUTF(this.client.user.username);
+			statPacket.writeInt(this.team);
+			this.party.sendPacket(-497293992, statPacket);
+		}
 	}
 
 	updateFund(increase) {

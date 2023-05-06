@@ -391,9 +391,15 @@ class ProTankiClient {
 				this.user.battle.bonusesParams();
 				this.user.battle.StatisticsModel();
 				this.sendPacket(-643105296); // INICIAR CHAT NA BATALHA
-				// this.sendPacket(-305710715); // possivel ping
+				if (
+					this.user.battle.party.mode == 0 ||
+					this.user.battle.party.friendlyFire
+				) {
+					this.sendPacket(930618015); // APENAS DM
+				} else {
+					this.sendPacket(183561709); // APENAS BATALHA TIME
+				}
 				this.user.battle.CodecBattleMineCC();
-				this.sendPacket(930618015);
 				this.user.battle.CodecStatistics();
 				this.sendPacket(1953272681);
 				this.user.battle.CodecBattleMineCC();

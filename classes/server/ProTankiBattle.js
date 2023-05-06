@@ -72,6 +72,21 @@ class ProTankiBattle {
 
 	bonusList = [];
 
+	ctf = {
+		base: {
+			red: { x: -23250, y: -5250, z: 80 },
+			blue: { x: -14250, y: 3750, z: 80 },
+		},
+		flag: {
+			red: {},
+			blue: {},
+		},
+		name: {
+			red: null,
+			blue: null,
+		},
+	};
+
 	constructor(objData) {
 		Object.assign(this, objData);
 		this.definePreview();

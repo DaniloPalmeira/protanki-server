@@ -3,3 +3,5 @@ test.js
 teste.js
 /logs
 data/database.sqlite
+helpers/map/i18n/en.json
+test.json

@@ -667,6 +667,70 @@ module.exports = class {
 		this.sendPacket(-1233891872, statTeamPacket);
 	}
 
+	tryFlagAction() {
+		this.tryTakeFlag();
+		this.tryCaptureFlag();
+		this.tryReturnFlag();
+	}
+
+	tryTakeFlag() {
+		if (this.party.mode !== 2) {
+			return;
+		}
+		if (this.party.ctf.name[this.team === 1 ? "red" : "blue"] !== null) {
+			return;
+		}
+		let flagPosition = this.party.ctf.flag[this.team === 1 ? "red" : "blue"];
+		if (!flagPosition.x) {
+			flagPosition = this.party.ctf.base[this.team === 1 ? "red" : "blue"];
+		}
+		const { x, y, z } = flagPosition;
+		if (x === undefined && y === undefined && z === undefined) {
+			return;
+		}
+
+		const distancia = this.calculateDistance(flagPosition);
+
+		if (distancia <= 300) {
+			this.party.ctf.name[this.team === 1 ? "red" : "blue"] =
+				this.client.user.username;
+			this.sendPacket(
+				-1282406496,
+				new ByteArray()
+					.writeUTF(this.client.user.username)
+					.writeInt(this.team ? 0 : 1)
+			);
+		}
+	}
+
+	tryCaptureFlag() {}
+
+	tryReturnFlag() {}
+
+	dropFlag() {
+		const flagTeam = this.team ? 0 : 1;
+		if (
+			this.party.ctf.name[this.team === 1 ? "red" : "blue"] ==
+			this.client.user.username
+		) {
+			this.party.ctf.name[this.team === 1 ? "red" : "blue"] = null;
+			this.party.ctf.flag[this.team === 1 ? "red" : "blue"] = {
+				x: this.position.x,
+				y: this.position.y,
+				z: this.position.z - 100,
+			};
+			this.sendPacket(
+				1925237062,
+				new ByteArray()
+					.writeBoolean(0)
+					.writeFloat(this.position.x)
+					.writeFloat(this.position.y)
+					.writeFloat(this.position.z - 100)
+					.writeInt(flagTeam)
+			);
+		}
+	}
+
 	/**
 	 * Envia as informações dos jogadores da equipe do cliente para a rede.
 	 */

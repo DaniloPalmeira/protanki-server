@@ -202,11 +202,7 @@ class ProTankiClient {
 	parsePacket(packet) {
 		var packetID = packet.readInt();
 
-		if (
-			![
-				-114968993, 2074243318, 1484572481, -1683279062, 329279865, -1749108178,
-			].includes(packetID)
-		) {
+		if (![].includes(packetID)) {
 			logger.debug(`Pacote recebido no ID: ${packetID}`);
 		}
 
@@ -387,19 +383,59 @@ class ProTankiClient {
 					6
 				);
 			} else if (callback == 6) {
+				const { party } = this.user.battle;
 				this.user.battle.mapParams();
 				this.user.battle.bonusesParams();
 				this.user.battle.StatisticsModel();
 				this.sendPacket(-643105296); // INICIAR CHAT NA BATALHA
-				if (
-					this.user.battle.party.mode == 0 ||
-					this.user.battle.party.friendlyFire
-				) {
+				if (party.mode == 0 || party.friendlyFire) {
 					this.sendPacket(930618015); // APENAS DM
-				} else {
+				} else if (party.mode != 2) {
 					this.sendPacket(183561709); // APENAS BATALHA TIME
 				}
 				this.user.battle.CodecBattleMineCC();
+				if (party.mode == 2) {
+					const ctfPacket = new ByteArray();
+					ctfPacket.writeBoolean(false);
+					ctfPacket.writeFloat(party.ctf.base.blue.x);
+					ctfPacket.writeFloat(party.ctf.base.blue.y);
+					ctfPacket.writeFloat(party.ctf.base.blue.z);
+					ctfPacket.writeUTF(party.ctf.name.blue);
+					if (party.ctf.flag.blue.x) {
+						ctfPacket.writeBoolean(false);
+						ctfPacket.writeFloat(party.ctf.flag.blue.x);
+						ctfPacket.writeFloat(party.ctf.flag.blue.y);
+						ctfPacket.writeFloat(party.ctf.flag.blue.z);
+					} else {
+						ctfPacket.writeBoolean(true);
+					}
+
+					ctfPacket.writeInt(538453);
+					ctfPacket.writeInt(236578);
+
+					ctfPacket.writeBoolean(false);
+					ctfPacket.writeFloat(party.ctf.base.red.x);
+					ctfPacket.writeFloat(party.ctf.base.red.y);
+					ctfPacket.writeFloat(party.ctf.base.red.z);
+					ctfPacket.writeUTF(party.ctf.name.red);
+					if (party.ctf.flag.red.x) {
+						ctfPacket.writeBoolean(false);
+						ctfPacket.writeFloat(party.ctf.flag.red.x);
+						ctfPacket.writeFloat(party.ctf.flag.red.y);
+						ctfPacket.writeFloat(party.ctf.flag.red.z);
+					} else {
+						ctfPacket.writeBoolean(true);
+					}
+
+					ctfPacket.writeInt(44351);
+					ctfPacket.writeInt(500060);
+					ctfPacket.writeInt(717912);
+					ctfPacket.writeInt(694498);
+					ctfPacket.writeInt(89214);
+					ctfPacket.writeInt(525427);
+
+					this.sendPacket(789790814, ctfPacket);
+				}
 				this.user.battle.CodecStatistics();
 				this.sendPacket(1953272681);
 				this.user.battle.CodecBattleMineCC();
@@ -711,6 +747,7 @@ class ProTankiClient {
 			controlPacket.writeUTF(this.user.username);
 			controlPacket.writeByte(this.user.battle.control);
 			this.user.battle.party.sendPacket(-301298508, controlPacket, this);
+			this.user.battle.tryFlagAction();
 		} else if (packetID == PKG.BATTLE_MOVE_AND_TURRENT_COMMAND) {
 			packet.readInt();
 			packet.readShort(); // specificationId
@@ -759,6 +796,7 @@ class ProTankiClient {
 			}
 
 			this.user.battle.turretDirection = packet.readFloat();
+			this.user.battle.tryFlagAction();
 		} else if (packetID == PKG.BATTLE_MOVE_COMMAND) {
 			packet.readInt();
 			packet.readShort(); // specificationId
@@ -805,6 +843,8 @@ class ProTankiClient {
 					z: packet.readFloat(),
 				};
 			}
+
+			this.user.battle.tryFlagAction();
 		} else if (packetID == PKG.BATTLE_READ_TO_ENABLE) {
 			this.user.battle.enableTanki();
 		} else if (packetID == PKG.BATTLE_RAILGUN_START) {
@@ -852,6 +892,8 @@ class ProTankiClient {
 				_packet.writeUTF(bonusId);
 				this.user.battle.party.sendPacket(-1291499147, _packet);
 			}
+		} else if (packetID == -1832611824) {
+			this.user.battle.dropFlag();
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}

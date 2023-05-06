@@ -132,7 +132,7 @@ class ProTankiServer {
 				maxRank: 30,
 				reArmorEnabled: true,
 				withoutSupplies: true,
-				autobalance: true,
+				autoBalance: true,
 				parkour: false,
 				scoreLimit: 0,
 				theme: 0,

@@ -28,7 +28,7 @@ process.on("uncaughtException", function (err) {
 	logger.error(err.stack);
 });
 
-const __ports = [443];
+const __ports = [1337];
 for (const port of __ports) {
 	let serverRun = net.createServer(handleConnection);
 	serverRun.listen(port);

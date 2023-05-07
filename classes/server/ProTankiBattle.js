@@ -67,23 +67,22 @@ class ProTankiBattle {
 	usersRed = [];
 	users = [];
 
-	scoreBlue = 0;
-	scoreRed = 0;
+	score = {};
 
 	bonusList = [];
 
 	ctf = {
-		base: {
-			red: { x: -23250, y: -5250, z: 80 },
-			blue: { x: -14250, y: 3750, z: 80 },
+		red: {
+			base: { x: -23250, y: -5250, z: 80 },
+			flag: { x: -20250, y: -5250, z: 80 },
+			holder: null,
+			lastAction: new Date(),
 		},
-		flag: {
-			red: {},
-			blue: {},
-		},
-		name: {
-			red: null,
-			blue: null,
+		blue: {
+			base: { x: -14250, y: 3750, z: 80 },
+			flag: {},
+			holder: null,
+			lastAction: new Date(),
 		},
 	};
 
@@ -302,11 +301,11 @@ class ProTankiBattle {
 		} else {
 			showData.usersBlue = this.userInfosList["blue"];
 			showData.usersRed = this.userInfosList["red"];
-			if (this.scoreBlue) {
-				showData.scoreBlue = this.scoreBlue;
+			if (this.score["blue"]) {
+				showData.scoreBlue = this.score["blue"];
 			}
-			if (this.scoreRed) {
-				showData.scoreRed = this.scoreRed;
+			if (this.score["red"]) {
+				showData.scoreRed = this.score["red"];
 			}
 			if (this.friendlyFire) {
 				showData.friendlyFire = this.friendlyFire;

@@ -650,9 +650,9 @@ module.exports = class {
 
 	CodecStatisticsTeamCC() {
 		const statTeamPacket = new ByteArray();
-		const { scoreBlue, scoreRed, usersBlue, usersRed } = this.party;
-		statTeamPacket.writeInt(scoreBlue);
-		statTeamPacket.writeInt(scoreRed);
+		const { score, usersBlue, usersRed } = this.party;
+		statTeamPacket.writeInt(score["blue"] ?? 0);
+		statTeamPacket.writeInt(score["red"] ?? 0);
 
 		statTeamPacket.writeInt(usersBlue.length);
 		usersBlue.forEach((user) => {
@@ -668,67 +668,142 @@ module.exports = class {
 	}
 
 	tryFlagAction() {
+		if (this.state !== "active" || this.party.mode !== 2) {
+			return;
+		}
 		this.tryTakeFlag();
 		this.tryCaptureFlag();
 		this.tryReturnFlag();
 	}
 
 	tryTakeFlag() {
-		if (this.party.mode !== 2) {
-			return;
-		}
-		if (this.party.ctf.name[this.team === 1 ? "red" : "blue"] !== null) {
-			return;
-		}
-		let flagPosition = this.party.ctf.flag[this.team === 1 ? "red" : "blue"];
-		if (!flagPosition.x) {
-			flagPosition = this.party.ctf.base[this.team === 1 ? "red" : "blue"];
-		}
-		const { x, y, z } = flagPosition;
-		if (x === undefined && y === undefined && z === undefined) {
+		const party = this.party;
+		const ctf = party.ctf;
+		const enemyTeamName = this.team === 1 ? "red" : "blue";
+		const { flag, base, lastAction, holder } = ctf[enemyTeamName];
+		const now = new Date();
+
+		if (holder || (lastAction && now - lastAction < 3000)) {
 			return;
 		}
 
-		const distancia = this.calculateDistance(flagPosition);
+		const flagPosition = flag.x ? flag : base;
+		const distance = this.calculateDistance(flagPosition);
 
-		if (distancia <= 300) {
-			this.party.ctf.name[this.team === 1 ? "red" : "blue"] =
-				this.client.user.username;
-			this.sendPacket(
-				-1282406496,
-				new ByteArray()
-					.writeUTF(this.client.user.username)
-					.writeInt(this.team ? 0 : 1)
-			);
+		if (distance <= 300) {
+			ctf[enemyTeamName].holder = this.client.user.username;
+			ctf[enemyTeamName].lastAction = now;
+
+			const packet = new ByteArray()
+				.writeUTF(this.client.user.username)
+				.writeInt(this.team === 1 ? 0 : 1);
+
+			this.party.sendPacket(-1282406496, packet);
 		}
 	}
 
-	tryCaptureFlag() {}
-
-	tryReturnFlag() {}
-
 	dropFlag() {
-		const flagTeam = this.team ? 0 : 1;
-		if (
-			this.party.ctf.name[this.team === 1 ? "red" : "blue"] ==
-			this.client.user.username
-		) {
-			this.party.ctf.name[this.team === 1 ? "red" : "blue"] = null;
-			this.party.ctf.flag[this.team === 1 ? "red" : "blue"] = {
-				x: this.position.x,
-				y: this.position.y,
-				z: this.position.z - 100,
-			};
-			this.sendPacket(
-				1925237062,
-				new ByteArray()
-					.writeBoolean(0)
-					.writeFloat(this.position.x)
-					.writeFloat(this.position.y)
-					.writeFloat(this.position.z - 100)
-					.writeInt(flagTeam)
-			);
+		const party = this.party;
+		const ctf = party.ctf;
+		const enemyTeamName = this.team === 1 ? "red" : "blue";
+		const flag = {
+			x: this.position.x,
+			y: this.position.y,
+			z: this.position.z - 80,
+		};
+
+		if (ctf[enemyTeamName].holder !== this.client.user.username) {
+			return;
 		}
+
+		ctf[enemyTeamName].lastAction = new Date();
+		ctf[enemyTeamName].holder = null;
+		ctf[enemyTeamName].flag = flag;
+
+		const packet = new ByteArray()
+			.writeBoolean(0)
+			.writeFloat(flag.x)
+			.writeFloat(flag.y)
+			.writeFloat(flag.z)
+			.writeInt(this.team === 1 ? 0 : 1);
+
+		this.party.sendPacket(1925237062, packet);
+	}
+
+	tryCaptureFlag() {
+		const party = this.party;
+		const ctf = party.ctf;
+		const myTeam = this.team == 0 ? "red" : "blue";
+		const enemyTeam = this.team == 1 ? "red" : "blue";
+		const { holder, flag, base } = ctf[myTeam];
+
+		if (
+			holder ||
+			flag.x ||
+			ctf[enemyTeam].holder !== this.client.user.username
+		) {
+			return;
+		}
+
+		const distance = this.calculateDistance(base);
+		if (distance > 300) {
+			return;
+		}
+
+		const packet = new ByteArray()
+			.writeInt(this.team)
+			.writeUTF(this.client.user.username);
+
+		this.party.sendPacket(-1870108387, packet);
+
+		ctf[enemyTeam].holder = null;
+		ctf[enemyTeam].flag = {};
+		this.increaseTeamScore(1);
+	}
+
+	increaseTeamScore(amount) {
+		if (this.party.score[this.teamStr.toLowerCase()]) {
+			this.party.score[this.teamStr.toLowerCase()] += amount;
+		} else {
+			this.party.score[this.teamStr.toLowerCase()] = amount;
+		}
+		this.sendPacket(
+			561771020,
+			new ByteArray()
+				.writeInt(this.team)
+				.writeInt(this.party.score[this.teamStr.toLowerCase()] ?? 0)
+		);
+	}
+
+	tryReturnFlag() {
+		const party = this.party;
+		const ctf = party.ctf;
+		const myTeam = this.team == 0 ? "red" : "blue";
+		const enemyTeam = this.team == 1 ? "red" : "blue";
+		const { holder, flag } = ctf[myTeam];
+
+		if (party.mode !== 2 || holder || !flag.x) {
+			return;
+		}
+
+		const distance = this.calculateDistance(flag);
+		if (distance > 300) {
+			return;
+		}
+
+		// const packet = new ByteArray()
+		// 	.writeInt(this.team)
+		// 	.writeUTF(this.client.user.username);
+
+		// this.sendPacket(-1870108387, packet);
+
+		ctf[myTeam].holder = null;
+		ctf[myTeam].flag = {};
+
+		const flagPacket = new ByteArray();
+		flagPacket.writeInt(this.team);
+		flagPacket.writeUTF(this.client.user.username);
+		this.party.sendPacket(-1026428589, flagPacket);
 	}
 
 	/**
@@ -885,6 +960,7 @@ module.exports = class {
 		killed.battle.state_null = true;
 		killed.battle.incarnation++;
 		killed.battle.updateStat();
+		killed.battle.dropFlag();
 
 		this.kills += 1;
 		this.updateStat();
@@ -897,6 +973,7 @@ module.exports = class {
 	}
 
 	leave(layout = null) {
+		this.dropFlag();
 		this.sendPacket(-985579124); // REMOVER TELA DA BATALHA
 		if (this.client.layout.front == 0) {
 			this.client.lobby.removeBattleList();

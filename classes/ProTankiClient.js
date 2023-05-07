@@ -397,15 +397,15 @@ class ProTankiClient {
 				if (party.mode == 2) {
 					const ctfPacket = new ByteArray();
 					ctfPacket.writeBoolean(false);
-					ctfPacket.writeFloat(party.ctf.base.blue.x);
-					ctfPacket.writeFloat(party.ctf.base.blue.y);
-					ctfPacket.writeFloat(party.ctf.base.blue.z);
-					ctfPacket.writeUTF(party.ctf.name.blue);
-					if (party.ctf.flag.blue.x) {
+					ctfPacket.writeFloat(party.ctf.blue.base.x);
+					ctfPacket.writeFloat(party.ctf.blue.base.y);
+					ctfPacket.writeFloat(party.ctf.blue.base.z);
+					ctfPacket.writeUTF(party.ctf.blue.holder);
+					if (party.ctf.blue.flag.x) {
 						ctfPacket.writeBoolean(false);
-						ctfPacket.writeFloat(party.ctf.flag.blue.x);
-						ctfPacket.writeFloat(party.ctf.flag.blue.y);
-						ctfPacket.writeFloat(party.ctf.flag.blue.z);
+						ctfPacket.writeFloat(party.ctf.blue.flag.x);
+						ctfPacket.writeFloat(party.ctf.blue.flag.y);
+						ctfPacket.writeFloat(party.ctf.blue.flag.z);
 					} else {
 						ctfPacket.writeBoolean(true);
 					}
@@ -414,15 +414,15 @@ class ProTankiClient {
 					ctfPacket.writeInt(236578);
 
 					ctfPacket.writeBoolean(false);
-					ctfPacket.writeFloat(party.ctf.base.red.x);
-					ctfPacket.writeFloat(party.ctf.base.red.y);
-					ctfPacket.writeFloat(party.ctf.base.red.z);
-					ctfPacket.writeUTF(party.ctf.name.red);
-					if (party.ctf.flag.red.x) {
+					ctfPacket.writeFloat(party.ctf.red.base.x);
+					ctfPacket.writeFloat(party.ctf.red.base.y);
+					ctfPacket.writeFloat(party.ctf.red.base.z);
+					ctfPacket.writeUTF(party.ctf.red.holder);
+					if (party.ctf.red.flag.x) {
 						ctfPacket.writeBoolean(false);
-						ctfPacket.writeFloat(party.ctf.flag.red.x);
-						ctfPacket.writeFloat(party.ctf.flag.red.y);
-						ctfPacket.writeFloat(party.ctf.flag.red.z);
+						ctfPacket.writeFloat(party.ctf.red.flag.x);
+						ctfPacket.writeFloat(party.ctf.red.flag.y);
+						ctfPacket.writeFloat(party.ctf.red.flag.z);
 					} else {
 						ctfPacket.writeBoolean(true);
 					}
@@ -872,6 +872,7 @@ class ProTankiClient {
 				this.user?.battle?.party?.sendPacket(162656882, _packet);
 				this.user.battle.state = "suicide";
 				this.user.battle.state_null = true;
+				this.user.battle.dropFlag();
 			}, 10 * 1000);
 		} else if (packetID == -1047185003) {
 			// REMOVER BONUS DO MAPA

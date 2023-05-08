@@ -181,15 +181,18 @@ class ProTankiClient {
 		}
 
 		const packetLen = this.rawDataReceived.packetLength();
+		const bytesAvailable = this.rawDataReceived.bytesAvailable();
 
-		if (this.rawDataReceived.bytesAvailable() >= packetLen) {
-			const packetData = new ByteArray(
-				this.rawDataReceived.readBytes(packetLen)
-			);
-			this.parsePacket(packetData);
-			if (this.rawDataReceived.bytesAvailable() > 0) {
-				this.onDataReceived();
-			}
+		if (bytesAvailable < packetLen) {
+			return;
+		}
+
+		const packetData = new ByteArray(this.rawDataReceived.readBytes(packetLen));
+
+		this.parsePacket(packetData);
+
+		if (bytesAvailable > packetLen) {
+			this.onDataReceived();
 		}
 	}
 
@@ -197,9 +200,7 @@ class ProTankiClient {
 		var packetLen = packet.readInt();
 		var packetID = packet.readInt();
 
-		if (![].includes(packetID)) {
-			logger.debug(`Pacote recebido no ID: ${packetID}`);
-		}
+		logger.debug(`Pacote recebido no ID: ${packetID}`);
 
 		this.decryptPacket(packet);
 

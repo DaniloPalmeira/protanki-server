@@ -31,6 +31,8 @@ module.exports = class {
 
 	isSpectator = false;
 
+	ping = { count: 0, current: 0, total: 0 };
+
 	constructor(client) {
 		this.client = client;
 
@@ -752,7 +754,7 @@ module.exports = class {
 		} else {
 			party.score[teamName] = amount;
 		}
-		this.sendPacket(
+		this.party.sendPacket(
 			561771020,
 			new ByteArray().writeInt(this.team).writeInt(party.score[teamName] ?? 0)
 		);
@@ -892,16 +894,36 @@ module.exports = class {
 		return movementPacket;
 	}
 
+	selfDestruct() {
+		const packet = new ByteArray();
+		packet.writeUTF(this.client.user.username);
+		packet.writeInt(3000);
+		const incarnation = this.incarnation;
+
+		setTimeout(() => {
+			if (
+				incarnation !== this.incarnation ||
+				this.client.user.battle !== this
+			) {
+				return;
+			}
+			this.incarnation++;
+			this.party.sendPacket(162656882, packet);
+			this.state = "suicide";
+			this.state_null = true;
+			this.dropFlag();
+		}, 10 * 1000);
+	}
+
 	randInt(min, max) {
 		// min and max included
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
-	damage(targetsUsers) {
+	damage(targetsUsers, incarnations) {
 		const damagePacket = new ByteArray();
-		damagePacket.writeInt(targetsUsers.length);
 
-		let damageList = {
+		const damageList = {
 			railgun: {
 				0: this.randInt(68, 106),
 				1: this.randInt(90, 137),
@@ -914,29 +936,43 @@ module.exports = class {
 		const turretName = this.equipament.turret.id;
 		const mainDamage = damageList[turretName]?.[level] ?? 0;
 
-		targetsUsers.forEach((target) => {
+		const damageListPacket = new ByteArray();
+		let damageListPacketCount = 0;
+
+		for (const [index, target] of targetsUsers.entries()) {
+			const incarnation = parseInt(incarnations[index]);
 			if (
-				target.battle.team == this.team &&
-				this.party.mode != 0 &&
-				!this.party.friendlyFire
+				(target.battle.team === this.team &&
+					this.party.mode !== 0 &&
+					!this.party.friendlyFire) ||
+				target.battle.incarnation !== incarnation
 			) {
-				return;
+				continue;
 			}
+			damageListPacketCount++;
 			target.battle.health -= mainDamage * target.battle.healthPart;
 			target.battle.updateHealth();
-			damagePacket.writeFloat(mainDamage);
+			damageListPacket.writeFloat(mainDamage);
 			if (target.battle.health <= 0) {
-				damagePacket.writeInt(2);
-				this.kill(target);
+				damageListPacket.writeInt(2);
+				this.kill(target, incarnation);
 			} else {
-				damagePacket.writeInt(0);
+				damageListPacket.writeInt(0);
 			}
-			damagePacket.writeUTF(target.username);
-		});
+			damageListPacket.writeUTF(target.username);
+		}
+
+		damagePacket.writeInt(damageListPacketCount);
+		damagePacket.write(damageListPacket.buffer);
+
 		this.client.sendPacket(-1165230470, damagePacket);
 	}
 
-	kill(killed) {
+	kill(killed, incarnation) {
+		if (killed.battle.incarnation !== incarnation) {
+			return;
+		}
+		killed.battle.incarnation++;
 		let valueToIncreaseFund =
 			killed.rank / 6 +
 			killed.battle.equipament.hull.propers.HULL_ARMOR.value / 100;
@@ -945,7 +981,6 @@ module.exports = class {
 		killed.battle.deaths++;
 		killed.battle.state = "suicide";
 		killed.battle.state_null = true;
-		killed.battle.incarnation++;
 		killed.battle.updateStat();
 		killed.battle.dropFlag();
 
@@ -987,14 +1022,19 @@ module.exports = class {
 		}
 	}
 
+	bufferUserStat(user) {
+		const userStatPacket = new ByteArray()
+			.writeInt(user.battle.deaths)
+			.writeInt(user.battle.kills)
+			.writeInt(user.battle.score)
+			.writeUTF(user.username);
+		return userStatPacket.buffer;
+	}
+
 	updateStat() {
+		const bufferUserStat = this.bufferUserStat(this.client.user);
 		const statPacket = new ByteArray();
-		const { deaths, kills } = this;
-		console.log({ deaths, kills });
-		statPacket.writeInt(this.deaths);
-		statPacket.writeInt(this.kills);
-		statPacket.writeInt(this.score);
-		statPacket.writeUTF(this.client.user.username);
+		statPacket.write(bufferUserStat);
 		if (this.party.mode !== 0) {
 			statPacket.writeInt(this.team);
 			this.party.sendPacket(-497293992, statPacket);

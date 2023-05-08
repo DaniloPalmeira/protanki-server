@@ -703,8 +703,6 @@ class ProTankiClient {
 					this.currentTime = new Date();
 				}, 1000);
 			}
-		} else if (packetID == -1376947245000000000) {
-			this.removeLoading();
 		} else if (packetID == 268832557) {
 			this.user.battle.updateTankiData();
 		} else if (packetID == PKG.BATTLE_JOIN) {
@@ -860,16 +858,7 @@ class ProTankiClient {
 			const kitPrice = packet.readInt();
 			console.log({ kitName, kitPrice });
 		} else if (packetID == 988664577) {
-			const _packet = new ByteArray();
-			_packet.writeUTF(this.user.username);
-			_packet.writeInt(3000);
-
-			setTimeout(() => {
-				this.user?.battle?.party?.sendPacket(162656882, _packet);
-				this.user.battle.state = "suicide";
-				this.user.battle.state_null = true;
-				this.user.battle.dropFlag();
-			}, 10 * 1000);
+			this.user.battle.selfDestruct();
 		} else if (packetID == -1047185003) {
 			// REMOVER BONUS DO MAPA
 			const bonusId = packet.readUTF();
@@ -1499,7 +1488,7 @@ class ProTankiClient {
 
 		this.user.battle.party.sendPacket(-369590613, _packet, true);
 
-		this.user.battle.damage(targets);
+		this.user.battle.damage(targets, incarnations);
 	}
 }
 

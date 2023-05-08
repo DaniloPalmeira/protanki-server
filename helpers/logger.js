@@ -3,7 +3,7 @@ const { createLogger, transports, format } = require("winston");
 const logger = createLogger({
 	transports: [
 		new transports.Console({
-			level: "fatal",
+			level: "debug",
 			format: format.combine(format.colorize(), format.simple()),
 		}),
 		new transports.File({

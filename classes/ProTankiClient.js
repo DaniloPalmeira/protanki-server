@@ -21,6 +21,7 @@ const {
 	generateCryptKeys,
 	encryptionPacket,
 } = require("../protocol/encryption");
+const { vectorPacket } = require("../protocol/package");
 
 class ProTankiClient {
 	language = "ru";
@@ -341,14 +342,7 @@ class ProTankiClient {
 					ctfPacket.writeFloat(party.ctf.blue.base.y);
 					ctfPacket.writeFloat(party.ctf.blue.base.z);
 					ctfPacket.writeUTF(party.ctf.blue.holder);
-					if (party.ctf.blue.flag.x) {
-						ctfPacket.writeBoolean(false);
-						ctfPacket.writeFloat(party.ctf.blue.flag.x);
-						ctfPacket.writeFloat(party.ctf.blue.flag.y);
-						ctfPacket.writeFloat(party.ctf.blue.flag.z);
-					} else {
-						ctfPacket.writeBoolean(true);
-					}
+					ctfPacket.writePacket(vectorPacket(party.ctf.blue.flag, true));
 
 					ctfPacket.writeInt(538453);
 					ctfPacket.writeInt(236578);
@@ -358,14 +352,7 @@ class ProTankiClient {
 					ctfPacket.writeFloat(party.ctf.red.base.y);
 					ctfPacket.writeFloat(party.ctf.red.base.z);
 					ctfPacket.writeUTF(party.ctf.red.holder);
-					if (party.ctf.red.flag.x) {
-						ctfPacket.writeBoolean(false);
-						ctfPacket.writeFloat(party.ctf.red.flag.x);
-						ctfPacket.writeFloat(party.ctf.red.flag.y);
-						ctfPacket.writeFloat(party.ctf.red.flag.z);
-					} else {
-						ctfPacket.writeBoolean(true);
-					}
+					ctfPacket.writePacket(vectorPacket(party.ctf.red.flag, true));
 
 					ctfPacket.writeInt(44351);
 					ctfPacket.writeInt(500060);

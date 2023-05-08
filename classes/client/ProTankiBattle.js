@@ -2,6 +2,7 @@ const {
 	userStatsPacket,
 	tankiParamsPacket,
 	cameraPacket,
+	vectorPacket,
 } = require("../../protocol/package");
 const ByteArray = require("../ByteArray");
 
@@ -682,11 +683,8 @@ module.exports = class {
 		const party = this.party;
 		const ctf = party.ctf;
 		const enemyTeamName = this.team === 1 ? "red" : "blue";
-		const flag = {
-			x: this.position.x,
-			y: this.position.y,
-			z: this.position.z - 80,
-		};
+		const { ...flag } = this.position;
+		flag.z -= 80;
 
 		if (ctf[enemyTeamName].holder !== this.client.user.username) {
 			return;
@@ -696,12 +694,8 @@ module.exports = class {
 		ctf[enemyTeamName].holder = null;
 		ctf[enemyTeamName].flag = flag;
 
-		const packet = new ByteArray()
-			.writeBoolean(0)
-			.writeFloat(flag.x)
-			.writeFloat(flag.y)
-			.writeFloat(flag.z)
-			.writeInt(this.team === 1 ? 0 : 1);
+		const packet = new ByteArray(vectorPacket(flag));
+		packet.writeInt(this.team === 1 ? 0 : 1);
 
 		this.party.sendPacket(1925237062, packet);
 	}
@@ -843,14 +837,8 @@ module.exports = class {
 		const prepareTankiPacket = new ByteArray();
 		prepareTankiPacket.writeUTF(this.client.user.username); // nome
 		prepareTankiPacket.writeInt(this.team); // team
-		prepareTankiPacket.writeByte(0); // position
-		prepareTankiPacket.writeFloat(this.position.x);
-		prepareTankiPacket.writeFloat(this.position.y);
-		prepareTankiPacket.writeFloat(this.position.z);
-		prepareTankiPacket.writeByte(0); // orientation
-		prepareTankiPacket.writeFloat(this.orientation.x);
-		prepareTankiPacket.writeFloat(this.orientation.y);
-		prepareTankiPacket.writeFloat(this.orientation.z);
+		prepareTankiPacket.writePacket(vectorPacket(this.position));
+		prepareTankiPacket.writePacket(vectorPacket(this.orientation));
 		prepareTankiPacket.writeShort(this.health); // health
 		prepareTankiPacket.writeShort(this.incarnation); // incarnationId
 		this.party.sendPacket(875259457, prepareTankiPacket);
@@ -860,27 +848,15 @@ module.exports = class {
 
 	movePacket() {
 		const movementPacket = new ByteArray();
-		movementPacket.writeBoolean(false); // angularVelocity
-		movementPacket.writeFloat(this.angularVelocity.x); // x
-		movementPacket.writeFloat(this.angularVelocity.y); // y
-		movementPacket.writeFloat(this.angularVelocity.z); // z
+		movementPacket.writePacket(vectorPacket(this.angularVelocity));
 
 		movementPacket.writeByte(this.control); // control
 
-		movementPacket.writeBoolean(false); // linearVelocity
-		movementPacket.writeFloat(this.linearVelocity.x); // x
-		movementPacket.writeFloat(this.linearVelocity.y); // y
-		movementPacket.writeFloat(this.linearVelocity.z); // z
+		movementPacket.writePacket(vectorPacket(this.linearVelocity));
 
-		movementPacket.writeBoolean(false); // orientation
-		movementPacket.writeFloat(this.orientation.x); // x
-		movementPacket.writeFloat(this.orientation.y); // y
-		movementPacket.writeFloat(this.orientation.z); // z
+		movementPacket.writePacket(vectorPacket(this.orientation));
 
-		movementPacket.writeBoolean(false); // position
-		movementPacket.writeFloat(this.position.x); // x
-		movementPacket.writeFloat(this.position.y); // y
-		movementPacket.writeFloat(this.position.z); // z
+		movementPacket.writePacket(vectorPacket(this.position));
 
 		return movementPacket;
 	}

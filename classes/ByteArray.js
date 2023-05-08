@@ -2,7 +2,11 @@ const logger = require("../helpers/logger");
 
 class ByteArray {
 	constructor(buffer) {
-		this.buffer = buffer ? Buffer.from(buffer) : Buffer.alloc(0);
+		if (buffer instanceof ByteArray) {
+			this.buffer = buffer.buffer;
+		} else {
+			this.buffer = buffer ? Buffer.from(buffer) : Buffer.alloc(0);
+		}
 	}
 
 	writeByte(value = null) {
@@ -116,6 +120,11 @@ class ByteArray {
 			return this;
 		}
 		this.buffer = Buffer.concat([this.buffer, new Buffer.from(value)]);
+		return this;
+	}
+
+	writePacket(value = null) {
+		this.write(value.buffer ?? "");
 		return this;
 	}
 

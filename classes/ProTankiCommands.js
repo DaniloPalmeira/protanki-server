@@ -1,4 +1,5 @@
 const { updateExperience, updateCrystal } = require("../helpers/db");
+const { vectorPacket, createBonusPacket } = require("../protocol/package");
 const ByteArray = require("./ByteArray");
 
 const PRIVILEGE_LEVELS = {
@@ -219,22 +220,26 @@ module.exports = class {
 				privilegeLevel: PRIVILEGE_LEVELS.NONE,
 				minArgsCount: 1,
 				execute: (command) => {
-					this.client.user.battle.party.bonusId++;
-					let bonus = `${command.args[0]}_${this.client.user.battle.party.bonusId}`;
-					this.client.user.battle.party.bonusList.push(bonus);
+					const { battle } = this.client.user;
+					const { party, position } = battle;
+					const { args, argCount } = command;
+
+					const bonusType = args[0];
+					const bonusId = ++party.bonusId;
+					const bonusName = `${bonusType}_${bonusId}`;
+					party.bonusList.push(bonusName);
+
 					let timeMS = 30000;
-					if (command.argCount == 2) {
-						timeMS = parseInt(command.args[1]);
+					if (argCount == 2) {
+						timeMS = parseInt(args[1]);
 					}
 
-					const bonusPacket = new ByteArray();
-					bonusPacket.writeUTF(bonus);
-					bonusPacket.writeBoolean(false);
-					bonusPacket.writeFloat(this.client.user.battle.position.x);
-					bonusPacket.writeFloat(this.client.user.battle.position.y);
-					bonusPacket.writeFloat(this.client.user.battle.position.z + 1000);
-					bonusPacket.writeInt(timeMS);
-					this.client.user.battle.party.sendPacket(1831462385, bonusPacket);
+					const bonusPosition = JSON.parse(JSON.stringify(position));
+					bonusPosition.z += 1000;
+					const bonusPacket = new ByteArray(
+						createBonusPacket(bonusName, bonusPosition, timeMS)
+					);
+					party.sendPacket(1831462385, bonusPacket);
 				},
 			},
 		};

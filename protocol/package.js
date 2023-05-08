@@ -12,7 +12,7 @@ const userStatsPacket = (user) => {
 		.writeInt(battle.kills)
 		.writeInt(battle.score)
 		.writeUTF(username);
-	return packet.buffer; // Return the buffer
+	return packet; // Return the buffer
 };
 
 const usernamePacket = (user) => {
@@ -23,7 +23,7 @@ const usernamePacket = (user) => {
 	}
 	const packet = new ByteArray();
 	packet.writeUTF(username);
-	return packet.buffer; // Return the buffer
+	return packet; // Return the buffer
 };
 
 const tankiParamsPacket = (user) => {
@@ -47,22 +47,22 @@ const tankiParamsPacket = (user) => {
 	packet.writeFloat(hull.propers.HULL_ACCELERATION.value); // acceleration
 	packet.writeShort(incarnation); // specificationId
 
-	return packet.buffer;
+	return packet;
 };
 
 const cameraPacket = (position, orientation) => {
 	const packet = new ByteArray();
-	packet.write(vectorPacket(position));
-	packet.write(vectorPacket(orientation));
+	packet.writePacket(vectorPacket(position));
+	packet.writePacket(vectorPacket(orientation));
 
-	return packet.buffer;
+	return packet;
 };
 
 const vectorPacket = (coord, optional = false) => {
 	const packet = new ByteArray();
 	if (optional && (!coord.x || !coord.y || !coord.z)) {
 		packet.writeBoolean(true);
-		return packet.buffer;
+		return packet;
 	}
 
 	packet.writeBoolean(false);
@@ -70,8 +70,16 @@ const vectorPacket = (coord, optional = false) => {
 	packet.writeFloat(coord.y ?? 0);
 	packet.writeFloat(coord.z ?? 0);
 
-	return packet.buffer;
+	return packet;
 };
+
+function createBonusPacket(name, position, time) {
+	const packet = new ByteArray();
+	packet.writeUTF(name);
+	packet.writePacket(vectorPacket(position));
+	packet.writeInt(time);
+	return packet;
+}
 
 module.exports = {
 	userStatsPacket,
@@ -79,4 +87,5 @@ module.exports = {
 	tankiParamsPacket,
 	cameraPacket,
 	vectorPacket,
+	createBonusPacket,
 };

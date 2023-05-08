@@ -115,23 +115,12 @@ module.exports = class {
 
 	prepareCameraPosition() {
 		if (!this.isSpectator) {
-			const spawnPoints = [
-				{
-					position: {
-						x: -22763.44140625,
-						y: 2887.464111328125,
-						z: 200,
-					},
-					orientation: {
-						x: 0,
-						y: 0,
-						z: 0,
-					},
-				},
-			];
+			const spawnPoints = this.party.spawns[this.team.toString()];
 
 			const spawnPoint =
 				spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
+
+			console.log(spawnPoint);
 
 			this.position = spawnPoint.position;
 			this.orientation = spawnPoint.orientation;
@@ -174,6 +163,9 @@ module.exports = class {
 	}
 
 	join(team = null) {
+		// const bIdPacket = new ByteArray();
+		// bIdPacket.writeUTF(this.id);
+		// this.sendPacket(-602527073, bIdPacket);
 		if (team !== null) {
 			this.team = team;
 			if (team == 0) {
@@ -211,13 +203,6 @@ module.exports = class {
 			} else {
 				packeta.writeInt(this.team);
 				this.client.lobbyServer.sendPacket(118447426, packeta);
-
-				// ADICIONAR JOGADOR PARA OS OUTROS PLAYERS
-				const myInfos = new ByteArray();
-				myInfos.writeUTF(this.client.user.username);
-				myInfos.writeBoolean(false);
-
-				this.party.sendPacket(2040021062, myInfos, this.client);
 			}
 		}
 
@@ -832,7 +817,6 @@ module.exports = class {
 
 	spawn() {
 		this.health = 10000;
-		console.log("Meu time:", this.team);
 		this.updateHealth();
 		const prepareTankiPacket = new ByteArray();
 		prepareTankiPacket.writeUTF(this.client.user.username); // nome
@@ -987,6 +971,12 @@ module.exports = class {
 		if (layout !== null) {
 			this.client.loadLayout({ layout, chat: true });
 		}
+	}
+
+	resetUserStat() {
+		this.kills = 0;
+		this.score = 0;
+		this.deaths = 0;
 	}
 
 	updateStat() {

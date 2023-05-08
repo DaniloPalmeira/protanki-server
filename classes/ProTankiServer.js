@@ -118,7 +118,7 @@ class ProTankiServer {
 				maxRank: 30,
 				reArmorEnabled: true,
 				parkour: false,
-				scoreLimit: 1,
+				timeLimitInSec: 1,
 				theme: 0,
 				fund: 2980,
 			},

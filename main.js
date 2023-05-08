@@ -24,9 +24,9 @@ const handleConnection = (socket) => {
 	});
 };
 
-// process.on("uncaughtException", function (err) {
-// 	logger.error(err.stack);
-// });
+process.on("uncaughtException", function (err) {
+	logger.error(err.stack);
+});
 
 const __ports = [1337];
 for (const port of __ports) {

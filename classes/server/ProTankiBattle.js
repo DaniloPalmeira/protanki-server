@@ -1,6 +1,7 @@
 const ByteArray = require("../ByteArray");
 const maps = require("../../helpers/map/items.json");
-const { rewardsPacket } = require("../../protocol/package");
+const mapsSpawn = require("../../helpers/map/spawn.json");
+const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
@@ -87,9 +88,22 @@ class ProTankiBattle {
 		},
 	};
 
+	spawnsExample = [
+		{
+			position: { x: 0, y: 0, z: 2500 },
+			orientation: { x: 0, y: 0, z: 0 },
+		},
+	];
+
 	constructor(objData) {
 		Object.assign(this, objData);
 		this.definePreview();
+
+		this.spawns = mapsSpawn[this.map] || {
+			0: this.spawnsExample,
+			1: this.spawnsExample,
+			2: this.spawnsExample,
+		};
 	}
 
 	get userListByTeam() {
@@ -395,12 +409,63 @@ class ProTankiBattle {
 		);
 
 		this.sendPacket(560336625, rewardsPacket(userRewards));
+		this.clients.forEach((client) => {
+			const { user } = client;
+			const { battle } = user;
+			battle.incarnation++;
+		});
 		setTimeout(() => {
 			this.resetBattle();
-		}, 10 * 1000);
+		}, 11 * 1000);
 	}
 
-	resetBattle() {}
+	resetBattle() {
+		this.resetUserStat();
+		this.resetFund();
+		this.resetTime();
+		this.resetScore();
+		this.clients.forEach((client) => {
+			const { user } = client;
+			const { battle } = user;
+			battle.resetUserStat();
+			battle.updateTankiData();
+			// client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
+		});
+	}
+
+	resetUserStat() {
+		const _userStatsPacket = new ByteArray();
+		_userStatsPacket.writeInt(this.clients.length);
+
+		this.clients.forEach((client) => {
+			const { user } = client;
+			_userStatsPacket.writePacket(userStatsPacket(user));
+		});
+
+		this.sendPacket(1061006142, _userStatsPacket);
+	}
+
+	resetFund() {
+		this.fund = 0;
+
+		const packet = new ByteArray();
+		packet.writeInt(this.fund);
+
+		this.sendPacket(1149211509, packet);
+	}
+
+	resetScore() {
+		this.score = {};
+		if (this.mode !== 0) {
+			this.sendPacket(561771020, new ByteArray().writeInt(0).writeInt(0));
+			this.sendPacket(561771020, new ByteArray().writeInt(1).writeInt(0));
+		}
+	}
+	resetTime() {
+		const packet = new ByteArray();
+		packet.writeInt(this.timeLimitInSec);
+		this.sendPacket(732434644, packet);
+	}
 
 	removePlayer(player) {
 		removerItem(this.clients, player);

@@ -7,8 +7,8 @@ const {
 const ByteArray = require("../ByteArray");
 
 module.exports = class {
-	score = 23;
-	kills = 3;
+	score = 0;
+	kills = 0;
 	deaths = 0;
 	incarnation = 0;
 

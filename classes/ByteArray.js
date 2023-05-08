@@ -60,17 +60,6 @@ class ByteArray {
 		return this;
 	}
 
-	writeIntStart(value = null) {
-		if (value == null) {
-			logger.warn("writeIntStart não pode escrever um valor nulo");
-			return this;
-		}
-		let buffer = new Buffer.alloc(4);
-		buffer.writeInt32BE(value);
-		this.buffer = Buffer.concat([buffer, this.buffer]);
-		return this;
-	}
-
 	writeUInt(value = null) {
 		if (value == null) {
 			logger.warn("writeUInt não pode escrever um valor nulo");
@@ -210,6 +199,15 @@ class ByteArray {
 
 	bytesAvailable() {
 		return this.buffer.length;
+	}
+
+	clone() {
+		return new ByteArray(this.buffer);
+	}
+
+	packetLength() {
+		let value = this.buffer.slice(0, 4).readInt32BE();
+		return value;
 	}
 }
 

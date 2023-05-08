@@ -598,26 +598,6 @@ module.exports = class {
 		});
 	}
 
-	table() {
-		if (!this.isSpectator) {
-			this.myTankInTable();
-		}
-	}
-
-	myTankInTable() {
-		if (this.team == 2) {
-			this.party.clients.forEach((_client) => {
-				const statsPacket = new ByteArray();
-				statsPacket.writeInt(this.deaths); // deaths
-				statsPacket.writeInt(this.kills); // kills
-				statsPacket.writeInt(this.score); // score
-				statsPacket.writeUTF(this.client.user.username); // user
-
-				this.sendPacket(696140460, statsPacket);
-			});
-		}
-	}
-
 	CodecStatistics() {
 		if (this.party.modeStr === "DM") {
 			this.CodecStatisticsDMCC();
@@ -690,16 +670,19 @@ module.exports = class {
 		const flagPosition = flag.x ? flag : base;
 		const distance = this.calculateDistance(flagPosition);
 
-		if (distance <= 300) {
-			ctf[enemyTeamName].holder = this.client.user.username;
-			ctf[enemyTeamName].lastAction = now;
-
-			const packet = new ByteArray()
-				.writeUTF(this.client.user.username)
-				.writeInt(this.team === 1 ? 0 : 1);
-
-			this.party.sendPacket(-1282406496, packet);
+		if (distance > 300) {
+			return;
 		}
+		ctf[enemyTeamName].holder = this.client.user.username;
+		ctf[enemyTeamName].lastAction = now;
+
+		const packet = new ByteArray()
+			.writeUTF(this.client.user.username)
+			.writeInt(this.team === 1 ? 0 : 1);
+
+		this.party.sendPacket(-1282406496, packet);
+		const scoreByCap = this.party.userListByTeam[enemyTeamName].length * 10;
+		this.score += scoreByCap;
 	}
 
 	dropFlag() {
@@ -762,17 +745,21 @@ module.exports = class {
 	}
 
 	increaseTeamScore(amount) {
-		if (this.party.score[this.teamStr.toLowerCase()]) {
-			this.party.score[this.teamStr.toLowerCase()] += amount;
+		const party = this.party;
+		const teamName = this.teamStr.toLowerCase();
+		if (party.score[teamName]) {
+			party.score[teamName] += amount;
 		} else {
-			this.party.score[this.teamStr.toLowerCase()] = amount;
+			party.score[teamName] = amount;
 		}
 		this.sendPacket(
 			561771020,
-			new ByteArray()
-				.writeInt(this.team)
-				.writeInt(this.party.score[this.teamStr.toLowerCase()] ?? 0)
+			new ByteArray().writeInt(this.team).writeInt(party.score[teamName] ?? 0)
 		);
+
+		if (party.scoreLimit && party.score[teamName] >= party.scoreLimit) {
+			party.finish();
+		}
 	}
 
 	tryReturnFlag() {
@@ -963,6 +950,7 @@ module.exports = class {
 		killed.battle.dropFlag();
 
 		this.kills += 1;
+		this.score += 10;
 		this.updateStat();
 
 		const packet = new ByteArray();
@@ -970,6 +958,13 @@ module.exports = class {
 		packet.writeUTF(this.client.user.username);
 		packet.writeInt(3000);
 		this.party.sendPacket(-42520728, packet);
+		if (this.party.mode === 0) {
+			if (this.party.scoreLimit && this.kills >= this.party.scoreLimit) {
+				this.party.finish();
+			}
+		} else if (this.party.mode === 1) {
+			this.increaseTeamScore(1);
+		}
 	}
 
 	leave(layout = null) {
@@ -993,16 +988,18 @@ module.exports = class {
 	}
 
 	updateStat() {
+		const statPacket = new ByteArray();
+		const { deaths, kills } = this;
+		console.log({ deaths, kills });
+		statPacket.writeInt(this.deaths);
+		statPacket.writeInt(this.kills);
+		statPacket.writeInt(this.score);
+		statPacket.writeUTF(this.client.user.username);
 		if (this.party.mode !== 0) {
-			const statPacket = new ByteArray();
-			const { deaths, kills } = this;
-			console.log({ deaths, kills });
-			statPacket.writeInt(this.deaths);
-			statPacket.writeInt(this.kills);
-			statPacket.writeInt(this.score);
-			statPacket.writeUTF(this.client.user.username);
 			statPacket.writeInt(this.team);
 			this.party.sendPacket(-497293992, statPacket);
+		} else {
+			this.party.sendPacket(696140460, statPacket);
 		}
 	}
 

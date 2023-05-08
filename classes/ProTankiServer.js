@@ -127,6 +127,8 @@ class ProTankiServer {
 				map: "map_cross",
 				maxPeople: 20,
 				name: "Batalha Inicial CTF",
+				scoreLimit: 0,
+				fund: 2980,
 				pro: false,
 				minRank: 1,
 				maxRank: 30,
@@ -134,7 +136,6 @@ class ProTankiServer {
 				withoutSupplies: true,
 				autoBalance: true,
 				parkour: false,
-				scoreLimit: 0,
 				theme: 0,
 			},
 		].forEach((battle) => {

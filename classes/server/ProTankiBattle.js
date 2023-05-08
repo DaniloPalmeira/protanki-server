@@ -74,7 +74,7 @@ class ProTankiBattle {
 	ctf = {
 		red: {
 			base: { x: -23250, y: -5250, z: 80 },
-			flag: { x: -20250, y: -5250, z: 80 },
+			flag: {},
 			holder: null,
 			lastAction: new Date(),
 		},
@@ -347,6 +347,71 @@ class ProTankiBattle {
 				}
 			}
 		});
+	}
+
+	finish() {
+		const { blue = 0, red = 0 } = this.score;
+		let fundByScore = this.fund / (blue + red);
+		let userList = [];
+
+		console.log({ fundByScore });
+
+		if (blue > 0) {
+			let scoreTotal = 0;
+			let fundToRepart = fundByScore * blue;
+			console.log({ fundToRepart });
+			this.usersBlue.forEach((user) => {
+				scoreTotal += user.battle.score;
+			});
+
+			let fundByPoint = fundToRepart / scoreTotal;
+			console.log({ fundByPoint });
+
+			this.usersBlue.forEach((user) => {
+				let userReward = Math.floor(user.battle.score * fundByPoint);
+				const premiumBonusReward = userReward;
+				const newbiesAbonementBonusReward = userReward;
+				userList.push({
+					reward: userReward,
+					premiumBonusReward,
+					newbiesAbonementBonusReward,
+				});
+			});
+		}
+
+		if (red > 0) {
+			let scoreTotal = 0;
+			let fundToRepart = fundByScore * red;
+			this.usersRed.forEach((user) => {
+				scoreTotal += user.battle.score;
+			});
+
+			let fundByPoint = fundToRepart / scoreTotal;
+			this.usersRed.forEach((user) => {
+				let userReward = Math.floor(user.battle.score * fundByPoint);
+				const premiumBonusReward = userReward;
+				const newbiesAbonementBonusReward = userReward;
+				userList.push({
+					reward: userReward,
+					premiumBonusReward,
+					newbiesAbonementBonusReward,
+					username: user.username,
+				});
+			});
+		}
+
+		const finishPacket = new ByteArray();
+
+		finishPacket.writeInt(userList.length);
+		userList.forEach((dados) => {
+			finishPacket.writeInt(dados.newbiesAbonementBonusReward);
+			finishPacket.writeInt(dados.premiumBonusReward);
+			finishPacket.writeInt(dados.reward);
+			finishPacket.writeUTF(dados.username);
+		});
+		finishPacket.writeInt(10);
+
+		this.sendPacket(560336625, finishPacket);
 	}
 
 	removePlayer(player) {

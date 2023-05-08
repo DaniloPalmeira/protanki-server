@@ -180,26 +180,21 @@ class ProTankiClient {
 			this.rawDataReceived.write(data);
 		}
 
-		var possibleLen = this.rawDataReceived.readInt() - 4;
+		const packetLen = this.rawDataReceived.packetLength();
 
-		if (this.rawDataReceived.bytesAvailable() >= possibleLen) {
-			var _data = new ByteArray(this.rawDataReceived.readBytes(possibleLen));
-			this.parsePacket(_data);
-			if (this.rawDataReceived.bytesAvailable() > 0) {
-				await this.onDataReceived();
-			}
-		} else {
-			this.rawDataReceived.writeIntStart(possibleLen + 4);
-			console.log(
-				"Pacote imcompleto",
-				possibleLen - 4,
-				this.rawDataReceived.bytesAvailable(),
-				this.rawDataReceived
+		if (this.rawDataReceived.bytesAvailable() >= packetLen) {
+			const packetData = new ByteArray(
+				this.rawDataReceived.readBytes(packetLen)
 			);
+			this.parsePacket(packetData);
+			if (this.rawDataReceived.bytesAvailable() > 0) {
+				this.onDataReceived();
+			}
 		}
 	}
 
 	parsePacket(packet) {
+		var packetLen = packet.readInt();
 		var packetID = packet.readInt();
 
 		if (![].includes(packetID)) {
@@ -441,7 +436,7 @@ class ProTankiClient {
 				this.user.battle.CodecBattleMineCC();
 				this.user.battle.suppliesPanel();
 				this.user.battle.newTank();
-				this.user.battle.table();
+				// this.user.battle.updateStat();
 				this.user.battle.effects();
 				this.user.battle.objetoIndefinido();
 				this.changeLayout();
@@ -702,11 +697,11 @@ class ProTankiClient {
 					doubleInt.writeInt(new Date() - this.currentTime);
 					this.sendPacket(34068208, doubleInt);
 				}
+				setTimeout(() => {
+					this.sendPacket(-555602629);
+					this.currentTime = new Date();
+				}, 1000);
 			}
-			setTimeout(() => {
-				this.sendPacket(-555602629);
-				this.currentTime = new Date();
-			}, 1000);
 		} else if (packetID == -1376947245000000000) {
 			this.removeLoading();
 		} else if (packetID == 268832557) {
@@ -723,7 +718,7 @@ class ProTankiClient {
 			this.clientMS = clientMS;
 			const serverMS = packet.readInt();
 
-			console.log({ clientMS, serverMS });
+			// console.log({ clientMS, serverMS });
 		} else if (packetID == PKG.BATTLE_READY_TO_SPAWN) {
 			this.user.battle.spawn();
 		} else if (packetID == PKG.BATTLE_TURRENT_COMMAND) {

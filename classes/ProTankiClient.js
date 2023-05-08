@@ -13,6 +13,7 @@ const logger = require("../helpers/logger");
 const captcha = require("../helpers/captcha");
 
 const fs = require("fs");
+const { encryptPacket, decryptPacket } = require("../protocol/encryption");
 
 class ProTankiClient {
 	language = "ru";
@@ -22,12 +23,14 @@ class ProTankiClient {
 		back: 0,
 	};
 
-	decrypt_position = 0;
-	encrypt_position = 0;
+	encryptionKeys = {
+		decrypt_position: 0,
+		encrypt_position: 0,
 
-	encryptionLenght = 8;
-	decrypt_keys = new Array(8);
-	encrypt_keys = new Array(8);
+		encryptionLenght: 8,
+		decrypt_keys: new Array(8),
+		encrypt_keys: new Array(8),
+	};
 
 	i18Garage = {
 		pt_BR: require("../helpers/garage/i18n/pt_BR.json"),
@@ -129,51 +132,13 @@ class ProTankiClient {
 			locaoako2 += 1;
 		}
 		var locaoako3 = 0;
-		while (locaoako3 < this.encryptionLenght) {
-			this.encrypt_keys[locaoako3] = base ^ (locaoako3 << 3);
-			this.decrypt_keys[locaoako3] = base ^ (locaoako3 << 3) ^ 87;
+		while (locaoako3 < this.encryptionKeys.encryptionLenght) {
+			this.encryptionKeys.encrypt_keys[locaoako3] = base ^ (locaoako3 << 3);
+			this.encryptionKeys.decrypt_keys[locaoako3] =
+				base ^ (locaoako3 << 3) ^ 87;
 			locaoako3 += 1;
 		}
 	};
-
-	decryptPacket(BArray) {
-		var loc2 = 0;
-		var loc3 = 0;
-
-		var ByteA = new ByteArray(BArray.buffer);
-
-		while (loc2 < BArray.buffer.length) {
-			loc3 = ByteA.readByte();
-
-			this.decrypt_keys[this.decrypt_position] =
-				loc3 ^ this.decrypt_keys[this.decrypt_position];
-
-			BArray.buffer[loc2] = this.decrypt_keys[this.decrypt_position];
-
-			this.decrypt_position ^= this.decrypt_keys[this.decrypt_position] & 7;
-
-			loc2 += 1;
-		}
-	}
-
-	encryptPacket(BArray) {
-		var loc2 = 0;
-		var loc3 = 0;
-
-		var ByteA = new ByteArray(BArray.buffer);
-
-		while (loc2 < BArray.buffer.length) {
-			loc3 = ByteA.readByte();
-
-			BArray.buffer[loc2] = loc3 ^ this.encrypt_keys[this.encrypt_position];
-
-			this.encrypt_keys[this.encrypt_position] = loc3;
-
-			this.encrypt_position ^= loc3 & 7;
-
-			loc2 += 1;
-		}
-	}
 
 	async onDataReceived(data = null) {
 		if (data != null) {
@@ -202,7 +167,7 @@ class ProTankiClient {
 
 		logger.debug(`Pacote recebido no ID: ${packetID}`);
 
-		this.decryptPacket(packet);
+		packet = decryptPacket(packet, this.encryptionKeys);
 
 		if (packetID == PKG.SET_LANGUAGE) {
 			this.setLanguage(packet);
@@ -886,9 +851,9 @@ class ProTankiClient {
 	}
 
 	sendPacket(packetID, packet = new ByteArray(), encryption = true) {
-		const nPacket = new ByteArray().write(packet.buffer);
+		let nPacket = packet;
 		if (encryption) {
-			this.encryptPacket(nPacket);
+			nPacket = encryptPacket(nPacket, this.encryptionKeys);
 		}
 
 		var byteA = new ByteArray()

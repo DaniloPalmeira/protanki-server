@@ -140,7 +140,7 @@ class ProTankiClient {
 		}
 	};
 
-	async onDataReceived(data = null) {
+	onDataReceived(data = null) {
 		if (data != null) {
 			this.rawDataReceived.write(data);
 		}

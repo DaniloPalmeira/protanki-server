@@ -1,3 +1,8 @@
+const {
+	userStatsPacket,
+	tankiParamsPacket,
+	cameraPacket,
+} = require("../../protocol/package");
 const ByteArray = require("../ByteArray");
 
 module.exports = class {
@@ -101,18 +106,8 @@ module.exports = class {
 	}
 
 	updateTankiData() {
-		const tankiPacket = new ByteArray();
-		tankiPacket.writeUTF(this.client.user.username);
-		tankiPacket.writeFloat(this.equipament.hull.propers.HULL_SPEED.value); // maxSpeed
-		tankiPacket.writeFloat(
-			this.equipament.hull.propers.HULL_TURN_SPEED.value / 57.2957
-		); // maxTurnSpeed
-		tankiPacket.writeFloat(1.6999506950378418); // maxTurretRotationSpeed
-		tankiPacket.writeFloat(
-			this.equipament.hull.propers.HULL_ACCELERATION.value
-		); // acceleration
-		tankiPacket.writeShort(1); // specificationId
-		this.sendPacket(-1672577397, tankiPacket);
+		const packet = new ByteArray(tankiParamsPacket(this.client.user));
+		this.sendPacket(-1672577397, packet);
 
 		this.prepareCameraPosition();
 	}
@@ -139,16 +134,12 @@ module.exports = class {
 
 			this.position = spawnPoint.position;
 			this.orientation = spawnPoint.orientation;
-			const tankiPOPacket = new ByteArray();
-			tankiPOPacket.writeBoolean(false);
-			tankiPOPacket.writeFloat(spawnPoint.position.x); // position - x
-			tankiPOPacket.writeFloat(spawnPoint.position.y); // position - y
-			tankiPOPacket.writeFloat(spawnPoint.position.z); // position - z
-			tankiPOPacket.writeBoolean(false);
-			tankiPOPacket.writeFloat(spawnPoint.orientation.x); // orientation - x
-			tankiPOPacket.writeFloat(spawnPoint.orientation.y); // orientation - y
-			tankiPOPacket.writeFloat(spawnPoint.orientation.z); // orientation - z
-			this.sendPacket(-157204477, tankiPOPacket);
+
+			const packet = new ByteArray(
+				cameraPacket(this.position, this.orientation)
+			);
+
+			this.sendPacket(-157204477, packet);
 		}
 	}
 
@@ -167,17 +158,17 @@ module.exports = class {
 	}
 
 	spectatorMessage(message, teamOnly) {
-		const spectMsgPacket = new ByteArray();
+		const packet = new ByteArray();
 		if (teamOnly) {
 			message = `[${this.client.user.username}] → ${message}`;
 		}
-		spectMsgPacket.writeUTF(this.client.user.username);
-		spectMsgPacket.writeUTF(message);
-		// this.sendPacket(1532749363, spectMsgPacket);
+		packet.writeUTF(this.client.user.username);
+		packet.writeUTF(message);
+		// this.sendPacket(1532749363, packet);
 		if (teamOnly) {
-			this.party.sendPacketSpectator(1532749363, spectMsgPacket);
+			this.party.sendPacketSpectator(1532749363, packet);
 		} else {
-			this.party.sendPacket(1532749363, spectMsgPacket);
+			this.party.sendPacket(1532749363, packet);
 		}
 	}
 
@@ -1022,24 +1013,13 @@ module.exports = class {
 		}
 	}
 
-	bufferUserStat(user) {
-		const userStatPacket = new ByteArray()
-			.writeInt(user.battle.deaths)
-			.writeInt(user.battle.kills)
-			.writeInt(user.battle.score)
-			.writeUTF(user.username);
-		return userStatPacket.buffer;
-	}
-
 	updateStat() {
-		const bufferUserStat = this.bufferUserStat(this.client.user);
-		const statPacket = new ByteArray();
-		statPacket.write(bufferUserStat);
+		const packet = new ByteArray(userStatsPacket(this.client.user));
 		if (this.party.mode !== 0) {
-			statPacket.writeInt(this.team);
-			this.party.sendPacket(-497293992, statPacket);
+			packet.writeInt(this.team);
+			this.party.sendPacket(-497293992, packet);
 		} else {
-			this.party.sendPacket(696140460, statPacket);
+			this.party.sendPacket(696140460, packet);
 		}
 	}
 

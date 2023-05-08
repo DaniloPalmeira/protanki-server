@@ -1,3 +1,43 @@
+const ByteArray = require("../classes/ByteArray");
+
+function generateKeys() {
+	var keys = [];
+	for (var i = 0; i < 4; i++) {
+		var key = Math.floor(Math.random() * -120) - 1; // gera um número aleatório entre -1 e -120
+		keys.push(key);
+	}
+	return keys;
+}
+
+function encryptionPacket(encryptionKeys) {
+	const keys = generateKeys();
+
+	const packet = new ByteArray();
+	packet.writeInt(keys.length);
+
+	keys.forEach((val) => {
+		packet.writeByte(val);
+	});
+
+	setCrypsKeys(keys, encryptionKeys);
+
+	return packet;
+}
+
+function setCrypsKeys(keys, encryptionKeys) {
+	let base = 0;
+	for (let i = 0; i < keys.length; i++) {
+		base ^= keys[i];
+	}
+	for (let i = 0; i < encryptionKeys.encryptionLenght; i++) {
+		const encryptionKey = base ^ (i << 3);
+		const decryptionKey = encryptionKey ^ 87;
+
+		encryptionKeys.encrypt_keys[i] = encryptionKey;
+		encryptionKeys.decrypt_keys[i] = decryptionKey;
+	}
+}
+
 function decryptPacket(packet, keys) {
 	// Cria uma cópia do pacote original
 	const decryptedPacket = packet.clone();
@@ -45,4 +85,10 @@ function encryptPacket(packet, keys) {
 	return encryptedPacket;
 }
 
-module.exports = { encryptPacket, decryptPacket };
+module.exports = {
+	encryptPacket,
+	decryptPacket,
+	setCrypsKeys,
+	generateKeys,
+	encryptionPacket,
+};

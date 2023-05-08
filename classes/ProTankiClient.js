@@ -13,7 +13,14 @@ const logger = require("../helpers/logger");
 const captcha = require("../helpers/captcha");
 
 const fs = require("fs");
-const { encryptPacket, decryptPacket } = require("../protocol/encryption");
+const {
+	encryptPacket,
+	decryptPacket,
+	setCrypsKeys,
+	generateKeys,
+	generateCryptKeys,
+	encryptionPacket,
+} = require("../protocol/encryption");
 
 class ProTankiClient {
 	language = "ru";
@@ -80,7 +87,7 @@ class ProTankiClient {
 		this.socket.on("error", () => this.onConnectionClose());
 
 		this.server.addClient(this);
-		this.gerateCryptKeys();
+		this.startEncryption();
 
 		this.user = this.reloadClassFile("/ProTankiUser.js");
 		this.register = new ProTankiRegister(this);
@@ -107,38 +114,10 @@ class ProTankiClient {
 		logger.verbose(`Conexão encerrada com o IP: ${this.socket.remoteAddress}`);
 	}
 
-	gerateCryptKeys() {
-		var packet = new ByteArray();
-
-		var keys = [-104, -46, -99, -122];
-
-		packet.writeInt(keys.length);
-		keys.map((val) => {
-			[packet.writeByte(val)];
-		});
-
+	startEncryption() {
+		const packet = encryptionPacket(this.encryptionKeys);
 		this.sendPacket(2001736388, packet, false);
-
-		this.setCrypsKeys(keys);
-
-		return keys;
 	}
-
-	setCrypsKeys = async (keys) => {
-		var locaoako2 = 0;
-		var base = 0;
-		while (locaoako2 < keys.length) {
-			base ^= keys[locaoako2];
-			locaoako2 += 1;
-		}
-		var locaoako3 = 0;
-		while (locaoako3 < this.encryptionKeys.encryptionLenght) {
-			this.encryptionKeys.encrypt_keys[locaoako3] = base ^ (locaoako3 << 3);
-			this.encryptionKeys.decrypt_keys[locaoako3] =
-				base ^ (locaoako3 << 3) ^ 87;
-			locaoako3 += 1;
-		}
-	};
 
 	onDataReceived(data = null) {
 		if (data != null) {

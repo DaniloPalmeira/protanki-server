@@ -73,13 +73,28 @@ const vectorPacket = (coord, optional = false) => {
 	return packet;
 };
 
-function createBonusPacket(name, position, time) {
+const createBonusPacket = (name, position, time) => {
 	const packet = new ByteArray();
 	packet.writeUTF(name);
 	packet.writePacket(vectorPacket(position));
 	packet.writeInt(time);
 	return packet;
-}
+};
+
+const rewardsPacket = (userRewards) => {
+	const packet = new ByteArray();
+
+	packet.writeInt(userRewards.length);
+	userRewards.forEach((reward) => {
+		packet.writeInt(reward.newbiesAbonementBonusReward);
+		packet.writeInt(reward.premiumBonusReward);
+		packet.writeInt(reward.reward);
+		packet.writeUTF(reward.username);
+	});
+	packet.writeInt(10);
+
+	return packet;
+};
 
 module.exports = {
 	userStatsPacket,
@@ -88,4 +103,5 @@ module.exports = {
 	cameraPacket,
 	vectorPacket,
 	createBonusPacket,
+	rewardsPacket,
 };

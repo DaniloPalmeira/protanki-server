@@ -1,5 +1,6 @@
 const ByteArray = require("../ByteArray");
 const maps = require("../../helpers/map/items.json");
+const { rewardsPacket } = require("../../protocol/package");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
@@ -349,70 +350,57 @@ class ProTankiBattle {
 		});
 	}
 
+	calculateRewards(users, fundTotal, criterio) {
+		const totalScoreTeam = users.reduce((total, user) => {
+			return total + user.battle[criterio];
+		}, 0);
+
+		const userListTeam = users.map((user) => {
+			const reward = Math.floor(
+				user.battle[criterio] * (fundTotal / totalScoreTeam)
+			);
+
+			const userRewardTotal = reward + 0 + 0;
+
+			user.crystal += userRewardTotal;
+
+			return {
+				reward,
+				username: user.username,
+				premiumBonusReward: 0,
+				newbiesAbonementBonusReward: 0,
+			};
+		});
+
+		return userListTeam;
+	}
+
 	finish() {
 		const { blue = 0, red = 0 } = this.score;
-		let fundByScore = this.fund / (blue + red);
-		let userList = [];
+		const teamScoreTotal = blue + red;
+		const fundByScore = this.fund / (teamScoreTotal <= 0 ? 1 : teamScoreTotal);
+		const blueFundTotal = fundByScore * blue;
+		const redFundTotal = fundByScore * red;
 
-		console.log({ fundByScore });
+		const userRewards = [];
 
-		if (blue > 0) {
-			let scoreTotal = 0;
-			let fundToRepart = fundByScore * blue;
-			console.log({ fundToRepart });
-			this.usersBlue.forEach((user) => {
-				scoreTotal += user.battle.score;
-			});
+		userRewards.push(...this.calculateRewards(this.users, this.fund, "kills"));
 
-			let fundByPoint = fundToRepart / scoreTotal;
-			console.log({ fundByPoint });
+		userRewards.push(
+			...this.calculateRewards(this.usersRed, redFundTotal, "score")
+		);
 
-			this.usersBlue.forEach((user) => {
-				let userReward = Math.floor(user.battle.score * fundByPoint);
-				const premiumBonusReward = userReward;
-				const newbiesAbonementBonusReward = userReward;
-				userList.push({
-					reward: userReward,
-					premiumBonusReward,
-					newbiesAbonementBonusReward,
-				});
-			});
-		}
+		userRewards.push(
+			...this.calculateRewards(this.usersBlue, blueFundTotal, "score")
+		);
 
-		if (red > 0) {
-			let scoreTotal = 0;
-			let fundToRepart = fundByScore * red;
-			this.usersRed.forEach((user) => {
-				scoreTotal += user.battle.score;
-			});
-
-			let fundByPoint = fundToRepart / scoreTotal;
-			this.usersRed.forEach((user) => {
-				let userReward = Math.floor(user.battle.score * fundByPoint);
-				const premiumBonusReward = userReward;
-				const newbiesAbonementBonusReward = userReward;
-				userList.push({
-					reward: userReward,
-					premiumBonusReward,
-					newbiesAbonementBonusReward,
-					username: user.username,
-				});
-			});
-		}
-
-		const finishPacket = new ByteArray();
-
-		finishPacket.writeInt(userList.length);
-		userList.forEach((dados) => {
-			finishPacket.writeInt(dados.newbiesAbonementBonusReward);
-			finishPacket.writeInt(dados.premiumBonusReward);
-			finishPacket.writeInt(dados.reward);
-			finishPacket.writeUTF(dados.username);
-		});
-		finishPacket.writeInt(10);
-
-		this.sendPacket(560336625, finishPacket);
+		this.sendPacket(560336625, rewardsPacket(userRewards));
+		setTimeout(() => {
+			this.resetBattle();
+		}, 10 * 1000);
 	}
+
+	resetBattle() {}
 
 	removePlayer(player) {
 		removerItem(this.clients, player);

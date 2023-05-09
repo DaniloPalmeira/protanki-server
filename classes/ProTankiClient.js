@@ -17,9 +17,6 @@ const fs = require("fs");
 const {
 	encryptPacket,
 	decryptPacket,
-	setCrypsKeys,
-	generateKeys,
-	generateCryptKeys,
 	encryptionPacket,
 } = require("../protocol/encryption");
 const { vectorPacket } = require("../protocol/package");

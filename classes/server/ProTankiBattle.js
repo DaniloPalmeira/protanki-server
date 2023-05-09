@@ -424,6 +424,7 @@ class ProTankiBattle {
 		this.resetFund();
 		this.resetTime();
 		this.resetScore();
+		this.resetFlags();
 		this.clients.forEach((client) => {
 			const { user } = client;
 			const { battle } = user;
@@ -431,6 +432,28 @@ class ProTankiBattle {
 			battle.updateTankiData();
 			// client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
 		});
+	}
+
+	resetFlags() {
+		this.ctf.blue.flag = {};
+		this.ctf.red.flag = {};
+
+		if (this.ctf.red.flag.x || this.ctf.red.holder) {
+			let packet = new ByteArray();
+			packet.writeInt(0);
+			packet.writeUTF(null);
+			this.sendPacket(-1026428589, packet);
+		}
+
+		if (this.ctf.blue.flag.x || this.ctf.blue.holder) {
+			let packet = new ByteArray();
+			packet.writeInt(1);
+			packet.writeUTF(null);
+			this.sendPacket(-1026428589, packet);
+		}
+
+		this.ctf.blue.holder = null;
+		this.ctf.red.holder = null;
 	}
 
 	resetUserStat() {

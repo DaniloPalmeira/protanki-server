@@ -66,6 +66,10 @@ module.exports = class {
 			paint: paintProps,
 		};
 
+		this.equipament.paint.resistances = this.resistancesTransform(
+			this.equipament.paint.resistances
+		);
+
 		this.supplies = this.client.user.garage.inventory;
 
 		this.healthTotal = this.equipament.hull.propers.HULL_ARMOR.value;
@@ -104,6 +108,16 @@ module.exports = class {
 		users.forEach((user) => {
 			user.client.sendPacket(packetID, packet);
 		});
+	}
+
+	resistancesTransform(obj) {
+		const newObj = {};
+		for (let prop in obj) {
+			const newProp = prop.toLowerCase().split("_")[0];
+			newObj[newProp] = obj[prop];
+			delete obj[prop];
+		}
+		return newObj;
 	}
 
 	updateTankiData() {
@@ -759,10 +773,10 @@ module.exports = class {
 		ctf[myTeam].holder = null;
 		ctf[myTeam].flag = {};
 
-		const flagPacket = new ByteArray();
-		flagPacket.writeInt(this.team);
-		flagPacket.writeUTF(this.client.user.username);
-		this.party.sendPacket(-1026428589, flagPacket);
+		const packet = new ByteArray();
+		packet.writeInt(this.team);
+		packet.writeUTF(this.client.user.username);
+		this.party.sendPacket(-1026428589, packet);
 	}
 
 	/**
@@ -891,6 +905,9 @@ module.exports = class {
 		let damageListPacketCount = 0;
 
 		for (const [index, target] of targetsUsers.entries()) {
+			const protection =
+				target.battle.equipament.paint.resistances[turretName]?.value ?? 0;
+			const userDamage = mainDamage * (1 - protection / 100);
 			const incarnation = parseInt(incarnations[index]);
 			if (
 				(target.battle.team === this.team &&
@@ -901,9 +918,9 @@ module.exports = class {
 				continue;
 			}
 			damageListPacketCount++;
-			target.battle.health -= mainDamage * target.battle.healthPart;
+			target.battle.health -= userDamage * target.battle.healthPart;
 			target.battle.updateHealth();
-			damageListPacket.writeFloat(mainDamage);
+			damageListPacket.writeFloat(userDamage);
 			if (target.battle.health <= 0) {
 				damageListPacket.writeInt(2);
 				this.kill(target, incarnation);

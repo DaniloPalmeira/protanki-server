@@ -255,6 +255,121 @@ module.exports = class {
 			this.sendPacket(-1895446889, notifierDataPacket);
 		});
 
+		this.loadLibraryResources();
+
+		this.sendPacket(-555602629);
+
+		const doubleInt = new ByteArray();
+		doubleInt.writeInt(0);
+		doubleInt.writeInt(0);
+		this.sendPacket(34068208, doubleInt);
+	}
+
+	bonusesParams() {
+		const paramsBonus = new ByteArray();
+		paramsBonus.writeObject({
+			bonuses: [
+				{ id: "nitro", resourceId: 170010, lifeTimeMs: 30000 },
+				{ id: "damage", resourceId: 170011, lifeTimeMs: 30000 },
+				{ id: "armor", resourceId: 170006, lifeTimeMs: 30000 },
+				{ id: "health", resourceId: 170009, lifeTimeMs: 30000 },
+				{ id: "crystall", resourceId: 170007, lifeTimeMs: 900000 },
+				{ id: "gold", resourceId: 170008, lifeTimeMs: 30000000 },
+				{ id: "special", resourceId: 170012, lifeTimeMs: 30000000 },
+				{ id: "moon", resourceId: 170013, lifeTimeMs: 30000000 },
+				{ id: "pumpkin", resourceId: 170014, lifeTimeMs: 30000000 },
+			],
+			cordResource: 1000065,
+			parachuteInnerResource: 170005,
+			parachuteResource: 170004,
+			pickupSoundResource: 269321,
+		});
+		this.sendPacket(228171466, paramsBonus);
+	}
+
+	loadSkyboxResources() {
+		this.client.resources.loadByJSON(
+			{
+				resources: [
+					{
+						idhigh: "0",
+						idlow: 268412,
+						versionhigh: "0",
+						versionlow: 1,
+						lazy: false,
+						alpha: false,
+						type: 10,
+					},
+					{
+						idhigh: "0",
+						idlow: 31494,
+						versionhigh: "0",
+						versionlow: 1,
+						lazy: false,
+						alpha: false,
+						type: 10,
+					},
+					{
+						idhigh: "0",
+						idlow: 57735,
+						versionhigh: "0",
+						versionlow: 1,
+						lazy: false,
+						alpha: false,
+						type: 10,
+					},
+					{
+						idhigh: "0",
+						idlow: 927961,
+						versionhigh: "0",
+						versionlow: 1,
+						lazy: false,
+						alpha: false,
+						type: 10,
+					},
+					{
+						idhigh: "0",
+						idlow: 987391,
+						versionhigh: "0",
+						versionlow: 1,
+						lazy: false,
+						alpha: false,
+						type: 10,
+					},
+					{
+						idhigh: "0",
+						idlow: 45572,
+						versionhigh: "0",
+						versionlow: 1,
+						lazy: false,
+						alpha: false,
+						type: 10,
+					},
+				],
+			},
+			5
+		);
+	}
+
+	loadMapResources() {
+		this.client.resources.loadByJSON(
+			{
+				resources: [
+					{
+						idhigh: "0",
+						idlow: 684125,
+						versionhigh: "0",
+						versionlow: 3,
+						lazy: false,
+						type: 7,
+					},
+				],
+			},
+			6
+		);
+	}
+
+	loadLibraryResources() {
 		this.client.resources.loadByJSON(
 			{
 				resources: [
@@ -342,35 +457,6 @@ module.exports = class {
 			},
 			4
 		);
-
-		this.sendPacket(-555602629);
-
-		const doubleInt = new ByteArray();
-		doubleInt.writeInt(0);
-		doubleInt.writeInt(0);
-		this.sendPacket(34068208, doubleInt);
-	}
-
-	bonusesParams() {
-		const paramsBonus = new ByteArray();
-		paramsBonus.writeObject({
-			bonuses: [
-				{ id: "nitro", resourceId: 170010, lifeTimeMs: 30000 },
-				{ id: "damage", resourceId: 170011, lifeTimeMs: 30000 },
-				{ id: "armor", resourceId: 170006, lifeTimeMs: 30000 },
-				{ id: "health", resourceId: 170009, lifeTimeMs: 30000 },
-				{ id: "crystall", resourceId: 170007, lifeTimeMs: 900000 },
-				{ id: "gold", resourceId: 170008, lifeTimeMs: 30000000 },
-				{ id: "special", resourceId: 170012, lifeTimeMs: 30000000 },
-				{ id: "moon", resourceId: 170013, lifeTimeMs: 30000000 },
-				{ id: "pumpkin", resourceId: 170014, lifeTimeMs: 30000000 },
-			],
-			cordResource: 1000065,
-			parachuteInnerResource: 170005,
-			parachuteResource: 170004,
-			pickupSoundResource: 269321,
-		});
-		this.sendPacket(228171466, paramsBonus);
 	}
 
 	mapParams() {

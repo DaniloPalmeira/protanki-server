@@ -241,83 +241,9 @@ class ProTankiClient {
 
 				this.changeLayout();
 			} else if (callback == 4) {
-				this.resources.loadByJSON(
-					{
-						resources: [
-							{
-								idhigh: "0",
-								idlow: 268412,
-								versionhigh: "0",
-								versionlow: 1,
-								lazy: false,
-								alpha: false,
-								type: 10,
-							},
-							{
-								idhigh: "0",
-								idlow: 31494,
-								versionhigh: "0",
-								versionlow: 1,
-								lazy: false,
-								alpha: false,
-								type: 10,
-							},
-							{
-								idhigh: "0",
-								idlow: 57735,
-								versionhigh: "0",
-								versionlow: 1,
-								lazy: false,
-								alpha: false,
-								type: 10,
-							},
-							{
-								idhigh: "0",
-								idlow: 927961,
-								versionhigh: "0",
-								versionlow: 1,
-								lazy: false,
-								alpha: false,
-								type: 10,
-							},
-							{
-								idhigh: "0",
-								idlow: 987391,
-								versionhigh: "0",
-								versionlow: 1,
-								lazy: false,
-								alpha: false,
-								type: 10,
-							},
-							{
-								idhigh: "0",
-								idlow: 45572,
-								versionhigh: "0",
-								versionlow: 1,
-								lazy: false,
-								alpha: false,
-								type: 10,
-							},
-						],
-					},
-					5
-				);
+				this.user.battle.loadSkyboxResources();
 			} else if (callback == 5) {
-				this.resources.loadByJSON(
-					{
-						resources: [
-							{
-								idhigh: "0",
-								idlow: 684125,
-								versionhigh: "0",
-								versionlow: 3,
-								lazy: false,
-								type: 7,
-							},
-						],
-					},
-					6
-				);
+				this.user.battle.loadMapResources();
 			} else if (callback == 6) {
 				const { party } = this.user.battle;
 				this.user.battle.mapParams();

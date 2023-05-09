@@ -374,22 +374,24 @@ class ProTankiBattle {
 			return total + user.battle[criterio];
 		}, 0);
 
-		const userListTeam = users.map((user) => {
-			const reward = Math.floor(
-				user.battle[criterio] * (fundTotal / totalScoreTeam)
-			);
+		const userListTeam = users
+			.map((user) => {
+				let reward = Math.floor(
+					user.battle[criterio] * (fundTotal / totalScoreTeam)
+				);
+				reward = isNaN(reward) ? 0 : reward;
 
-			const userRewardTotal = reward + 0 + 0;
+				const userRewardTotal = reward + 0 + 0;
+				user.crystal += userRewardTotal;
 
-			user.crystal += userRewardTotal;
-
-			return {
-				reward,
-				username: user.username,
-				premiumBonusReward: 0,
-				newbiesAbonementBonusReward: 0,
-			};
-		});
+				return {
+					reward,
+					username: user.username,
+					premiumBonusReward: 0,
+					newbiesAbonementBonusReward: 0,
+				};
+			})
+			.filter((user) => user.reward > 0);
 
 		return userListTeam;
 	}

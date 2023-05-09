@@ -332,20 +332,14 @@ class ProTankiClient {
 				this.user.battle.CodecBattleMineCC();
 				if (party.mode == 2) {
 					const ctfPacket = new ByteArray();
-					ctfPacket.writeBoolean(false);
-					ctfPacket.writeFloat(party.ctf.blue.base.x);
-					ctfPacket.writeFloat(party.ctf.blue.base.y);
-					ctfPacket.writeFloat(party.ctf.blue.base.z);
+					ctfPacket.writePacket(vectorPacket(party.ctf.blue.base));
 					ctfPacket.writeUTF(party.ctf.blue.holder);
 					ctfPacket.writePacket(vectorPacket(party.ctf.blue.flag, true));
 
 					ctfPacket.writeInt(538453);
 					ctfPacket.writeInt(236578);
 
-					ctfPacket.writeBoolean(false);
-					ctfPacket.writeFloat(party.ctf.red.base.x);
-					ctfPacket.writeFloat(party.ctf.red.base.y);
-					ctfPacket.writeFloat(party.ctf.red.base.z);
+					ctfPacket.writePacket(vectorPacket(party.ctf.red.base));
 					ctfPacket.writeUTF(party.ctf.red.holder);
 					ctfPacket.writePacket(vectorPacket(party.ctf.red.flag, true));
 

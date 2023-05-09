@@ -1,6 +1,6 @@
 const ByteArray = require("../ByteArray");
 const maps = require("../../helpers/map/items.json");
-const mapsSpawn = require("../../helpers/map/spawn.json");
+const mapsSpawn = require("../../helpers/map/properties/spawn.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
 
 function removerItem(lista, item) {
@@ -93,22 +93,30 @@ class ProTankiBattle {
 		},
 	};
 
-	spawnsExample = [
-		{
-			position: { x: 0, y: 0, z: 2500 },
-			orientation: { x: 0, y: 0, z: 0 },
-		},
-	];
-
 	constructor(objData) {
 		Object.assign(this, objData);
 		this.definePreview();
 
+		const spawnsExample = [
+			{
+				position: { x: 0, y: 0, z: 2500 },
+				orientation: { x: 0, y: 0, z: 0 },
+			},
+		];
+
 		this.spawns = mapsSpawn[this.map] || {
-			0: this.spawnsExample,
-			1: this.spawnsExample,
-			2: this.spawnsExample,
+			0: spawnsExample,
+			1: spawnsExample,
+			2: spawnsExample,
 		};
+
+		const flagsBase = this.server.flagsBase[this.map] || {
+			red: { x: 99999, y: 99999, z: 99999 },
+			blue: { x: 99999, y: 99999, z: 99999 },
+		};
+
+		this.ctf.red.base = flagsBase["red"];
+		this.ctf.blue.base = flagsBase["blue"];
 	}
 
 	get userListByTeam() {

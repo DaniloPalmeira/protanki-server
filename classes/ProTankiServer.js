@@ -24,6 +24,8 @@ class ProTankiServer {
 			en: require("../helpers/map/i18n/en.json"),
 			ru: require("../helpers/map/i18n/ru.json"),
 		};
+
+		this.flagsBase = require("../helpers/map/properties/flags.json");
 		this.battleList = {};
 		this.captchaLocations = [];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];

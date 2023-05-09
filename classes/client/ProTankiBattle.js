@@ -177,9 +177,21 @@ module.exports = class {
 	}
 
 	join(team = null) {
-		// const bIdPacket = new ByteArray();
-		// bIdPacket.writeUTF(this.id);
-		// this.sendPacket(-602527073, bIdPacket);
+		const { turret, hull } = this.equipament;
+		const validEquipment = this.party.validEquips[this.party.equip];
+		// console.log({ validEquipment, turret, hull });
+		if (
+			!this.isSpectator &&
+			validEquipment &&
+			(!validEquipment.turret.includes(turret.id) ||
+				!validEquipment.hull.includes(hull.id))
+		) {
+			this.client.user.battle = null;
+			const packet = new ByteArray();
+			packet.writeUTF(this.party.id);
+			this.sendPacket(1229594925, packet);
+			return;
+		}
 		if (team !== null) {
 			this.team = team;
 			if (team == 0) {
@@ -906,8 +918,21 @@ module.exports = class {
 
 		for (const [index, target] of targetsUsers.entries()) {
 			const protection =
-				target.battle.equipament.paint.resistances[turretName]?.value ?? 0;
-			const userDamage = mainDamage * (1 - protection / 100);
+				this.party.equip === 0
+					? target.battle.equipament.paint.resistances[turretName]?.value ?? 0
+					: 15;
+			let userDamage = mainDamage * (1 - protection / 100);
+			if (
+				this.party.equip !== 0 &&
+				(userDamage >= target.battle.healthTotal ||
+					userDamage < target.battle.healthTotal / 2)
+			) {
+				if (userDamage >= target.battle.healthTotal) {
+					userDamage = target.battle.healthTotal - 10;
+				} else {
+					userDamage = target.battle.healthTotal / 2 + 1;
+				}
+			}
 			const incarnation = parseInt(incarnations[index]);
 			if (
 				(target.battle.team === this.team &&

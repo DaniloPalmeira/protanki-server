@@ -103,6 +103,10 @@ module.exports = class {
 			battleId = packet.readUTF();
 		}
 
+		const selectedBattlePacket = new ByteArray();
+		selectedBattlePacket.writeUTF(battleId);
+		this.sendPacket(-602527073, selectedBattlePacket);
+
 		logger.verbose(`Obter visualização da batalha: ${battleId}`);
 
 		// Verifica se o ID da batalha está presente na lista de batalhas do servidor

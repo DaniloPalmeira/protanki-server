@@ -29,6 +29,11 @@ class ProTankiBattle {
 		2: "WASP_RAILGUN",
 		3: "HORNET_WASP_RAILGUN",
 	};
+	validEquips = {
+		1: { hull: "hornet", turret: "railgun" },
+		2: { hull: "wasp", turret: "railgun" },
+		3: { hull: ["wasp", "hornet"], turret: "railgun" },
+	};
 	friendlyFire = false;
 	scoreLimit = 0;
 	timeLimitInSec = 0;

@@ -118,8 +118,9 @@ class ProTankiServer {
 				maxRank: 30,
 				reArmorEnabled: true,
 				parkour: false,
-				scoreLimit: 0,
+				scoreLimit: 100,
 				theme: 0,
+				equip: 3,
 			},
 			{
 				id: "abcdef9876543210",
@@ -127,7 +128,7 @@ class ProTankiServer {
 				map: "map_cross",
 				maxPeople: 20,
 				name: "Cruz CTF",
-				scoreLimit: 0,
+				scoreLimit: 10,
 				pro: false,
 				minRank: 1,
 				maxRank: 30,
@@ -136,6 +137,7 @@ class ProTankiServer {
 				autoBalance: true,
 				parkour: false,
 				theme: 0,
+				equip: 3,
 			},
 		].forEach((battle) => {
 			const nBattle = new ProTankiBattleServer({

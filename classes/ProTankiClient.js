@@ -7,6 +7,7 @@ const ProTankiLobbyChat = require("./client/ProTankiLobbyChat");
 const ProTankiGarage = require("./client/ProTankiGarage");
 const ProTankiBattle = require("./client/ProTankiBattle");
 const ProTankiResources = require("./ProTankiResources");
+const ProTankiUser = require("./ProTankiUser");
 const PKG = require("../helpers/pkg.json");
 const mainResources = require("../helpers/mainResources.json");
 const logger = require("../helpers/logger");
@@ -90,7 +91,7 @@ class ProTankiClient {
 		this.server.addClient(this);
 		this.startEncryption();
 
-		this.user = this.reloadClassFile("/ProTankiUser.js");
+		this.user = new ProTankiUser(this);
 		this.register = new ProTankiRegister(this);
 		this.login = new ProTankiLogin(this);
 		this.command = this.reloadClassFile("/ProTankiCommands.js");
@@ -98,9 +99,6 @@ class ProTankiClient {
 
 	reloadClass() {
 		this.command = this.reloadClassFile("/ProTankiCommands.js");
-		this.login = this.reloadClassFile("/ProTankiCommands.js");
-		this.register = this.reloadClassFile("/ProTankiCommands.js");
-		this.user = this.reloadClassFile("/ProTankiUser.js");
 	}
 
 	onConnectionClose() {
@@ -1195,7 +1193,7 @@ class ProTankiClient {
 		client = undefined
 	) {
 		if (!(username in this.server.users) || forceUpdate) {
-			let _user = this.reloadClassFile("/ProTankiUser.js", client);
+			let _user = new ProTankiUser(client);
 			await _user.loadByUsername(username);
 			if (_user.exist) {
 				this.server.users[username] = _user;
@@ -1209,7 +1207,7 @@ class ProTankiClient {
 
 	async ObtainUserByUser(_userObj, forceUpdate = false, client = undefined) {
 		if (!(_userObj.username in this.server.users) || forceUpdate) {
-			let _user = this.reloadClassFile("/ProTankiUser.js", client);
+			let _user = new ProTankiUser(client);
 			await _user.loadByUser(_userObj);
 			if (_user.exist) {
 				this.server.users[_userObj.username] = _user;

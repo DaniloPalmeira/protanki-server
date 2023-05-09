@@ -16,41 +16,57 @@ NPM (Node Package Manager) or Yarn installed.
 
 ## Installation
 
-Clone the ProTanki-Server repository to your local machine:
+- Install NodeJs on your machine
 
-```bash
-git clone https://github.com/DaniloPalmeira/ProTanki-Server.git
-```
+  - ##### Using Ubuntu
 
-Access the project directory:
+    ```sh
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+    sudo apt-get install -y nodejs
+    ```
 
-```bash
-cd ProTanki-Server
-```
+  - ##### Using Debian, as root
 
-Install project dependencies:
+    ```sh
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+    apt-get install -y nodejs
+    ```
 
-```bash
-npm install
-```
+- Clone the ProTanki-Server repository to your local machine:
 
-or
+  ```bash
+  git clone https://github.com/DaniloPalmeira/ProTanki-Server.git
+  ```
 
-```bash
-yarn
-```
+- Access the project directory:
 
-Start the server:
+  ```bash
+  cd protanki-server
+  ```
 
-```bash
-npm start
-```
+- Install project dependencies:
 
-or
+  ```bash
+  npm install
+  ```
 
-```bash
-yarn start
-```
+  or
+
+  ```bash
+  yarn
+  ```
+
+- Start the server:
+
+  ```bash
+  npm start
+  ```
+
+  or
+
+  ```bash
+  yarn start
+  ```
 
 The ProTanki server will start and be ready to receive client connections.
 

@@ -120,7 +120,7 @@ class ProTankiServer {
 			{
 				id: "abcdef0123456789",
 				mode: 0,
-				map: "map_wave",
+				map: "map_island",
 				maxPeople: 20,
 				name: "Ilha DM",
 				pro: false,

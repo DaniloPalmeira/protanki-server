@@ -1,0 +1,298 @@
+{
+	"map_cross": {
+		"SUMMER": [
+			{
+				"idhigh": "0",
+				"idlow": 768697,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 421539,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 894006,
+				"versionhigh": "0",
+				"versionlow": 3,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 344680,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 644412,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 698047,
+				"versionhigh": "0",
+				"versionlow": 35,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 994853,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 426360,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 286895,
+				"versionhigh": "0",
+				"versionlow": 5,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 761948,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			}
+		],
+		"WINTER": [
+			{
+				"idhigh": "0",
+				"idlow": 893062,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 311175,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 316457,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 934285,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 105954,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 597073,
+				"versionhigh": "0",
+				"versionlow": 4,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 795676,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 185320,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 404625,
+				"versionhigh": "0",
+				"versionlow": 35,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 675186,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			}
+		]
+	},
+
+	"map_island": {
+		"SUMMER": [
+			{
+				"idhigh": "0",
+				"idlow": 837890,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 39200,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 137788,
+				"versionhigh": "0",
+				"versionlow": 3,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 609946,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 849509,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 89699,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			}
+		]
+	},
+
+	"map_sandbox": {
+		"SUMMER": [
+			{
+				"idhigh": "0",
+				"idlow": 761948,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 286895,
+				"versionhigh": "0",
+				"versionlow": 5,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 698047,
+				"versionhigh": "0",
+				"versionlow": 35,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 768697,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 894006,
+				"versionhigh": "0",
+				"versionlow": 3,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 426360,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 644412,
+				"versionhigh": "0",
+				"versionlow": 1,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 421539,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			},
+			{
+				"idhigh": "0",
+				"idlow": 344680,
+				"versionhigh": "0",
+				"versionlow": 2,
+				"lazy": false,
+				"type": 8
+			}
+		]
+	}
+}

@@ -25,6 +25,9 @@ class ProTankiServer {
 			ru: require("../helpers/map/i18n/ru.json"),
 		};
 
+		this.mapsBase = require("../helpers/map/properties/infos.json");
+		this.mapsLibrary = require("../helpers/map/properties/resources.json");
+
 		this.flagsBase = require("../helpers/map/properties/flags.json");
 		this.battleList = {};
 		this.captchaLocations = [];

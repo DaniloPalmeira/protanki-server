@@ -1,0 +1,644 @@
+{
+	"map_island": {
+		"SUMMER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_island",
+			"mapId": 117520,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "3ab5e2a70dbed56e",
+			"minRank": 9,
+			"maxRank": 17,
+			"skybox": {
+				"top": 345563,
+				"front": 80445,
+				"back": 266699,
+				"bottom": 590300,
+				"left": 616027,
+				"right": 190313
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_island",
+				"mapTheme": "SUMMER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 13090219,
+				"shadowColor": 5530735,
+				"fogAlpha": 0.25,
+				"fogColor": 14545407,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 3025184,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		}
+	},
+	"map_sandbox": {
+		"SUMMER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_sandbox",
+			"mapId": 336728,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "d23ef680f3f1cdf6",
+			"minRank": 11,
+			"maxRank": 18,
+			"skybox": {
+				"top": 45572,
+				"front": 57735,
+				"back": 268412,
+				"bottom": 31494,
+				"left": 927961,
+				"right": 987391
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_sandbox",
+				"mapTheme": "SUMMER",
+				"angleX": -0.8500000238418579,
+				"angleZ": 2.5,
+				"lightColor": 13090219,
+				"shadowColor": 5530735,
+				"fogAlpha": 0.25,
+				"fogColor": 10543615,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2045258,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		},
+		"SUMMER_NIGHT": {
+			"kick_period_ms": 300000,
+			"map_id": "map_sandbox",
+			"mapId": 336728,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "c91a56286376bd70",
+			"minRank": 11,
+			"maxRank": 18,
+			"skybox": {
+				"top": 943466,
+				"front": 728777,
+				"back": 180702,
+				"bottom": 732324,
+				"left": 68020,
+				"right": 527828
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_sandbox",
+				"mapTheme": "SUMMER_NIGHT",
+				"angleX": -0.6000000238418579,
+				"angleZ": -0.800000011920929,
+				"lightColor": 3163220,
+				"shadowColor": 1382169,
+				"fogAlpha": 0.25,
+				"fogColor": 68116,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2045258,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		},
+		"WINTER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_sandbox",
+			"mapId": 948195,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110002,
+			"battleId": "cfd6e66746411d35",
+			"minRank": 11,
+			"maxRank": 18,
+			"skybox": {
+				"top": 1929,
+				"front": 274735,
+				"back": 667135,
+				"bottom": 123809,
+				"left": 784146,
+				"right": 804716
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_sandbox",
+				"mapTheme": "WINTER",
+				"angleX": -0.8500000238418579,
+				"angleZ": 2.5,
+				"lightColor": 8419955,
+				"shadowColor": 6184542,
+				"fogAlpha": 0.25,
+				"fogColor": 15333375,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2374217,
+				"dustAlpha": 0.8999999761581421,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "winter",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		}
+	},
+	"map_stadium": {
+		"WINTER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_stadium",
+			"mapId": 328574,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110002,
+			"battleId": "17f830e3338c2147",
+			"minRank": 9,
+			"maxRank": 16,
+			"skybox": {
+				"top": 1929,
+				"front": 274735,
+				"back": 667135,
+				"bottom": 123809,
+				"left": 784146,
+				"right": 804716
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_stadium",
+				"mapTheme": "WINTER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 8419955,
+				"shadowColor": 6184542,
+				"fogAlpha": 0.25,
+				"fogColor": 15333375,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2374217,
+				"dustAlpha": 0.8999999761581421,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "winter",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		},
+		"SUMMER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_stadium",
+			"mapId": 850881,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "8926a3d767bb32a2",
+			"minRank": 9,
+			"maxRank": 16,
+			"skybox": {
+				"top": 345563,
+				"front": 80445,
+				"back": 266699,
+				"bottom": 590300,
+				"left": 616027,
+				"right": 190313
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_stadium",
+				"mapTheme": "SUMMER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 13090219,
+				"shadowColor": 5530735,
+				"fogAlpha": 0.25,
+				"fogColor": 14545407,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 3025184,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		}
+	},
+	"map_novel": {
+		"SUMMER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_novel",
+			"mapId": 660958,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "866b616f00bd41f7",
+			"minRank": 5,
+			"maxRank": 13,
+			"skybox": {
+				"top": 345563,
+				"front": 80445,
+				"back": 266699,
+				"bottom": 590300,
+				"left": 616027,
+				"right": 190313
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_novel",
+				"mapTheme": "SUMMER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 13090219,
+				"shadowColor": 5530735,
+				"fogAlpha": 0.25,
+				"fogColor": 14545407,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 3025184,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		}
+	},
+	"map_serpuhov": {
+		"SUMMER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_serpuhov",
+			"mapId": 739572,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "b5f345598f78d519",
+			"minRank": 11,
+			"maxRank": 19,
+			"skybox": {
+				"top": 45572,
+				"front": 57735,
+				"back": 268412,
+				"bottom": 31494,
+				"left": 927961,
+				"right": 987391
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_serpuhov",
+				"mapTheme": "SUMMER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 13090219,
+				"shadowColor": 5530735,
+				"fogAlpha": 0.25,
+				"fogColor": 10543615,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2045258,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		}
+	},
+	"map_cross": {
+		"SUMMER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_cross",
+			"mapId": 684125,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110001,
+			"battleId": "ef55582ea47b0147",
+			"minRank": 11,
+			"maxRank": 18,
+			"skybox": {
+				"top": 45572,
+				"front": 57735,
+				"back": 268412,
+				"bottom": 31494,
+				"left": 927961,
+				"right": 987391
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_cross",
+				"mapTheme": "SUMMER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 13090219,
+				"shadowColor": 5530735,
+				"fogAlpha": 0.25,
+				"fogColor": 10543615,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2045258,
+				"dustAlpha": 0.75,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "summer",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		},
+		"WINTER": {
+			"kick_period_ms": 300000,
+			"map_id": "map_cross",
+			"mapId": 434780,
+			"invisible_time": 3500,
+			"spectator": false,
+			"active": true,
+			"dustParticle": 110002,
+			"battleId": "d6d18ad60b116827",
+			"minRank": 11,
+			"maxRank": 18,
+			"skybox": {
+				"top": 1929,
+				"front": 274735,
+				"back": 667135,
+				"bottom": 123809,
+				"left": 784146,
+				"right": 804716
+			},
+			"sound_id": 584396,
+			"map_graphic_data": {
+				"mapId": "map_cross",
+				"mapTheme": "WINTER",
+				"angleX": -1,
+				"angleZ": -0.5,
+				"lightColor": 8419955,
+				"shadowColor": 6184542,
+				"fogAlpha": 0.25,
+				"fogColor": 15333375,
+				"farLimit": 10000,
+				"nearLimit": 5000,
+				"gravity": 1000,
+				"skyboxRevolutionSpeed": 0,
+				"ssaoColor": 2374217,
+				"dustAlpha": 0.8999999761581421,
+				"dustDensity": 0.15000000596046448,
+				"dustFarDistance": 7000,
+				"dustNearDistance": 5000,
+				"dustParticle": "winter",
+				"dustSize": 200
+			},
+			"reArmorEnabled": true,
+			"lighting": {
+				"ctfLighting": {
+					"redColor": 16711680,
+					"redColorIntensity": 1,
+					"blueColor": 26367,
+					"blueColorIntensity": 1,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				},
+				"dominationLighting": {
+					"redPointColor": 16711680,
+					"redPointIntensity": 1,
+					"bluePointColor": 26367,
+					"bluePointIntensity": 1,
+					"neutralPointColor": 16777215,
+					"neutralPointIntensity": 0.7,
+					"attenuationBegin": 100,
+					"attenuationEnd": 1000
+				}
+			}
+		}
+	}
+}

@@ -5,3 +5,4 @@ teste.js
 data/database.sqlite
 helpers/map/i18n/en.json
 test.json
+resources/app.js

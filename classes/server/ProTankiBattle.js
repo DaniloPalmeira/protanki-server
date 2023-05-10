@@ -97,9 +97,11 @@ class ProTankiBattle {
 		Object.assign(this, objData);
 		this.definePreview();
 
+		const positionExample = { x: 99999, y: 99999, z: 99999 };
+
 		const spawnsExample = [
 			{
-				position: { x: 0, y: 0, z: 2500 },
+				position: positionExample,
 				orientation: { x: 0, y: 0, z: 0 },
 			},
 		];
@@ -111,12 +113,28 @@ class ProTankiBattle {
 		};
 
 		const flagsBase = this.server.flagsBase[this.map] || {
-			red: { x: 99999, y: 99999, z: 99999 },
-			blue: { x: 99999, y: 99999, z: 99999 },
+			red: positionExample,
+			blue: positionExample,
 		};
 
 		this.ctf.red.base = flagsBase["red"];
 		this.ctf.blue.base = flagsBase["blue"];
+
+		this.mapInfos = this.server.mapsBase[this.map]?.[this.themeStr] || null;
+		this.mapLibrary =
+			this.server.mapsLibrary[this.map]?.[this.themeStr] || null;
+		if (this.mapInfos !== null) {
+			this.mapInfos.minRank = this.minRank;
+			this.mapInfos.maxRank = this.maxRank;
+			this.mapInfos.reArmorEnabled = this.reArmorEnabled;
+			this.mapInfos.map_id = this.map;
+			this.mapInfos.kick_period_ms = 300000;
+			this.mapInfos.invisible_time = 3500;
+			this.mapInfos.battleId = this.id;
+			this.mapInfos.map_graphic_data.gravity = this.gravity;
+			this.mapInfos.map_graphic_data.mapId = this.map;
+			this.mapInfos.map_graphic_data.mapTheme = this.themeStr;
+		}
 	}
 
 	get userListByTeam() {

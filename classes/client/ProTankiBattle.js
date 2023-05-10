@@ -177,6 +177,10 @@ module.exports = class {
 	}
 
 	join(team = null) {
+		if (this.party.mapInfos === null || this.party.mapLibrary === null) {
+			this.client.user.battle = null;
+			return;
+		}
 		const { turret, hull } = this.equipament;
 		const validEquipment = this.party.validEquips[this.party.equip];
 		// console.log({ validEquipment, turret, hull });
@@ -288,67 +292,18 @@ module.exports = class {
 	}
 
 	loadSkyboxResources() {
-		this.client.resources.loadByJSON(
-			{
-				resources: [
-					{
-						idhigh: "0",
-						idlow: 268412,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						alpha: false,
-						type: 10,
-					},
-					{
-						idhigh: "0",
-						idlow: 31494,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						alpha: false,
-						type: 10,
-					},
-					{
-						idhigh: "0",
-						idlow: 57735,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						alpha: false,
-						type: 10,
-					},
-					{
-						idhigh: "0",
-						idlow: 927961,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						alpha: false,
-						type: 10,
-					},
-					{
-						idhigh: "0",
-						idlow: 987391,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						alpha: false,
-						type: 10,
-					},
-					{
-						idhigh: "0",
-						idlow: 45572,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						alpha: false,
-						type: 10,
-					},
-				],
-			},
-			5
+		const resources = Object.values(this.party.mapInfos.skybox).map(
+			(value) => ({
+				idhigh: "0",
+				idlow: value,
+				versionhigh: "0",
+				versionlow: 1,
+				lazy: false,
+				alpha: false,
+				type: 10,
+			})
 		);
+		this.client.resources.loadByJSON({ resources }, 5);
 	}
 
 	loadMapResources() {
@@ -357,7 +312,7 @@ module.exports = class {
 				resources: [
 					{
 						idhigh: "0",
-						idlow: 684125,
+						idlow: this.party.mapInfos.mapId,
 						versionhigh: "0",
 						versionlow: 3,
 						lazy: false,
@@ -370,161 +325,18 @@ module.exports = class {
 	}
 
 	loadLibraryResources() {
-		this.client.resources.loadByJSON(
-			{
-				resources: [
-					{
-						idhigh: "0",
-						idlow: 768697,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 421539,
-						versionhigh: "0",
-						versionlow: 2,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 894006,
-						versionhigh: "0",
-						versionlow: 3,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 344680,
-						versionhigh: "0",
-						versionlow: 2,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 644412,
-						versionhigh: "0",
-						versionlow: 1,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 698047,
-						versionhigh: "0",
-						versionlow: 35,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 994853,
-						versionhigh: "0",
-						versionlow: 2,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 426360,
-						versionhigh: "0",
-						versionlow: 2,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 286895,
-						versionhigh: "0",
-						versionlow: 5,
-						lazy: false,
-						type: 8,
-					},
-					{
-						idhigh: "0",
-						idlow: 761948,
-						versionhigh: "0",
-						versionlow: 2,
-						lazy: false,
-						type: 8,
-					},
-				],
-			},
-			4
-		);
+		this.client.resources.loadByJSON({ resources: this.party.mapLibrary }, 4);
 	}
 
 	mapParams() {
 		// map_zone
 		const paramsMap = new ByteArray();
-		const mapObject = {
-			kick_period_ms: 300000,
-			map_id: this.party.map,
-			mapId: 684125,
-			invisible_time: 3500,
-			spectator: this.isSpectator,
-			active: true,
-			dustParticle: 110001,
-			battleId: this.party.id,
-			minRank: this.party.minRank,
-			maxRank: this.party.maxRank,
-			skybox: JSON.stringify({
-				top: 45572,
-				front: 57735,
-				back: 268412,
-				bottom: 31494,
-				left: 927961,
-				right: 987391,
-			}),
-			sound_id: 584396,
-			map_graphic_data: JSON.stringify({
-				mapId: this.party.map,
-				mapTheme: this.party.themeStr,
-				angleX: -1,
-				angleZ: -0.5,
-				lightColor: 13090219,
-				shadowColor: 5530735,
-				fogAlpha: 0.25,
-				fogColor: 10543615,
-				farLimit: 10000,
-				nearLimit: 5000,
-				gravity: this.party.gravity,
-				skyboxRevolutionSpeed: 0,
-				ssaoColor: 2045258,
-				dustAlpha: 0.75,
-				dustDensity: 0.15000000596046448,
-				dustFarDistance: 7000,
-				dustNearDistance: 5000,
-				dustParticle: "summer",
-				dustSize: 200,
-			}),
-			reArmorEnabled: this.party.reArmorEnabled,
-			lighting: JSON.stringify({
-				ctfLighting: {
-					redColor: 16711680,
-					redColorIntensity: 1,
-					blueColor: 26367,
-					blueColorIntensity: 1,
-					attenuationBegin: 100,
-					attenuationEnd: 1000,
-				},
-				dominationLighting: {
-					redPointColor: 16711680,
-					redPointIntensity: 1,
-					bluePointColor: 26367,
-					bluePointIntensity: 1,
-					neutralPointColor: 16777215,
-					neutralPointIntensity: 0.7,
-					attenuationBegin: 100,
-					attenuationEnd: 1000,
-				},
-			}),
-		};
+		const mapObject = JSON.parse(JSON.stringify(this.party.mapInfos));
+		mapObject.spectator = this.isSpectator;
+
+		mapObject.skybox = JSON.stringify(mapObject.skybox);
+		mapObject.map_graphic_data = JSON.stringify(mapObject.map_graphic_data);
+		mapObject.lighting = JSON.stringify(mapObject.lighting);
 		paramsMap.writeObject(mapObject);
 
 		this.sendPacket(-152638117, paramsMap);

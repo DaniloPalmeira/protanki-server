@@ -4,6 +4,8 @@ const weapons = require("../helpers/weapons.json");
 const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");
 const database = require("../helpers/connection");
+const path = require("path");
+const fs = require("fs");
 
 const logger = require("../helpers/logger");
 
@@ -27,6 +29,8 @@ class ProTankiServer {
 		this.mapsBase = require("../helpers/map/properties/infos.json");
 		this.mapsLibrary = require("../helpers/map/properties/resources.json");
 
+		this.resources = require("../helpers/resources.json");
+
 		this.flagsBase = require("../helpers/map/properties/flags.json");
 		this.battleList = {};
 		this.captchaLocations = [];
@@ -49,6 +53,26 @@ class ProTankiServer {
 		this.initializeGarageProperties();
 		this.initializeRegularBattles();
 		this.initializeNewsList();
+	}
+
+	updateMapLibrary() {
+		const mapLibraryPath = path.join(
+			__dirname,
+			"../helpers/map/properties/resources.json"
+		);
+		fs.writeFileSync(mapLibraryPath, JSON.stringify(this.mapsLibrary), {
+			flag: "w",
+		});
+	}
+
+	resourceByIdList(items) {
+		const resources = [];
+		for (const key of items) {
+			if (this.resources.hasOwnProperty(key)) {
+				resources.push(this.resources[key]);
+			}
+		}
+		return resources;
 	}
 
 	async initializeNewsList() {
@@ -96,7 +120,7 @@ class ProTankiServer {
 			{
 				id: "abcdef0123456789",
 				mode: 0,
-				map: "map_island",
+				map: "map_wave",
 				maxPeople: 20,
 				name: "Ilha DM",
 				pro: false,

@@ -2,6 +2,7 @@ const ByteArray = require("../ByteArray");
 const maps = require("../../helpers/map/items.json");
 const mapsSpawn = require("../../helpers/map/properties/spawn.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
+const getXml = require("../../helpers/proplibsXml");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
@@ -122,8 +123,6 @@ class ProTankiBattle {
 		this.ctf.blue.base = flagsBase["blue"] ?? positionExample;
 
 		this.mapInfos = this.server.mapsBase[this.map]?.[this.themeStr] ?? null;
-		this.mapLibrary =
-			this.server.mapsLibrary[this.map]?.[this.themeStr] ?? null;
 		if (this.mapInfos !== null) {
 			this.mapInfos.minRank = this.minRank;
 			this.mapInfos.maxRank = this.maxRank;
@@ -132,9 +131,29 @@ class ProTankiBattle {
 			this.mapInfos.kick_period_ms = 300000;
 			this.mapInfos.invisible_time = 3500;
 			this.mapInfos.battleId = this.id;
-			this.mapInfos.map_graphic_data.gravity = this.gravity;
+			// this.mapInfos.map_graphic_data.gravity;
 			this.mapInfos.map_graphic_data.mapId = this.map;
 			this.mapInfos.map_graphic_data.mapTheme = this.themeStr;
+			this.getLibraryXML();
+		}
+	}
+
+	async getLibraryXML() {
+		this.mapLibrary =
+			this.server.mapsLibrary[this.map]?.[this.themeStr] ?? null;
+		if (
+			this.mapLibrary === null &&
+			this.server.resources[this.mapInfos.mapId]
+		) {
+			this.mapLibrary = await getXml(
+				this.mapInfos.mapId,
+				this.server.resources[this.mapInfos.mapId].versionlow
+			);
+			if (!this.server.mapsLibrary[this.map]) {
+				this.server.mapsLibrary[this.map] = {};
+			}
+			this.server.mapsLibrary[this.map][this.themeStr] = this.mapLibrary;
+			this.server.updateMapLibrary();
 		}
 	}
 
@@ -534,7 +553,6 @@ class ProTankiBattle {
 
 	sendPacketSpectator(packedID, packet = new ByteArray()) {
 		this.spectators.forEach((client) => {
-			console.log(client.user.username);
 			var _packet = new ByteArray(packet.buffer);
 			client.sendPacket(packedID, _packet);
 		});

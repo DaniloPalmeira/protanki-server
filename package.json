@@ -4,7 +4,8 @@
 		"@types/sequelize": "^4.28.14",
 		"sequelize": "^6.29.3",
 		"sqlite3": "^5.1.4",
-		"winston": "^3.8.2"
+		"winston": "^3.8.2",
+		"xml-js": "^1.6.11"
 	},
 	"version": "1.0.0",
 	"description": "ProTanki Online - Server",

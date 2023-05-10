@@ -224,7 +224,7 @@ module.exports = class {
 			packeta.writeUTF(this.party.id);
 			packeta.writeInt(this.kills);
 			packeta.writeInt(this.score);
-			packeta.writeBoolean(true); // suspeito
+			packeta.writeBoolean(false); // suspeito
 			packeta.writeUTF(this.client.user.username);
 			if (this.party.modeStr == "DM") {
 				this.client.lobbyServer.sendPacket(-911626491, packeta);
@@ -291,39 +291,17 @@ module.exports = class {
 
 	loadSkyboxResources() {
 		const resources = Object.values(this.party.mapInfos.skybox).map(
-			(value) => ({
-				idhigh: "0",
-				idlow: value,
-				versionhigh: "0",
-				versionlow: 1,
-				lazy: false,
-				alpha: false,
-				type: 10,
-			})
+			(value) => value
 		);
-		this.client.resources.loadByJSON({ resources }, 5);
+		this.client.resources.loadByListOfIds(resources, 5);
 	}
 
 	loadMapResources() {
-		this.client.resources.loadByJSON(
-			{
-				resources: [
-					{
-						idhigh: "0",
-						idlow: this.party.mapInfos.mapId,
-						versionhigh: "0",
-						versionlow: 3,
-						lazy: false,
-						type: 7,
-					},
-				],
-			},
-			6
-		);
+		this.client.resources.loadByListOfIds([this.party.mapInfos.mapId], 6);
 	}
 
 	loadLibraryResources() {
-		this.client.resources.loadByJSON({ resources: this.party.mapLibrary }, 4);
+		this.client.resources.loadByListOfIds(this.party.mapLibrary, 4);
 	}
 
 	mapParams() {

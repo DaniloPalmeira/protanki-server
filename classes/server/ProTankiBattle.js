@@ -97,7 +97,7 @@ class ProTankiBattle {
 		Object.assign(this, objData);
 		this.definePreview();
 
-		const positionExample = { x: 99999, y: 99999, z: 99999 };
+		const positionExample = { x: 0, y: 0, z: 1000 };
 
 		const spawnsExample = [
 			{
@@ -106,23 +106,24 @@ class ProTankiBattle {
 			},
 		];
 
-		this.spawns = mapsSpawn[this.map] || {
+		this.spawns = {
 			0: spawnsExample,
 			1: spawnsExample,
 			2: spawnsExample,
 		};
+		Object.assign(this.spawns, mapsSpawn[this.map] ?? {});
 
-		const flagsBase = this.server.flagsBase[this.map] || {
+		const flagsBase = this.server.flagsBase[this.map] ?? {
 			red: positionExample,
 			blue: positionExample,
 		};
 
-		this.ctf.red.base = flagsBase["red"];
-		this.ctf.blue.base = flagsBase["blue"];
+		this.ctf.red.base = flagsBase["red"] ?? positionExample;
+		this.ctf.blue.base = flagsBase["blue"] ?? positionExample;
 
-		this.mapInfos = this.server.mapsBase[this.map]?.[this.themeStr] || null;
+		this.mapInfos = this.server.mapsBase[this.map]?.[this.themeStr] ?? null;
 		this.mapLibrary =
-			this.server.mapsLibrary[this.map]?.[this.themeStr] || null;
+			this.server.mapsLibrary[this.map]?.[this.themeStr] ?? null;
 		if (this.mapInfos !== null) {
 			this.mapInfos.minRank = this.minRank;
 			this.mapInfos.maxRank = this.maxRank;

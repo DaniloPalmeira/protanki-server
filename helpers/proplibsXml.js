@@ -47,6 +47,7 @@ async function getXml(id, version) {
 	const midPath = idToPath(id, version);
 
 	return new Promise((resolve) => {
+		console.log("Obtendo", urlBase + midPath + "proplibs.xml");
 		http
 			.get(urlBase + midPath + "proplibs.xml", (res) => {
 				let data = "";

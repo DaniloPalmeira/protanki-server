@@ -3,6 +3,7 @@ const maps = require("../../helpers/map/items.json");
 const mapsSpawn = require("../../helpers/map/properties/spawn.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
 const getXml = require("../../helpers/proplibsXml");
+const logger = require("../../helpers/logger");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
@@ -154,6 +155,9 @@ class ProTankiBattle {
 			}
 			this.server.mapsLibrary[this.map][this.themeStr] = this.mapLibrary;
 			this.server.updateMapLibrary();
+		}
+		if (this.mapLibrary === null) {
+			logger.error(`${this.map} não foi encontrado nas resources !`);
 		}
 	}
 

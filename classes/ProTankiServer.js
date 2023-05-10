@@ -16,7 +16,7 @@ class ProTankiServer {
 		this.users = {};
 		this.clients = [];
 
-		database.sync({ alter: true });
+		// database.sync({ alter: true });
 
 		this.weapons = weapons;
 		this.maps = maps;

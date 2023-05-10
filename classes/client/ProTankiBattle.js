@@ -185,9 +185,13 @@ module.exports = class {
 		if (
 			!this.isSpectator &&
 			validEquipment &&
-			(!validEquipment.turret.includes(turret.id) ||
-				!validEquipment.hull.includes(hull.id))
+			(!validEquipment.turret.includes(turret.id.replace("_xt", "")) ||
+				!validEquipment.hull.includes(hull.id.replace("_xt", "")))
 		) {
+			console.log({
+				t: turret.id.replace("_xt", ""),
+				h: hull.id.replace("_xt", ""),
+			});
 			this.client.user.battle = null;
 			const packet = new ByteArray();
 			packet.writeUTF(this.party.id);
@@ -781,10 +785,17 @@ module.exports = class {
 				2: this.randInt(111, 168),
 				3: this.randInt(133, 199),
 			},
+			railgun_xt: {
+				0: this.randInt(68, 106),
+				1: this.randInt(90, 137),
+				2: this.randInt(111, 168),
+				3: this.randInt(133, 199),
+			},
 		};
 
 		const level = this.equipament.turret.m;
-		const turretName = this.equipament.turret.id;
+		const turretName = this.equipament.turret.id.replace("_xt", "");
+		console.log({ turretName, level });
 		const mainDamage = damageList[turretName]?.[level] ?? 0;
 
 		const damageListPacket = new ByteArray();

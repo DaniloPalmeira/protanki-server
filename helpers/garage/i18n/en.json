@@ -47,6 +47,10 @@
 		"name": "Railgun",
 		"description": "If mid-caliber guns are not enough for your self-expression, this weapon is right for you. Large-caliber gun with huge muzzle speed and shells using depleted uranium. Extremely powerful and accurate kinetic projectile can go right through the enemy’s tank or hit several targets standing on the line of fire with a single shot. An ideal choice for long-range trench warfare and sniping. Remember that it takes a lot of time to recharge the gun and make sure your opponents will not take advantage of it."
 	},
+	"railgun_xt": {
+		"name": "Railgun XT",
+		"description": "If mid-caliber guns are not enough for your self-expression, this weapon is right for you. Large-caliber gun with huge muzzle speed and shells using depleted uranium. Extremely powerful and accurate kinetic projectile can go right through the enemy’s tank or hit several targets standing on the line of fire with a single shot. An ideal choice for long-range trench warfare and sniping. Remember that it takes a lot of time to recharge the gun and make sure your opponents will not take advantage of it."
+	},
 	"isida": {
 		"name": "Isida",
 		"description": "The idea of this unique weapon arose in the times of the cold war but was brought to life only with the development of quantum physics and nanotechnologies. The heart of this wonder-machine is generator of nanorobots able to reproduce or destroy the structure of any non-biologocal material. The weapon is equipped with impulse emitter which allows transporting nanomass in the magnetic channel at a distance of about twenty meters. Molecular material, derived when nanorobots are functioning in the mode of target destruction, is used to fix shooter’s own chassis. Thus, Isida deals damage to enemies and heals allies, which makes it invaluable in team battles."
@@ -77,6 +81,10 @@
 	},
 	"hornet": {
 		"name": "Hornet",
+		"description": "This compact hull uses the latest generation of composite materials, which makes it light, quick and grants high survivability even after a direct hit. Hornet is perfect for quick attacks."
+	},
+	"hornet_xt": {
+		"name": "Hornet XT",
 		"description": "This compact hull uses the latest generation of composite materials, which makes it light, quick and grants high survivability even after a direct hit. Hornet is perfect for quick attacks."
 	},
 	"hunter": {

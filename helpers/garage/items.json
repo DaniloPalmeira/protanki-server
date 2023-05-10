@@ -133,6 +133,86 @@
 		"isForRent": false
 	},
 	{
+		"id": "railgun_xt",
+		"isInventory": false,
+		"index": 6,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 1,
+		"price": 1000000,
+		"rank": 1,
+		"category": "weapon",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 0
+	},
+	{
+		"id": "railgun_xt",
+		"isInventory": false,
+		"index": 6,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 1,
+		"price": 1000000,
+		"rank": 1,
+		"category": "weapon",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 1
+	},
+	{
+		"id": "railgun_xt",
+		"isInventory": false,
+		"index": 6,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 1,
+		"price": 1000000,
+		"rank": 1,
+		"category": "weapon",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 2
+	},
+	{
+		"id": "railgun_xt",
+		"isInventory": false,
+		"index": 6,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 1,
+		"price": 1000000,
+		"rank": 1,
+		"category": "weapon",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 3
+	},
+	{
 		"id": "smoky",
 		"isInventory": false,
 		"index": 7,
@@ -932,6 +1012,87 @@
 		"isForRent": false,
 		"modificationID": 3
 	},
+	{
+		"id": "hornet_xt",
+		"isInventory": false,
+		"index": 17,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 2,
+		"price": 1000000,
+		"rank": 1,
+		"category": "armor",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 0
+	},
+	{
+		"id": "hornet_xt",
+		"isInventory": false,
+		"index": 17,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 2,
+		"price": 1000000,
+		"rank": 1,
+		"category": "armor",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 1
+	},
+	{
+		"id": "hornet_xt",
+		"isInventory": false,
+		"index": 17,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 2,
+		"price": 1000000,
+		"rank": 1,
+		"category": "armor",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 2
+	},
+	{
+		"id": "hornet_xt",
+		"isInventory": false,
+		"index": 17,
+		"next_price": 1000000,
+		"next_rank": 1,
+		"type": 2,
+		"price": 1000000,
+		"rank": 1,
+		"category": "armor",
+		"discount": {
+			"percent": 0,
+			"timeLeftInSeconds": -1679201183,
+			"timeToStartInSeconds": -1679201183
+		},
+		"remainingTimeInSec": -1,
+		"grouped": false,
+		"isForRent": false,
+		"modificationID": 3
+	},
+
 	{
 		"id": "wasp",
 		"isInventory": false,

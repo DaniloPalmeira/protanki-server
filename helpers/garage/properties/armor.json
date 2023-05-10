@@ -107,6 +107,61 @@
 			"previewResourceId": 72507
 		}
 	},
+
+	"hornet_xt": {
+		"0": {
+			"propers": {
+				"HULL_ARMOR": { "value": 122, "subproperties": null },
+				"HULL_SPEED": { "value": 10.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 90.8, "subproperties": null },
+				"HULL_MASS": { "value": 1616, "subproperties": null },
+				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
+				"HULL_ACCELERATION": { "value": 10, "subproperties": null }
+			},
+			"object3ds": 916625,
+			"baseItemId": 209093,
+			"previewResourceId": 209093
+		},
+		"1": {
+			"propers": {
+				"HULL_ARMOR": { "value": 154, "subproperties": null },
+				"HULL_SPEED": { "value": 10.7, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 105.2, "subproperties": null },
+				"HULL_MASS": { "value": 1905, "subproperties": null },
+				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
+				"HULL_ACCELERATION": { "value": 11, "subproperties": null }
+			},
+			"object3ds": 682349,
+			"baseItemId": 209093,
+			"previewResourceId": 930954
+		},
+		"2": {
+			"propers": {
+				"HULL_ARMOR": { "value": 187, "subproperties": null },
+				"HULL_SPEED": { "value": 11.5, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 119.7, "subproperties": null },
+				"HULL_MASS": { "value": 2194, "subproperties": null },
+				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
+				"HULL_ACCELERATION": { "value": 13, "subproperties": null }
+			},
+			"object3ds": 46050,
+			"baseItemId": 209093,
+			"previewResourceId": 725126
+		},
+		"3": {
+			"propers": {
+				"HULL_ARMOR": { "value": 210, "subproperties": null },
+				"HULL_SPEED": { "value": 12.0, "subproperties": null },
+				"HULL_TURN_SPEED": { "value": 130, "subproperties": null },
+				"HULL_MASS": { "value": 2400, "subproperties": null },
+				"HULL_POWER": { "value": null, "subproperties": ["HULL_ACCELERATION"] },
+				"HULL_ACCELERATION": { "value": 14, "subproperties": null }
+			},
+			"object3ds": 907344,
+			"baseItemId": 209093,
+			"previewResourceId": 72508
+		}
+	},
 	"hunter": {
 		"0": {
 			"propers": {

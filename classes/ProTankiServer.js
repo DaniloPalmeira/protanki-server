@@ -9,11 +9,10 @@ const logger = require("../helpers/logger");
 
 class ProTankiServer {
 	constructor() {
+		logger.debug("Construindo servidor ProTanki.");
 		this.id = 1;
 		this.users = {};
 		this.clients = [];
-		this.ClientfromUID = {};
-		this.UIDfromClient = {};
 
 		database.sync({ alter: true });
 
@@ -45,6 +44,19 @@ class ProTankiServer {
 			minLength: 5,
 		};
 
+		this.initializeBattleLimits();
+		this.initializeEquipmentProperties();
+		this.initializeGarageProperties();
+		this.initializeRegularBattles();
+		this.initializeNewsList();
+	}
+
+	async initializeNewsList() {
+		this.newsList = await getNews();
+	}
+
+	initializeBattleLimits() {
+		logger.debug("Inicializando limites de batalha no servidor.");
 		this.battleLimits = [
 			{ battleMode: "DM", scoreLimit: 999, timeLimitInSec: 59940 },
 			{ battleMode: "TDM", scoreLimit: 999, timeLimitInSec: 59940 },
@@ -52,57 +64,23 @@ class ProTankiServer {
 			{ battleMode: "CP", scoreLimit: 999, timeLimitInSec: 59940 },
 			{ battleMode: "AS", scoreLimit: 999, timeLimitInSec: 59940 },
 		];
+	}
 
+	initializeEquipmentProperties() {
+		logger.debug("Inicializando propriedades de equipamento.");
 		this.paintProperties = require("../helpers/garage/properties/paint.json");
 		this.armorProperties = require("../helpers/garage/properties/armor.json");
 		this.weaponProperties = require("../helpers/garage/properties/weapon.json");
+	}
 
-		this.garageItems = garageItems.filter((item) => {
-			if (item.category === "paint" && this.paintProperties[item.id]) {
-				const requiredProperties = ["resistances", "preview", "coloring"];
-				const hasAllProperties = requiredProperties.every(
-					(prop) => prop in this.paintProperties[item.id]
-				);
-				if (hasAllProperties) {
-					const properties = this.paintProperties[item.id].resistances;
-					const properts = Object.entries(properties || {}).map(
-						([property, value]) => ({
-							property,
-							value: value.value,
-							subproperties: value.subproperties,
-						})
-					);
-
-					item.baseItemId = this.paintProperties[item.id].preview;
-					item.previewResourceId = this.paintProperties[item.id].preview;
-					item.coloring = this.paintProperties[item.id].coloring;
-					item.properts = properts;
-
-					return true; // Mantém o item na lista
-				} else {
-					return false; // Remove o item da lista
-				}
-			} else if (item.category === "armor" && this.armorProperties[item.id]) {
-				const { object3ds, baseItemId, previewResourceId } =
-					this.armorProperties[item.id][item.modificationID];
-				item.properts = this.PropertiesToArmor(
-					this.armorProperties[item.id][item.modificationID].propers
-				);
-				item.object3ds = object3ds;
-				item.baseItemId = baseItemId;
-				item.previewResourceId = previewResourceId;
-			} else if (item.category === "weapon" && this.weaponProperties[item.id]) {
-				const { object3ds, baseItemId, previewResourceId } =
-					this.weaponProperties[item.id][item.modificationID];
-				item.properts = this.PropertiesToArmor(
-					this.weaponProperties[item.id][item.modificationID].propers
-				);
-				item.object3ds = object3ds;
-				item.baseItemId = baseItemId;
-				item.previewResourceId = previewResourceId;
-			}
-			return true;
-		});
+	initializeGarageProperties() {
+		logger.debug("Inicializando propriedades de garagem.");
+		this.garageItems = this.initializeGarageItems(
+			garageItems,
+			this.paintProperties,
+			this.armorProperties,
+			this.weaponProperties
+		);
 
 		this.garage = {
 			items: this.garageItems,
@@ -110,14 +88,17 @@ class ProTankiServer {
 			delayMountWeaponInSec: 0,
 			delayMountColorInSec: 0,
 		};
+	}
 
-		[
+	initializeRegularBattles() {
+		logger.debug("Inicializando batalhas regulares no servidor.");
+		const battles = [
 			{
 				id: "abcdef0123456789",
 				mode: 0,
-				map: "map_cross",
+				map: "map_island",
 				maxPeople: 20,
-				name: "Cruz DM",
+				name: "Ilha DM",
 				pro: false,
 				minRank: 1,
 				maxRank: 30,
@@ -130,9 +111,9 @@ class ProTankiServer {
 			{
 				id: "abcdef9876543210",
 				mode: 2,
-				map: "map_cross",
+				map: "map_sandbox",
 				maxPeople: 20,
-				name: "Cruz CTF",
+				name: "Caixa de Areia CTF",
 				scoreLimit: 10,
 				pro: false,
 				minRank: 1,
@@ -144,21 +125,87 @@ class ProTankiServer {
 				theme: 0,
 				equip: 3,
 			},
-		].forEach((battle) => {
+		];
+
+		for (let i = 0; i < battles.length; i++) {
+			const battle = battles[i];
 			const nBattle = new ProTankiBattleServer({
 				...battle,
 				server: this,
 			});
 			this.battleList[battle.id] = nBattle;
-		});
-
-		this.getNews();
-
-		logger.debug("Classe do servidor carregada !");
+		}
 	}
 
-	async getNews() {
-		this.newsList = await getNews();
+	initializeGarageItems(
+		garageItems,
+		paintProperties,
+		armorProperties,
+		weaponProperties
+	) {
+		logger.debug("Inicializando itens na garagem.");
+		const requiredPaintProperties = ["resistances", "preview", "coloring"];
+
+		return garageItems.filter((item) => {
+			switch (item.category) {
+				case "paint": {
+					const itemPaintProperties = paintProperties[item.id];
+
+					if (!itemPaintProperties) {
+						return false; // Remove the item from the list
+					}
+
+					const hasAllProperties = requiredPaintProperties.every(
+						(property) => property in itemPaintProperties
+					);
+
+					if (!hasAllProperties) {
+						return false; // Remove the item from the list
+					}
+
+					const resistances = itemPaintProperties.resistances;
+					const properts = Object.entries(resistances || {}).map(
+						([property, value]) => ({
+							property,
+							value: value.value,
+							subproperties: value.subproperties,
+						})
+					);
+
+					item.baseItemId = itemPaintProperties.preview;
+					item.previewResourceId = itemPaintProperties.preview;
+					item.coloring = itemPaintProperties.coloring;
+					item.properts = properts;
+
+					return true; // Keep the item in the list
+				}
+
+				case "armor":
+				case "weapon": {
+					const itemProperties =
+						item.category === "armor"
+							? armorProperties[item.id]
+							: weaponProperties[item.id];
+
+					if (!itemProperties || !itemProperties[item.modificationID]) {
+						return false; // Remove the item from the list
+					}
+
+					const { object3ds, baseItemId, previewResourceId, propers } =
+						itemProperties[item.modificationID];
+
+					item.properts = this.PropertiesToArmor(propers);
+					item.object3ds = object3ds;
+					item.baseItemId = baseItemId;
+					item.previewResourceId = previewResourceId;
+
+					return true; // Keep the item in the list
+				}
+
+				default:
+					return true; // Keep the item in the list
+			}
+		});
 	}
 
 	PropertiesToArmor(originalObject) {
@@ -217,7 +264,7 @@ class ProTankiServer {
 	}
 
 	addClient(client) {
-		if (this.clients.indexOf(client) === -1) {
+		if (!this.clients.includes(client)) {
 			this.clients.push(client);
 		}
 	}

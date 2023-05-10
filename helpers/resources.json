@@ -526,6 +526,15 @@
 		"alpha": true,
 		"type": 10
 	},
+	"68020": {
+		"idhigh": "0",
+		"idlow": 68020,
+		"versionhigh": "0",
+		"versionlow": 2,
+		"lazy": false,
+		"alpha": false,
+		"type": 10
+	},
 	"68065": {
 		"idhigh": "0",
 		"idlow": 68065,
@@ -2321,6 +2330,15 @@
 		"versionlow": 1,
 		"lazy": false,
 		"alpha": true,
+		"type": 10
+	},
+	"180702": {
+		"idhigh": "0",
+		"idlow": 180702,
+		"versionhigh": "0",
+		"versionlow": 2,
+		"lazy": false,
+		"alpha": false,
 		"type": 10
 	},
 	"184125": {
@@ -6546,6 +6564,15 @@
 		"alpha": false,
 		"type": 10
 	},
+	"527828": {
+		"idhigh": "0",
+		"idlow": 527828,
+		"versionhigh": "0",
+		"versionlow": 2,
+		"lazy": false,
+		"alpha": false,
+		"type": 10
+	},
 	"528275": {
 		"idhigh": "0",
 		"idlow": 528275,
@@ -8313,6 +8340,15 @@
 		"lazy": false,
 		"type": 8
 	},
+	"728777": {
+		"idhigh": "0",
+		"idlow": 728777,
+		"versionhigh": "0",
+		"versionlow": 2,
+		"lazy": false,
+		"alpha": false,
+		"type": 10
+	},
 	"729724": {
 		"idhigh": "0",
 		"idlow": 729724,
@@ -8359,6 +8395,15 @@
 		"numFrames": 51,
 		"fps": 30,
 		"type": 11
+	},
+	"732324": {
+		"idhigh": "0",
+		"idlow": 732324,
+		"versionhigh": "0",
+		"versionlow": 2,
+		"lazy": false,
+		"alpha": false,
+		"type": 10
 	},
 	"736437": {
 		"idhigh": "0",
@@ -10618,6 +10663,15 @@
 		"versionhigh": "0",
 		"versionlow": 1,
 		"lazy": true,
+		"alpha": false,
+		"type": 10
+	},
+	"943466": {
+		"idhigh": "0",
+		"idlow": 943466,
+		"versionhigh": "0",
+		"versionlow": 2,
+		"lazy": false,
 		"alpha": false,
 		"type": 10
 	},

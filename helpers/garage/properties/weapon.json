@@ -2070,15 +2070,15 @@
 				],
 				"bcsh": [
 					{
-						"brightness": 9.027,
-						"contrast": -3.54,
+						"brightness": 0,
+						"contrast": 0,
 						"saturation": 0,
 						"hue": 0,
 						"key": "trail"
 					},
 					{
-						"brightness": 9.027,
-						"contrast": -3.54,
+						"brightness": 0,
+						"contrast": 0,
 						"saturation": 0,
 						"hue": 0,
 						"key": "charge"

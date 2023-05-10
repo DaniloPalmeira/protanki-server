@@ -3,7 +3,6 @@ const maps = require("../helpers/map/items.json");
 const weapons = require("../helpers/weapons.json");
 const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");
-const database = require("../helpers/connection");
 const path = require("path");
 const fs = require("fs");
 
@@ -70,6 +69,8 @@ class ProTankiServer {
 		for (const key of items) {
 			if (this.resources.hasOwnProperty(key)) {
 				resources.push(this.resources[key]);
+			} else {
+				logger.error(`${key} não existe no arquivo de resources`);
 			}
 		}
 		return resources;
@@ -146,7 +147,7 @@ class ProTankiServer {
 				withoutSupplies: true,
 				autoBalance: true,
 				parkour: false,
-				theme: 0,
+				theme: 4,
 				equip: 3,
 			},
 		];

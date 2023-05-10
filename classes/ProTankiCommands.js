@@ -68,6 +68,11 @@ module.exports = class {
 				minArgsCount: 0,
 				execute: this.finishExecute,
 			},
+			del: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: this.delExecute,
+			},
 		};
 	}
 
@@ -86,6 +91,12 @@ module.exports = class {
 
 	evalExecute = (command) => {
 		eval(command.combinedArgs);
+	};
+
+	delExecute = (command) => {
+		this.client.user.battle.confirmSelfDestruct(
+			this.client.user.battle.incarnation
+		);
 	};
 
 	takeExecute = (command) => {

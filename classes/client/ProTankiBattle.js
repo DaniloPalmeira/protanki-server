@@ -750,24 +750,26 @@ module.exports = class {
 	}
 
 	selfDestruct() {
-		const packet = new ByteArray();
-		packet.writeUTF(this.client.user.username);
-		packet.writeInt(3000);
 		const incarnation = this.incarnation;
 
 		setTimeout(() => {
-			if (
-				incarnation !== this.incarnation ||
-				this.client.user.battle !== this
-			) {
-				return;
-			}
-			this.incarnation++;
-			this.party.sendPacket(162656882, packet);
-			this.state = "suicide";
-			this.state_null = true;
-			this.dropFlag();
+			this.confirmSelfDestruct(incarnation);
 		}, 10 * 1000);
+	}
+
+	confirmSelfDestruct(incarnation) {
+		if (incarnation !== this.incarnation || this.client.user.battle !== this) {
+			return;
+		}
+		this.incarnation++;
+		this.state = "suicide";
+		this.state_null = true;
+		this.dropFlag();
+
+		const packet = new ByteArray();
+		packet.writeUTF(this.client.user.username);
+		packet.writeInt(3000);
+		this.party.sendPacket(162656882, packet);
 	}
 
 	randInt(min, max) {

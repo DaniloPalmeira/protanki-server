@@ -1,3 +1,4 @@
+const logger = require("../../helpers/logger");
 const {
 	userStatsPacket,
 	tankiParamsPacket,
@@ -89,7 +90,7 @@ module.exports = class {
 			this.team = index !== -1 ? index : 0;
 		} else {
 			this.team = 0;
-			console.log(`O valor recebido não é uma string`);
+			logger.info(`O valor recebido não é uma string`);
 		}
 	}
 
@@ -108,6 +109,59 @@ module.exports = class {
 		users.forEach((user) => {
 			user.client.sendPacket(packetID, packet);
 		});
+	}
+
+	putMine() {
+		const mine = {};
+
+		mine.id = (++this.party.bonusId).toString();
+		mine.owner = this.client.user.username;
+		mine.position = JSON.parse(JSON.stringify(this.position));
+
+		const packet = new ByteArray();
+		packet.writeUTF("mine");
+		packet.writeInt(0);
+		packet.writeBoolean(true);
+		this.sendPacket(2032104949, packet);
+
+		const minePacket = new ByteArray();
+		minePacket.writeUTF(mine.id);
+		minePacket.writeFloat(mine.position.x);
+		minePacket.writeFloat(mine.position.y);
+		minePacket.writeFloat(mine.position.z);
+		minePacket.writeUTF(mine.owner);
+		this.party.sendPacket(272183855, minePacket);
+
+		setTimeout(() => {
+			this.party.mines.push(mine);
+			const _mineNamePacket = new ByteArray();
+			_mineNamePacket.writeUTF(mine.id);
+			this.party.sendPacket(-624217047, _mineNamePacket);
+		}, 3000);
+	}
+
+	tryMineAction() {
+		const mines = this.party.mines;
+		const username = this.client.user.username;
+
+		for (let i = mines.length - 1; i >= 0; i--) {
+			const mine = mines[i];
+			const distanceOfMine = this.calculateDistance(mine.position);
+
+			if (distanceOfMine < 383 && mine.owner != username) {
+				// this.client.command.replySystem(distanceOfMine.toString());
+				// Verifica se o elemento ainda está na lista
+				if (mines.includes(mine)) {
+					mines.splice(i, 1);
+					const packet = new ByteArray();
+					packet.writeUTF(mine.id);
+					packet.writeUTF(username);
+					this.party.sendPacket(1387974401, packet);
+
+					// Remove o elemento da lista de minas
+				}
+			}
+		}
 	}
 
 	resistancesTransform(obj) {
@@ -181,17 +235,12 @@ module.exports = class {
 		}
 		const { turret, hull } = this.equipament;
 		const validEquipment = this.party.validEquips[this.party.equip];
-		// console.log({ validEquipment, turret, hull });
 		if (
 			!this.isSpectator &&
 			validEquipment &&
 			(!validEquipment.turret.includes(turret.id.replace("_xt", "")) ||
 				!validEquipment.hull.includes(hull.id.replace("_xt", "")))
 		) {
-			console.log({
-				t: turret.id.replace("_xt", ""),
-				h: hull.id.replace("_xt", ""),
-			});
 			this.client.user.battle = null;
 			const packet = new ByteArray();
 			packet.writeUTF(this.party.id);
@@ -712,7 +761,6 @@ module.exports = class {
 	}
 
 	updateHealth() {
-		console.log(this.health);
 		const userHealthPacket = new ByteArray();
 		userHealthPacket.writeUTF(this.client.user.username);
 		userHealthPacket.writeFloat(this.health);
@@ -797,7 +845,6 @@ module.exports = class {
 
 		const level = this.equipament.turret.m;
 		const turretName = this.equipament.turret.id.replace("_xt", "");
-		console.log({ turretName, level });
 		const mainDamage = damageList[turretName]?.[level] ?? 0;
 
 		const damageListPacket = new ByteArray();

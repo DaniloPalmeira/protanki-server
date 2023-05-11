@@ -577,6 +577,8 @@ class ProTankiClient {
 			rotateTurretPacket.writeFloat(this.user.battle.angle);
 			rotateTurretPacket.writeByte(this.user.battle.control);
 			this.user.battle.party.sendPacket(1927704181, rotateTurretPacket, this);
+			this.user.battle.tryFlagAction();
+			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_CONTROL_COMMAND) {
 			packet.readInt();
 			const specificationId = packet.readShort();
@@ -588,6 +590,7 @@ class ProTankiClient {
 			controlPacket.writeByte(this.user.battle.control);
 			this.user.battle.party.sendPacket(-301298508, controlPacket, this);
 			this.user.battle.tryFlagAction();
+			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_MOVE_AND_TURRENT_COMMAND) {
 			packet.readInt();
 			packet.readShort(); // specificationId
@@ -637,6 +640,7 @@ class ProTankiClient {
 
 			this.user.battle.turretDirection = packet.readFloat();
 			this.user.battle.tryFlagAction();
+			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_MOVE_COMMAND) {
 			packet.readInt();
 			packet.readShort(); // specificationId
@@ -685,6 +689,7 @@ class ProTankiClient {
 			}
 
 			this.user.battle.tryFlagAction();
+			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_READ_TO_ENABLE) {
 			this.user.battle.enableTanki();
 		} else if (packetID == PKG.BATTLE_RAILGUN_START) {
@@ -726,6 +731,12 @@ class ProTankiClient {
 			}
 		} else if (packetID == -1832611824) {
 			this.user.battle.dropFlag();
+		} else if (packetID == -2102525054) {
+			const suppName = packet.readUTF();
+			if (suppName == "mine") {
+				this.user.battle.putMine();
+			}
+			console.log({ suppName, packet });
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}

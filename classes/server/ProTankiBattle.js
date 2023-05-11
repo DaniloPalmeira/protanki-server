@@ -80,6 +80,8 @@ class ProTankiBattle {
 
 	bonusList = [];
 
+	mines = [];
+
 	ctf = {
 		red: {
 			base: { x: -14250, y: 3750, z: 80 },

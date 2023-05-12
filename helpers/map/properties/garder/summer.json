@@ -1,14 +1,21 @@
 {
-	"mapId": 569718,
-	"dustParticle": 110001,
-	"skybox": "Mountains",
-	"sound_id": 584396,
-	"map_graphic_data": {
-		"lightColor": 13090219,
-		"shadowColor": 5530735,
-		"fogColor": 14545407,
-		"ssaoColor": 3025184,
-		"dustAlpha": 0.75,
-		"dustParticle": "summer"
-	}
+  "mapId": 569718,
+  "dustParticle": 110001,
+  "map_graphic_data": {
+    "lightColor": 13090219,
+    "shadowColor": 5530735,
+    "fogColor": 14545407,
+    "ssaoColor": 3025184,
+    "dustAlpha": 0.75,
+    "dustParticle": "summer"
+  },
+  "resources": [
+    89699,
+    205870,
+    593128,
+    245366,
+    698047,
+    478937,
+    286895
+  ]
 }

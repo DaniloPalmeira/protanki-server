@@ -1,140 +1,19 @@
 {
-	"spawn": {
-		"RED": [
-			{
-				"position": { "x": 2750, "y": -1000, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 0.2619999945163727 }
-			},
-			{
-				"position": { "x": 2750, "y": -500, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 0.2619999945163727 }
-			},
-			{
-				"position": { "x": 2750, "y": 0, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 0.2619999945163727 }
-			},
-			{
-				"position": { "x": 1000, "y": -2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 1.309000015258789 }
-			},
-			{
-				"position": { "x": 2750, "y": -1625, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 1.1339999437332153 }
-			},
-			{
-				"position": { "x": 1500, "y": -2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 0.9599999785423279 }
-			},
-			{
-				"position": { "x": 500, "y": -2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 1.4830000400543213 }
-			},
-			{
-				"position": { "x": 2125, "y": -2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 0.7850000262260437 }
-			}
-		],
-		"BLUE": [
-			{
-				"position": { "x": -500, "y": 2750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 4.363999843597412 }
-			},
-			{
-				"position": { "x": -1625, "y": 2750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 3.8399999141693115 }
-			},
-			{
-				"position": { "x": -2250, "y": 1500, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 3.8389999866485596 }
-			},
-			{
-				"position": { "x": -2250, "y": 2125, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 4.013999938964844 }
-			},
-			{
-				"position": { "x": -2250, "y": 500, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 3.490000009536743 }
-			},
-			{
-				"position": { "x": -1000, "y": 2750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 4.189000129699707 }
-			},
-			{
-				"position": { "x": 0, "y": 2750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 4.014999866485596 }
-			},
-			{
-				"position": { "x": -2250, "y": 1000, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 3.8389999866485596 }
-			}
-		],
-		"NONE": [
-			{
-				"position": { "x": -1750, "y": 1250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": -0.4359999895095825 }
-			},
-			{
-				"position": { "x": 2250, "y": -1750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 2.181999921798706 }
-			},
-			{
-				"position": { "x": -1750, "y": 2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 5.060999870300293 }
-			},
-			{
-				"position": { "x": 1750, "y": -1750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 5.8470001220703125 }
-			},
-			{
-				"position": { "x": 2250, "y": 750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 6.718999862670898 }
-			},
-			{
-				"position": { "x": -250, "y": -2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 0.871999979019165 }
-			},
-			{
-				"position": { "x": 2250, "y": -750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 2.7060000896453857 }
-			},
-			{
-				"position": { "x": -500, "y": -1500, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 }
-			},
-			{
-				"position": { "x": 750, "y": 2750, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 4.013999938964844 }
-			},
-			{
-				"position": { "x": -1250, "y": 2250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 2.7049999237060547 }
-			},
-			{
-				"position": { "x": -1750, "y": -250, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": 3.578000068664551 }
-			},
-			{
-				"position": { "x": 1000, "y": 2000, "z": 200 },
-				"orientation": { "x": 0, "y": 0, "z": -4.7129998207092285 }
-			}
-		]
-	},
-	"map_graphic_data": {
-		"angleX": -1,
-		"angleZ": -0.5,
-		"fogAlpha": 0.25,
-		"farLimit": 10000,
-		"nearLimit": 5000,
-		"gravity": 1000,
-		"skyboxRevolutionSpeed": 0,
-		"dustDensity": 0.15000000596046448,
-		"dustFarDistance": 7000,
-		"dustNearDistance": 5000,
-		"dustSize": 200
-	},
-	"flags": {
-		"red": { "x": 2250, "y": -1750, "z": 80 },
-		"blue": { "x": -1750, "y": 2250, "z": 80 }
-	},
-	"points": {}
+  "spawn": {},
+  "map_graphic_data": {
+    "angleX": -1,
+    "angleZ": -0.5,
+    "fogAlpha": 0.25,
+    "farLimit": 10000,
+    "nearLimit": 5000,
+    "gravity": 1000,
+    "skyboxRevolutionSpeed": 0,
+    "dustDensity": 0.15000000596046448,
+    "dustFarDistance": 7000,
+    "dustNearDistance": 5000,
+    "dustSize": 200
+  },
+  "flags": {},
+  "points": [],
+  "sound_id": 584396
 }

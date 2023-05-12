@@ -1,52 +1,33 @@
 {
-	"mapId": 862349,
-	"dustParticle": 110002,
-	"skybox": {
-		"top": 1929,
-		"front": 274735,
-		"back": 667135,
-		"bottom": 123809,
-		"left": 784146,
-		"right": 804716
-	},
-	"sound_id": 584396,
-	"map_graphic_data": {
-		"angleX": -1,
-		"angleZ": -0.5,
-		"lightColor": 8419955,
-		"shadowColor": 6184542,
-		"fogAlpha": 0.25,
-		"fogColor": 15333375,
-		"farLimit": 10000,
-		"nearLimit": 5000,
-		"gravity": 1000,
-		"skyboxRevolutionSpeed": 0,
-		"ssaoColor": 2374217,
-		"dustAlpha": 0.8999999761581421,
-		"dustDensity": 0.15000000596046448,
-		"dustFarDistance": 7000,
-		"dustNearDistance": 5000,
-		"dustParticle": "winter",
-		"dustSize": 200
-	},
-	"lighting": {
-		"ctfLighting": {
-			"redColor": 16711680,
-			"redColorIntensity": 1,
-			"blueColor": 26367,
-			"blueColorIntensity": 1,
-			"attenuationBegin": 100,
-			"attenuationEnd": 1000
-		},
-		"dominationLighting": {
-			"redPointColor": 16711680,
-			"redPointIntensity": 1,
-			"bluePointColor": 26367,
-			"bluePointIntensity": 1,
-			"neutralPointColor": 16777215,
-			"neutralPointIntensity": 0.7,
-			"attenuationBegin": 100,
-			"attenuationEnd": 1000
-		}
-	}
+  "mapId": 862349,
+  "dustParticle": 110002,
+  "sound_id": 584396,
+  "map_graphic_data": {
+    "lightColor": 8419955,
+    "shadowColor": 6184542,
+    "fogColor": 15333375,
+    "gravity": 1000,
+    "skyboxRevolutionSpeed": 0,
+    "ssaoColor": 2374217,
+    "dustAlpha": 0.8999999761581421,
+    "dustParticle": "winter"
+  },
+  "resources": [
+    404625,
+    397339,
+    597073,
+    143237,
+    675186,
+    652904,
+    63715,
+    795676,
+    886914,
+    618528,
+    663090,
+    316457,
+    802209,
+    863808,
+    105954,
+    311175
+  ]
 }

@@ -46,5 +46,54 @@
 		"bottom": 325968,
 		"left": 233133,
 		"right": 719361
+	},
+	"Urban": {
+		"top": 817818,
+		"front": 458358,
+		"back": 604715,
+		"bottom": 591165,
+		"left": 972735,
+		"right": 796690
+	},
+	"Rio": {
+		"top": 867283,
+		"front": 629457,
+		"back": 338222,
+		"bottom": 536438,
+		"left": 347680,
+		"right": 772608
+	},
+	"Rio Night": {
+		"top": 272756,
+		"front": 429475,
+		"back": 336744,
+		"bottom": 934083,
+		"left": 824898,
+		"right": 521113
+	},
+	"Urban Night": {
+		"top": 226765,
+		"front": 967825,
+		"back": 646439,
+		"bottom": 253969,
+		"left": 312500,
+		"right": 229643
+	},
+
+	"Iran": {
+		"top": 382517,
+		"front": 154237,
+		"back": 713031,
+		"bottom": 140763,
+		"left": 340282,
+		"right": 214316
+	},
+	"Iran Winter": {
+		"top": 83632,
+		"front": 390708,
+		"back": 475018,
+		"bottom": 271597,
+		"left": 931533,
+		"right": 657818
 	}
 }

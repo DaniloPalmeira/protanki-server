@@ -1,8 +1,38 @@
 {
-  "mapId": 0,
-  "dustParticle": 0,
-  "sound_id": 0,
-  "map_graphic_data": {},
-  "skybox": "",
-  "resources": []
+  "mapId": 879013,
+  "dustParticle": 110001,
+  "sound_id": 584398,
+  "map_graphic_data": {
+    "lightColor": 13090219,
+    "shadowColor": 5530735,
+    "fogColor": 10543615,
+    "gravity": 400,
+    "skyboxRevolutionSpeed": 0.015,
+    "ssaoColor": 2045258,
+    "dustAlpha": 0.75,
+    "dustParticle": "summer"
+  },
+  "resources": [
+    205210,
+    421539,
+    668013,
+    962184,
+    728154,
+    169171,
+    894006,
+    426360,
+    761948,
+    837890,
+    590422,
+    768697,
+    344680,
+    257170,
+    698047,
+    994853,
+    842988,
+    479176,
+    286895,
+    308916,
+    644412
+  ]
 }

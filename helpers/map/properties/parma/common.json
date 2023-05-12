@@ -1,18 +1,19 @@
 {
-	"spawn": {
-		"RED": [
-			{
-				"position": {
-					"x": 4286.36279296875,
-					"y": -725.4769897460938,
-					"z": 200
-				},
-				"orientation": { "x": 0, "y": 0, "z": 1.4839999675750732 }
-			},
-			{
-				"position": { "x": 6723.06005859375, "y": -1222.85595703125, "z": 800 },
-				"orientation": { "x": 0, "y": 0, "z": 1.6579999923706055 }
-			}
-		]
-	}
+  "spawn": {},
+  "map_graphic_data": {
+    "angleX": -1,
+    "angleZ": -0.5,
+    "fogAlpha": 0.25,
+    "farLimit": 10000,
+    "nearLimit": 5000,
+    "gravity": 1000,
+    "skyboxRevolutionSpeed": 0,
+    "dustDensity": 0.15000000596046448,
+    "dustFarDistance": 7000,
+    "dustNearDistance": 5000,
+    "dustSize": 200
+  },
+  "flags": {},
+  "points": [],
+  "sound_id": 584396
 }

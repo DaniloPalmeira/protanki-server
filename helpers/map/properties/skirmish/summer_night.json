@@ -1,8 +1,10 @@
 {
-  "mapId": 0,
-  "dustParticle": 0,
-  "sound_id": 0,
-  "map_graphic_data": {},
-  "skybox": "",
+  "map_graphic_data": {
+    "angleZ": -1.899999976158142,
+    "lightColor": 4216936,
+    "shadowColor": 1382169,
+    "fogColor": 68116,
+    "ssaoColor": 2045258
+  },
   "resources": []
 }

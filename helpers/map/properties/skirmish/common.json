@@ -1,6 +1,34 @@
 {
   "spawn": {},
-  "map_graphic_data": {},
+  "map_graphic_data": {
+    "angleX": -1,
+    "fogAlpha": 0.25,
+    "farLimit": 10000,
+    "nearLimit": 5000,
+    "gravity": 1000,
+    "skyboxRevolutionSpeed": 0,
+    "dustAlpha": 0.75,
+    "dustDensity": 0.15000000596046448,
+    "dustFarDistance": 7000,
+    "dustNearDistance": 5000,
+    "dustParticle": "summer",
+    "dustSize": 200
+  },
   "flags": {},
-  "points": []
+  "points": [],
+  "mapId": 214361,
+  "dustParticle": 110001,
+  "sound_id": 584396,
+  "resources": [
+    327137,
+    443222,
+    593128,
+    347383,
+    698047,
+    479176,
+    586915,
+    745712,
+    890995,
+    84460
+  ]
 }

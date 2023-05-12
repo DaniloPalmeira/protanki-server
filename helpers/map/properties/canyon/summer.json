@@ -1,8 +1,29 @@
 {
-  "mapId": 0,
-  "dustParticle": 0,
-  "sound_id": 0,
-  "map_graphic_data": {},
-  "skybox": "",
-  "resources": []
+  "mapId": 375416,
+  "dustParticle": 110001,
+  "map_graphic_data": {
+    "lightColor": 13090219,
+    "shadowColor": 5530735,
+    "fogColor": 14545407,
+    "dustAlpha": 0.75,
+    "dustParticle": "summer"
+  },
+  "resources": [
+    849509,
+    89699,
+    663653,
+    587350,
+    478937,
+    426360,
+    107420,
+    39200,
+    205870,
+    593128,
+    768697,
+    245366,
+    698047,
+    609946,
+    286895,
+    84460
+  ]
 }

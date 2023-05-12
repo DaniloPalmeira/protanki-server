@@ -1,6 +1,6 @@
 const ByteArray = require("../ByteArray");
 const maps = require("../../helpers/map/items.json");
-const mapsSpawn = require("../../helpers/map/properties/spawn.json");
+// const mapsSpawn = require("../../helpers/map/properties/spawn.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
 const getXml = require("../../helpers/proplibsXml");
 const logger = require("../../helpers/logger");
@@ -101,6 +101,8 @@ class ProTankiBattle {
 		Object.assign(this, objData);
 		this.definePreview();
 
+		this.mapName = this.map.replace("map_", "");
+
 		const positionExample = { x: 0, y: 0, z: 1000 };
 
 		const spawnsExample = [
@@ -110,24 +112,55 @@ class ProTankiBattle {
 			},
 		];
 
-		this.spawns = {
-			0: spawnsExample,
-			1: spawnsExample,
-			2: spawnsExample,
-		};
-		Object.assign(this.spawns, mapsSpawn[this.map] ?? {});
-
-		const flagsBase = this.server.flagsBase[this.map] ?? {
-			red: positionExample,
-			blue: positionExample,
+		const spawns = {
+			RED: spawnsExample,
+			BLUE: spawnsExample,
+			NONE: spawnsExample,
 		};
 
-		this.ctf.red.base = flagsBase["red"] ?? positionExample;
-		this.ctf.blue.base = flagsBase["blue"] ?? positionExample;
+		const propLoad = [
+			"lighting",
+			"map_graphic_data",
+			"skybox",
+			"sound_id",
+			"dustParticle",
+			"mapId",
+		];
+		const localInfos = ["spawn", "points", "flags", "resources"];
 
-		this.mapInfos = this.server.mapsBase[this.map]?.[this.themeStr] ?? null;
-		if (this.mapInfos !== null) {
+		this.fullMapInfos =
+			this.server.mapsInfos?.[this.mapName]?.[this.themeStr.toLowerCase()] ??
+			{};
+
+		this.mapInfos = propLoad.reduce((obj, propriedade) => {
+			if (this.fullMapInfos.hasOwnProperty(propriedade)) {
+				obj[propriedade] = this.fullMapInfos[propriedade];
+			}
+			return obj;
+		}, {});
+
+		this.mapInfos.skybox = this.getSkyboxObject(this.mapInfos.skybox);
+		// console.log({ full: this.mapInfos });
+
+		this.params = localInfos.reduce((obj, propriedade) => {
+			if (this.fullMapInfos.hasOwnProperty(propriedade)) {
+				obj[propriedade] = this.fullMapInfos[propriedade];
+			}
+			return obj;
+		}, {});
+		this.params.skybox = this.getSkyboxProperties(this.mapInfos.skybox);
+
+		this.ctf.red.base = this.params.flags?.["red"] ?? positionExample;
+		this.ctf.blue.base = this.params.flags?.["blue"] ?? positionExample;
+
+		// console.log(this.mapInfos);
+		Object.assign(spawns, this.params?.spawn ?? {});
+
+		this.params.spawn = spawns;
+
+		if (this.mapInfos.skybox !== null) {
 			this.mapInfos.minRank = this.minRank;
+			this.mapInfos.active = true;
 			this.mapInfos.maxRank = this.maxRank;
 			this.mapInfos.reArmorEnabled = this.reArmorEnabled;
 			this.mapInfos.map_id = this.map;
@@ -137,7 +170,30 @@ class ProTankiBattle {
 			// this.mapInfos.map_graphic_data.gravity;
 			this.mapInfos.map_graphic_data.mapId = this.map;
 			this.mapInfos.map_graphic_data.mapTheme = this.themeStr;
-			this.getLibraryXML();
+			// this.getLibraryXML();
+			// console.log(this.mapInfos);
+		}
+	}
+
+	getSkyboxObject(skyboxKey) {
+		// Verificar se a chave skybox existe no objeto skybox
+		if (skyboxKey in this.server.mapsInfos.skybox) {
+			// Retornar o objeto skybox correspondente à chave skybox
+			return this.server.mapsInfos.skybox[skyboxKey];
+		} else {
+			// Retornar null se a chave skybox não for encontrada
+			return null;
+		}
+	}
+
+	getSkyboxProperties(skyboxObject) {
+		// Verificar se o objeto skybox foi encontrado
+		if (skyboxObject !== null) {
+			// Retornar um array com os valores das propriedades do skybox
+			return Object.values(skyboxObject);
+		} else {
+			// Retornar null se o objeto skybox não for encontrado
+			return null;
 		}
 	}
 

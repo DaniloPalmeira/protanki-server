@@ -2,6 +2,7 @@
 	"name": "protanki-server",
 	"dependencies": {
 		"@types/sequelize": "^4.28.14",
+		"lodash": "^4.17.21",
 		"sequelize": "^6.29.3",
 		"sqlite3": "^5.1.4",
 		"winston": "^3.8.2",

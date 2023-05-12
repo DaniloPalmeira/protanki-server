@@ -1,0 +1,16 @@
+{
+	"mapId": 655320,
+	"dustParticle": 110001,
+	"skybox": "Space",
+	"sound_id": 584398,
+	"map_graphic_data": {
+		"lightColor": 13090219,
+		"shadowColor": 5530735,
+		"fogColor": 14545407,
+		"gravity": 400,
+		"skyboxRevolutionSpeed": 0.015,
+		"ssaoColor": 3025184,
+		"dustAlpha": 0.75,
+		"dustParticle": "summer"
+	}
+}

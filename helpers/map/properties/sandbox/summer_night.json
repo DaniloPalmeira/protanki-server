@@ -1,0 +1,19 @@
+{
+	"mapId": 336728,
+	"dustParticle": 110001,
+	"sound_id": 584396,
+	"map_graphic_data": {
+		"angleX": -0.6000000238418579,
+		"angleZ": -0.800000011920929,
+		"lightColor": 3163220,
+		"shadowColor": 1382169,
+		"fogColor": 68116,
+		"ssaoColor": 2045258,
+		"dustAlpha": 0.75,
+		"dustParticle": "summer"
+	},
+	"skybox": "Hills Night",
+	"resources": [
+		761948, 768697, 344680, 421539, 698047, 894006, 286895, 644412, 426360
+	]
+}

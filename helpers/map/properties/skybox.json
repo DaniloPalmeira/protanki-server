@@ -1,0 +1,50 @@
+{
+	"Hills": {
+		"top": 45572,
+		"front": 57735,
+		"back": 268412,
+		"bottom": 31494,
+		"left": 927961,
+		"right": 987391
+	},
+	"Hills Night": {
+		"top": 943466,
+		"front": 728777,
+		"back": 180702,
+		"bottom": 732324,
+		"left": 68020,
+		"right": 527828
+	},
+	"Winter": {
+		"top": 1929,
+		"front": 274735,
+		"back": 667135,
+		"bottom": 123809,
+		"left": 784146,
+		"right": 804716
+	},
+	"Mountains": {
+		"top": 345563,
+		"front": 80445,
+		"back": 266699,
+		"bottom": 590300,
+		"left": 616027,
+		"right": 190313
+	},
+	"Space": {
+		"top": 120253,
+		"front": 7352,
+		"back": 255467,
+		"bottom": 329064,
+		"left": 86763,
+		"right": 669522
+	},
+	"Desert": {
+		"top": 618407,
+		"front": 901771,
+		"back": 115550,
+		"bottom": 325968,
+		"left": 233133,
+		"right": 719361
+	}
+}

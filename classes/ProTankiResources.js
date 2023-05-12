@@ -34,6 +34,8 @@ module.exports = class {
 			resources: this.client.server.resourceByIdList(listOfidlow),
 		};
 
+		console.log(callbackID, obj);
+
 		packet.writeObject(obj);
 		packet.writeInt(callbackID);
 

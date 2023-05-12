@@ -567,7 +567,12 @@ class ProTankiClient {
 		} else if (packetID == PKG.BATTLE_READY_TO_SPAWN) {
 			this.user.battle.spawn();
 		} else if (packetID == PKG.BATTLE_TURRENT_COMMAND) {
-			packet.readInt();
+			const clientMS = packet.readInt();
+			if (clientMS + 1 < this.clientMS) {
+				logger.error(`${packetID} ClientMS: ${this.clientMS} ${clientMS}`);
+				return;
+			}
+			this.clientMS = clientMS;
 			this.user.battle.angle = packet.readFloat();
 			const control = packet.readByte();
 			const incarnationId = packet.readShort();
@@ -580,7 +585,12 @@ class ProTankiClient {
 			this.user.battle.tryFlagAction();
 			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_CONTROL_COMMAND) {
-			packet.readInt();
+			const clientMS = packet.readInt();
+			if (clientMS + 1 < this.clientMS) {
+				logger.error(`${packetID} ClientMS: ${this.clientMS} ${clientMS}`);
+				return;
+			}
+			this.clientMS = clientMS;
 			const specificationId = packet.readShort();
 			const control = packet.readByte();
 			this.user.battle.control = control;
@@ -592,7 +602,12 @@ class ProTankiClient {
 			this.user.battle.tryFlagAction();
 			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_MOVE_AND_TURRENT_COMMAND) {
-			packet.readInt();
+			const clientMS = packet.readInt();
+			if (clientMS + 1 < this.clientMS) {
+				logger.error(`${packetID} ClientMS: ${this.clientMS} ${clientMS}`);
+				return;
+			}
+			this.clientMS = clientMS;
 			packet.readShort(); // specificationId
 
 			const nPacket = new ByteArray();
@@ -642,7 +657,12 @@ class ProTankiClient {
 			this.user.battle.tryFlagAction();
 			this.user.battle.tryMineAction();
 		} else if (packetID == PKG.BATTLE_MOVE_COMMAND) {
-			packet.readInt();
+			const clientMS = packet.readInt();
+			if (clientMS + 1 < this.clientMS) {
+				logger.error(`${packetID} ClientMS: ${this.clientMS} ${clientMS}`);
+				return;
+			}
+			this.clientMS = clientMS;
 			packet.readShort(); // specificationId
 
 			const nPacket = new ByteArray();

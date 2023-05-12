@@ -183,7 +183,7 @@ module.exports = class {
 
 	prepareCameraPosition() {
 		if (!this.isSpectator) {
-			const spawnPoints = this.party.spawns[this.team];
+			const spawnPoints = this.party.params.spawn[this.teamStr];
 
 			const spawnPoint =
 				spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
@@ -343,7 +343,7 @@ module.exports = class {
 	}
 
 	loadSkyboxResources() {
-		const resources = Object.values(this.party.mapInfos.skybox).map(
+		const resources = Object.values(this.party.params.skybox).map(
 			(value) => value
 		);
 		this.client.resources.loadByListOfIds(resources, 5);
@@ -354,7 +354,7 @@ module.exports = class {
 	}
 
 	loadLibraryResources() {
-		this.client.resources.loadByListOfIds(this.party.mapLibrary, 4);
+		this.client.resources.loadByListOfIds(this.party.params.resources, 4);
 	}
 
 	mapParams() {
@@ -366,6 +366,7 @@ module.exports = class {
 		mapObject.skybox = JSON.stringify(mapObject.skybox);
 		mapObject.map_graphic_data = JSON.stringify(mapObject.map_graphic_data);
 		mapObject.lighting = JSON.stringify(mapObject.lighting);
+		console.log(mapObject);
 		paramsMap.writeObject(mapObject);
 
 		this.sendPacket(-152638117, paramsMap);

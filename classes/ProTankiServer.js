@@ -5,6 +5,7 @@ const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");
 const path = require("path");
 const fs = require("fs");
+const _ = require("lodash");
 
 const logger = require("../helpers/logger");
 
@@ -25,12 +26,12 @@ class ProTankiServer {
 			ru: require("../helpers/map/i18n/ru.json"),
 		};
 
-		this.mapsBase = require("../helpers/map/properties/infos.json");
-		this.mapsLibrary = require("../helpers/map/properties/resources.json");
+		// this.mapsBase = require("../helpers/map/properties/infos.json");
+		// this.mapsLibrary = require("../helpers/map/properties/resources.json");
 
 		this.resources = require("../helpers/resources.json");
 
-		this.flagsBase = require("../helpers/map/properties/flags.json");
+		// this.flagsBase = require("../helpers/map/properties/flags.json");
 		this.battleList = {};
 		this.captchaLocations = [];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];
@@ -47,11 +48,18 @@ class ProTankiServer {
 			minLength: 5,
 		};
 
+		this.initializeMaps();
 		this.initializeBattleLimits();
 		this.initializeEquipmentProperties();
 		this.initializeGarageProperties();
 		this.initializeRegularBattles();
 		this.initializeNewsList();
+	}
+
+	initializeMaps() {
+		this.mapsInfos = this.readJSONFilesFromDirectory(
+			"../helpers/map/properties"
+		);
 	}
 
 	updateMapLibrary() {
@@ -273,6 +281,82 @@ class ProTankiServer {
 		}
 
 		return transformedObject;
+	}
+
+	readJSONFilesFromDirectory(directoryPath) {
+		const jsonData = {};
+
+		function readFilesRecursively(dir, parentKey, commonData) {
+			const files = fs.readdirSync(dir);
+
+			files.forEach((file) => {
+				const filePath = path.join(dir, file);
+				const fileExtension = path.extname(file);
+
+				if (fs.statSync(filePath).isDirectory()) {
+					const directoryName = path.basename(file);
+					const newKey = parentKey
+						? `${parentKey}.${directoryName}`
+						: directoryName;
+
+					const commonFilePath = path.join(dir, "common.json");
+					if (fs.existsSync(commonFilePath)) {
+						const commonFileContent = fs.readFileSync(commonFilePath, "utf-8");
+						const commonFileData = JSON.parse(commonFileContent);
+						if (parentKey) {
+							commonData[newKey] = _.merge(
+								{},
+								commonData[parentKey],
+								commonFileData
+							);
+						} else {
+							commonData[newKey] = commonFileData;
+						}
+					}
+
+					readFilesRecursively(filePath, newKey, commonData);
+				} else if (fileExtension === ".json") {
+					const fileContent = fs.readFileSync(filePath, "utf-8");
+					const fileData = JSON.parse(fileContent);
+					const fileName = path.basename(file, fileExtension);
+
+					if (parentKey) {
+						if (!jsonData[parentKey]) {
+							jsonData[parentKey] = {};
+						}
+
+						if (fileName === "common") {
+							commonData[parentKey] = _.merge(
+								{},
+								commonData[parentKey],
+								fileData
+							);
+						} else {
+							jsonData[parentKey][fileName] = _.merge(
+								{},
+								commonData[parentKey],
+								fileData
+							);
+						}
+					} else {
+						jsonData[fileName] = fileData;
+					}
+				}
+			});
+
+			if (parentKey && commonData[parentKey]) {
+				delete commonData[parentKey];
+			}
+		}
+
+		const fullDirectoryPath = path.join(__dirname, directoryPath);
+		readFilesRecursively(fullDirectoryPath, null, {});
+
+		if (jsonData.common) {
+			delete jsonData.common;
+		}
+
+		return jsonData;
 	}
 
 	/**

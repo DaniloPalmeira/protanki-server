@@ -1,5 +1,5 @@
 const ProTankiBattleServer = require("./server/ProTankiBattle");
-const maps = require("../helpers/map/items.json");
+const maps = require("../maps/items.json");
 const weapons = require("../helpers/weapons.json");
 const garageItems = require("../helpers/garage/items.json");
 const { getNews } = require("../helpers/db");
@@ -22,17 +22,13 @@ class ProTankiServer {
 		this.weapons = weapons;
 		this.maps = maps;
 		this.mapsNames = {
-			pt_BR: require("../helpers/map/i18n/pt_BR.json"),
-			en: require("../helpers/map/i18n/en.json"),
-			ru: require("../helpers/map/i18n/ru.json"),
+			pt_BR: require("../maps/i18n/pt_BR.json"),
+			en: require("../maps/i18n/en.json"),
+			ru: require("../maps/i18n/ru.json"),
 		};
-
-		// this.mapsBase = require("../helpers/map/properties/infos.json");
-		// this.mapsLibrary = require("../helpers/map/properties/resources.json");
 
 		this.resources = require("../helpers/resources.json");
 
-		// this.flagsBase = require("../helpers/map/properties/flags.json");
 		this.battleList = {};
 		this.captchaLocations = [];
 		this.linksWhiteList = ["http://gtanks-online.com/", "http://vk.com/ebal"];
@@ -58,19 +54,7 @@ class ProTankiServer {
 	}
 
 	initializeMaps() {
-		this.mapsInfos = this.readJSONFilesFromDirectory(
-			"../helpers/map/properties"
-		);
-	}
-
-	updateMapLibrary() {
-		const mapLibraryPath = path.join(
-			__dirname,
-			"../helpers/map/properties/resources.json"
-		);
-		fs.writeFileSync(mapLibraryPath, JSON.stringify(this.mapsLibrary), {
-			flag: "w",
-		});
+		this.mapsInfos = this.readJSONFilesFromDirectory("../maps/properties");
 	}
 
 	resourceByIdList(items) {

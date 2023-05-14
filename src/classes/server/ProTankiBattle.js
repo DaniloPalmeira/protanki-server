@@ -1,10 +1,6 @@
 const ByteArray = require("../ByteArray");
-const maps = require("../../helpers/map/items.json");
-// const mapsSpawn = require("../../helpers/map/properties/spawn.json");
+const maps = require("../../maps/items.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
-const getXml = require("../../helpers/proplibsXml");
-const logger = require("../../helpers/logger");
-const { NONE } = require("sequelize");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
@@ -178,7 +174,6 @@ class ProTankiBattle {
 			// this.mapInfos.map_graphic_data.gravity;
 			this.mapInfos.map_graphic_data.mapId = this.map;
 			this.mapInfos.map_graphic_data.mapTheme = this.themeStr;
-			// this.getLibraryXML();
 		}
 	}
 
@@ -201,28 +196,6 @@ class ProTankiBattle {
 		} else {
 			// Retornar null se o objeto skybox não for encontrado
 			return null;
-		}
-	}
-
-	async getLibraryXML() {
-		this.mapLibrary =
-			this.server.mapsLibrary[this.map]?.[this.themeStr] ?? null;
-		if (
-			this.mapLibrary === null &&
-			this.server.resources[this.mapInfos.mapId]
-		) {
-			this.mapLibrary = await getXml(
-				this.mapInfos.mapId,
-				this.server.resources[this.mapInfos.mapId].versionlow
-			);
-			if (!this.server.mapsLibrary[this.map]) {
-				this.server.mapsLibrary[this.map] = {};
-			}
-			this.server.mapsLibrary[this.map][this.themeStr] = this.mapLibrary;
-			this.server.updateMapLibrary();
-		}
-		if (this.mapLibrary === null) {
-			logger.error(`${this.map} não foi encontrado nas resources !`);
 		}
 	}
 

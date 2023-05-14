@@ -95,6 +95,55 @@ const rewardsPacket = (userRewards) => {
 	return packet;
 };
 
+const buildTankPacket = (client) => {
+	const { user } = client;
+	const { battle } = user;
+	const { hull, turret, paint } = battle.equipament;
+
+	const packet = new ByteArray();
+	const tankiInfos = {
+		battleId: battle.party.id,
+		colormap_id: paint.coloring,
+		hull_id: `${hull.id}_m${hull.m}`,
+		turret_id: `${turret.id}_m${turret.m}`,
+		team_type: battle.teamStr,
+		partsObject: JSON.stringify({
+			engineIdleSound: 386284,
+			engineStartMovingSound: 226985,
+			engineMovingSound: 75329,
+			turretSound: 242699,
+		}),
+		hullResource: hull.object3ds,
+		turretResource: turret.object3ds,
+		sfxData: JSON.stringify(turret.sfxData || {}),
+		position: battle.position,
+		orientation: battle.orientation,
+		incarnation: battle.incarnation,
+		tank_id: user.username,
+		nickname: user.username,
+		state: battle.state,
+		maxSpeed: hull.propers.HULL_SPEED.value,
+		maxTurnSpeed: hull.propers.HULL_TURN_SPEED.value / 57.2957,
+		acceleration: hull.propers.HULL_ACCELERATION.value,
+		reverseAcceleration: 17,
+		sideAcceleration: 24,
+		turnAcceleration: 3.4906585,
+		reverseTurnAcceleration: 6.4577184,
+		mass: hull.propers.HULL_MASS.value,
+		power: hull.propers.HULL_ACCELERATION.value,
+		dampingCoeff: 900,
+		turret_turn_speed: 1.6999506914424771,
+		health: battle.health,
+		rank: user.rank,
+		kickback: 3,
+		turretTurnAcceleration: 1.7599900177110819,
+		impact_force: 7,
+		state_null: battle.state_null,
+	};
+	packet.writeObject(tankiInfos);
+	return packet;
+};
+
 module.exports = {
 	userStatsPacket,
 	usernamePacket,
@@ -103,4 +152,5 @@ module.exports = {
 	vectorPacket,
 	createBonusPacket,
 	rewardsPacket,
+	buildTankPacket,
 };

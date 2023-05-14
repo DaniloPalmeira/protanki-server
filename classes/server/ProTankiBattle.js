@@ -4,6 +4,7 @@ const maps = require("../../helpers/map/items.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
 const getXml = require("../../helpers/proplibsXml");
 const logger = require("../../helpers/logger");
+const { NONE } = require("sequelize");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
@@ -109,14 +110,9 @@ class ProTankiBattle {
 			{
 				position: positionExample,
 				orientation: { x: 0, y: 0, z: 0 },
+				example: true,
 			},
 		];
-
-		const spawns = {
-			RED: spawnsExample,
-			BLUE: spawnsExample,
-			NONE: spawnsExample,
-		};
 
 		const propLoad = [
 			"lighting",
@@ -140,7 +136,6 @@ class ProTankiBattle {
 		}, {});
 
 		this.mapInfos.skybox = this.getSkyboxObject(this.mapInfos.skybox);
-		// console.log({ full: this.mapInfos });
 
 		this.params = localInfos.reduce((obj, propriedade) => {
 			if (this.fullMapInfos.hasOwnProperty(propriedade)) {
@@ -153,10 +148,23 @@ class ProTankiBattle {
 		this.ctf.red.base = this.params.flags?.["red"] ?? positionExample;
 		this.ctf.blue.base = this.params.flags?.["blue"] ?? positionExample;
 
-		// console.log(this.mapInfos);
-		Object.assign(spawns, this.params?.spawn ?? {});
+		this.spawns = {
+			NONE: spawnsExample,
+			RED: spawnsExample,
+			BLUE: spawnsExample,
+		};
 
-		this.params.spawn = spawns;
+		if (Array.isArray(this.params.spawn)) {
+			this.params.spawn.forEach(({ team, modes, position, orientation }) => {
+				if (modes.includes(this.modeStr)) {
+					if (this.spawns[team] == spawnsExample) {
+						this.spawns[team] = [];
+					}
+					const spawn = { position, orientation, modes, team };
+					this.spawns[team].push(spawn);
+				}
+			});
+		}
 
 		if (this.mapInfos.skybox !== null) {
 			this.mapInfos.minRank = this.minRank;
@@ -171,7 +179,6 @@ class ProTankiBattle {
 			this.mapInfos.map_graphic_data.mapId = this.map;
 			this.mapInfos.map_graphic_data.mapTheme = this.themeStr;
 			// this.getLibraryXML();
-			// console.log(this.mapInfos);
 		}
 	}
 

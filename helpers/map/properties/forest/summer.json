@@ -1,6 +1,7 @@
 {
   "mapId": 707606,
   "dustParticle": 110001,
+  "skybox": "Hills",
   "map_graphic_data": {
     "lightColor": 13090219,
     "shadowColor": 5530735,
@@ -10,11 +11,11 @@
     "dustParticle": "summer"
   },
   "resources": [
-    768697,
-    344680,
     698047,
-    479176,
     286895,
-    644412
+    479176,
+    768697,
+    644412,
+    344680
   ]
 }

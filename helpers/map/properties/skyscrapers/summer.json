@@ -1,4 +1,5 @@
 {
+  "skybox": "Urban",
   "map_graphic_data": {
     "gravity": 1000,
     "skyboxRevolutionSpeed": 0,

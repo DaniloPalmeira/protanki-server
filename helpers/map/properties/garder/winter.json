@@ -1,6 +1,7 @@
 {
   "mapId": 26862,
   "dustParticle": 110002,
+  "skybox": "Winter",
   "map_graphic_data": {
     "lightColor": 8419955,
     "shadowColor": 6184542,
@@ -10,12 +11,12 @@
     "dustParticle": "winter"
   },
   "resources": [
-    762902,
-    404625,
-    882130,
+    129718,
     597073,
     380083,
     967254,
-    129718
+    882130,
+    404625,
+    762902
   ]
 }

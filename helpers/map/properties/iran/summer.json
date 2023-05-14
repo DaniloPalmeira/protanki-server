@@ -1,5 +1,6 @@
 {
   "mapId": 708256,
+  "skybox": "Iran",
   "map_graphic_data": {
     "lightColor": 8816262,
     "shadowColor": 4016978,
@@ -8,9 +9,9 @@
     "ssaoColor": 2045258
   },
   "resources": [
-    137788,
-    209939,
     736437,
+    209939,
+    137788,
     46914
   ]
 }

@@ -1,19 +1,353 @@
 {
-  "spawn": {},
-  "map_graphic_data": {
-    "angleX": -1,
-    "angleZ": -0.5,
-    "fogAlpha": 0.25,
-    "farLimit": 10000,
-    "nearLimit": 5000,
-    "gravity": 1000,
-    "skyboxRevolutionSpeed": 0,
-    "dustDensity": 0.15000000596046448,
-    "dustFarDistance": 7000,
-    "dustNearDistance": 5000,
-    "dustSize": 200
-  },
-  "flags": {},
-  "points": [],
-  "sound_id": 584396
+	"spawn": [
+		{
+			"position": { "x": -250, "y": 250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.4839999675750732 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 2250, "y": -250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -3.1419999599456787 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -5187.5, "y": 1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 250, "y": -3750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0.17499999701976776 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -5250, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -6.2829999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 1250, "y": 4750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -3.2290000915527344 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -3187.5, "y": -1750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 5250, "y": -1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -1028.8690185546875, "y": 4777.8828125, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -3.2290000915527344 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 5250, "y": -250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 1750, "y": 750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 3.1419999599456787 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 5687.5, "y": 1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -5125, "y": 4250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 3250, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -6.369999885559082 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -4875, "y": 3250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 1250, "y": 750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -4.800000190734863 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -1750, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -0.08699999749660492 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -4750, "y": 250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -1750, "y": -1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 5750, "y": 4750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 2.618000030517578 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 1750, "y": -1750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0.17499999701976776 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -1250, "y": -3750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0.17499999701976776 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 1250, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0.17499999701976776 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 4250, "y": 1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 3.1419999599456787 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 3687.5, "y": -3250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -4.800000190734863 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -4250, "y": 1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": 5687.5, "y": 3750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.6579999923706055 },
+			"modes": ["DM"],
+			"team": "NONE"
+		},
+		{
+			"position": { "x": -3250, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -5187.5, "y": 1750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0.08699999749660492 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -3250, "y": 1250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -4250, "y": 812.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -3750, "y": -2250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -3750, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -5187.5, "y": -250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -5250, "y": -3250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -4250, "y": 5250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -3250, "y": -2750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -3750, "y": 4750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -5187.5, "y": 750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -3750, "y": 187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -3.1419999599456787 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": -5187.5, "y": 2750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "RED"
+		},
+		{
+			"position": { "x": 4250, "y": 4750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 4750, "y": 5250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 5687.5, "y": 2750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 4750, "y": 250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 2250, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 5250, "y": -2250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -4.800000190734863 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 4250, "y": -4250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 5687.5, "y": 250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 5250, "y": -4250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 2750, "y": -4187.5, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 0.08699999749660492 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 5687.5, "y": -750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 1.6579999923706055 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 3250, "y": -2250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 3.053999900817871 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 3750, "y": 250, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": 3.2290000915527344 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		},
+		{
+			"position": { "x": 3312.5, "y": -1750, "z": 200 },
+			"orientation": { "x": 0, "y": 0, "z": -1.5709999799728394 },
+			"modes": ["TDM", "CTF", "CP"],
+			"team": "BLUE"
+		}
+	],
+	"map_graphic_data": {
+		"angleX": -1,
+		"angleZ": -0.5,
+		"fogAlpha": 0.25,
+		"farLimit": 10000,
+		"nearLimit": 5000,
+		"gravity": 1000,
+		"skyboxRevolutionSpeed": 0,
+		"dustDensity": 0.15000000596046448,
+		"dustFarDistance": 7000,
+		"dustNearDistance": 5000,
+		"dustSize": 200
+	},
+	"flags": {
+		"red": { "x": -4750, "y": -750, "z": 80 },
+		"blue": { "x": 5750, "y": -2750, "z": 80 }
+	},
+	"points": [],
+	"sound_id": 584396
 }

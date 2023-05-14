@@ -1,5 +1,26 @@
 {
-	"spawn": {},
-	"flags": {},
-	"points": []
+  "spawn": {},
+  "map_graphic_data": {
+    "angleX": -1,
+    "angleZ": -0.5,
+    "lightColor": 13090219,
+    "shadowColor": 5530735,
+    "fogAlpha": 0.25,
+    "fogColor": 14545407,
+    "farLimit": 9993,
+    "nearLimit": 5007,
+    "gravity": 1000,
+    "skyboxRevolutionSpeed": 0,
+    "ssaoColor": 3025184,
+    "dustAlpha": 0.75,
+    "dustDensity": 0.15000000596046448,
+    "dustFarDistance": 7000,
+    "dustNearDistance": 5000,
+    "dustParticle": "summer",
+    "dustSize": 200
+  },
+  "flags": {},
+  "points": [],
+  "dustParticle": 110001,
+  "sound_id": 584396
 }

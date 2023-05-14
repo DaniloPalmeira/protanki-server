@@ -1,6 +1,7 @@
 {
   "mapId": 307699,
   "dustParticle": 110001,
+  "skybox": "Mountains",
   "map_graphic_data": {
     "lightColor": 13090219,
     "shadowColor": 5530735,
@@ -10,11 +11,11 @@
     "dustParticle": "summer"
   },
   "resources": [
-    89699,
     593128,
-    245366,
-    698047,
     478937,
-    84460
+    698047,
+    245366,
+    84460,
+    89699
   ]
 }

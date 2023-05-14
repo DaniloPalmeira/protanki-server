@@ -1,5 +1,6 @@
 {
   "mapId": 826788,
+  "skybox": "Iran Winter",
   "map_graphic_data": {
     "lightColor": 8419955,
     "shadowColor": 6184542,
@@ -8,9 +9,9 @@
     "ssaoColor": 2374217
   },
   "resources": [
+    331907,
     552422,
     213102,
-    331907,
     37116
   ]
 }

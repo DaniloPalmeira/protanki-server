@@ -6,6 +6,7 @@ const { getNews } = require("../helpers/db");
 const path = require("path");
 const fs = require("fs");
 const _ = require("lodash");
+const database = require("../helpers/connection");
 
 const logger = require("../helpers/logger");
 
@@ -16,7 +17,7 @@ class ProTankiServer {
 		this.users = {};
 		this.clients = [];
 
-		// database.sync({ alter: true });
+		database.sync({ alter: true });
 
 		this.weapons = weapons;
 		this.maps = maps;
@@ -127,28 +128,13 @@ class ProTankiServer {
 		logger.debug("Inicializando batalhas regulares no servidor.");
 		const battles = [
 			{
-				id: "abcdef0123456789",
-				mode: 0,
-				map: "map_island",
-				maxPeople: 20,
-				name: "Ilha DM",
-				pro: false,
-				minRank: 1,
-				maxRank: 30,
-				reArmorEnabled: true,
-				parkour: false,
-				scoreLimit: 100,
-				theme: 0,
-				equip: 3,
-			},
-			{
 				id: "abcdef9876543210",
 				mode: 2,
 				map: "map_sandbox",
 				maxPeople: 20,
 				name: "Caixa de Areia CTF",
 				scoreLimit: 10,
-				pro: false,
+				pro: true,
 				minRank: 1,
 				maxRank: 30,
 				reArmorEnabled: true,

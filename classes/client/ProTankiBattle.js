@@ -183,10 +183,12 @@ module.exports = class {
 
 	prepareCameraPosition() {
 		if (!this.isSpectator) {
-			const spawnPoints = this.party.params.spawn[this.teamStr];
+			console.log(this.teamStr);
+			const spawnPoints = this.party.spawns[this.teamStr];
 
 			const spawnPoint =
 				spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
+			console.log(spawnPoint);
 
 			this.position = spawnPoint.position;
 			this.orientation = spawnPoint.orientation;

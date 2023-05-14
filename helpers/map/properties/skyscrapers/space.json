@@ -1,4 +1,5 @@
 {
+  "skybox": "Space",
   "map_graphic_data": {
     "gravity": 300,
     "skyboxRevolutionSpeed": 0.015,

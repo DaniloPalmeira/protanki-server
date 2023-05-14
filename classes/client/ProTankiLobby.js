@@ -186,6 +186,21 @@ module.exports = class {
 	mapsList() {
 		// Cria um novo objeto ByteArray
 		const packet = new ByteArray();
+		const maps = this.client.server.maps.map((item) => {
+			if (this.client.user.privLevel != 0) {
+				// se o usuário tiver um nível de privilégio diferente de 0, habilita todos os mapas e define o rank mínimo como 1
+				item.minRank = 1;
+				item.enabled = true;
+			} else if (this.client.user.rank == 1) {
+				// se o usuário tiver um rank igual a 1, desabilita todos os mapas
+				item.enabled = false;
+			}
+			item.mapName =
+				this.client.server.mapsNames[this.client.language]?.[item.mapId] ??
+				`Unnamed - ${item.mapId}`;
+			delete item.props;
+			return item;
+		});
 
 		// Cria um objeto "json" com informações sobre a lista de mapas
 		const json = {
@@ -193,20 +208,8 @@ module.exports = class {
 			battleCreationDisabled:
 				this.client.user.rank == 1 && !this.client.user.privLevel, // define se a criação de batalhas está desabilitada com base no nível de privilégio do usuário e sua posição no ranking
 			battleLimits: this.client.server.battleLimits, // define os limites de pontuação e tempo para cada modo de batalha disponível
-			maps: this.client.server.maps.map((item) => {
-				if (this.client.user.privLevel != 0) {
-					// se o usuário tiver um nível de privilégio diferente de 0, habilita todos os mapas e define o rank mínimo como 1
-					item.minRank = 1;
-					item.enabled = true;
-				} else if (this.client.user.rank == 1) {
-					// se o usuário tiver um rank igual a 1, desabilita todos os mapas
-					item.enabled = false;
-				}
-				item.mapName =
-					this.client.server.mapsNames[this.client.language]?.[item.mapId] ??
-					`Unnamed - ${item.mapId}`;
-				delete item.props;
-				return item;
+			maps: maps.filter((map) => {
+				return map.enabled;
 			}),
 		};
 

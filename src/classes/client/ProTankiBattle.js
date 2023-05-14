@@ -317,8 +317,6 @@ module.exports = class {
 
 		this.loadLibraryResources();
 
-		this.sendPacket(-555602629);
-
 		const doubleInt = new ByteArray();
 		doubleInt.writeInt(0);
 		doubleInt.writeInt(0);

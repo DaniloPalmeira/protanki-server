@@ -145,6 +145,7 @@ class ProTankiClient {
 		packet = decryptPacket(packet, this.encryptionKeys);
 
 		if (packetID == PKG.SET_LANGUAGE) {
+			this.sendPacket(-555602629); // INICIAR PING E EVITAR DESCONEXÃO POR AFK
 			this.setLanguage(packet);
 		} else if (packetID == PKG.INVITE_CODE_VERIFY) {
 			const code = packet.readUTF();
@@ -537,18 +538,19 @@ class ProTankiClient {
 				this.user.battle.joinSpectator();
 			}
 		} else if (packetID == PKG.BATTLE_PING) {
-			if (this.user.battle) {
-				if (this.currentTime) {
-					const doubleInt = new ByteArray();
-					doubleInt.writeInt(new Date() - this.serverTime);
-					doubleInt.writeInt(new Date() - this.currentTime);
-					this.sendPacket(34068208, doubleInt);
-				}
-				setTimeout(() => {
+			if (this.currentTime) {
+				const doubleInt = new ByteArray();
+				doubleInt.writeInt(new Date() - this.serverTime);
+				doubleInt.writeInt(new Date() - this.currentTime);
+				this.sendPacket(34068208, doubleInt);
+			}
+			setTimeout(
+				() => {
 					this.sendPacket(-555602629);
 					this.currentTime = new Date();
-				}, 1000);
-			}
+				},
+				this.user.battle ? 1000 : 2000
+			);
 		} else if (packetID == 268832557) {
 			this.user.battle.updateTankiData();
 		} else if (packetID == PKG.BATTLE_JOIN) {

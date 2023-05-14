@@ -191,9 +191,6 @@ module.exports = class {
 				// se o usuário tiver um nível de privilégio diferente de 0, habilita todos os mapas e define o rank mínimo como 1
 				item.minRank = 1;
 				item.enabled = true;
-			} else if (this.client.user.rank == 1) {
-				// se o usuário tiver um rank igual a 1, desabilita todos os mapas
-				item.enabled = false;
 			}
 			item.mapName =
 				this.client.server.mapsNames[this.client.language]?.[item.mapId] ??

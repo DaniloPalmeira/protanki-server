@@ -142,6 +142,10 @@ module.exports = class {
 	}
 
 	tryMineAction() {
+		if (this.state !== "active") {
+			return;
+		}
+
 		const mines = this.party.mines;
 		const username = this.client.user.username;
 

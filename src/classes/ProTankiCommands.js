@@ -64,17 +64,31 @@ module.exports = class {
 				execute: this.dropExecute,
 			},
 			finish: {
-				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				privilegeLevel: PRIVILEGE_LEVELS.LOW,
 				minArgsCount: 0,
 				execute: this.finishExecute,
 			},
 			del: {
-				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				privilegeLevel: PRIVILEGE_LEVELS.LOW,
 				minArgsCount: 0,
 				execute: this.delExecute,
 			},
+			spect: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: this.spectExecute,
+			},
+			espectador: {
+				privilegeLevel: PRIVILEGE_LEVELS.NONE,
+				minArgsCount: 0,
+				execute: this.spectExecute,
+			},
 		};
 	}
+
+	spectExecute = (command) => {
+		this.client.user.spectator = true;
+	};
 
 	helpExecute = (command) => {
 		Object.keys(this.commands).forEach((cmd) => {

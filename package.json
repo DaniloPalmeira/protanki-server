@@ -10,11 +10,11 @@
 	},
 	"version": "1.0.0",
 	"description": "ProTanki Online - Server",
-	"main": "main.js",
+	"main": "app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node main.js",
-		"dev": "nodemon main.js"
+		"start": "node app.js",
+		"dev": "nodemon app.js"
 	},
 	"keywords": [],
 	"author": "DaniloPalmeira",

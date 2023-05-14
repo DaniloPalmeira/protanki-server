@@ -183,12 +183,10 @@ module.exports = class {
 
 	prepareCameraPosition() {
 		if (!this.isSpectator) {
-			console.log(this.teamStr);
 			const spawnPoints = this.party.spawns[this.teamStr];
 
 			const spawnPoint =
 				spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
-			console.log(spawnPoint);
 
 			this.position = spawnPoint.position;
 			this.orientation = spawnPoint.orientation;
@@ -368,7 +366,6 @@ module.exports = class {
 		mapObject.skybox = JSON.stringify(mapObject.skybox);
 		mapObject.map_graphic_data = JSON.stringify(mapObject.map_graphic_data);
 		mapObject.lighting = JSON.stringify(mapObject.lighting);
-		console.log(mapObject);
 		paramsMap.writeObject(mapObject);
 
 		this.sendPacket(-152638117, paramsMap);

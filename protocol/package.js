@@ -33,7 +33,6 @@ const tankiParamsPacket = (user) => {
 	const { hull } = equipament;
 
 	if (!battle || !username || !equipament || !hull) {
-		console.log({ battle, username, hull });
 		logger.error("tankiParamsPacket: Invalid user object");
 		return null;
 	}

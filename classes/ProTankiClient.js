@@ -562,8 +562,6 @@ class ProTankiClient {
 			const clientMS = packet.readInt();
 			this.clientMS = clientMS;
 			const serverMS = packet.readInt();
-
-			// console.log({ clientMS, serverMS });
 		} else if (packetID == PKG.BATTLE_READY_TO_SPAWN) {
 			this.user.battle.spawn();
 		} else if (packetID == PKG.BATTLE_TURRENT_COMMAND) {
@@ -1322,7 +1320,6 @@ class ProTankiClient {
 		_packet.writeUTF(this.user.username);
 
 		if (Object.keys(staticHitPoint).length > 0) {
-			console.log(staticHitPoint);
 			_packet.writeBoolean(false);
 			_packet.writeFloat(staticHitPoint.x);
 			_packet.writeFloat(staticHitPoint.y);
@@ -1353,15 +1350,6 @@ class ProTankiClient {
 		} else {
 			_packet.writeBoolean(true);
 		}
-
-		// console.log({
-		// 	targets,
-		// 	shorts,
-		// 	staticHitPoint,
-		// 	targetHitPoints,
-		// 	_targetHitPoints,
-		// 	__targetHitPoints,
-		// });
 
 		this.user.battle.party.sendPacket(-369590613, _packet, true);
 

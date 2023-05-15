@@ -277,14 +277,14 @@ module.exports = class {
 
 		let timeMS = 30000;
 		let extraZ = 0;
+
+		const bonusPosition = JSON.parse(JSON.stringify(position));
 		if (argCount == 2) {
 			extraZ = parseInt(args[1]);
 			bonusPosition.z += extraZ;
 		} else {
 			bonusPosition.z += 1000;
 		}
-
-		const bonusPosition = JSON.parse(JSON.stringify(position));
 		const bonusPacket = new ByteArray(
 			createBonusPacket(bonusName, bonusPosition, timeMS)
 		);

@@ -281,7 +281,7 @@ module.exports = class {
 		}
 
 		const bonusPosition = JSON.parse(JSON.stringify(position));
-		bonusPosition.z += 1000;
+		bonusPosition.z += 5000;
 		const bonusPacket = new ByteArray(
 			createBonusPacket(bonusName, bonusPosition, timeMS)
 		);

@@ -129,7 +129,6 @@ class ProTankiServer {
 				reArmorEnabled: true,
 				autoBalance: false,
 				theme: 2,
-				equip: 3,
 				parkour: true,
 			},
 		];

@@ -65,6 +65,35 @@ module.exports = class LobbyChat {
 		this.sendPacket(PKG.LOBBY_CHAT_DELAY, packet);
 	}
 
+	getBattleName(battleId) {
+		return this.client.server.battleList?.[battleId]?.name;
+	}
+
+	insertBattleLink(texto) {
+		const regexAntigo = /#battle\|([^|]+)\|(\w+)/g;
+		const regexNovo = /#\/battle\/(\w+)/g;
+
+		const novoTexto = texto
+			.replace(regexAntigo, (match, nomeDaBatalha, idDaBatalha) => {
+				const novoNomeDaBatalha = this.getBattleName(idDaBatalha);
+				if (novoNomeDaBatalha) {
+					return `#battle|${novoNomeDaBatalha}|${idDaBatalha}`;
+				} else {
+					return match; // Mantém o formato antigo
+				}
+			})
+			.replace(regexNovo, (match, idDaBatalha) => {
+				const nomeDaBatalha = this.getBattleName(idDaBatalha);
+				if (nomeDaBatalha) {
+					return `#battle|${nomeDaBatalha}|${idDaBatalha}`;
+				} else {
+					return match; // Mantém o formato antigo
+				}
+			});
+
+		return novoTexto;
+	}
+
 	async sendMessage(packet) {
 		let local = false;
 		let mensagem = {};
@@ -77,6 +106,8 @@ module.exports = class LobbyChat {
 			mensagem.targetUserStatus = target.userStatus;
 		}
 		mensagem.text = packet.readUTF();
+
+		mensagem.text = this.insertBattleLink(mensagem.text);
 
 		if (mensagem.text.startsWith("/")) {
 			this.client.command.parse(mensagem.text);

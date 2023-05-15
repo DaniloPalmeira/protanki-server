@@ -365,6 +365,8 @@ class ProTankiClient {
 			this.lobbyChat.sendMessage(packet);
 		} else if (packetID == PKG.LOBBY_BATTLE_INFOS) {
 			this.lobby.getBattleInfos(packet);
+		} else if (packetID == -604091695) {
+			this.lobby.getBattleInfos(packet);
 		} else if (packetID == PKG.OPEN_MISSIONS_PANEL) {
 			console.log("Tentanto abrir a tela de missões");
 			const missionsPacket = new ByteArray();

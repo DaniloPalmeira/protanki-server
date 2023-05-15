@@ -118,20 +118,19 @@ class ProTankiServer {
 		const battles = [
 			{
 				id: "abcdef9876543210",
-				mode: 2,
-				map: "map_sandbox",
+				mode: 1,
+				map: "map_silence_moon",
 				maxPeople: 20,
-				name: "Caixa de Areia CTF",
-				scoreLimit: 10,
+				name: "Rank+ | No Kill |",
+				scoreLimit: 0,
 				pro: true,
 				minRank: 1,
 				maxRank: 30,
 				reArmorEnabled: true,
-				withoutSupplies: true,
-				autoBalance: true,
-				parkour: false,
-				theme: 4,
+				autoBalance: false,
+				theme: 2,
 				equip: 3,
+				parkour: true,
 			},
 		];
 

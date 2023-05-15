@@ -1,0 +1,20 @@
+{
+	"1": {
+		"turret_turn_speed": 1.8622663118779497,
+		"turretTurnAcceleration": 3.2210051345555355,
+		"kickback": 0,
+		"impact_force": 0
+	},
+	"2": {
+		"turret_turn_speed": 2.1249383643030963,
+		"turretTurnAcceleration": 3.5533158241352556,
+		"kickback": 0,
+		"impact_force": 0
+	},
+	"3": {
+		"turret_turn_speed": 2.3500858378103646,
+		"turretTurnAcceleration": 3.850021796974292,
+		"kickback": 0,
+		"impact_force": 0
+	}
+}

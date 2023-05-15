@@ -27,12 +27,10 @@ const usernamePacket = (user) => {
 };
 
 const tankiParamsPacket = (user) => {
-	const { username } = user;
-	const { battle } = user;
-	const { equipament, incarnation } = battle;
-	const { hull } = equipament;
+	const { username, battle } = user;
+	const { incarnation, physics } = battle;
 
-	if (!battle || !username || !equipament || !hull) {
+	if (!battle || !username || !physics) {
 		logger.error("tankiParamsPacket: Invalid user object");
 		return null;
 	}
@@ -40,10 +38,10 @@ const tankiParamsPacket = (user) => {
 	const packet = new ByteArray();
 
 	packet.writeUTF(username);
-	packet.writeFloat(hull.propers.HULL_SPEED.value); // maxSpeed
-	packet.writeFloat(hull.propers.HULL_TURN_SPEED.value / 57.2957); // maxTurnSpeed
-	packet.writeFloat(1.6999506950378418); // maxTurretRotationSpeed
-	packet.writeFloat(hull.propers.HULL_ACCELERATION.value); // acceleration
+	packet.writeFloat(physics.hull.maxSpeed); // maxSpeed
+	packet.writeFloat(physics.hull.maxTurnSpeed); // maxTurnSpeed
+	packet.writeFloat(physics.turret.turret_turn_speed); // maxTurretRotationSpeed
+	packet.writeFloat(physics.hull.acceleration); // acceleration
 	packet.writeShort(incarnation); // specificationId
 
 	return packet;
@@ -99,6 +97,7 @@ const buildTankPacket = (client) => {
 	const { user } = client;
 	const { battle } = user;
 	const { hull, turret, paint } = battle.equipament;
+	const physics = battle.physics;
 
 	const packet = new ByteArray();
 	const tankiInfos = {
@@ -122,22 +121,22 @@ const buildTankPacket = (client) => {
 		tank_id: user.username,
 		nickname: user.username,
 		state: battle.state,
-		maxSpeed: hull.propers.HULL_SPEED.value,
-		maxTurnSpeed: hull.propers.HULL_TURN_SPEED.value / 57.2957,
-		acceleration: hull.propers.HULL_ACCELERATION.value,
-		reverseAcceleration: 17,
-		sideAcceleration: 24,
-		turnAcceleration: 3.4906585,
-		reverseTurnAcceleration: 6.4577184,
-		mass: hull.propers.HULL_MASS.value,
-		power: hull.propers.HULL_ACCELERATION.value,
-		dampingCoeff: 900,
-		turret_turn_speed: 1.6999506914424771,
+		maxSpeed: physics.hull.maxSpeed,
+		maxTurnSpeed: physics.hull.maxTurnSpeed,
+		acceleration: physics.hull.acceleration,
+		reverseAcceleration: physics.hull.reverseAcceleration,
+		sideAcceleration: physics.hull.sideAcceleration,
+		turnAcceleration: physics.hull.turnAcceleration,
+		reverseTurnAcceleration: physics.hull.reverseTurnAcceleration,
+		mass: physics.hull.mass,
+		power: physics.hull.power,
+		dampingCoeff: physics.hull.dampingCoeff,
+		turret_turn_speed: physics.turret.turret_turn_speed,
 		health: battle.health,
 		rank: user.rank,
-		kickback: 3,
-		turretTurnAcceleration: 1.7599900177110819,
-		impact_force: 7,
+		kickback: physics.turret.kickback,
+		turretTurnAcceleration: physics.turret.turretTurnAcceleration,
+		impact_force: physics.turret.impact_force,
 		state_null: battle.state_null,
 	};
 	packet.writeObject(tankiInfos);

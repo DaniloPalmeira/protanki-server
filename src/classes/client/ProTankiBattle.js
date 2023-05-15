@@ -43,23 +43,24 @@ module.exports = class {
 
 	constructor(client) {
 		this.client = client;
+		this.server = client.server;
 
 		const { armor, weapon, paint } = this.client.user.garage;
 		const paintProps = {
-			...this.client.server.paintProperties[paint.equiped],
+			...this.server.paintProperties[paint.equiped],
 			id: paint.equiped,
 		};
 
 		this.equipament = {
 			hull: {
-				...this.client.server.armorProperties[armor.equiped][
+				...this.server.armorProperties[armor.equiped][
 					armor[armor.equiped].m.toString()
 				],
 				id: armor.equiped,
 				m: armor[armor.equiped].m,
 			},
 			turret: {
-				...this.client.server.weaponProperties[weapon.equiped][
+				...this.server.weaponProperties[weapon.equiped][
 					weapon[weapon.equiped].m.toString()
 				],
 				id: weapon.equiped,
@@ -76,6 +77,21 @@ module.exports = class {
 
 		this.healthTotal = this.equipament.hull.propers.HULL_ARMOR.value;
 		this.healthPart = 10000 / this.healthTotal;
+
+		this.physics = {
+			hull: JSON.parse(
+				JSON.stringify(
+					this.server.physics[this.equipament.hull.id][this.equipament.hull.m]
+				)
+			),
+			turret: JSON.parse(
+				JSON.stringify(
+					this.server.physics[this.equipament.turret.id][
+						this.equipament.turret.m
+					]
+				)
+			),
+		};
 
 		this.party = client.user.selectedBattle;
 		this.party.removeViewer(client);
@@ -207,7 +223,7 @@ module.exports = class {
 	weaponsInfos() {
 		var packet = new ByteArray();
 
-		packet.writeObject(this.client.server.weapons);
+		packet.writeObject(this.server.weapons);
 
 		this.sendPacket(-2124388778, packet);
 	}
@@ -307,7 +323,7 @@ module.exports = class {
 		notifierDataPacketBase.writeBoolean(this.party.pro);
 		notifierDataPacketBase.writeInt(this.party.maxRank);
 		notifierDataPacketBase.writeInt(this.party.minRank);
-		notifierDataPacketBase.writeInt(this.client.server.id);
+		notifierDataPacketBase.writeInt(this.server.id);
 		this.party.clients.forEach((_client) => {
 			const notifierDataPacket = new ByteArray();
 			notifierDataPacket.write(notifierDataPacketBase.buffer);
@@ -780,6 +796,9 @@ module.exports = class {
 	}
 
 	damage(targetsUsers, incarnations) {
+		if (this.state !== "active") {
+			return;
+		}
 		const damagePacket = new ByteArray();
 
 		const damageList = {

@@ -1,0 +1,50 @@
+{
+	"0": {
+		"maxSpeed": 4.4,
+		"maxTurnSpeed": 0.9424778,
+		"acceleration": 11.31,
+		"reverseAcceleration": 8.9,
+		"sideAcceleration": 18.81,
+		"turnAcceleration": 1.4210471,
+		"reverseTurnAcceleration": 2.9503045,
+		"mass": 4262,
+		"power": 11.31,
+		"dampingCoeff": 2000
+	},
+	"1": {
+		"maxSpeed": 4.6,
+		"maxTurnSpeed": 1.118756,
+		"acceleration": 12.74,
+		"reverseAcceleration": 10.11,
+		"sideAcceleration": 21.22,
+		"turnAcceleration": 1.5472344,
+		"reverseTurnAcceleration": 3.1604424,
+		"mass": 4743,
+		"power": 12.74,
+		"dampingCoeff": 2000
+	},
+	"2": {
+		"maxSpeed": 4.9,
+		"maxTurnSpeed": 1.2950343,
+		"acceleration": 14.18,
+		"reverseAcceleration": 11.31,
+		"sideAcceleration": 23.62,
+		"turnAcceleration": 1.6732472,
+		"reverseTurnAcceleration": 3.3705797,
+		"mass": 5225,
+		"power": 14.18,
+		"dampingCoeff": 2000
+	},
+	"3": {
+		"maxSpeed": 5,
+		"maxTurnSpeed": 1.3962634,
+		"acceleration": 15,
+		"reverseAcceleration": 12,
+		"sideAcceleration": 25,
+		"turnAcceleration": 1.7453293,
+		"reverseTurnAcceleration": 3.4906585,
+		"mass": 5500,
+		"power": 15,
+		"dampingCoeff": 2000
+	}
+}

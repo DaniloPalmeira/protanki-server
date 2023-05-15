@@ -1,0 +1,26 @@
+{
+	"0": {
+		"turret_turn_speed": 1.5940092058464213,
+		"turretTurnAcceleration": 1.3535028349216025,
+		"kickback": 1.5581,
+		"impact_force": 1.6425
+	},
+	"1": {
+		"turret_turn_speed": 1.9230037698473523,
+		"turretTurnAcceleration": 1.7488199104983182,
+		"kickback": 1.7299,
+		"impact_force": 1.9371
+	},
+	"2": {
+		"turret_turn_speed": 2.2519983338482836,
+		"turretTurnAcceleration": 2.144311519000233,
+		"kickback": 1.918,
+		"impact_force": 2.2317
+	},
+	"3": {
+		"turret_turn_speed": 2.4399702942880728,
+		"turretTurnAcceleration": 2.3701571242083,
+		"kickback": 2,
+		"impact_force": 2.4
+	}
+}

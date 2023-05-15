@@ -51,10 +51,15 @@ class ProTankiServer {
 		this.initializeGarageProperties();
 		this.initializeRegularBattles();
 		this.initializeNewsList();
+		this.initializePhysics();
 	}
 
 	initializeMaps() {
 		this.mapsInfos = this.readJSONFilesFromDirectory("../maps/properties");
+	}
+
+	initializePhysics() {
+		this.physics = this.readJSONFilesFromDirectory("../helpers/garage/physics");
 	}
 
 	resourceByIdList(items) {

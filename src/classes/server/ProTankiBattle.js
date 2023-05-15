@@ -81,16 +81,18 @@ class ProTankiBattle {
 
 	ctf = {
 		red: {
-			base: { x: -14250, y: 3750, z: 80 },
+			base: {},
 			flag: {},
 			holder: null,
 			lastAction: new Date(),
+			action: "",
 		},
 		blue: {
-			base: { x: -23250, y: -5250, z: 80 },
+			base: {},
 			flag: {},
 			holder: null,
 			lastAction: new Date(),
+			action: "",
 		},
 	};
 

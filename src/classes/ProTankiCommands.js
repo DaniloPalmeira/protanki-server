@@ -276,12 +276,13 @@ module.exports = class {
 		party.bonusList.push(bonusName);
 
 		let timeMS = 30000;
+		let extraZ = 0;
 		if (argCount == 2) {
-			timeMS = parseInt(args[1]);
+			extraZ = parseInt(args[1]);
 		}
 
 		const bonusPosition = JSON.parse(JSON.stringify(position));
-		bonusPosition.z += 5000;
+		bonusPosition.z += 1000 + extraZ;
 		const bonusPacket = new ByteArray(
 			createBonusPacket(bonusName, bonusPosition, timeMS)
 		);

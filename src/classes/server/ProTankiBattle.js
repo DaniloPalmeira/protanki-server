@@ -66,8 +66,8 @@ class ProTankiBattle {
 	preview = 0;
 	viewers = [];
 	fund = 0;
-
 	bonusId = 0;
+	autoReturnFlagMS = 20000;
 
 	usersBlue = [];
 	usersRed = [];
@@ -76,7 +76,6 @@ class ProTankiBattle {
 	score = {};
 
 	bonusList = [];
-
 	mines = [];
 
 	ctf = {
@@ -85,14 +84,12 @@ class ProTankiBattle {
 			flag: {},
 			holder: null,
 			lastAction: new Date(),
-			action: "",
 		},
 		blue: {
 			base: {},
 			flag: {},
 			holder: null,
 			lastAction: new Date(),
-			action: "",
 		},
 	};
 
@@ -532,25 +529,32 @@ class ProTankiBattle {
 	}
 
 	resetFlags() {
-		this.ctf.blue.flag = {};
-		this.ctf.red.flag = {};
+		this.confirmAutoReturnFlag("red");
+		this.confirmAutoReturnFlag("blue");
+	}
 
-		if (this.ctf.red.flag.x || this.ctf.red.holder) {
-			let packet = new ByteArray();
-			packet.writeInt(0);
-			packet.writeUTF(null);
-			this.sendPacket(-1026428589, packet);
+	autoReturnFlag(flagColor, lastAction) {
+		setTimeout(() => {
+			this.confirmAutoReturnFlag(flagColor, lastAction);
+		}, this.autoReturnFlagMS);
+	}
+
+	confirmAutoReturnFlag(flagColor, lastAction = null) {
+		const flagId = flagColor === "red" ? 0 : 1;
+		if (lastAction && this.ctf[flagColor].lastAction !== lastAction) {
+			return;
 		}
 
-		if (this.ctf.blue.flag.x || this.ctf.blue.holder) {
+		if (this.ctf[flagColor].flag.x || this.ctf[flagColor].holder) {
 			let packet = new ByteArray();
-			packet.writeInt(1);
+			packet.writeInt(flagId);
 			packet.writeUTF(null);
 			this.sendPacket(-1026428589, packet);
-		}
 
-		this.ctf.blue.holder = null;
-		this.ctf.red.holder = null;
+			this.ctf[flagColor].flag = {};
+			this.ctf[flagColor].holder = null;
+			this.ctf[flagColor].lastAction = new Date();
+		}
 	}
 
 	resetUserStat() {

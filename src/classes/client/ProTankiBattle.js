@@ -598,7 +598,9 @@ module.exports = class {
 			return;
 		}
 
-		ctf[enemyTeamName].lastAction = new Date();
+		const now = new Date();
+
+		ctf[enemyTeamName].lastAction = now;
 		ctf[enemyTeamName].holder = null;
 		ctf[enemyTeamName].flag = flag;
 
@@ -606,6 +608,7 @@ module.exports = class {
 		packet.writeInt(this.team === 1 ? 0 : 1);
 
 		this.party.sendPacket(1925237062, packet);
+		this.party.autoReturnFlag(enemyTeamName, now);
 	}
 
 	tryCaptureFlag() {

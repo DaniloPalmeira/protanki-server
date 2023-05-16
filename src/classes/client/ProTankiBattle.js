@@ -750,9 +750,20 @@ module.exports = class {
 		prepareTankiPacket.writePacket(vectorPacket(this.orientation));
 		prepareTankiPacket.writeShort(this.health); // health
 		prepareTankiPacket.writeShort(this.incarnation); // incarnationId
-		this.party.sendPacket(875259457, prepareTankiPacket);
 		this.state = "newcome";
 		this.state_null = false;
+		setTimeout(() => {
+			this.confirmSpawn(prepareTankiPacket);
+		}, 2000);
+	}
+
+	confirmSpawn(packet) {
+		if (this.client.user.battle === this) {
+			this.party.sendPacket(875259457, packet);
+			return;
+		}
+		this.state = "suicide";
+		this.state_null = true;
 	}
 
 	movePacket() {

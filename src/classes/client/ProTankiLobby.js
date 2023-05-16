@@ -186,7 +186,7 @@ module.exports = class {
 	mapsList() {
 		// Cria um novo objeto ByteArray
 		const packet = new ByteArray();
-		const maps = this.client.server.maps
+		const maps = JSON.parse(JSON.stringify(this.client.server.maps))
 			.map((item) => {
 				if (this.client.user.privLevel != 0) {
 					// se o usuário tiver um nível de privilégio diferente de 0, habilita todos os mapas e define o rank mínimo como 1

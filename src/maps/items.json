@@ -1280,7 +1280,7 @@
 		"theme": "WINTER"
 	},
 	{
-		"enabled": false,
+		"enabled": true,
 		"mapId": "map_silence_moon",
 		"maxPeople": 20,
 		"preview": 952789,

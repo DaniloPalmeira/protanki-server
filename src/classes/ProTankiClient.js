@@ -797,8 +797,8 @@ class ProTankiClient {
 			nPacket.writeUTF(this.user.username);
 			nPacket.writeUTF(target);
 			nPacket.writeVector(hitPoint);
-			nPacket.writeFloat(0);
-			nPacket.writeBoolean(true);
+			nPacket.writeFloat(1);
+			nPacket.writeBoolean(false);
 
 			this.user.battle.party.sendPacket(-1334002026, nPacket);
 		}

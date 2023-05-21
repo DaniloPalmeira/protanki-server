@@ -1,12 +1,22 @@
 const ByteArray = require("../ByteArray");
 const maps = require("../../maps/items.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
+const { Vector3 } = require("three");
 
 function removerItem(lista, item) {
 	let index = lista.indexOf(item);
 	if (index !== -1) {
 		lista.splice(index, 1);
 	}
+}
+
+function newVector(obj) {
+	if (!obj) {
+		return new Vector3(0, 0, 0);
+	}
+
+	var { x, y, z } = obj;
+	return new Vector3(x, y, z);
 }
 
 class ProTankiBattle {
@@ -80,14 +90,14 @@ class ProTankiBattle {
 
 	ctf = {
 		red: {
-			base: {},
-			flag: {},
+			base: new Vector3(),
+			flag: new Vector3(),
 			holder: null,
 			lastAction: new Date(),
 		},
 		blue: {
-			base: {},
-			flag: {},
+			base: new Vector3(),
+			flag: new Vector3(),
 			holder: null,
 			lastAction: new Date(),
 		},
@@ -99,12 +109,12 @@ class ProTankiBattle {
 
 		this.mapName = this.map.replace("map_", "");
 
-		const positionExample = { x: 0, y: 0, z: 1000 };
+		const positionExample = new Vector3(0, 0, 1000);
 
 		const spawnsExample = [
 			{
 				position: positionExample,
-				orientation: { x: 0, y: 0, z: 0 },
+				orientation: new Vector3(),
 				example: true,
 			},
 		];
@@ -140,8 +150,8 @@ class ProTankiBattle {
 		}, {});
 		this.params.skybox = this.getSkyboxProperties(this.mapInfos.skybox);
 
-		this.ctf.red.base = this.params.flags?.["red"] ?? positionExample;
-		this.ctf.blue.base = this.params.flags?.["blue"] ?? positionExample;
+		this.ctf.red.base = newVector(this.params.flags?.["red"]);
+		this.ctf.blue.base = newVector(this.params.flags?.["blue"]);
 
 		this.spawns = {
 			NONE: spawnsExample,
@@ -551,7 +561,8 @@ class ProTankiBattle {
 			packet.writeUTF(null);
 			this.sendPacket(-1026428589, packet);
 
-			this.ctf[flagColor].flag = {};
+			console.log(this.ctf[flagColor].flag instanceof Vector3);
+			this.ctf[flagColor].flag.set(0, 0, 0);
 			this.ctf[flagColor].holder = null;
 			this.ctf[flagColor].lastAction = new Date();
 		}

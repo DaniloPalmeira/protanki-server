@@ -140,12 +140,18 @@ class ProTankiClient {
 		var packetLen = packet.readInt();
 		var packetID = packet.readInt();
 
-		logger.debug(`Pacote recebido no ID: ${packetID}`);
+		if (
+			![1484572481, 2074243318, -114968993, 329279865, -1683279062].includes(
+				packetID
+			)
+		) {
+			logger.debug(`Pacote recebido no ID: ${packetID}`);
+		}
 
 		packet = decryptPacket(packet, this.encryptionKeys);
 
 		if (packetID == PKG.SET_LANGUAGE) {
-			this.sendPacket(-555602629); // INICIAR PING E EVITAR DESCONEXÃO POR AFK
+			this.sendPacket(PKG.PING); // INICIAR PING E EVITAR DESCONEXÃO POR AFK
 			this.setLanguage(packet);
 		} else if (packetID == PKG.INVITE_CODE_VERIFY) {
 			const code = packet.readUTF();
@@ -539,7 +545,7 @@ class ProTankiClient {
 				this.user.battle = new ProTankiBattle(this);
 				this.user.battle.joinSpectator();
 			}
-		} else if (packetID == PKG.BATTLE_PING) {
+		} else if (packetID == PKG.PONG) {
 			if (this.currentTime) {
 				const doubleInt = new ByteArray();
 				doubleInt.writeInt(new Date() - this.serverTime);
@@ -548,7 +554,7 @@ class ProTankiClient {
 			}
 			setTimeout(
 				() => {
-					this.sendPacket(-555602629);
+					this.sendPacket(PKG.PING);
 					this.currentTime = new Date();
 				},
 				this.user.battle ? 1000 : 2000
@@ -619,40 +625,40 @@ class ProTankiClient {
 
 			let empty = packet.readBoolean(); // angularVelocity
 			if (!empty) {
-				this.user.battle.angularVelocity = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.angularVelocity.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			this.user.battle.control = packet.readByte(); // control
 
 			empty = packet.readBoolean(); // linearVelocity
 			if (!empty) {
-				this.user.battle.linearVelocity = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.linearVelocity.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			empty = packet.readBoolean(); // orientation
 			if (!empty) {
-				this.user.battle.orientation = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.orientation.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			empty = packet.readBoolean(); // position
 			if (!empty) {
-				this.user.battle.position = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.position.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			this.user.battle.turretDirection = packet.readFloat();
@@ -674,40 +680,40 @@ class ProTankiClient {
 
 			let empty = packet.readBoolean(); // angularVelocity
 			if (!empty) {
-				this.user.battle.angularVelocity = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.angularVelocity.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			this.user.battle.control = packet.readByte(); // control
 
 			empty = packet.readBoolean(); // linearVelocity
 			if (!empty) {
-				this.user.battle.linearVelocity = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.linearVelocity.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			empty = packet.readBoolean(); // orientation
 			if (!empty) {
-				this.user.battle.orientation = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.orientation.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			empty = packet.readBoolean(); // position
 			if (!empty) {
-				this.user.battle.position = {
-					x: packet.readFloat(),
-					y: packet.readFloat(),
-					z: packet.readFloat(),
-				};
+				this.user.battle.position.set(
+					packet.readFloat(),
+					packet.readFloat(),
+					packet.readFloat()
+				);
 			}
 
 			this.user.battle.tryFlagAction();
@@ -759,6 +765,77 @@ class ProTankiClient {
 				this.user.battle.putMine();
 			}
 			console.log({ suppName, packet });
+		}
+		// SMOKY - FUMEGANTE
+		// // TIRO FORA
+		else if (packetID === 1478921140) {
+			const clientMS = packet.readInt();
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			this.user.battle.party.sendPacket(-1032328347, nPacket);
+		}
+		// // TIRO NA PAREDE
+		else if (packetID == 1470597926) {
+			const clientMS = packet.readInt();
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.writePacket(packet);
+			this.user.battle.party.sendPacket(546849203, nPacket);
+		}
+		// // TIRO NO PLAYER
+		else if (packetID === 229267683) {
+			const clientMS = packet.readInt();
+			const target = packet.readUTF();
+			const targetIncarnation = packet.readShort();
+			const targetPosition = packet.readVector();
+			const hitPoint = packet.readVector();
+			const sourcePosition = packet.readVector();
+			console.log({ targetPosition, hitPoint, sourcePosition });
+			console.log(packet);
+
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.writeUTF(target);
+			nPacket.writeVector(hitPoint);
+			nPacket.writeFloat(0);
+			nPacket.writeBoolean(true);
+
+			this.user.battle.party.sendPacket(-1334002026, nPacket);
+		}
+		// END - FIM \\ SMOKY - FUMEGANTE
+
+		// THUNDER - TROVAO
+		// // TIRO FORA
+		else if (packetID === -136344740) {
+			const clientMS = packet.readInt();
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			this.user.battle.party.sendPacket(958509220, nPacket);
+		}
+		// // TIRO NA PAREDE
+		else if (packetID === 1501310158) {
+			const clientMS = packet.readInt();
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			const hitVector = packet.readVector();
+			nPacket.writeVector(hitVector);
+			console.log(hitVector);
+			this.user.battle.party.sendPacket(1690491826, nPacket);
+		}
+		// // TIRO NO PLAYER
+		else if (packetID === 259979915) {
+			const clientMS = packet.readInt();
+			const relativeHitPoint = packet.readVector();
+			const targetID = packet.readUTF();
+			const targetIncarnation = packet.readShort();
+			const pos1 = packet.readVector();
+			const pos2 = packet.readVector();
+			console.log({ desconhecido: { pos1, pos2 } });
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.writeUTF(targetID);
+			nPacket.writeVector(relativeHitPoint);
+			this.user.battle.party.sendPacket(-190359403, nPacket);
 		} else {
 			console.warn("Adicionar:", packetID, packet);
 		}
@@ -929,7 +1006,7 @@ class ProTankiClient {
 
 			this.setLoginSocialButtons();
 			this.initCaptchaPositions();
-			this.resources.loadByJSON(mainResources, 1);
+			this.resources.loadByListOfIds(mainResources, 1);
 		}
 	}
 
@@ -1324,10 +1401,7 @@ class ProTankiClient {
 		_packet.writeUTF(this.user.username);
 
 		if (Object.keys(staticHitPoint).length > 0) {
-			_packet.writeBoolean(false);
-			_packet.writeFloat(staticHitPoint.x);
-			_packet.writeFloat(staticHitPoint.y);
-			_packet.writeFloat(staticHitPoint.z);
+			_packet.writeVector(staticHitPoint);
 		} else {
 			_packet.writeBoolean(true);
 		}
@@ -1346,10 +1420,7 @@ class ProTankiClient {
 			_packet.writeBoolean(false);
 			_packet.writeInt(targetHitPoints.length);
 			targetHitPoints.forEach((targetHitPoint) => {
-				_packet.writeBoolean(false);
-				_packet.writeFloat(targetHitPoint.x);
-				_packet.writeFloat(targetHitPoint.y);
-				_packet.writeFloat(targetHitPoint.z);
+				_packet.writeVector(targetHitPoint);
 			});
 		} else {
 			_packet.writeBoolean(true);

@@ -1,3 +1,4 @@
+const { Vector3 } = require("three");
 const logger = require("../helpers/logger");
 
 class ByteArray {
@@ -204,6 +205,21 @@ class ByteArray {
 
 	readBoolean() {
 		return this.readByte() !== 0;
+	}
+
+	readVector() {
+		const vector = new Vector3();
+		if (!this.readBoolean()) {
+			vector.set(this.readFloat(), this.readFloat(), this.readFloat());
+		}
+		return vector;
+	}
+
+	writeVector(vector) {
+		return this.writeBoolean(false)
+			.writeFloat(vector.x)
+			.writeFloat(vector.y)
+			.writeFloat(vector.z);
 	}
 
 	bytesAvailable() {

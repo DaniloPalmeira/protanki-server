@@ -62,10 +62,7 @@ const vectorPacket = (coord, optional = false) => {
 		return packet;
 	}
 
-	packet.writeBoolean(false);
-	packet.writeFloat(coord?.x ?? 0);
-	packet.writeFloat(coord?.y ?? 0);
-	packet.writeFloat(coord?.z ?? 0);
+	packet.writeVector(coord);
 
 	return packet;
 };

@@ -1,3 +1,5 @@
+const { Vector3 } = require("three");
+
 const logger = require("../../helpers/logger");
 const {
 	userStatsPacket,
@@ -7,6 +9,10 @@ const {
 	buildTankPacket,
 } = require("../../protocol/package");
 const ByteArray = require("../ByteArray");
+
+function isVectorEmpty(vector) {
+	return vector.x === 0 && vector.y === 0 && vector.z === 0;
+}
 
 module.exports = class {
 	score = 0;
@@ -28,10 +34,10 @@ module.exports = class {
 		2: "NONE",
 	};
 
-	position = { x: -22763.44140625, y: 2887.464111328125, z: 200 };
-	orientation = { x: 0, y: 0, z: -6.2829999923706055 };
-	angularVelocity = { x: 0, y: 0, z: 0 };
-	linearVelocity = { x: 0, y: 0, z: 0 };
+	position = new Vector3();
+	orientation = new Vector3();
+	angularVelocity = new Vector3();
+	linearVelocity = new Vector3();
 
 	control = 0;
 	angle = 0;
@@ -133,7 +139,7 @@ module.exports = class {
 
 		mine.id = (++this.party.bonusId).toString();
 		mine.owner = this.client.user.username;
-		mine.position = JSON.parse(JSON.stringify(this.position));
+		mine.position = this.position.clone();
 
 		const packet = new ByteArray();
 		packet.writeUTF("mine");
@@ -167,7 +173,7 @@ module.exports = class {
 
 		for (let i = mines.length - 1; i >= 0; i--) {
 			const mine = mines[i];
-			const distanceOfMine = this.calculateDistance(mine.position);
+			const distanceOfMine = mine.position.distanceTo(this.position);
 
 			if (distanceOfMine < 383 && mine.owner != username) {
 				// this.client.command.replySystem(distanceOfMine.toString());
@@ -209,8 +215,16 @@ module.exports = class {
 			const spawnPoint =
 				spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
 
-			this.position = spawnPoint.position;
-			this.orientation = spawnPoint.orientation;
+			this.position.set(
+				spawnPoint.position.x,
+				spawnPoint.position.y,
+				spawnPoint.position.z
+			);
+			this.orientation.set(
+				spawnPoint.orientation.x,
+				spawnPoint.orientation.y,
+				spawnPoint.orientation.z
+			);
 
 			const packet = new ByteArray(
 				cameraPacket(this.position, this.orientation)
@@ -569,8 +583,8 @@ module.exports = class {
 			return;
 		}
 
-		const flagPosition = flag.x ? flag : base;
-		const distance = this.calculateDistance(flagPosition);
+		const flagPosition = isVectorEmpty(flag) ? base : flag;
+		const distance = this.position.distanceTo(flagPosition);
 
 		if (distance > 300) {
 			return;
@@ -602,7 +616,7 @@ module.exports = class {
 
 		ctf[enemyTeamName].lastAction = now;
 		ctf[enemyTeamName].holder = null;
-		ctf[enemyTeamName].flag = flag;
+		Object.assign(ctf[enemyTeamName].flag, flag);
 
 		const packet = new ByteArray(vectorPacket(flag));
 		packet.writeInt(this.team === 1 ? 0 : 1);
@@ -626,7 +640,7 @@ module.exports = class {
 			return;
 		}
 
-		const distance = this.calculateDistance(base);
+		const distance = this.position.distanceTo(base);
 		if (distance > 300) {
 			return;
 		}
@@ -638,7 +652,7 @@ module.exports = class {
 		this.party.sendPacket(-1870108387, packet);
 
 		ctf[enemyTeam].holder = null;
-		ctf[enemyTeam].flag = {};
+		ctf[enemyTeam].flag.set(0, 0, 0);
 		this.increaseTeamScore(1);
 	}
 
@@ -667,11 +681,11 @@ module.exports = class {
 		const enemyTeam = this.team == 1 ? "red" : "blue";
 		const { holder, flag } = ctf[myTeam];
 
-		if (party.mode !== 2 || holder || !flag.x) {
+		if (party.mode !== 2 || holder || isVectorEmpty(flag)) {
 			return;
 		}
 
-		const distance = this.calculateDistance(flag);
+		const distance = this.position.distanceTo(flag);
 		if (distance > 300) {
 			return;
 		}
@@ -683,7 +697,7 @@ module.exports = class {
 		// this.sendPacket(-1870108387, packet);
 
 		ctf[myTeam].holder = null;
-		ctf[myTeam].flag = {};
+		ctf[myTeam].flag.set(0, 0, 0);
 
 		const packet = new ByteArray();
 		packet.writeInt(this.team);
@@ -964,18 +978,5 @@ module.exports = class {
 		this.state = "active";
 		tankiPacket.writeUTF(this.client.user.username);
 		this.party.sendPacket(1868573511, tankiPacket);
-	}
-
-	calculateDistance(otherPoint = {}) {
-		otherPoint = otherPoint || {};
-
-		const { x: x1, y: y1, z: z1 } = this.position;
-		const { x: x2 = 0, y: y2 = 0, z: z2 = 0 } = otherPoint;
-
-		const distance = Math.sqrt(
-			Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2)
-		);
-
-		return distance;
 	}
 };

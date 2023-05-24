@@ -222,7 +222,7 @@ class ByteArray {
 			.writeFloat(vector.z);
 	}
 
-	bytesAvailable() {
+	get bytesAvailable() {
 		return this.buffer.length;
 	}
 

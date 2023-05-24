@@ -121,7 +121,7 @@ class ProTankiClient {
 		}
 
 		const packetLen = this.rawDataReceived.packetLength();
-		const bytesAvailable = this.rawDataReceived.bytesAvailable();
+		const bytesAvailable = this.rawDataReceived.bytesAvailable;
 
 		if (bytesAvailable < packetLen) {
 			return;
@@ -878,8 +878,45 @@ class ProTankiClient {
 		}
 
 		// END - FIM // MARTELO - HAMMER
-		else {
-			console.warn("Adicionar:", packetID, packet);
+
+		// TWINS - GEMEOS
+		// // TIRO SAI DO TAMBOR
+		else if (packetID === -159686980) {
+			const clientMS = packet.readInt();
+			const barrel = packet.readByte();
+			const shotId = packet.readInt();
+			const shotDirection = packet.readVector();
+
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.writeByte(barrel);
+			nPacket.writeInt(shotId);
+			nPacket.writeVector(shotDirection);
+			this.user.battle.party.sendPacket(-44282936, nPacket);
+		}
+		// // TIRO PEGA NA PAREDE
+		else if (packetID === -482023661) {
+			const clientMS = packet.readInt();
+			const shotId = packet.readInt();
+			const hitPoint = packet.readVector();
+		}
+		// // TIRO PEGA NO PLAYER
+		else if (packetID === -1723353904) {
+			const clientMS = packet.readInt();
+			const shotId = packet.readInt();
+			const target = packet.readUTF();
+			const pos1 = packet.readVector();
+			const pos2 = packet.readVector();
+		}
+		// // ALTERNA TAMBOR
+		else if (packetID === -1805942142) {
+			const clientMS = packet.readInt();
+			const barrel = packet.readByte();
+		}
+		// END - FIM // TWINS - GEMEOS
+
+		if (packet.bytesAvailable) {
+			console.warn("Verificar:", packetID, packet);
 		}
 	}
 

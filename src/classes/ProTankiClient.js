@@ -836,7 +836,49 @@ class ProTankiClient {
 			nPacket.writeUTF(targetID);
 			nPacket.writeVector(relativeHitPoint);
 			this.user.battle.party.sendPacket(-190359403, nPacket);
-		} else {
+		}
+		// END - FIM // THUNDER - TROVAO
+
+		// RICOCHET - RICOCHETE
+		// // TIRO
+		else if (packetID === -1907971330) {
+			const clientMS = packet.readInt();
+			const shotId = packet.readInt();
+			const shotDirectionX = packet.readShort();
+			const shotDirectionY = packet.readShort();
+			const shotDirectionZ = packet.readShort();
+			const nPacket = new ByteArray();
+			nPacket.writeUTF(this.user.username);
+			nPacket.writeShort(shotDirectionX);
+			nPacket.writeShort(shotDirectionY);
+			nPacket.writeShort(shotDirectionZ);
+			this.user.battle.party.sendPacket(-118119523, nPacket);
+		}
+		// // TIRO PEGOU ALGUÉM
+		else if (packetID === 1229701582) {
+			const clientMS = packet.readInt();
+			const targetID = packet.readUTF();
+			const shotId = packet.readInt();
+			const vector = packet.readVector();
+			const empty = packet.readBoolean();
+			const hitPoints = [];
+			if (!empty) {
+				const length = packet.readInt();
+				for (let index = 0; index < length; index++) {
+					const element = packet.readVector();
+					hitPoints.push(element);
+				}
+			}
+			console.log({ targetID, vector, hitPoints });
+		}
+		// END - FIM // RICOCHET
+
+		// MARTELO - HAMMER
+		else if (packetID === -541655881) {
+		}
+
+		// END - FIM // MARTELO - HAMMER
+		else {
 			console.warn("Adicionar:", packetID, packet);
 		}
 	}

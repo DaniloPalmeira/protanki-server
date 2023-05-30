@@ -1689,14 +1689,14 @@
 				],
 				"bcsh": [
 					{
-						"brightness": 0,
+						"brightness": 100,
 						"contrast": 0,
 						"saturation": 0,
 						"hue": 0,
 						"key": "trail"
 					},
 					{
-						"brightness": 0,
+						"brightness": 100,
 						"contrast": 0,
 						"saturation": 0,
 						"hue": 0,
@@ -1816,17 +1816,17 @@
 				],
 				"bcsh": [
 					{
-						"brightness": 10.155,
-						"contrast": -2.655,
-						"saturation": 61.947,
-						"hue": 344.07,
+						"brightness": 100,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
 						"key": "trail"
 					},
 					{
-						"brightness": 10.155,
-						"contrast": -2.655,
-						"saturation": 44.248,
-						"hue": 340.88,
+						"brightness": 100,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
 						"key": "charge"
 					}
 				]
@@ -1943,17 +1943,17 @@
 				],
 				"bcsh": [
 					{
-						"brightness": 7.898,
-						"contrast": -2.655,
-						"saturation": 35.398,
-						"hue": 78.05,
+						"brightness": 100,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
 						"key": "trail"
 					},
 					{
-						"brightness": 7.898,
-						"contrast": -2.655,
-						"saturation": 35.398,
-						"hue": 78.05,
+						"brightness": 100,
+						"contrast": 0,
+						"saturation": 0,
+						"hue": 0,
 						"key": "charge"
 					}
 				]
@@ -2070,14 +2070,14 @@
 				],
 				"bcsh": [
 					{
-						"brightness": 0,
+						"brightness": 100,
 						"contrast": 0,
 						"saturation": 0,
 						"hue": 0,
 						"key": "trail"
 					},
 					{
-						"brightness": 0,
+						"brightness": 100,
 						"contrast": 0,
 						"saturation": 0,
 						"hue": 0,

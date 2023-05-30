@@ -60,7 +60,7 @@
 		"theme": "WINTER"
 	},
 	{
-		"enabled": false,
+		"enabled": true,
 		"mapId": "map_stadium",
 		"maxPeople": 20,
 		"preview": 331140,
@@ -70,7 +70,7 @@
 		"theme": "SUMMER"
 	},
 	{
-		"enabled": false,
+		"enabled": true,
 		"mapId": "map_stadium",
 		"maxPeople": 20,
 		"preview": 22385,
@@ -80,7 +80,7 @@
 		"theme": "WINTER"
 	},
 	{
-		"enabled": false,
+		"enabled": true,
 		"mapId": "map_stadium",
 		"maxPeople": 20,
 		"preview": 196847,

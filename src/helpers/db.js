@@ -50,6 +50,7 @@ const getUserByEmail = async (email) => {
  */
 const getNews = async () => {
 	try {
+		await news.sync();
 		const _news = await news.findAll();
 		logger.debug(
 			"Obtido uma lista a partir da tabela 'news' do banco de dados"

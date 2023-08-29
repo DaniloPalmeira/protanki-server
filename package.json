@@ -1,21 +1,22 @@
 {
-	"name": "protanki-server",
-	"dependencies": {
-		"@types/sequelize": "^4.28.14",
-		"sequelize": "^6.29.3",
-		"sqlite3": "^5.1.4",
-		"three": "^0.152.2",
-		"winston": "^3.8.2"
-	},
-	"version": "1.0.0",
-	"description": "ProTanki Online - Server",
-	"main": "app.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node app.js",
-		"dev": "nodemon app.js"
-	},
-	"keywords": [],
-	"author": "DaniloPalmeira",
-	"license": "ISC"
+  "name": "protanki-server",
+  "dependencies": {
+    "@types/sequelize": "^4.28.14",
+    "nodemon": "^3.0.1",
+    "sequelize": "^6.29.3",
+    "sqlite3": "^5.1.4",
+    "three": "^0.152.2",
+    "winston": "^3.8.2"
+  },
+  "version": "1.0.0",
+  "description": "ProTanki Online - Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "DaniloPalmeira",
+  "license": "ISC"
 }

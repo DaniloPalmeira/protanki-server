@@ -10,8 +10,8 @@ const logger = require("./logger");
  * @returns {Promise<Object>} - O usuário encontrado ou nulo
  */
 const getUserById = async (id) => {
-	const _user = await user.findByPk(id);
-	return _user?.dataValues ?? null;
+  const _user = await user.findByPk(id);
+  return _user?.dataValues ?? null;
 };
 
 /**
@@ -20,13 +20,13 @@ const getUserById = async (id) => {
  * @returns {Promise<Object>} - O usuário encontrado ou nulo
  */
 const getUserByUsername = async (username) => {
-	const _user = await user.findOne({
-		where: Sequelize.where(
-			Sequelize.fn("lower", Sequelize.col("username")),
-			Sequelize.fn("lower", username)
-		),
-	});
-	return _user?.dataValues ?? null;
+  const _user = await user.findOne({
+    where: Sequelize.where(
+      Sequelize.fn("lower", Sequelize.col("username")),
+      Sequelize.fn("lower", username)
+    ),
+  });
+  return _user?.dataValues ?? null;
 };
 
 /**
@@ -35,13 +35,13 @@ const getUserByUsername = async (username) => {
  * @returns {Promise<Object>} - O usuário encontrado ou nulo
  */
 const getUserByEmail = async (email) => {
-	const _user = await user.findOne({
-		where: Sequelize.where(
-			Sequelize.fn("lower", Sequelize.col("email")),
-			Sequelize.fn("lower", email)
-		),
-	});
-	return _user?.dataValues ?? null;
+  const _user = await user.findOne({
+    where: Sequelize.where(
+      Sequelize.fn("lower", Sequelize.col("email")),
+      Sequelize.fn("lower", email)
+    ),
+  });
+  return _user?.dataValues ?? null;
 };
 
 /**
@@ -49,16 +49,18 @@ const getUserByEmail = async (email) => {
  * @returns {Promise<Array>} - Uma Promise contendo um array de objetos que representam cada registro encontrado (apenas dataValues) ou um array vazio se não houver registros ou se ocorrer um erro
  */
 const getNews = async () => {
-	try {
-		const _news = await news.findAll();
-		logger.debug(
-			"Obtido uma lista a partir da tabela 'news' do banco de dados"
-		);
-		return _news ? _news.map((n) => n.dataValues) : [];
-	} catch (error) {
-		logger.error(`Erro ao buscar os registros da tabela 'news': ${error}`);
-		return [];
-	}
+  try {
+    const _news = await news.findAll();
+    logger.debug(
+      "Obtido uma lista a partir da tabela 'news' do banco de dados"
+    );
+    return _news ? _news.map((n) => n.dataValues) : [];
+  } catch (error) {
+    logger.warn(
+      `Base de dados 'news' não encontrada, ignore este aviso se for a primeira vez executando o servidor !`
+    );
+    return [];
+  }
 };
 
 /**
@@ -68,12 +70,12 @@ const getNews = async () => {
  * @returns {Promise<void>}
  */
 const setUserNewsID = async (lastNews, id) => {
-	const options = {
-		news: lastNews,
-	};
-	await user.update(options, {
-		where: { uid: id },
-	});
+  const options = {
+    news: lastNews,
+  };
+  await user.update(options, {
+    where: { uid: id },
+  });
 };
 
 /**
@@ -83,12 +85,12 @@ const setUserNewsID = async (lastNews, id) => {
  * @returns {Promise<void>}
  */
 const updateCrystal = async (crystal, id) => {
-	const options = {
-		crystal,
-	};
-	await user.update(options, {
-		where: { uid: id },
-	});
+  const options = {
+    crystal,
+  };
+  await user.update(options, {
+    where: { uid: id },
+  });
 };
 
 /**
@@ -98,12 +100,12 @@ const updateCrystal = async (crystal, id) => {
  * @returns {Promise<void>}
  */
 const updateExperience = async (experience, id) => {
-	const options = {
-		experience,
-	};
-	await user.update(options, {
-		where: { uid: id },
-	});
+  const options = {
+    experience,
+  };
+  await user.update(options, {
+    where: { uid: id },
+  });
 };
 
 /**
@@ -112,23 +114,23 @@ const updateExperience = async (experience, id) => {
  * @returns {Promise<Object>} - Os amigos encontrados ou um objeto vazio se não houver amigos
  */
 const getFriendsOrCreateByID = async (id) => {
-	const [_friends] = await friends.findOrCreate({
-		where: { uid: id },
-		defaults: { uid: id },
-	});
-	const ObjFriends = {};
-	const keys = [
-		"friendsAccepted",
-		"friendsAcceptedNew",
-		"friendsIncoming",
-		"friendsIncomingNew",
-		"friendsOutgoing",
-	];
-	keys.forEach((key) => {
-		ObjFriends[key] = JSON.parse(_friends[key] ?? "[]");
-	});
-	logger.debug(`Lista de amigos obtida para o usuário com ID ${id}`);
-	return ObjFriends;
+  const [_friends] = await friends.findOrCreate({
+    where: { uid: id },
+    defaults: { uid: id },
+  });
+  const ObjFriends = {};
+  const keys = [
+    "friendsAccepted",
+    "friendsAcceptedNew",
+    "friendsIncoming",
+    "friendsIncomingNew",
+    "friendsOutgoing",
+  ];
+  keys.forEach((key) => {
+    ObjFriends[key] = JSON.parse(_friends[key] ?? "[]");
+  });
+  logger.debug(`Lista de amigos obtida para o usuário com ID ${id}`);
+  return ObjFriends;
 };
 
 /**
@@ -139,13 +141,13 @@ const getFriendsOrCreateByID = async (id) => {
  * @returns {Promise<void>}
  */
 const updateFriends = async (keys, friendsObj, id) => {
-	const options = {};
-	keys.forEach((key) => {
-		options[key] = JSON.stringify(friendsObj[key] ?? []);
-	});
-	await friends.update(options, {
-		where: { uid: id },
-	});
+  const options = {};
+  keys.forEach((key) => {
+    options[key] = JSON.stringify(friendsObj[key] ?? []);
+  });
+  await friends.update(options, {
+    where: { uid: id },
+  });
 };
 
 /**
@@ -155,17 +157,17 @@ const updateFriends = async (keys, friendsObj, id) => {
  * @returns {Promise<Object>} - O usuário criado
  */
 const createAccount = async (username, password) => {
-	return await user.create({ username, password });
+  return await user.create({ username, password });
 };
 module.exports = {
-	getUserById,
-	getUserByUsername,
-	getUserByEmail,
-	getFriendsOrCreateByID,
-	getNews,
-	setUserNewsID,
-	updateFriends,
-	createAccount,
-	updateCrystal,
-	updateExperience,
+  getUserById,
+  getUserByUsername,
+  getUserByEmail,
+  getFriendsOrCreateByID,
+  getNews,
+  setUserNewsID,
+  updateFriends,
+  createAccount,
+  updateCrystal,
+  updateExperience,
 };

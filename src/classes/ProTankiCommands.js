@@ -174,35 +174,36 @@ module.exports = class {
       const rankLoopEnd = newRank;
       const loopDirection = oldRank < newRank ? 1 : -1;
 
-      let finalRank;
-      if (loopDirection > 0) {
-        finalRank = rankLoopEnd - loopDirection;
-      } else {
-        finalRank = rankLoopEnd + loopDirection;
-      }
+      for (let i = rankLoopStart; i !== rankLoopEnd; i += loopDirection) {
+        let ObjInfos = user.getDataByRank(i + loopDirection);
+        let ObjInfosOld = user.getDataByRank(i);
+        const userDataInfos = new ByteArray();
+        userDataInfos.writeInt(i + loopDirection);
+        userDataInfos.writeInt(
+          i + loopDirection != newRank
+            ? ObjInfos.nextRankScore - 1
+            : user.experience
+        );
+        userDataInfos.writeInt(ObjInfos.currentRankScore);
+        userDataInfos.writeInt(ObjInfos.nextRankScore);
+        userDataInfos.writeInt(ObjInfos.bonusCrystals);
 
-      let ObjInfos = user.getDataByRank(finalRank + loopDirection);
-      let ObjInfosOld = user.getDataByRank(finalRank);
-      const userDataInfos = new ByteArray();
-      userDataInfos.writeInt(finalRank + loopDirection);
-      userDataInfos.writeInt(
-        finalRank + loopDirection != newRank
-          ? ObjInfos.nextRankScore - 1
-          : user.experience
-      );
-      userDataInfos.writeInt(ObjInfos.currentRankScore);
-      userDataInfos.writeInt(ObjInfos.nextRankScore);
-      userDataInfos.writeInt(ObjInfos.bonusCrystals);
+        if (i < i + loopDirection) {
+          user.crystal += ObjInfos.bonusCrystals;
+        } else {
+          user.crystal -= ObjInfosOld.bonusCrystals;
+        }
+        if (user.crystal < 0) {
+          user.crystal = 0;
+        }
 
-      if (finalRank < finalRank + loopDirection) {
-        user.crystal += ObjInfos.bonusCrystals;
-      } else {
-        user.crystal -= ObjInfosOld.bonusCrystals;
+        if (
+          (loopDirection > 0 && i + loopDirection >= rankLoopEnd) ||
+          (loopDirection < 0 && i + loopDirection <= rankLoopEnd)
+        ) {
+          this.sendPacket(1989173907, userDataInfos);
+        }
       }
-      if (user.crystal < 0) {
-        user.crystal = 0;
-      }
-      this.sendPacket(1989173907, userDataInfos);
 
       const crysPacket = new ByteArray();
       crysPacket.writeInt(user.crystal);
@@ -233,35 +234,36 @@ module.exports = class {
       const rankLoopEnd = newRank;
       const loopDirection = oldRank < newRank ? 1 : -1;
 
-      let finalRank;
-      if (loopDirection > 0) {
-        finalRank = rankLoopEnd - loopDirection;
-      } else {
-        finalRank = rankLoopEnd + loopDirection;
-      }
+      for (let i = rankLoopStart; i !== rankLoopEnd; i += loopDirection) {
+        let ObjInfos = user.getDataByRank(i + loopDirection);
+        let ObjInfosOld = user.getDataByRank(i);
+        const userDataInfos = new ByteArray();
+        userDataInfos.writeInt(i + loopDirection);
+        userDataInfos.writeInt(
+          i + loopDirection != newRank
+            ? ObjInfos.nextRankScore - 1
+            : user.experience
+        );
+        userDataInfos.writeInt(ObjInfos.currentRankScore);
+        userDataInfos.writeInt(ObjInfos.nextRankScore);
+        userDataInfos.writeInt(ObjInfos.bonusCrystals);
 
-      let ObjInfos = user.getDataByRank(finalRank + loopDirection);
-      let ObjInfosOld = user.getDataByRank(finalRank);
-      const userDataInfos = new ByteArray();
-      userDataInfos.writeInt(finalRank + loopDirection);
-      userDataInfos.writeInt(
-        finalRank + loopDirection != newRank
-          ? ObjInfos.nextRankScore - 1
-          : user.experience
-      );
-      userDataInfos.writeInt(ObjInfos.currentRankScore);
-      userDataInfos.writeInt(ObjInfos.nextRankScore);
-      userDataInfos.writeInt(ObjInfos.bonusCrystals);
+        if (i < i + loopDirection) {
+          user.crystal += ObjInfos.bonusCrystals;
+        } else {
+          user.crystal -= ObjInfosOld.bonusCrystals;
+        }
+        if (user.crystal < 0) {
+          user.crystal = 0;
+        }
 
-      if (finalRank < finalRank + loopDirection) {
-        user.crystal += ObjInfos.bonusCrystals;
-      } else {
-        user.crystal -= ObjInfosOld.bonusCrystals;
+        if (
+          (loopDirection > 0 && i + loopDirection >= rankLoopEnd) ||
+          (loopDirection < 0 && i + loopDirection <= rankLoopEnd)
+        ) {
+          this.sendPacket(1989173907, userDataInfos);
+        }
       }
-      if (user.crystal < 0) {
-        user.crystal = 0;
-      }
-      this.sendPacket(1989173907, userDataInfos);
 
       const crysPacket = new ByteArray();
       crysPacket.writeInt(user.crystal);

@@ -74,12 +74,12 @@ module.exports = class {
         execute: this.delExecute,
       },
       spect: {
-        privilegeLevel: PRIVILEGE_LEVELS.LOW,
+        privilegeLevel: PRIVILEGE_LEVELS.NONE,
         minArgsCount: 0,
         execute: this.spectExecute,
       },
       espectador: {
-        privilegeLevel: PRIVILEGE_LEVELS.LOW,
+        privilegeLevel: PRIVILEGE_LEVELS.NONE,
         minArgsCount: 0,
         execute: this.spectExecute,
       },

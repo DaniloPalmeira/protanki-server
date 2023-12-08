@@ -3,7 +3,6 @@ const { createLogger, transports, format } = require("winston");
 // Obtendo o nível de log do argumento da linha de comando, se disponível.
 // Caso contrário, use 'info' como padrão.
 const logLevel = process.argv[2] || "warn";
-console.log(logLevel);
 
 const logger = createLogger({
   transports: [

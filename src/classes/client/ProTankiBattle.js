@@ -418,10 +418,6 @@ module.exports = class {
   }
 
   StatisticsModel() {
-    console.log({
-      timeLimitInSec: this.party.timeLimitInSec,
-      timeLeftInSec: this.party.timeLeftInSec,
-    });
     const SMPacket = new ByteArray();
     SMPacket.writeInt(this.party.modeInt);
     SMPacket.writeInt(this.party.equipInt);

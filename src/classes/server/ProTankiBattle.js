@@ -2,6 +2,7 @@ const ByteArray = require("../ByteArray");
 const maps = require("../../maps/items.json");
 const { rewardsPacket, userStatsPacket } = require("../../protocol/package");
 const { Vector3 } = require("three");
+const { v4: uuidv4 } = require("uuid");
 
 function removerItem(lista, item) {
   let index = lista.indexOf(item);
@@ -87,6 +88,9 @@ class ProTankiBattle {
 
   bonusList = [];
   mines = [];
+
+  startTime = null;
+  session = false;
 
   ctf = {
     red: {
@@ -206,6 +210,17 @@ class ProTankiBattle {
       // Retornar null se o objeto skybox não for encontrado
       return null;
     }
+  }
+
+  get timeLeftInSec() {
+    if (this.timeLimitInSec === 0 || !this.startTime) {
+      return 0;
+    }
+
+    const nowTime = new Date();
+    const runningTime = (nowTime - this.startTime) / 1000;
+    const timeLeft = this.timeLimitInSec - runningTime;
+    return timeLeft;
   }
 
   get userListByTeam() {
@@ -407,7 +422,7 @@ class ProTankiBattle {
       minRank: this.minRank,
       maxRank: this.maxRank,
       proBattleEnterPrice: this.proBattleEnterPrice,
-      timeLeftInSec: -1677704464,
+      timeLeftInSec: this.timeLeftInSec,
       proBattleTimeLeftInSec: -1,
       equipmentConstraintsMode: this.equipStr,
       userPaidNoSuppliesBattle: false, // tem o cartão batalha pro ?
@@ -493,7 +508,34 @@ class ProTankiBattle {
     return userListTeam;
   }
 
+  startBattleTime() {
+    if (!this.startTime) {
+      this.startTime = new Date();
+      this.finishBattleByTime();
+    }
+  }
+
+  finishBattleByTime() {
+    var session = uuidv4();
+    this.session = session;
+    if (this.timeLimitInSec > 0) {
+      setTimeout(() => {
+        if (session === this.session) {
+          this.finish();
+        }
+      }, this.timeLimitInSec * 1000);
+    }
+  }
+
+  stopBattleTime() {
+    if (this.startTime) {
+      this.session = null;
+      this.startTime = null;
+    }
+  }
+
   finish() {
+    this.stopBattleTime();
     const { blue = 0, red = 0 } = this.score;
     const teamScoreTotal = blue + red;
     const fundByScore = this.fund / (teamScoreTotal <= 0 ? 1 : teamScoreTotal);
@@ -524,6 +566,7 @@ class ProTankiBattle {
   }
 
   resetBattle() {
+    this.startBattleTime();
     this.resetUserStat();
     this.resetFund();
     this.resetTime();
@@ -574,6 +617,7 @@ class ProTankiBattle {
 
     this.clients.forEach((client) => {
       const { user } = client;
+      user.battle.resetUserStat();
       _userStatsPacket.writePacket(userStatsPacket(user));
     });
 
@@ -596,6 +640,7 @@ class ProTankiBattle {
       this.sendPacket(561771020, new ByteArray().writeInt(1).writeInt(0));
     }
   }
+
   resetTime() {
     const packet = new ByteArray();
     packet.writeInt(this.timeLimitInSec);
@@ -608,6 +653,9 @@ class ProTankiBattle {
     removerItem(this.users, player.user);
     removerItem(this.usersBlue, player.user);
     removerItem(this.usersRed, player.user);
+    if (this.clients.length === 0) {
+      this.stopBattleTime();
+    }
   }
 
   sendPacketSpectator(packedID, packet = new ByteArray()) {

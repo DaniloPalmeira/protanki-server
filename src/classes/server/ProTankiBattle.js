@@ -565,15 +565,12 @@ class ProTankiBattle {
     }, 11 * 1000);
   }
 
-  resetBattle() {
-    this.changeTeams();
+  async resetBattle() {
+    await this.changeTeams();
     this.clients.forEach((client) => {
       const { user } = client;
       const { battle } = user;
-      battle.resetUserStat();
       battle.updateTankiData();
-      battle.CodecStatisticsTeamCC();
-      // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
     });
     this.startBattleTime();
     this.resetUserStat();
@@ -583,9 +580,8 @@ class ProTankiBattle {
     this.resetFlags();
   }
 
-  changeTeams() {
+  async changeTeams() {
     function alterarTime(user) {
-      const antigoTeam = user.battle.team;
       user.battle.team =
         user.battle.team === 0
           ? 1
@@ -656,6 +652,8 @@ class ProTankiBattle {
 
     this.clients.forEach((client) => {
       const { user } = client;
+      const { battle } = user;
+      battle.resetUserStat();
       _userStatsPacket.writePacket(userStatsPacket(user));
     });
 

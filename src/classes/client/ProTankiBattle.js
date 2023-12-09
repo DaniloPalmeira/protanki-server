@@ -205,7 +205,9 @@ module.exports = class {
     const packet = new ByteArray(tankiParamsPacket(this.client.user));
     this.sendPacket(-1672577397, packet);
 
-    this.prepareCameraPosition();
+    if (this.party.canPlay) {
+      this.prepareCameraPosition();
+    }
   }
 
   prepareCameraPosition() {

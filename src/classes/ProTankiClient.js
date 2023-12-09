@@ -560,7 +560,9 @@ class ProTankiClient {
         this.user.battle ? 1000 : 2000
       );
     } else if (packetID == 268832557) {
-      this.user.battle.updateTankiData();
+      if (this.user.battle.party.canPlay) {
+        this.user.battle.updateTankiData();
+      }
     } else if (packetID == PKG.BATTLE_JOIN) {
       const team = packet.readInt();
       if (!this.user.battle) {

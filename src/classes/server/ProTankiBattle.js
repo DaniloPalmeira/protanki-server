@@ -88,6 +88,7 @@ class ProTankiBattle {
 
   bonusList = [];
   mines = [];
+  canPlay = true;
 
   startTime = null;
   session = false;
@@ -509,6 +510,7 @@ class ProTankiBattle {
   }
 
   startBattleTime() {
+    this.canPlay = true;
     if (!this.startTime) {
       this.startTime = new Date();
       this.finishBattleByTime();
@@ -531,10 +533,12 @@ class ProTankiBattle {
     if (this.startTime) {
       this.session = null;
       this.startTime = null;
+      this.canPlay = false;
     }
   }
 
   finish() {
+    this.canPlay = false;
     this.stopBattleTime();
     const { blue = 0, red = 0 } = this.score;
     const teamScoreTotal = blue + red;
@@ -566,13 +570,13 @@ class ProTankiBattle {
   }
 
   async resetBattle() {
+    this.startBattleTime();
     await this.changeTeams();
     this.clients.forEach((client) => {
       const { user } = client;
       const { battle } = user;
       battle.updateTankiData();
     });
-    this.startBattleTime();
     this.resetUserStat();
     this.resetFund();
     this.resetTime();

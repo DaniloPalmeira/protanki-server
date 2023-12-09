@@ -566,23 +566,21 @@ class ProTankiBattle {
   }
 
   resetBattle() {
-    if (!this.session) {
-      this.changeTeams();
-      this.clients.forEach((client) => {
-        const { user } = client;
-        const { battle } = user;
-        battle.resetUserStat();
-        battle.updateTankiData();
-        battle.CodecStatisticsTeamCC();
-        // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
-      });
-      this.startBattleTime();
-      this.resetUserStat();
-      this.resetFund();
-      this.resetTime();
-      this.resetScore();
-      this.resetFlags();
-    }
+    this.changeTeams();
+    this.clients.forEach((client) => {
+      const { user } = client;
+      const { battle } = user;
+      battle.resetUserStat();
+      battle.updateTankiData();
+      battle.CodecStatisticsTeamCC();
+      // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
+    });
+    this.startBattleTime();
+    this.resetUserStat();
+    this.resetFund();
+    this.resetTime();
+    this.resetScore();
+    this.resetFlags();
   }
 
   changeTeams() {
@@ -606,11 +604,6 @@ class ProTankiBattle {
 
     this.usersBlue.length = 0;
     this.usersBlue.push(...listaTemp);
-
-    console.log({
-      blue: this.usersBlue.length,
-      red: this.usersRed.length,
-    });
 
     const _usersStatsPacket = new ByteArray();
     _usersStatsPacket.writeInt(this.usersRed.length);
@@ -651,7 +644,6 @@ class ProTankiBattle {
       packet.writeUTF(null);
       this.sendPacket(-1026428589, packet);
 
-      console.log(this.ctf[flagColor].flag instanceof Vector3);
       this.ctf[flagColor].flag.set(0, 0, 0);
       this.ctf[flagColor].holder = null;
       this.ctf[flagColor].lastAction = new Date();

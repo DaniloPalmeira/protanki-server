@@ -1041,6 +1041,7 @@ class ProTankiClient {
     _packet.writeBoolean(_user.online); //online
     _packet.writeInt(this.server.id); //serverNumber
     _packet.writeUTF(_user.username); //userId
+
     this.sendPacket(2041598093, _packet);
     logger.debug(
       `CodecOnlineNotifierData do usário ${_user.username} foi enviado para o ${this.user.username}`

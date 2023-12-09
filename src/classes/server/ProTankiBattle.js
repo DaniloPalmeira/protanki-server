@@ -566,19 +566,64 @@ class ProTankiBattle {
   }
 
   resetBattle() {
+    this.changeTeams();
+    this.clients.forEach((client) => {
+      const { user } = client;
+      const { battle } = user;
+      battle.resetUserStat();
+      battle.updateTankiData();
+      battle.CodecStatisticsTeamCC();
+      // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
+    });
     this.startBattleTime();
     this.resetUserStat();
     this.resetFund();
     this.resetTime();
     this.resetScore();
     this.resetFlags();
-    this.clients.forEach((client) => {
-      const { user } = client;
-      const { battle } = user;
-      battle.resetUserStat();
-      battle.updateTankiData();
-      // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
+  }
+
+  changeTeams() {
+    function alterarTime(user) {
+      const antigoTeam = user.battle.team;
+      user.battle.team =
+        user.battle.team === 0
+          ? 1
+          : user.battle.team === 1
+          ? 0
+          : user.battle.team;
+
+      return user;
+    }
+
+    const listaTemp = [...this.usersRed.map(alterarTime)];
+
+    // Atribua os valores da this.usersBlue à lista1
+    this.usersRed.length = 0;
+    this.usersRed.push(...this.usersBlue.map(alterarTime));
+
+    this.usersBlue.length = 0;
+    this.usersBlue.push(...listaTemp);
+
+    console.log({
+      blue: this.usersBlue.length,
+      red: this.usersRed.length,
     });
+
+    const _usersStatsPacket = new ByteArray();
+    _usersStatsPacket.writeInt(this.usersRed.length);
+
+    this.usersRed.forEach((user) => {
+      _usersStatsPacket.writePacket(userStatsPacket(user));
+    });
+
+    _usersStatsPacket.writeInt(this.usersBlue.length);
+
+    this.usersBlue.forEach((user) => {
+      _usersStatsPacket.writePacket(userStatsPacket(user));
+    });
+
+    this.sendPacket(-1668779175, _usersStatsPacket);
   }
 
   resetFlags() {
@@ -617,7 +662,6 @@ class ProTankiBattle {
 
     this.clients.forEach((client) => {
       const { user } = client;
-      user.battle.resetUserStat();
       _userStatsPacket.writePacket(userStatsPacket(user));
     });
 

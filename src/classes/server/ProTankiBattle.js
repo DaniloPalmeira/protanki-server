@@ -509,11 +509,13 @@ class ProTankiBattle {
     return userListTeam;
   }
 
-  startBattleTime() {
-    this.canPlay = true;
-    if (!this.startTime) {
-      this.startTime = new Date();
-      this.finishBattleByTime();
+  startBattleTime(force = false) {
+    if (force || this.clients.length === 0) {
+      this.canPlay = true;
+      if (!this.startTime) {
+        this.startTime = new Date();
+        this.finishBattleByTime();
+      }
     }
   }
 
@@ -570,7 +572,7 @@ class ProTankiBattle {
   }
 
   async resetBattle() {
-    this.startBattleTime();
+    this.startBattleTime(true);
     await this.changeTeams();
     this.clients.forEach((client) => {
       const { user } = client;

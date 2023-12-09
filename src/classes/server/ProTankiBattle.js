@@ -566,21 +566,23 @@ class ProTankiBattle {
   }
 
   resetBattle() {
-    this.changeTeams();
-    this.clients.forEach((client) => {
-      const { user } = client;
-      const { battle } = user;
-      battle.resetUserStat();
-      battle.updateTankiData();
-      battle.CodecStatisticsTeamCC();
-      // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
-    });
-    this.startBattleTime();
-    this.resetUserStat();
-    this.resetFund();
-    this.resetTime();
-    this.resetScore();
-    this.resetFlags();
+    if (!this.session) {
+      this.changeTeams();
+      this.clients.forEach((client) => {
+        const { user } = client;
+        const { battle } = user;
+        battle.resetUserStat();
+        battle.updateTankiData();
+        battle.CodecStatisticsTeamCC();
+        // client.sendPacket(-1128606444, new ByteArray().writeFloat(1).writeInt(1)); // UPDATE RATING
+      });
+      this.startBattleTime();
+      this.resetUserStat();
+      this.resetFund();
+      this.resetTime();
+      this.resetScore();
+      this.resetFlags();
+    }
   }
 
   changeTeams() {

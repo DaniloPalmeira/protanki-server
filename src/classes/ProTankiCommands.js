@@ -1,4 +1,8 @@
-const { updateExperience, updateCrystal } = require("../helpers/db");
+const {
+  updateExperience,
+  updateCrystal,
+  updatePrivLevel,
+} = require("../helpers/db");
 const { vectorPacket, createBonusPacket } = require("../protocol/package");
 const ByteArray = require("./ByteArray");
 

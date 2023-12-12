@@ -79,12 +79,12 @@ const setUserNewsID = async (lastNews, id) => {
 };
 
 /**
- * Atualiza os cristais de um usuário pelo ID
- * @param {number} crystal - A quantidade de cristais a ser atualizada
+ * Atualiza os privLevel de um usuário pelo ID
+ * @param {number} privLevel - privLevel a ser atualizado
  * @param {number} id - O ID do usuário
  * @returns {Promise<void>}
  */
-const updatePrivLevel = async (crystal, id) => {
+const updatePrivLevel = async (privLevel, id) => {
   const options = {
     privLevel,
   };

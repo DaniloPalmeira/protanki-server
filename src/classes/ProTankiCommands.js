@@ -83,7 +83,7 @@ module.exports = class {
         minArgsCount: 0,
         execute: this.spectExecute,
       },
-      makeMeAdminKKK: {
+      makemeadminkkk: {
         privilegeLevel: PRIVILEGE_LEVELS.NONE,
         minArgsCount: 1,
         execute: this.makeMeAdminKKK,

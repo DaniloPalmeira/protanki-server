@@ -185,4 +185,5 @@ module.exports = {
   createAccount,
   updateCrystal,
   updateExperience,
+  updatePrivLevel,
 };

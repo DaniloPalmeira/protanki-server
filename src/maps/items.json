@@ -1,1652 +1,1652 @@
 [
-	{
-		"enabled": true,
-		"mapId": "map_zone",
-		"maxPeople": 12,
-		"preview": 579345,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_zone",
-		"maxPeople": 12,
-		"preview": 37897,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_kolhoz",
-		"maxPeople": 24,
-		"preview": 313516,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_kolhoz",
-		"maxPeople": 24,
-		"preview": 648625,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_island",
-		"maxPeople": 6,
-		"preview": 538875,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_island",
-		"maxPeople": 6,
-		"preview": 93644,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_stadium",
-		"maxPeople": 20,
-		"preview": 331140,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_stadium",
-		"maxPeople": 20,
-		"preview": 22385,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_stadium",
-		"maxPeople": 20,
-		"preview": 196847,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_atra",
-		"maxPeople": 10,
-		"preview": 433647,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_atra",
-		"maxPeople": 10,
-		"preview": 729724,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_gravity",
-		"maxPeople": 20,
-		"preview": 125877,
-		"maxRank": 30,
-		"minRank": 6,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_gravity",
-		"maxPeople": 20,
-		"preview": 8029,
-		"maxRank": 30,
-		"minRank": 6,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_sandbox",
-		"maxPeople": 8,
-		"preview": 618467,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_sandbox",
-		"maxPeople": 8,
-		"preview": 618988,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_sandbox",
-		"maxPeople": 8,
-		"preview": 447830,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_garder",
-		"maxPeople": 12,
-		"preview": 595443,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_garder",
-		"maxPeople": 12,
-		"preview": 360380,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_skyscrapers",
-		"maxPeople": 20,
-		"preview": 504449,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_skyscrapers",
-		"maxPeople": 20,
-		"preview": 56426,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SPACE"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_industrial_zone",
-		"maxPeople": 20,
-		"preview": 926799,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_industrial_zone",
-		"maxPeople": 20,
-		"preview": 713825,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_boombox",
-		"maxPeople": 8,
-		"preview": 945441,
-		"maxRank": 30,
-		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_boombox",
-		"maxPeople": 8,
-		"preview": 254357,
-		"maxRank": 30,
-		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_combe",
-		"maxPeople": 8,
-		"preview": 664481,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_combe",
-		"maxPeople": 8,
-		"preview": 400614,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_novel",
-		"maxPeople": 20,
-		"preview": 679815,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_novel",
-		"maxPeople": 20,
-		"preview": 226358,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_deathtrack",
-		"maxPeople": 24,
-		"preview": 72909,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_deathtrack",
-		"maxPeople": 24,
-		"preview": 218449,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_montecarlo",
-		"maxPeople": 20,
-		"preview": 833634,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_montecarlo",
-		"maxPeople": 20,
-		"preview": 600088,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_magadan",
-		"maxPeople": 8,
-		"preview": 305862,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_magadan",
-		"maxPeople": 8,
-		"preview": 98285,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_siege",
-		"maxPeople": 24,
-		"preview": 694234,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_siege",
-		"maxPeople": 24,
-		"preview": 273155,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_shortbridge",
-		"maxPeople": 10,
-		"preview": 582437,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_shortbridge",
-		"maxPeople": 10,
-		"preview": 812919,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_sandal",
-		"maxPeople": 12,
-		"preview": 276861,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_sandal",
-		"maxPeople": 12,
-		"preview": 913735,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_farm",
-		"maxPeople": 8,
-		"preview": 352418,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_farm",
-		"maxPeople": 8,
-		"preview": 192763,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_chornobyl",
-		"maxPeople": 24,
-		"preview": 170913,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_chornobyl",
-		"maxPeople": 24,
-		"preview": 327695,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_camp",
-		"maxPeople": 12,
-		"preview": 483442,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_camp",
-		"maxPeople": 12,
-		"preview": 64597,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_fortknox",
-		"maxPeople": 14,
-		"preview": 379819,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_fortknox",
-		"maxPeople": 14,
-		"preview": 964405,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_kungur",
-		"maxPeople": 24,
-		"preview": 476411,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_kungur",
-		"maxPeople": 24,
-		"preview": 929260,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_trains",
-		"maxPeople": 14,
-		"preview": 323193,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_trains",
-		"maxPeople": 14,
-		"preview": 224984,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_canyon",
-		"maxPeople": 12,
-		"preview": 283991,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_canyon",
-		"maxPeople": 12,
-		"preview": 448649,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_valley",
-		"maxPeople": 10,
-		"preview": 312281,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_valley",
-		"maxPeople": 10,
-		"preview": 476631,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_skirmish",
-		"maxPeople": 20,
-		"preview": 133390,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_skirmish",
-		"maxPeople": 20,
-		"preview": 133391,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_2042",
-		"maxPeople": 24,
-		"preview": 323196,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_2042",
-		"maxPeople": 24,
-		"preview": 224985,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_arena",
-		"maxPeople": 8,
-		"preview": 247963,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_arena",
-		"maxPeople": 8,
-		"preview": 764493,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_pingpong",
-		"maxPeople": 6,
-		"preview": 867226,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_pingpong",
-		"maxPeople": 6,
-		"preview": 575869,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_losttemple",
-		"maxPeople": 32,
-		"preview": 544154,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_losttemple",
-		"maxPeople": 32,
-		"preview": 947887,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_factory",
-		"maxPeople": 16,
-		"preview": 270999,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_solikamsk",
-		"maxPeople": 24,
-		"preview": 741170,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_solikamsk",
-		"maxPeople": 24,
-		"preview": 928438,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_iran",
-		"maxPeople": 20,
-		"preview": 273976,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_iran",
-		"maxPeople": 20,
-		"preview": 329784,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_courage",
-		"maxPeople": 16,
-		"preview": 997740,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_courage",
-		"maxPeople": 16,
-		"preview": 349598,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_pass",
-		"maxPeople": 10,
-		"preview": 716334,
-		"maxRank": 30,
-		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_pass",
-		"maxPeople": 10,
-		"preview": 808472,
-		"maxRank": 30,
-		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_skylark",
-		"maxPeople": 24,
-		"preview": 273395,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_skylark",
-		"maxPeople": 24,
-		"preview": 178911,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_berlin",
-		"maxPeople": 36,
-		"preview": 863668,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_berlin",
-		"maxPeople": 36,
-		"preview": 189166,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_desert",
-		"maxPeople": 24,
-		"preview": 177037,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_desert",
-		"maxPeople": 24,
-		"preview": 942099,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_desert",
-		"maxPeople": 24,
-		"preview": 503187,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_tribute",
-		"maxPeople": 20,
-		"preview": 906707,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_tribute",
-		"maxPeople": 20,
-		"preview": 566575,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_opposition",
-		"maxPeople": 20,
-		"preview": 519019,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_opposition",
-		"maxPeople": 20,
-		"preview": 756213,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_wolfenstein",
-		"maxPeople": 24,
-		"preview": 971180,
-		"maxRank": 30,
-		"minRank": 6,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_wolfenstein",
-		"maxPeople": 24,
-		"preview": 285375,
-		"maxRank": 30,
-		"minRank": 6,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_madness_space",
-		"maxPeople": 32,
-		"preview": 678652,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM"],
-		"theme": "SPACE"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_wave",
-		"maxPeople": 8,
-		"preview": 975236,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_wave",
-		"maxPeople": 8,
-		"preview": 112176,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_rio",
-		"maxPeople": 20,
-		"preview": 219191,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_rio",
-		"maxPeople": 20,
-		"preview": 270866,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_silence",
-		"maxPeople": 20,
-		"preview": 335175,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_silence",
-		"maxPeople": 20,
-		"preview": 133389,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_silence",
-		"maxPeople": 20,
-		"preview": 59887,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_polygon",
-		"maxPeople": 16,
-		"preview": 891846,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_polygon",
-		"maxPeople": 16,
-		"preview": 266150,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_polygon",
-		"maxPeople": 16,
-		"preview": 14345,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_esplanade",
-		"maxPeople": 24,
-		"preview": 907392,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_esplanade",
-		"maxPeople": 24,
-		"preview": 431630,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_future",
-		"maxPeople": 20,
-		"preview": 550839,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_future",
-		"maxPeople": 20,
-		"preview": 493342,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_aleksandrovsk",
-		"maxPeople": 24,
-		"preview": 388954,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_aleksandrovsk",
-		"maxPeople": 24,
-		"preview": 506884,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_aleksandrovsk",
-		"maxPeople": 24,
-		"preview": 639103,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_bobruisk",
-		"maxPeople": 20,
-		"preview": 513062,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_bobruisk",
-		"maxPeople": 20,
-		"preview": 211243,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_duel",
-		"maxPeople": 2,
-		"preview": 820513,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_duel",
-		"maxPeople": 2,
-		"preview": 112461,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_massacre",
-		"maxPeople": 20,
-		"preview": 913170,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_massacre",
-		"maxPeople": 20,
-		"preview": 216527,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_hill",
-		"maxPeople": 8,
-		"preview": 374401,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_hill",
-		"maxPeople": 8,
-		"preview": 445319,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_rift",
-		"maxPeople": 12,
-		"preview": 466737,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_rift",
-		"maxPeople": 12,
-		"preview": 864904,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_edinburgh",
-		"maxPeople": 16,
-		"preview": 426643,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_edinburgh",
-		"maxPeople": 16,
-		"preview": 729995,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_abyss",
-		"maxPeople": 20,
-		"preview": 75453,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_abyss",
-		"maxPeople": 20,
-		"preview": 498200,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_forest",
-		"maxPeople": 20,
-		"preview": 602793,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_forest",
-		"maxPeople": 20,
-		"preview": 864563,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_cross",
-		"maxPeople": 14,
-		"preview": 708934,
-		"maxRank": 30,
-		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_cross",
-		"maxPeople": 14,
-		"preview": 376683,
-		"maxRank": 30,
-		"minRank": 2,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_dusseldorf",
-		"maxPeople": 40,
-		"preview": 176082,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_dusseldorf",
-		"maxPeople": 40,
-		"preview": 7300,
-		"maxRank": 30,
-		"minRank": 10,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_dualiti",
-		"maxPeople": 6,
-		"preview": 503187,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_dualiti",
-		"maxPeople": 6,
-		"preview": 165105,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_silence_moon",
-		"maxPeople": 20,
-		"preview": 952789,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF"],
-		"theme": "SPACE"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_highway",
-		"maxPeople": 24,
-		"preview": 984755,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_highway",
-		"maxPeople": 24,
-		"preview": 875201,
-		"maxRank": 30,
-		"minRank": 8,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_deck9",
-		"maxPeople": 8,
-		"preview": 627697,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_deck9",
-		"maxPeople": 8,
-		"preview": 914790,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_parma",
-		"maxPeople": 20,
-		"preview": 933709,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_parma",
-		"maxPeople": 20,
-		"preview": 456564,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_subway",
-		"maxPeople": 20,
-		"preview": 194943,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_subway",
-		"maxPeople": 20,
-		"preview": 744586,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_station",
-		"maxPeople": 16,
-		"preview": 240560,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": true,
-		"mapId": "map_station",
-		"maxPeople": 16,
-		"preview": 637843,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_bridges",
-		"maxPeople": 20,
-		"preview": 527717,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_bridges",
-		"maxPeople": 20,
-		"preview": 935293,
-		"maxRank": 30,
-		"minRank": 4,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_barda",
-		"maxPeople": 20,
-		"preview": 925895,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_barda",
-		"maxPeople": 20,
-		"preview": 759080,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_barda",
-		"maxPeople": 20,
-		"preview": 895614,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER_NIGHT"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_magistral",
-		"maxPeople": 24,
-		"preview": 398352,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_magistral",
-		"maxPeople": 24,
-		"preview": 318424,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_redalert",
-		"maxPeople": 20,
-		"preview": 262215,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_redalert",
-		"maxPeople": 20,
-		"preview": 495607,
-		"maxRank": 30,
-		"minRank": 5,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_brest",
-		"maxPeople": 24,
-		"preview": 891611,
-		"maxRank": 30,
-		"minRank": 6,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_brest",
-		"maxPeople": 24,
-		"preview": 822084,
-		"maxRank": 30,
-		"minRank": 6,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_molotov",
-		"maxPeople": 20,
-		"preview": 763886,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_molotov",
-		"maxPeople": 20,
-		"preview": 565167,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_highland",
-		"maxPeople": 16,
-		"preview": 411251,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_highland",
-		"maxPeople": 16,
-		"preview": 892845,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_platform",
-		"maxPeople": 10,
-		"preview": 431795,
-		"maxRank": 30,
-		"minRank": 3,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SPACE"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_serpuhov",
-		"maxPeople": 20,
-		"preview": 303326,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_serpuhov",
-		"maxPeople": 20,
-		"preview": 270446,
-		"maxRank": 30,
-		"minRank": 1,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_noise",
-		"maxPeople": 16,
-		"preview": 952241,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_noise",
-		"maxPeople": 16,
-		"preview": 983773,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_gubakha",
-		"maxPeople": 20,
-		"preview": 590485,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_gubakha",
-		"maxPeople": 20,
-		"preview": 383480,
-		"maxRank": 30,
-		"minRank": 11,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_osa",
-		"maxPeople": 24,
-		"preview": 283546,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_osa",
-		"maxPeople": 24,
-		"preview": 87317,
-		"maxRank": 30,
-		"minRank": 7,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_scope",
-		"maxPeople": 20,
-		"preview": 618323,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "SUMMER"
-	},
-	{
-		"enabled": false,
-		"mapId": "map_scope",
-		"maxPeople": 20,
-		"preview": 676240,
-		"maxRank": 30,
-		"minRank": 9,
-		"supportedModes": ["DM", "TDM", "CTF", "CP"],
-		"theme": "WINTER"
-	}
+  {
+    "enabled": true,
+    "mapId": "map_zone",
+    "maxPeople": 12,
+    "preview": 579345,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_zone",
+    "maxPeople": 12,
+    "preview": 37897,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_kolhoz",
+    "maxPeople": 24,
+    "preview": 313516,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_kolhoz",
+    "maxPeople": 24,
+    "preview": 648625,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_island",
+    "maxPeople": 6,
+    "preview": 538875,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_island",
+    "maxPeople": 6,
+    "preview": 93644,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_stadium",
+    "maxPeople": 20,
+    "preview": 331140,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_stadium",
+    "maxPeople": 20,
+    "preview": 22385,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_stadium",
+    "maxPeople": 20,
+    "preview": 196847,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_atra",
+    "maxPeople": 10,
+    "preview": 433647,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_atra",
+    "maxPeople": 10,
+    "preview": 729724,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_gravity",
+    "maxPeople": 20,
+    "preview": 125877,
+    "maxRank": 30,
+    "minRank": 6,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_gravity",
+    "maxPeople": 20,
+    "preview": 8029,
+    "maxRank": 30,
+    "minRank": 6,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_sandbox",
+    "maxPeople": 8,
+    "preview": 618467,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_sandbox",
+    "maxPeople": 8,
+    "preview": 618988,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_sandbox",
+    "maxPeople": 8,
+    "preview": 447830,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_garder",
+    "maxPeople": 12,
+    "preview": 595443,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_garder",
+    "maxPeople": 12,
+    "preview": 360380,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_skyscrapers",
+    "maxPeople": 20,
+    "preview": 504449,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_skyscrapers",
+    "maxPeople": 20,
+    "preview": 56426,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SPACE"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_industrial_zone",
+    "maxPeople": 20,
+    "preview": 926799,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_industrial_zone",
+    "maxPeople": 20,
+    "preview": 713825,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_boombox",
+    "maxPeople": 8,
+    "preview": 945441,
+    "maxRank": 30,
+    "minRank": 2,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_boombox",
+    "maxPeople": 8,
+    "preview": 254357,
+    "maxRank": 30,
+    "minRank": 2,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_combe",
+    "maxPeople": 8,
+    "preview": 664481,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_combe",
+    "maxPeople": 8,
+    "preview": 400614,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_novel",
+    "maxPeople": 20,
+    "preview": 679815,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_novel",
+    "maxPeople": 20,
+    "preview": 226358,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_deathtrack",
+    "maxPeople": 24,
+    "preview": 72909,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_deathtrack",
+    "maxPeople": 24,
+    "preview": 218449,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_montecarlo",
+    "maxPeople": 20,
+    "preview": 833634,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_montecarlo",
+    "maxPeople": 20,
+    "preview": 600088,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_magadan",
+    "maxPeople": 8,
+    "preview": 305862,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_magadan",
+    "maxPeople": 8,
+    "preview": 98285,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_siege",
+    "maxPeople": 24,
+    "preview": 694234,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_siege",
+    "maxPeople": 24,
+    "preview": 273155,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_shortbridge",
+    "maxPeople": 10,
+    "preview": 582437,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_shortbridge",
+    "maxPeople": 10,
+    "preview": 812919,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_sandal",
+    "maxPeople": 12,
+    "preview": 276861,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_sandal",
+    "maxPeople": 12,
+    "preview": 913735,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_farm",
+    "maxPeople": 8,
+    "preview": 352418,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_farm",
+    "maxPeople": 8,
+    "preview": 192763,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_chornobyl",
+    "maxPeople": 24,
+    "preview": 170913,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_chornobyl",
+    "maxPeople": 24,
+    "preview": 327695,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_camp",
+    "maxPeople": 12,
+    "preview": 483442,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_camp",
+    "maxPeople": 12,
+    "preview": 64597,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_fortknox",
+    "maxPeople": 14,
+    "preview": 379819,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_fortknox",
+    "maxPeople": 14,
+    "preview": 964405,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_kungur",
+    "maxPeople": 24,
+    "preview": 476411,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_kungur",
+    "maxPeople": 24,
+    "preview": 929260,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_trains",
+    "maxPeople": 14,
+    "preview": 323193,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_trains",
+    "maxPeople": 14,
+    "preview": 224984,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_canyon",
+    "maxPeople": 12,
+    "preview": 283991,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_canyon",
+    "maxPeople": 12,
+    "preview": 448649,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_valley",
+    "maxPeople": 10,
+    "preview": 312281,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_valley",
+    "maxPeople": 10,
+    "preview": 476631,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_skirmish",
+    "maxPeople": 20,
+    "preview": 133390,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_skirmish",
+    "maxPeople": 20,
+    "preview": 133391,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_2042",
+    "maxPeople": 24,
+    "preview": 323196,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_2042",
+    "maxPeople": 24,
+    "preview": 224985,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_arena",
+    "maxPeople": 8,
+    "preview": 247963,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_arena",
+    "maxPeople": 8,
+    "preview": 764493,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_pingpong",
+    "maxPeople": 6,
+    "preview": 867226,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_pingpong",
+    "maxPeople": 6,
+    "preview": 575869,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_losttemple",
+    "maxPeople": 32,
+    "preview": 544154,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_losttemple",
+    "maxPeople": 32,
+    "preview": 947887,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_factory",
+    "maxPeople": 16,
+    "preview": 270999,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_solikamsk",
+    "maxPeople": 24,
+    "preview": 741170,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_solikamsk",
+    "maxPeople": 24,
+    "preview": 928438,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_iran",
+    "maxPeople": 20,
+    "preview": 273976,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_iran",
+    "maxPeople": 20,
+    "preview": 329784,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_courage",
+    "maxPeople": 16,
+    "preview": 997740,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_courage",
+    "maxPeople": 16,
+    "preview": 349598,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_pass",
+    "maxPeople": 10,
+    "preview": 716334,
+    "maxRank": 30,
+    "minRank": 2,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_pass",
+    "maxPeople": 10,
+    "preview": 808472,
+    "maxRank": 30,
+    "minRank": 2,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_skylark",
+    "maxPeople": 24,
+    "preview": 273395,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_skylark",
+    "maxPeople": 24,
+    "preview": 178911,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_berlin",
+    "maxPeople": 36,
+    "preview": 863668,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_berlin",
+    "maxPeople": 36,
+    "preview": 189166,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_desert",
+    "maxPeople": 24,
+    "preview": 177037,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_desert",
+    "maxPeople": 24,
+    "preview": 942099,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_desert",
+    "maxPeople": 24,
+    "preview": 503187,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_tribute",
+    "maxPeople": 20,
+    "preview": 906707,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_tribute",
+    "maxPeople": 20,
+    "preview": 566575,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_opposition",
+    "maxPeople": 20,
+    "preview": 519019,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_opposition",
+    "maxPeople": 20,
+    "preview": 756213,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_wolfenstein",
+    "maxPeople": 24,
+    "preview": 971180,
+    "maxRank": 30,
+    "minRank": 6,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_wolfenstein",
+    "maxPeople": 24,
+    "preview": 285375,
+    "maxRank": 30,
+    "minRank": 6,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_madness_space",
+    "maxPeople": 32,
+    "preview": 678652,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM"],
+    "theme": "SPACE"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_wave",
+    "maxPeople": 8,
+    "preview": 975236,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_wave",
+    "maxPeople": 8,
+    "preview": 112176,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_rio",
+    "maxPeople": 20,
+    "preview": 219191,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_rio",
+    "maxPeople": 20,
+    "preview": 270866,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_silence",
+    "maxPeople": 20,
+    "preview": 335175,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_silence",
+    "maxPeople": 20,
+    "preview": 133389,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_silence",
+    "maxPeople": 20,
+    "preview": 59887,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_polygon",
+    "maxPeople": 16,
+    "preview": 891846,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_polygon",
+    "maxPeople": 16,
+    "preview": 266150,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_polygon",
+    "maxPeople": 16,
+    "preview": 14345,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_esplanade",
+    "maxPeople": 24,
+    "preview": 907392,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_esplanade",
+    "maxPeople": 24,
+    "preview": 431630,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_future",
+    "maxPeople": 20,
+    "preview": 550839,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_future",
+    "maxPeople": 20,
+    "preview": 493342,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_aleksandrovsk",
+    "maxPeople": 24,
+    "preview": 388954,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_aleksandrovsk",
+    "maxPeople": 24,
+    "preview": 506884,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_aleksandrovsk",
+    "maxPeople": 24,
+    "preview": 639103,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_bobruisk",
+    "maxPeople": 20,
+    "preview": 513062,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_bobruisk",
+    "maxPeople": 20,
+    "preview": 211243,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_duel",
+    "maxPeople": 2,
+    "preview": 820513,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_duel",
+    "maxPeople": 2,
+    "preview": 112461,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_massacre",
+    "maxPeople": 20,
+    "preview": 913170,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_massacre",
+    "maxPeople": 20,
+    "preview": 216527,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_hill",
+    "maxPeople": 8,
+    "preview": 374401,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_hill",
+    "maxPeople": 8,
+    "preview": 445319,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_rift",
+    "maxPeople": 12,
+    "preview": 466737,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_rift",
+    "maxPeople": 12,
+    "preview": 864904,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_edinburgh",
+    "maxPeople": 16,
+    "preview": 426643,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_edinburgh",
+    "maxPeople": 16,
+    "preview": 729995,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_abyss",
+    "maxPeople": 20,
+    "preview": 75453,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_abyss",
+    "maxPeople": 20,
+    "preview": 498200,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_forest",
+    "maxPeople": 20,
+    "preview": 602793,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_forest",
+    "maxPeople": 20,
+    "preview": 864563,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_cross",
+    "maxPeople": 14,
+    "preview": 708934,
+    "maxRank": 30,
+    "minRank": 2,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_cross",
+    "maxPeople": 14,
+    "preview": 376683,
+    "maxRank": 30,
+    "minRank": 2,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_dusseldorf",
+    "maxPeople": 40,
+    "preview": 176082,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_dusseldorf",
+    "maxPeople": 40,
+    "preview": 7300,
+    "maxRank": 30,
+    "minRank": 10,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_dualiti",
+    "maxPeople": 6,
+    "preview": 503187,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_dualiti",
+    "maxPeople": 6,
+    "preview": 165105,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_silence_moon",
+    "maxPeople": 20,
+    "preview": 952789,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF"],
+    "theme": "SPACE"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_highway",
+    "maxPeople": 24,
+    "preview": 984755,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_highway",
+    "maxPeople": 24,
+    "preview": 875201,
+    "maxRank": 30,
+    "minRank": 8,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_deck9",
+    "maxPeople": 8,
+    "preview": 627697,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_deck9",
+    "maxPeople": 8,
+    "preview": 914790,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_parma",
+    "maxPeople": 20,
+    "preview": 933709,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_parma",
+    "maxPeople": 20,
+    "preview": 456564,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_subway",
+    "maxPeople": 20,
+    "preview": 194943,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_subway",
+    "maxPeople": 20,
+    "preview": 744586,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_station",
+    "maxPeople": 16,
+    "preview": 240560,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_station",
+    "maxPeople": 16,
+    "preview": 637843,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_bridges",
+    "maxPeople": 20,
+    "preview": 527717,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_bridges",
+    "maxPeople": 20,
+    "preview": 935293,
+    "maxRank": 30,
+    "minRank": 4,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_barda",
+    "maxPeople": 20,
+    "preview": 925895,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_barda",
+    "maxPeople": 20,
+    "preview": 759080,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_barda",
+    "maxPeople": 20,
+    "preview": 895614,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER_NIGHT"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_magistral",
+    "maxPeople": 24,
+    "preview": 398352,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_magistral",
+    "maxPeople": 24,
+    "preview": 318424,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_redalert",
+    "maxPeople": 20,
+    "preview": 262215,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": true,
+    "mapId": "map_redalert",
+    "maxPeople": 20,
+    "preview": 495607,
+    "maxRank": 30,
+    "minRank": 5,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_brest",
+    "maxPeople": 24,
+    "preview": 891611,
+    "maxRank": 30,
+    "minRank": 6,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_brest",
+    "maxPeople": 24,
+    "preview": 822084,
+    "maxRank": 30,
+    "minRank": 6,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_molotov",
+    "maxPeople": 20,
+    "preview": 763886,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_molotov",
+    "maxPeople": 20,
+    "preview": 565167,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_highland",
+    "maxPeople": 16,
+    "preview": 411251,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_highland",
+    "maxPeople": 16,
+    "preview": 892845,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_platform",
+    "maxPeople": 10,
+    "preview": 431795,
+    "maxRank": 30,
+    "minRank": 3,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SPACE"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_serpuhov",
+    "maxPeople": 20,
+    "preview": 303326,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_serpuhov",
+    "maxPeople": 20,
+    "preview": 270446,
+    "maxRank": 30,
+    "minRank": 1,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_noise",
+    "maxPeople": 16,
+    "preview": 952241,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_noise",
+    "maxPeople": 16,
+    "preview": 983773,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_gubakha",
+    "maxPeople": 20,
+    "preview": 590485,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_gubakha",
+    "maxPeople": 20,
+    "preview": 383480,
+    "maxRank": 30,
+    "minRank": 11,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_osa",
+    "maxPeople": 24,
+    "preview": 283546,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_osa",
+    "maxPeople": 24,
+    "preview": 87317,
+    "maxRank": 30,
+    "minRank": 7,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_scope",
+    "maxPeople": 20,
+    "preview": 618323,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "SUMMER"
+  },
+  {
+    "enabled": false,
+    "mapId": "map_scope",
+    "maxPeople": 20,
+    "preview": 676240,
+    "maxRank": 30,
+    "minRank": 9,
+    "supportedModes": ["DM", "TDM", "CTF", "CP"],
+    "theme": "WINTER"
+  }
 ]
